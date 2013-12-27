@@ -1,0 +1,3 @@
+D:\MyCode\trunk\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.csprojResolveAssemblyReference.cache
+D:\MyCode\trunk\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.Properties.Resources.resources
+D:\MyCode\trunk\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.csproj.GenerateResource.Cache
