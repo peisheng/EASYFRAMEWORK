@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Media;
 using System.Windows;
+using System.Diagnostics;
 
 
-namespace BMC.Core 
+namespace Wpf.Utils 
 {
     public static class ControlsHelper
     {
@@ -43,6 +44,24 @@ namespace BMC.Core
                 var child = VisualTreeHelper.GetChild(root, i);
                 yield return child;
                 foreach (var descendants in child.GetVisuals())
+                {
+                    yield return descendants;
+                }
+            }
+        }
+
+        public static IEnumerable<T> GetVisuals<T>(this DependencyObject root) where T:DependencyObject
+        {
+            int count = VisualTreeHelper.GetChildrenCount(root);
+            for (int i = 0; i < count; i++)
+            {
+                var child = VisualTreeHelper.GetChild(root, i);
+                if (child.GetType().ToString()==typeof(T).ToString())
+                {
+                     
+                    yield return (T)child;
+                }
+                foreach (var descendants in child.GetVisuals<T>())
                 {
                     yield return descendants;
                 }

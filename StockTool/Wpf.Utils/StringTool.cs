@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Security.Cryptography;
 using System.IO;
 
-namespace BMC.Core
+namespace Wpf.Utils
 {
     public class StringTool
     {

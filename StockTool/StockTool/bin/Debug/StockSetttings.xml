@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+<StockSetttings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SetttingList>
+    <SettingEntity>
+      <StockCode>000616</StockCode>
+      <BuyCostPrice>3.6154</BuyCostPrice>
+      <BuyVol>3100</BuyVol>
+      <AlarmLossStopPoint>0.2</AlarmLossStopPoint>
+      <AlarmMakeStopPoint>4</AlarmMakeStopPoint>
+      <IsActived>true</IsActived>
+    </SettingEntity>
+    <SettingEntity>
+      <StockCode>002184</StockCode>
+      <BuyCostPrice>7.5613</BuyCostPrice>
+      <BuyVol>2200</BuyVol>
+      <AlarmLossStopPoint>2</AlarmLossStopPoint>
+      <AlarmMakeStopPoint>4</AlarmMakeStopPoint>
+      <IsActived>true</IsActived>
+    </SettingEntity>
+  </SetttingList>
+</StockSetttings>

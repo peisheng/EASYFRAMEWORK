@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace BMC.Core
+namespace Wpf.Utils
 {
     public class XmlUtil<T>
     {
@@ -108,9 +108,6 @@ namespace BMC.Core
                 }
             }
             catch(Exception ex){
-
-                LogBase log = new LogBase();
-                log.ExceptionLog(ex.Message,ex);
                 return default(T);
             }
         }

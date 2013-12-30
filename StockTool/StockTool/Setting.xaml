@@ -1,21 +1,21 @@
 ﻿<Window x:Class="StockTool.Setting"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Setting" Height="600" Width="800">     
-    <Grid>
+        Title="Setting" Height="350" Width="300">     
+    <Grid >
         <Grid.RowDefinitions>            
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition ></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="60"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Canvas  >
-            <ListBox x:Name="ltConfig"> 
+        <Canvas Grid.Row="0" Grid.RowSpan="2" >
+            <ListBox x:Name="ltConfig" Height="345" Width="60"  SelectionChanged="ltConfig_SelectionChanged_1"  > 
             </ListBox> 
         </Canvas>
-        <StackPanel Grid.Column="1">
+        <StackPanel Grid.Column="1" VerticalAlignment="Top" Height="200">
             <StackPanel Orientation="Horizontal" >
                 <Label>股票代码：</Label>
                 <TextBox x:Name="txtCode"></TextBox>
@@ -38,15 +38,15 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <Label>是否启用预警：</Label>
-                <CheckBox VerticalAlignment="Center"></CheckBox>
+                <CheckBox VerticalAlignment="Center" x:Name="chkIsActive"></CheckBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" ></StackPanel>
 
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal">
-            <Button x:Name="btnDelete">删除</Button>
-            <Button x:Name="btnNew">新建</Button>            
-            <Button x:Name="btnSave">保存</Button>
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <Button x:Name="btnDelete" Click="btnDelete_Click">删除</Button>
+            <Button x:Name="btnNew" Click="btnNew_Click">新建</Button>            
+            <Button x:Name="btnSave" Click="btnSave_Click">保存</Button>
         </StackPanel>
     </Grid>
     

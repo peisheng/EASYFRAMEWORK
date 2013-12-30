@@ -95,7 +95,7 @@ namespace StockTool
         static StockInfo parserStockInfo(string[] result)
         {
             
-            if(result.Length==24)
+            if(result.Length==25)
             {
                 return new StockInfo(){
                     Code=result[0],

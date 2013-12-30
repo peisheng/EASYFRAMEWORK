@@ -5,7 +5,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.Windows.Threading;
 
-namespace ATMC.Core
+namespace Wpf.Utils
 {
     public class WindowsUtil
     {

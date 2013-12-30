@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Threading;
 
-namespace BMC.Core
+namespace Wpf.Utils
 {
     public class TimerTool
     {

@@ -1,3 +1,9 @@
 D:\MyCode\trunk\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.csprojResolveAssemblyReference.cache
 D:\MyCode\trunk\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.Properties.Resources.resources
 D:\MyCode\trunk\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.csproj.GenerateResource.Cache
+E:\git\StockTool\Wpf.Utils\bin\Debug\Wpf.Utils.dll
+E:\git\StockTool\Wpf.Utils\bin\Debug\Wpf.Utils.pdb
+E:\git\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.Properties.Resources.resources
+E:\git\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.csproj.GenerateResource.Cache
+E:\git\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.dll
+E:\git\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.pdb

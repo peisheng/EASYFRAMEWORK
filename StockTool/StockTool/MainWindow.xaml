@@ -1,4 +1,15 @@
 ﻿<Window x:Class="StockTool.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="" Height="350" Width="300"/>
+        Title="" Height="350" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" VerticalAlignment="Center"   x:Name="btnStartWatching" Click="btnStartWatching_Click">启动预警</Button>
+        <Button Grid.Column="1" VerticalAlignment="Center" x:Name="Setting" Click="Setting_Click">配置任务</Button>
+    </Grid>
+    
+</Window>
+    

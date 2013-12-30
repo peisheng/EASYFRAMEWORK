@@ -5,6 +5,7 @@ using System.Text;
 
 namespace StockTool.Entity
 {
+    [Serializable]
     public class SettingEntity
     {
         public string StockCode { get; set; }  //股票代码

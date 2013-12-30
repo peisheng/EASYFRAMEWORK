@@ -34,9 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Animate.NET">
-      <HintPath>..\..\CommonDll\Animate.NET.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
@@ -63,6 +60,8 @@
     </Compile>
     <Compile Include="Entity\SettingEntity.cs" />
     <Compile Include="Entity\StockInfo.cs" />
+    <Compile Include="Entity\StockSetttings.cs" />
+    <Compile Include="Helper\EntityHelper.cs" />
     <Compile Include="Helper\WindHelper.cs" />
     <Compile Include="Service References\ChinaStock\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -142,6 +141,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wpf.Utils\Wpf.Utils.csproj">
+      <Project>{3d7799af-a11c-493a-9bad-2bf78c7771a6}</Project>
+      <Name>Wpf.Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
