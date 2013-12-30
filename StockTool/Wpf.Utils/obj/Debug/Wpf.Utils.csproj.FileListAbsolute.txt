@@ -7,3 +7,9 @@ E:\git\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.Properties.Resources.resources
 E:\git\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.csproj.GenerateResource.Cache
 E:\git\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.dll
 E:\git\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.pdb
+D:\GIT\EASYFRAMEWORK\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.csproj.GenerateResource.Cache
+D:\GIT\EASYFRAMEWORK\StockTool\Wpf.Utils\bin\Debug\Wpf.Utils.dll
+D:\GIT\EASYFRAMEWORK\StockTool\Wpf.Utils\bin\Debug\Wpf.Utils.pdb
+D:\GIT\EASYFRAMEWORK\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.Properties.Resources.resources
+D:\GIT\EASYFRAMEWORK\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.dll
+D:\GIT\EASYFRAMEWORK\StockTool\Wpf.Utils\obj\Debug\Wpf.Utils.pdb
