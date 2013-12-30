@@ -63,12 +63,12 @@
     <Compile Include="Entity\StockSetttings.cs" />
     <Compile Include="Helper\EntityHelper.cs" />
     <Compile Include="Helper\WindHelper.cs" />
+    <Compile Include="Helper\StockHelper.cs" />
     <Compile Include="Service References\ChinaStock\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Helper\StockHelper.cs" />
     <Compile Include="Setting.xaml.cs">
       <DependentUpon>Setting.xaml</DependentUpon>
     </Compile>
@@ -125,6 +125,12 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Wpf.Utils\Wpf.Utils.csproj">
+      <Project>{3d7799af-a11c-493a-9bad-2bf78c7771a6}</Project>
+      <Name>Wpf.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <WCFMetadataStorage Include="Service References\ChinaStock\" />
   </ItemGroup>
   <ItemGroup>
@@ -141,12 +147,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Wpf.Utils\Wpf.Utils.csproj">
-      <Project>{3d7799af-a11c-493a-9bad-2bf78c7771a6}</Project>
-      <Name>Wpf.Utils</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

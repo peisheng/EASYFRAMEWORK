@@ -64,3 +64,10 @@ D:\GIT\EASYFRAMEWORK\StockTool\StockTool\obj\Debug\StockTool_MarkupCompile.cache
 D:\GIT\EASYFRAMEWORK\StockTool\StockTool\obj\Debug\StockTool.g.resources
 D:\GIT\EASYFRAMEWORK\StockTool\StockTool\obj\Debug\StockTool.csproj.GenerateResource.Cache
 D:\GIT\EASYFRAMEWORK\StockTool\StockTool\obj\Debug\StockTool.Properties.Resources.resources
+D:\GIT\EASYFRAMEWORK\StockTool\StockTool\bin\Debug\StockTool.exe.config
+D:\GIT\EASYFRAMEWORK\StockTool\StockTool\bin\Debug\StockTool.exe
+D:\GIT\EASYFRAMEWORK\StockTool\StockTool\bin\Debug\StockTool.pdb
+D:\GIT\EASYFRAMEWORK\StockTool\StockTool\bin\Debug\Wpf.Utils.dll
+D:\GIT\EASYFRAMEWORK\StockTool\StockTool\bin\Debug\Wpf.Utils.pdb
+D:\GIT\EASYFRAMEWORK\StockTool\StockTool\obj\Debug\StockTool.exe
+D:\GIT\EASYFRAMEWORK\StockTool\StockTool\obj\Debug\StockTool.pdb
