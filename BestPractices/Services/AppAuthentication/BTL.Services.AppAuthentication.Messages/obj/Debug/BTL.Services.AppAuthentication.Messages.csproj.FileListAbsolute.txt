@@ -1,0 +1,4 @@
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\Services\AppAuthentication\BTL.Services.AppAuthentication.Messages\bin\Debug\BTL.Services.AppAuthentication.Messages.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\Services\AppAuthentication\BTL.Services.AppAuthentication.Messages\bin\Debug\BTL.Services.AppAuthentication.Messages.pdb
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\Services\AppAuthentication\BTL.Services.AppAuthentication.Messages\obj\Debug\BTL.Services.AppAuthentication.Messages.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\Services\AppAuthentication\BTL.Services.AppAuthentication.Messages\obj\Debug\BTL.Services.AppAuthentication.Messages.pdb

@@ -1,0 +1,10 @@
+C:\Users\T.Chung\Desktop\BTL\BTL.Application.Web\Plugins\BTL.Application.UserAuthoring.dll
+C:\Users\T.Chung\Desktop\BTL\BTL.Application.Web\Plugins\BTL.Application.UserAuthoring.pdb
+C:\Users\T.Chung\Desktop\BTL\Plugins\BTL.Application.UserAuthoring\obj\Debug\BTL.Application.UserAuthoring.csprojResolveAssemblyReference.cache
+C:\Users\T.Chung\Desktop\BTL\Plugins\BTL.Application.UserAuthoring\obj\Debug\BTL.Application.UserAuthoring.dll
+C:\Users\T.Chung\Desktop\BTL\Plugins\BTL.Application.UserAuthoring\obj\Debug\BTL.Application.UserAuthoring.pdb
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Application.Web\Plugins\BTL.Application.UserAuthoring.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Application.Web\Plugins\BTL.Application.UserAuthoring.pdb
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\Plugins\BTL.Application.UserAuthoring\obj\Debug\BTL.Application.UserAuthoring.csprojResolveAssemblyReference.cache
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\Plugins\BTL.Application.UserAuthoring\obj\Debug\BTL.Application.UserAuthoring.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\Plugins\BTL.Application.UserAuthoring\obj\Debug\BTL.Application.UserAuthoring.pdb

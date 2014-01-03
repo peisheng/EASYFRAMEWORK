@@ -1,0 +1,17 @@
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\bin\Debug\BTL.ContractMessages.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\bin\Debug\BTL.ContractMessages.pdb
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\bin\Debug\BTL.Infrastructure.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\bin\Debug\Autofac.Integration.Wcf.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\bin\Debug\Autofac.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\bin\Debug\Couchbase.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\bin\Debug\Autofac.Integration.Web.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\bin\Debug\Enyim.Caching.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\bin\Debug\AutoMapper.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\bin\Debug\BTL.Infrastructure.pdb
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\bin\Debug\Autofac.xml
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\bin\Debug\Couchbase.xml
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\bin\Debug\Enyim.Caching.xml
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\bin\Debug\AutoMapper.xml
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\obj\Debug\BTL.ContractMessages.csprojResolveAssemblyReference.cache
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\obj\Debug\BTL.ContractMessages.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.DataMessages\obj\Debug\BTL.ContractMessages.pdb

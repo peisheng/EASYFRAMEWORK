@@ -1,0 +1,5 @@
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\Services\AppAuthentication\BTL.Services.AppAuthentication.Contract\bin\Debug\BTL.Services.AppAuthentication.Contract.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\Services\AppAuthentication\BTL.Services.AppAuthentication.Contract\bin\Debug\BTL.Services.AppAuthentication.Contract.pdb
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\Services\AppAuthentication\BTL.Services.AppAuthentication.Contract\obj\Debug\BTL.Services.AppAuthentication.Contract.csprojResolveAssemblyReference.cache
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\Services\AppAuthentication\BTL.Services.AppAuthentication.Contract\obj\Debug\BTL.Services.AppAuthentication.Contract.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\Services\AppAuthentication\BTL.Services.AppAuthentication.Contract\obj\Debug\BTL.Services.AppAuthentication.Contract.pdb

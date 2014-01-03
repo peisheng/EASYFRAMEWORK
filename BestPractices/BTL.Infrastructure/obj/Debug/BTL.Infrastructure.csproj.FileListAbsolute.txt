@@ -1,0 +1,16 @@
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\bin\Debug\BTL.Infrastructure.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\bin\Debug\BTL.Infrastructure.pdb
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\bin\Debug\Autofac.Configuration.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\bin\Debug\Autofac.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\bin\Debug\Autofac.Integration.Wcf.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\bin\Debug\Autofac.Integration.Web.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\bin\Debug\AutoMapper.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\bin\Debug\Couchbase.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\bin\Debug\Enyim.Caching.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\bin\Debug\Autofac.xml
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\bin\Debug\AutoMapper.xml
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\bin\Debug\Couchbase.xml
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\bin\Debug\Enyim.Caching.xml
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\obj\Debug\BTL.Infrastructure.csprojResolveAssemblyReference.cache
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\obj\Debug\BTL.Infrastructure.dll
+d:\Documents\Visual Studio 2012\Samples\Best Practices for A1\BTL.Infrastructure\obj\Debug\BTL.Infrastructure.pdb
