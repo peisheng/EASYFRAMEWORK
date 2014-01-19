@@ -1,0 +1,105 @@
+<html>
+<head>
+	<title>左帧菜单</title>
+    <META http-equiv=Content-Type content="text/html; charset=gb2312">
+
+    <style type="text/css">
+<!--
+body,td{
+	margin: 0px;
+	padding:0;
+	background-color: #D8ECFF;
+	font-size:12px;
+}
+.pp{ padding-left:25px;}
+a.dht{color:#333;font-size:12px;text-decoration :none;}
+a.dht:hover{color:#f30;font-size:12px;text-decoration : underline;}
+a{color:#333;font-size:14px;text-decoration :none;}
+a:hover{color:#f30;font-size:14px;text-decoration : underline;}
+-->
+</style>
+</head>
+<body>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="40" align="center"><a href="../" target="_blank"><span style="color: #FF6600; font-size:14px; font-weight:bold;">浏览网站首页</span></a></td>
+          </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="25" align="center" style="background:url(images/new_left.jpg) repeat-x; font-size:14px; font-weight:bold;">系统配置</td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="main.php" target="right" class="dht">后台首页</a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="manageconfig.php" target="right" class="dht">系统基本参数</a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="managePaiApp.php" target="right" class="dht">推广账号配置</a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="manageadvdata.php" target="right" class="dht"><strong>网站配置中心</strong></a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="delete.php" target="right" class="dht">清空缓存</a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="managestyle.php" target="right" class="dht">模板选择</a></td>
+          </tr>
+        </table>
+        
+        
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="25" align="center" style="background:url(images/new_left.jpg) repeat-x; font-size:14px; font-weight:bold;">内容管理</td>
+          </tr>
+          <tr>
+            <td height="25" class="pp">
+            <img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=index&m=article" target="right" class="dht">文章</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=index&m=items" target="right" class="dht">商品</a>
+            </td>
+          </tr>
+          <tr>
+            <td height="25" class="pp">
+            <img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=index&m=shops" target="right" class="dht">店铺</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=index&m=adlist" target="right" class="dht">广告</a>
+            </td>
+          </tr>
+          <tr>
+            <td height="25" class="pp">
+            <img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=index&m=user" target="right" class="dht">会员</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=b2corder&m=user" target="right" class="dht">订单</a>
+<!---->            </td>
+          </tr>
+        </table>
+
+
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="25" align="center" style="background:url(images/new_left.jpg) repeat-x; font-size:14px; font-weight:bold;">管理员</td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="manageUser.php" target="right" class="dht">修改密码</a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=index&m=bak" target="right" class="dht">备份/还原</a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=loginout" target="_top"  class="dht">退出系统</a></td>
+          </tr>
+        </table>
+        
+        
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="90" align="center">版本号:<?php echo VERSON;?><br>
+              技术总监:高大元<br>
+            版权所有&nbsp;&copy;&nbsp;淘客帝国</td>
+          </tr>
+        </table>
+
+</body>
+</html>
+  

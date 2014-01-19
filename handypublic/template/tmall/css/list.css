@@ -1,0 +1,83 @@
+/*list*/
+p.indexppp {clear:both;margin-bottom:15px;padding-top:15px;font:bold 16px Arial;}
+.taodi_mainbox { width:950px; clear:both; margin:5px auto; background:url(../img/orange/950bg_taodi.gif) repeat-y; border-top:1px #e4e4e4 solid; border-bottom:1px #e4e4e4 solid; }
+.taodi_mainboxl { width:190px; float:left;}
+.taodi_mainboxr { width:760px; float:right;}
+.taodi_left_catalogs { width:188px; margin:0 auto; clear:both;}
+.taodi_left_catalogs h2 {width:188px;height:28px;border-bottom:1px #e4e4e4 solid;background:url(../img/orange/menu_top.gif);font-size:14px;text-align:center;margin-top:0;margin-bottom:0;color: #FFFFFF;}
+.taodi_left_catalogs h2 span { line-height:28px;}
+.taodi_left_catalogs ul { width:188px;}
+.taodi_left_catalogs ul li {line-height:24px;text-align:left;height:24px;border-bottom:1px #e4e4e4 solid;background-image: url(../img/orange/dot.gif);background-repeat: no-repeat;background-position: 5px 1px;padding-left:18px;}
+.fenlei{font-weight: bold; font-size: 14px; color: #FF6600;}
+.fenlei a{font-weight: bold; font-size: 14px; color: #FF6600;}
+.fenlei01{background-color: #FFECF0;}
+.fenlei02{background-color: #F0FFF0;}
+.fenlei03{background-color: #FFFFE1;}
+.fenlei04{background-color: #F0F0FF;}
+
+.taodi_right_catalogs { width:740px; margin:5px auto; clear:both; }
+.taodi_right_catalogs h2 { width:740px; line-height:26px; height:26px; font-size:12px; text-align:left;}
+.taodi_right_catalogs ul { width:738px; margin:0 ; border:1px solid #80FF80; background:#F0FFF0;}
+.taodi_right_catalogs ul li { width:184px; float:left; text-align:left; color:#999; line-height:22px; height:22px; overflow:hidden;}
+.taodi_right_catalogs ul li a { padding-left:10px; color:#333333;}
+
+.taodi_tips {width:738px;height:24px;border:1px #FFDF70 solid;background:#FEFEE9;line-height:24px;margin:5px 5px 5px 10px!important;margin:5px;}
+.taodi_tips .listweizhi{float:left; padding-left:10px;}
+.taodi_tips .listweizhi a{padding-right:3px; padding-left:3px; color:#ff5500;}
+.taodi_tips .shuliang{float:left;padding-left:20px;}
+.taodi_tips .shuliang span{ color:#ff5500; padding-left:3px; padding-right:3px;}
+
+.taodi_choose { margin:5px auto; width:740px;}
+.taodi_choose ul { width:740px; height:34px; }
+.taodi_choose ul { width:740px; background:url(../img/orange/choosebg.gif) repeat-x; height:34px;}
+.taodi_choose ul li { float:left; background:url(../img/orange/nochoose.gif) no-repeat 0 2px; width:100px; height:34px; line-height:30px; text-align:center; margin-right:6px;}
+#this_choose { background:url(../img/orange/choose.gif) no-repeat;}
+#this_choose a { font-weight:bold; color:#fff;}
+
+.taodi_listbox { width:950px; margin:5px auto; clear:both; border:0px #ccc solid;}
+.taodi_listbox dl { width:950px; margin:0 auto; clear:both;}
+.taodi_listbox dl dt {
+	width: 237px;
+	float: left;
+	height: 320px;
+	margin: 0 auto;
+}
+.taodi_listbox dl dt em { width:226px; height:226px; border:1px #ccc solid; display:block; overflow:hidden; margin:0 auto;}
+.taodi_listbox dl dt em img { margin:3px;}
+.taodi_listbox dl dt span { color:red;}
+.taodi_listbox dl dt p { line-height:18px; margin:5px auto; margin-bottom:5px; color:#333333; text-align:left; width:220px; }
+.taodi_listbox dl dt p.taodi_title a { color:#3366cc;}
+.taodi_listbox dl dt p.taodi_nick b { font: bold 14px Georgia;color:#ad0101; padding-left:5px;padding-right:5px;}
+.taodi_listbox .taodi_title { width:226px; text-align:left; line-height:18px; height:36px; overflow:hidden;}
+.taodi_listbox .taodi_title span { color:red;}
+.taodi_listbox .taodi_sales b { color:#739F24;}
+
+
+.taodi_listbox_new { width:950px; margin:5px auto; clear:both; border:0px #ccc solid;}
+.taodi_listbox_new dl { width:950px; margin:0 auto; clear:both;}
+.taodi_listbox_new dl dt { width:237px; float:left; height:380px; margin:0 auto;}
+.taodi_listbox_new dl dt em { width:226px; height:226px; border:1px #ccc solid; display:block; overflow:hidden; margin:0 auto;}
+.taodi_listbox_new dl dt em img { margin:3px;}
+.taodi_listbox_new dl dt span { color:red;}
+.taodi_listbox_new dl dt p { line-height:18px; margin:5px auto; margin-bottom:5px; color:#333333; text-align:left; width:220px; }
+.taodi_listbox_new dl dt p.taodi_title a { color:#3366cc;}
+.taodi_listbox_new dl dt p.taodi_nick b { color:#ff5500; padding-left:5px;}
+.taodi_listbox_new .taodi_title { width:226px; text-align:left; line-height:18px; height:36px; overflow:hidden;}
+.taodi_listbox_new .taodi_title span { color:red;}
+.taodi_listbox_new .taodi_sales b { color:#739F24;}
+
+.condition { width:740px; border:1px #C0DBF8 solid; height:33px; background:url(../img/orange/conditionbg.gif) repeat-x; margin:3px auto; margin-bottom:0;}
+.condition ul { width:738px; clear:both; margin:0 auto;}
+.condition ul li { float:left; line-height:33px;}
+.condition .tilist { margin-left:5px; background:url(../img/orange/condition_right.gif) no-repeat right; width:110px;}
+.condition .by-price a { margin-right:5px;color:#FF3300;}
+.channel{width:950px;margin:5px auto;clear:both;}
+.page { margin:10px auto; margin-bottom:10px;}
+.page a { border:1px #E4E4E4 solid; padding:3px 6px 3px 6px; color:#3366cc;}
+.page em { font-size:14px;padding:3px 6px 3px 6px; border:1px #ff3300 solid;}
+#pages { clear:both;text-align:center; height:28px; line-height:28px; margin-top:20px; margin-bottom:20px; font-size:14px;font-family:"宋体";}
+#pages span,#pages u {padding:2px 4px;margin:4px 8px 0 0;background:#8B8A8A;border:1px solid #B9B7B7; color:#fff; font-weight:bold; }
+#pages a{ padding:2px 4px;margin:2px 4px 0 0; border:1px solid #B9B7B7; color:#8B8A8A; }
+#pages .active{background:#fff;border:1px solid #B9B7B7;color:#8B8A8A;font-weight:bold;padding:2px 4px;margin:2px 4px 0 0;}
+#pages a:visited{color:#8B8A8A;text-decoration:none; }
+#pages a:hover{color:#fff;background:#8B8A8A;border:1px solid #B9B7B7;}

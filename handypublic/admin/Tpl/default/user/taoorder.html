@@ -1,0 +1,124 @@
+<include file="user:header_js" />
+<link rel="stylesheet" type="text/css" href="../statics/js/calendar/calendar-blue.css"/>
+<script type="text/javascript" src="../statics/js/calendar/calendar.js"></script>
+<script type="text/javascript" src="../statics/js/jquery/plugins/jquery.imagePreview.js"></script>
+<div class="pad-10" >
+    <form name="searchform" action="" method="get" >
+    <table width="100%" cellspacing="0" class="search-form">
+        <tbody>
+            <tr>
+            <td>
+            <div class="explain-col">
+				订单时间：
+            	  <input type="text" name="time_start" id="time_start" class="date" size="12" value="{$time_start}">
+				<script language="javascript" type="text/javascript">
+                    Calendar.setup({
+                        inputField     :    "time_start",
+                        ifFormat       :    "%Y-%m-%d",
+                        showsTime      :    'true',
+                        timeFormat     :    "24"
+                    });
+                </script>
+                -
+                <input type="text" name="time_end" id="time_end" class="date" size="12" value="{$time_end}">
+				<script language="javascript" type="text/javascript">
+                    Calendar.setup({ 
+                        inputField     :    "time_end",
+                        ifFormat       :    "%Y-%m-%d",
+                        showsTime      :    'true',
+                        timeFormat     :    "24"
+                    });
+                </script>
+                
+                <input type="hidden" name="m" value="user" />
+                <input type="hidden" name="a" value="taoorder" />
+                <input type="submit" name="search" class="button" value="查询淘宝订单" />
+        	</div>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
+    <form id="myform" name="myform" action="{:u('user/delete')}" method="post" onsubmit="return check();">
+    <div class="table-list">
+    <table width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>订单号</th>
+                <th><input type="checkbox" value="" id="check_box" onclick="selectall('id[]');"></th>
+                <th>商品名称</th>
+                <th>数量</th>
+                <th>商品分类</th>
+                <th>卖家</th>
+                <th>佣金比率</th>
+				<th>创建时间</th>
+				<th>单价</th>
+				<th>实际付款</th>
+                <th>佣金金额</th>
+                <th>来路</th>
+            </tr>
+        </thead>
+    	<tbody>
+        <volist name="list" id="val" >
+        <tr>
+        	<td align="center">{$val.trade_id}</td>
+            <td align="center"><input type="checkbox" value="{$val.id}" name="id[]"></td>
+           <td align="center">{$val.item_title}</td>
+           <td align="center">{$val.item_num}</td>
+		   <td align="center"><br><font color=green>({$val.category_name})</font></td>
+            <td>{$val.seller_nick}</td>
+           <td align="center">{$val.commission_rate}%</td>
+           <td  align="center">{:date("Y-n-j   H:i:s",$val["pay_time"])}</td>
+           <td align="center">￥ {$val.pay_price}</td>
+           <td align="center">￥ {$val.real_pay_fee}</td>
+           <td align="center">￥ {$val.commission}</td>
+           <td align="center">{$val.outer_code}</td>
+        </volist>
+    	</tbody>
+    </table>
+    <div class="btn">
+    	
+    	查询结果总佣金：￥ {$sumfee}
+    	<div id="pages">{$page}</div>
+    </div>
+    </div>
+    </form>
+</div>
+
+<script language="javascript">
+function edit(id, name) {
+	var lang_edit = "{$Think.lang.edit}";
+	art.dialog({id:'edit'}).close();
+	art.dialog({title:lang_edit+'--'+name,id:'edit',iframe:'?m=user&a=edit&id='+id,width:'450',height:'500'}, 
+		function(){
+			var d = art.dialog({id:'edit'}).data.iframe;
+			d.document.getElementById('dosubmit').click();
+			return false;
+		}, 
+		function(){
+			art.dialog({id:'edit'}).close();
+		}
+	);
+}
+function check(){
+	if($("#myform").attr('action') == '{:u("items/delete")}') {
+		var ids='';
+		$("input[name='id[]']:checked").each(function(i, n){
+			ids += $(n).val() + ',';
+		});
+		if(ids=='') {
+			art.dialog({content:lang_please_select+lang_cate_name,lock:true,width:'200',height:'50',time:1.5},function(){});
+			return false;
+		}
+	}
+	return true;
+}
+function status(id,type){
+    $.get("{:u('user/status')}", { id: id, type: type }, function(jsondata){
+		var return_data  = eval("("+jsondata+")");
+		$("#"+type+"_"+id+" img").attr('src', '../statics/images/status_'+return_data.data+'.gif')
+	}); 
+}
+</script>
+</body>
+</html>

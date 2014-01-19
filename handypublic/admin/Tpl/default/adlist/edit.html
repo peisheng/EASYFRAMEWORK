@@ -1,0 +1,66 @@
+<include file="public:header" />
+<div class="pad_10">
+<form action="{:u('adlist/edit')}" method="post" name="myform" id="myform" >
+<table width="100%" cellpadding="2" cellspacing="1" class="table_form">
+	<tr> 
+		<th width="80">广告位名称 :</th>
+		<td>
+        <if condition="$adlist.type eq 'base'"><input type="text" name="name" id="name" class="input-text" size="30" value="{$adlist.name}"></if>
+        <if condition="$adlist.type eq 'template'">{$adlist.name}</if>
+        
+        </td>
+    </tr>
+    <tr> 
+		<th>广告位尺寸 :</th>
+		<td>
+        
+        <if condition="$adlist.type eq 'base'">宽 : 
+        <input type="text" name="width" id="width" class="input-text" size="6" value="{$adlist.width}" >
+         px&nbsp;&nbsp;&nbsp;&nbsp;高 : <input type="text" name="height" id="height" class="input-text" size="6" value="{$adlist.height}"></if>
+        <if condition="$adlist.type eq 'template'">宽 : 
+        {$adlist.width}px&nbsp;&nbsp;&nbsp;&nbsp;高 : {$adlist.height}</if>
+        
+         
+         
+         </td>
+    </tr>
+    <tr> 
+		<th>广告位说明 :</th>
+		<td>
+        <if condition="$adlist.type eq 'base'"><input name="description" type="text" class="input-textarea" id="description" value="{$adlist.description}" size="60" /></if>
+        <if condition="$adlist.type eq 'template'">{$adlist.description}</if>
+        </td>
+    </tr>
+    <tr>
+		<th>状态 :</th>
+		<td><select name="status">
+        	<option value="0" <if condition="$adlist.status eq '0'">selected="selected"</if>>关闭</option>
+            <option value="1" <if condition="$adlist.status eq '1'">selected="selected"</if>>开启</option>
+        </select></td>
+    </tr>
+    <tr>
+      <th>广告代码：</th>
+      <td><p>
+        <textarea rows="6" cols="55" class="input-textarea" id="code" name="code">{$adlist.code}</textarea>
+        <br />
+        广告中可以用的变量<br />
+        {#templateroot#} 代表模版根目录<br />
+        {#ROOT#} 代表根目录<br />
+        {#PID#} 代表后台设置的完整PID<br />
+        {#SPID#} 代表完整PID中的第一段那8位数字       </p></td>
+    </tr>
+</table>
+<input type="hidden" name="keyid" id="keyid" value="{$adlist.keyid}" />
+<input type="hidden" name="type" id="type" value="{$adlist.type}" />
+<input type="submit" name="dosubmit" id="dosubmit" class="dialog" value="修改">
+</form>
+<script type="text/javascript">
+	$(function(){
+		$.formValidator.initConfig({formid:"myform",autotip:true,onerror:function(msg,obj){art.dialog({content:msg,lock:true,width:'250',height:'50'}, function(){this.close();$(obj).focus();})}});
+		
+		$("#name").formValidator({onshow:"不能为空",onfocus:"不能为空"}).inputValidator({min:1,onerror:"请填写广告名称"});
+	})
+</script>
+</div>
+</body>
+</html>

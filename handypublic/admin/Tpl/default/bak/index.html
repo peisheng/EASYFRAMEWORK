@@ -1,0 +1,116 @@
+<include file="public:header" />
+<!-- 主页面开始 -->
+<div class="pad-10" >
+
+    <div class="table-list">
+<table width="98%" cellpadding=0 cellspacing=0 class="list">
+<thead>
+
+  <tr class="row" >
+    <th height="20" align="center" >文件名</td>
+    <th align="center" >备份时间</td>
+    <th align="center" >文件大小</td>
+    <th align="center" >管理选项</td>
+  </tr>
+</thead>
+<tbody>
+
+  <php>
+function MyScandir($FilePath='./',$Order=0){
+$FilePath = opendir($FilePath);
+while (false !== ($filename = readdir($FilePath))) {
+  $FileAndFolderAyy[] = $filename;
+}
+$Order == 0 ? sort($FileAndFolderAyy) : rsort($FileAndFolderAyy);
+return $FileAndFolderAyy;
+}
+
+$FileArr = MyScandir('../databak/');
+foreach ($FileArr as $i => $n){
+        if($n != 'PHPMyAdminInitialData.sql' && $i>1){
+                $FileTime = date('Y-m-d H:i:s',filemtime('../databak/'.$n));
+                $FileSize = filesize('../databak/' . $n)/1024;
+
+                if ($FileSize < 1024){
+                        $FileSize = number_format($FileSize,2) . ' KB';
+                } else {
+                        $FileSize = '<font color="#FF0000">' . number_format($FileSize/1024,2) . '</font> MB';
+                }
+                $sAS = "<a href=\"index.php?a=index&m=bak&Action=dow&file=" . $n . "\">下载</a> | ";
+                $sAS .= "<a onClick=\"return confirm('确定将数据库还原到当前备份吗？');\" href=\"index.php?a=index&m=bak&Action=RL&File=$n\">还原</a> | ";
+                $sAS .= "<a onClick=\"return confirm('确定删除该备份文件吗？');\" href=\"index.php?a=index&m=bak&Action=Del&File=$n\">删除</a>";
+                echo "<tr class=\"row\">
+                <td height=\"20\" align=\"center\">$n</td>
+                <td align=\"center\">$FileTime</td>
+                <td align=\"center\">$FileSize</td>
+                <td align=\"center\">$sAS</td>
+                </tr>";
+                unset($FileTime,$FileSize,$sAS);
+        }
+}
+</php>
+  <tr class="row">
+    <td colspan="4" height="40" align="center">
+    <input type="button" value="备份全部(全部备份，包含基本参数，配置中心和数据库)" style=" height:28px;cursor: hand" onClick="javascript:location.href='index.php?a=index&m=bak&Action=backup'">
+    <input type="button" value="仅备份数据库(不包含基本参数和配置中心)" style=" height:28px;cursor: hand;" onClick="javascript:location.href='index.php?a=index&m=bak&Action=backup0'">
+    
+    </td>
+  </tr>
+</tbody>
+  <tr><td height="5" colspan="4" class="bottomTd"></td></tr>
+</table>
+<table width="98%" border="0" align="center" cellpadding="0" cellspacing="6">
+        <tr class="row">
+          <td style="color:#333333; line-height:20px;">
+          
+<php>
+        $error = array();
+		$flag = true;
+        $check_file = array(
+            '/data',
+            '/data/applicationdate.php',
+            '/data/appnum.php',
+            '/data/configdata.php',
+            '/data/indexdata.php',
+            '/data/replacekeydata.php',
+            '/databak',
+            '/data/singerpagedate.php'
+        ); 
+        foreach ($check_file as $file) {
+            $path_file = ROOT_PATH . $file;
+            
+            if (!file_exists($path_file)) {
+                $error[] = $file . "不存在!";
+                $flag = false;
+                continue;
+            }
+            if (!is_writable($path_file)) {
+                $error[] = $file . "不可读写!";
+                $flag = false;
+            }
+        }
+		if(!$flag){
+			
+			echo("<font color=\"#FF0000\">提醒：<br />");	
+			foreach($error as $val){
+				echo($val."<br>");	
+			}
+			echo("<br />您好，请先将这些设置为可读写，之后才可以备份还原哦。</font>");	
+		}
+
+</php>
+          
+          
+          &nbsp;</td>
+        </tr>
+        <tr class="row">
+                <td style="color:#333333; line-height:20px;">
+                        注：1、本操作只对数据库中当前网站数据(表前缀为 "{$DB_PREFIX}" 的表)进行备份。如果您的数据库中有多个网站，其它站点不受影响。<br />
+                        　　2、备份后的数据可以进行还原操作或通过 phpMyAdmin 导入。
+                </td>
+      </tr>
+</table> 
+  </div>
+</div>
+</body>
+</html>

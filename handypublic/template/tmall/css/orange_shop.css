@@ -1,0 +1,134 @@
+/*! KISSY Style Platform Copyright(c) 2009 http://kissy.googlecode.com/ */
+		/*
+		reset.css
+		理念：清除和重置是紧密不可分的
+		特色：1.适应中文 2.基于最新主流浏览器
+		维护：玉伯(lifesinger@gmail.com), 正淳(ragecarrier@gmail.com)
+		*/
+		h1 { font-size: 18px; /* 18px / 12px = 1.5 */ }
+		h2 { font-size: 16px; }
+		h3 { font-size: 14px; }
+		h4, h5, h6 { font-size: 100%; }
+		
+		/** 重置表格元素 **/
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+		
+		/** 其它 **/
+		hr {
+			border: none;
+			height: 1px;
+		}
+		
+		.order-list .order li{
+				background:url(http://img.alimama.cn/cms/images/1258357261534.gif) 0 0 no-repeat;
+		}
+		.listshop{
+			clear:both;
+			width:304px;
+			margin-top:5px;
+			margin-left:0px;
+			
+		}
+		.order-list .order{
+			width:304px;
+			height:282px;
+		}
+		.order-list .order-3{
+			margin:0;
+		}
+		.order-list .order h3{
+			width:304px;
+			height:24px;
+			line-height:24px;
+			font-size:14px;
+			font-weight:700;
+			text-indent:11px;
+		}
+		.order-list .order ol{
+			width:274px;
+			margin-left:0px;
+			padding-left:0px;
+		}
+		.order-list .order li{
+			width:100%;
+			line-height:24px;
+			height:24px;
+			list-style-type:none;
+			padding-left:23px;
+		}
+		.order-list .order li a{
+			color:#333333;
+		}
+		.order-list .order li a span{
+			color:#CC0000;
+		}
+		.star_com{
+			float:right;
+			padding:4px 0 0;
+			*margin: -24px 0 0 0;
+			_margin: -24px 0 0 0;
+		}
+		.star_com img{
+			vertical-align:middle;
+		}
+		.order-list .order li.ol-1{
+			background-position:0 -79px;
+		}
+		.order-list .order li.ol-2{
+			background-position:0 -103px;
+		}
+		.order-list .order li.ol-3{
+			background-position:0 -127px;
+		}
+		.order-list .order li.ol-4{
+			background-position:0 -151px;
+		}
+		.order-list .order li.ol-5{
+			background-position:0 -175px;
+		}
+		.order-list .order li.ol-6{
+			background-position:0 -199px;
+		}
+		.order-list .order li.ol-7{
+			background-position:0 -223px;
+		}
+		.order-list .order li.ol-8{
+			background-position:0 -247px;
+		}
+		.order-list .order li.ol-9{
+			background-position:0 -271px;
+		}
+		.order-list .order li.ol-10{
+			background-position:0 -295px;
+		}
+		
+		
+		/*color*/
+		.pink .headline h2{
+			background-repeat:repeat-x;
+			color:#e6115c;
+		}
+		.pink .headline{
+			margin:0 0 4px;
+			border:1px solid #fb97ba;
+			line-height:26px;
+			height:26px;
+		}
+		.pink .order{
+			border:1px solid #febdd4;
+		}
+		.pink .order h3{
+			color:#ff6699;
+			border-bottom:1px solid #febdd4;
+			background-color:#fef1f5;
+		}
+		.pink .headline li a:link,.headline li a:visited {
+			color:#e6115c;
+		}
+		.pink .headline li a:active,.headline li a:hover {
+			color:#e6115c;
+			text-decoration:underline;
+		}

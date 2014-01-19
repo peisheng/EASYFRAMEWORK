@@ -1,0 +1,1 @@
+<?php exit();?>a:1:{s:6:"nowapp";s:1:"0";}<?php exit();?>

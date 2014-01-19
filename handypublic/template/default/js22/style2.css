@@ -1,0 +1,34 @@
+﻿
+DIV.grid-item {
+	 MARGIN: 0px 5px 5px 0px;  OVERFLOW: hidden; BORDER: #fff 1px dotted; 
+}
+DIV.grid-item img{width:192px;}
+DIV.grid-item:hover {
+	BORDER: #fc6820 1px solid; 
+}
+DIV.single-item :hover {
+	BORDER-BOTTOM: #fc6820 2px dotted; BORDER-LEFT: #fc6820 2px dotted; PADDING-BOTTOM: 29px; PADDING-LEFT: 14px; PADDING-RIGHT: 14px; BORDER-TOP: #fc6820 2px dotted; BORDER-RIGHT: #fc6820 2px dotted; PADDING-TOP: 14px
+}
+
+#grid-wrapper{margin-top:40px}
+
+
+.pic01{background:url(share_ico09.jpg) no-repeat;width:230px;height:15px}
+.pic02{background:url(share_ico10.jpg) repeat-y;width:230px;height:auto;padding-bottom:7px}
+.pic03{background:url(share_ico11.jpg) no-repeat;width:230px;height:61px}
+.pic04{margin-left:20px}
+.pic04 li{float:left}
+.pic04 .li01{background:url(share_ico12.jpg) no-repeat left center;width:90px;height:24px;line-height:24px;text-align:center;padding-left:10px;color:#fff}
+.pic04 .li01 span{color:#FF6699;margin-left:20px}
+.pic04 .li02{float:right;background:url(share_ico13.jpg) no-repeat right center;width:40px;margin-right:20px;height:24px;line-height:24px;text-align:center;padding-right:10px;color:#fff}
+.pic04 .li02 a{color:#FF6699;}
+
+DIV.grid-item .pic03 img{width:35px;height:35px;float:left;margin-right:10px}
+.pic03 p{padding:12px 0 0 18px;margin:0;text-align:left}
+.pic03 p span{color:#FF6699;}
+
+
+
+
+
+

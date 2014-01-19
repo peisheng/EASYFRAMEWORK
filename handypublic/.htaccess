@@ -1,0 +1,36 @@
+# Helicon ISAPI_Rewrite configuration file
+# Version 3.1.0.56
+# addhandler x-httpd-php-cgi .php4
+# addhandler x-httpd-php5-cgi .php5
+# addhandler x-httpd-php5-cgi .php
+
+RewriteEngine On
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
+
+
+Rewritebase /
+
+ RewriteRule ^(.*)taoshop/(.+)$ $1taoshop.php\?rule=$2
+ RewriteRule ^(.*)taozhe/(.+)$ $1taozhe.php\?rule=$2
+ RewriteRule ^(.*)taogou/(.+)$ $1taogou.php\?rule=$2
+ RewriteRule ^(.*)shareall/(.+)$ $1shareall.php\?rule=$2
+ RewriteRule ^(.*)b2cgou/(.+)$ $1b2cgou.php\?rule=$2
+ RewriteRule ^(.*)artlist/(.+)$ $1artlist.php\?rule=$2
+ RewriteRule ^(.*)shareadm/(.+)$ $1shareadm.php\?rule=$2
+ RewriteRule ^(.*)b2cmall/(.+)$ $1b2cmall.php\?rule=$2
+ RewriteRule ^(.*)taoseller/(.+)$ $1taoseller.php\?rule=$2
+ RewriteRule ^(.*)bigpic/(.+)$ $1bigpic.php\?rule=$2
+ RewriteRule ^(.*)allcates/(.+)$ $1allcates.php\?rule=$2
+ RewriteRule ^(.*)paigou/(.+)$ $1paigou.php\?rule=$2
+ RewriteRule ^(.*)channel/(.+)$ $1channel.php\?rule=$2
+ RewriteRule ^(.*)taoproduct/(.+)$ $1taoproduct.php\?rule=$2
+ RewriteRule ^(.*)b2cproduct/(.+)$ $1b2cproduct.php\?rule=$2
+ RewriteRule ^(.*)shareproduct/(.+)$ $1shareproduct.php\?rule=$2
+ RewriteRule ^(.*)b2cdetail/(.+)$ $1b2cdetail.php\?rule=$2
+ RewriteRule ^(.*)article/(.+)$ $1article.php\?rule=$2
+ RewriteRule ^(.*)help/(.+)$ $1help.php\?rule=$2
+ RewriteRule ^(.*)paiproduct/(.+)$ $1paiproduct.php\?rule=$2
+ RewriteRule ^(.*)tbcdn-([0-9]+)/(.+)$ $1img/nopic.gif
+ RewriteRule ^(.*)pai-([0-9]+)/(.+)$ $1img/nopic.gif
+ RewriteRule ^(.*)59b2c-([0-9]+)/(.+)$ $1img/nopic.gif

@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="off">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<link href="../statics/admin/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="../statics/css/dialog.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="../statics/js/jquery/jquery-1.4.2.min.js"></script>
+<script language="javascript" type="text/javascript" src="../statics/js/dialog.js"></script>
+<title>淘客帝国网站管理后台</title>
+</head>
+<body scroll="no">
+<div id="header">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="top" style="background:url(images/nei_top_bg.jpg) repeat-x;"><table width="1004" height="70" border="0" cellpadding="0" cellspacing="0" style="background:url(images/nei_logo.jpg) no-repeat;">
+      <tr>
+        <td width="811" align="left" valign="bottom" style="padding:0px 0px 20px 260px;color:#ffFFFF;">欢迎您，管理员：<?php echo $_COOKIE['COOKIEadminuser']?></td>
+        <td align="center"><a href="index.php?a=loginout" target="_top"><img src="images/exit.jpg" width="100" height="26" border="0" /></a></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</div>
+<div id="content">
+    <div class="left_menu fl">
+        <div id="leftMain">
+        
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="40" align="center"><a href="<?php echo $rootroad;?>/" target="_blank"><span style="color: #FF6600; font-size:14px; font-weight:bold;">浏览网站首页</span></a></td>
+          </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="25" align="center" style="background:url(images/new_left.jpg) repeat-x; font-size:14px; font-weight:bold;">系统配置</td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="http://www.cnmysoft.com/htggnew.html" target="right" class="dht">后台首页</a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="manageconfig.php" target="right" class="dht">系统基本参数</a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="manageAPP.php" target="right" class="dht"><strong>推广账号配置</strong></a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="manageadvdata.php" target="right" class="dht"><strong>网站配置中心</strong></a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="delete.php" target="right" class="dht">清空缓存</a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="managestyle.php" target="right" class="dht">模板设置</a></td>
+          </tr>
+        </table>
+        
+        
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="25" align="center" style="background:url(images/new_left.jpg) repeat-x; font-size:14px; font-weight:bold;">内容管理</td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=index&m=article" target="right" class="dht">文章管理</a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=index&m=items" target="right" class="dht">商品管理</a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=index&m=shops" target="right" class="dht">店铺管理</a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=index&m=adlist" target="right" class="dht">广告管理</a></td>
+          </tr>
+        </table>
+        
+        
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="25" align="center" style="background:url(images/new_left.jpg) repeat-x; font-size:14px; font-weight:bold;">会员管理</td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=index&m=user" target="right" class="dht">会员管理</a></td>
+          </tr>
+          <tr>
+            <td height="25" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=taoorder&m=user" target="right" class="dht">订单查看</a></td>
+          </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="25" align="center" style="background:url(images/new_left.jpg) repeat-x; font-size:14px; font-weight:bold;">个人信息</td>
+          </tr>
+          <tr>
+            <td height="30" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="manageUser.php" target="right" class="dht">修改密码</a></td>
+          </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="25" align="center" style="background:url(images/new_left.jpg) repeat-x; font-size:14px; font-weight:bold;">数据备份</td>
+          </tr>
+          <tr>
+            <td height="30" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=index&m=bak" target="right" class="dht">备份/还原</a></td>
+          </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="25" align="center" style="background:url(images/new_left.jpg) repeat-x; font-size:14px; font-weight:bold;">退出系统</td>
+          </tr>
+          <tr>
+            <td height="30" class="pp"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle">&nbsp;<a href="index.php?a=loginout" target="_top"  class="dht">退出系统</a></td>
+          </tr>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="90" align="center">版本号:<?php echo VERSON;?><br>
+              技术总监:高大元<br>
+            版权所有&nbsp;&copy;&nbsp;淘客帝国</td>
+          </tr>
+        </table>
+
+        
+        </div>
+        <a href="javascript:;" id="openClose" style="outline-style: none; outline-color: invert; outline-width: medium;" hideFocus="hidefocus" class="open" title="{$lang.expand_or_contract}"></a>
+    </div>
+    <div class="right_main">
+            <div class="rmc">
+                <div class="content" style="position:relative; overflow:hidden">
+                    <iframe name="right" id="rightMain" src="http://www.cnmysoft.com/htggnew.html" frameborder="false" scrolling="auto" style="overflow-x:hidden;border:none;" width="100%" height="auto" allowtransparency="true"></iframe>
+                </div>
+            </div>
+        </div>
+</div>
+<script type="text/javascript">
+function windowW(){
+	if($(window).width()<980){
+			$('#header').css('width',980+'px');
+			$('#content').css('width',980+'px');
+			$('body').attr('scroll','');
+			$('body').css('overflow','');
+	}
+}
+windowW();
+$(window).resize(function(){
+	if($(window).width()<980){
+		windowW();
+	}else{
+		$('#header').css('width','auto');
+		$('#content').css('width','auto');
+		$('body').attr('scroll','no');
+		$('body').css('overflow','hidden');
+
+	}
+});
+window.onresize = function(){
+	var heights = document.documentElement.clientHeight-80;
+	document.getElementById('rightMain').height = heights;
+	var openClose = $("#rightMain").height()+9;
+	$('#center_frame').height(openClose+9);
+	$("#openClose").height(openClose);
+	$("#leftMain").height($("#rightMain").height());
+}
+window.onresize();
+
+$(function(){
+	//默认载入左侧菜单
+	//$("#leftMain").load("{:u('public/menu', array('tag'=>'0'))}");
+	///$.get("{:u('index/current_pos', array('tag'=>'0'))}", function(data){
+		//$("#current_pos").html(data);
+	//});
+	//$('#top_menu li').first().addClass('on');
+})
+
+//左侧开关
+$("#openClose").click(function(){
+	
+	if($(this).data('clicknum')==1) {
+		$("html").removeClass("on");
+		$(".left_menu").removeClass("left_menu_on");
+		$(this).removeClass("close");
+		$(this).data('clicknum', 0);
+	} else {
+		$(".left_menu").addClass("left_menu_on");
+		$(this).addClass("close");
+		$("html").addClass("on");
+		$(this).data('clicknum', 1);
+	}
+	return false;
+});
+
+function _M(tag,targetUrl) {
+	$.get("{:u('public/menu')}", {tag:tag}, function(data){
+		$("#leftMain").html(data);
+	});
+
+	//$("#rightMain").attr('src', targetUrl);
+	$('.top_menu').removeClass("on");
+	$('#_M'+tag).addClass("on");
+
+	$.get("{:u('index/current_pos')}", {tag:tag}, function(data){
+		$("#current_pos").html(data);
+	});
+
+	//显示左侧菜单，当点击顶部时，展开左侧
+	$(".left_menu").removeClass("left_menu_on");
+	$("#openClose").removeClass("close");
+	$("html").removeClass("on");
+	$("#openClose").data('clicknum', 0);
+	$("#current_pos").data('clicknum', 1);
+}
+
+function _MP(menuid,targetUrl) {
+	$("#rightMain").attr('src', targetUrl);
+	$('.sub_menu').removeClass("on fb blue");
+	$('#_MP'+menuid).addClass("on fb blue");
+	$("#current_pos").data('clicknum', 1);
+	$.get("{:u('index/current_pos')}", {menuid:menuid}, function(data){
+		$("#current_pos").html(data);
+	});
+}
+
+function Refresh() {
+	var src = $("#rightMain").attr('src');
+	$("#rightMain").attr('src',src);
+}
+</script>
+</body>
+</html>

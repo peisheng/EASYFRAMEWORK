@@ -1,0 +1,169 @@
+<include file="public:header" />
+<include file="shops:header" />
+<link rel="stylesheet" type="text/css" href="../statics/js/calendar/calendar-blue.css"/>
+<script type="text/javascript" src="../statics/js/calendar/calendar.js"></script>
+<script type="text/javascript" src="../statics/js/jquery/plugins/jquery.imagePreview.js"></script>
+<div class="pad-10" >
+    <form name="searchform" action="" method="get">
+    <table width="100%" cellspacing="0" class="search-form">
+        <tbody>
+            <tr>
+            <td>
+            <div class="explain-col">
+            	&nbsp;店铺分类：
+                <select name="cate_id">
+            	{$TaoTypes_SelectItem}               
+              	</select>
+                &nbsp;
+                
+                <select name="sort">
+            	<option value="-1">-排序方式-</option>
+                <option value="commission_rate" <if condition="$sort eq 'commission_rate'">selected="selected"</if>>佣金比率</option>
+                <option value="auction_count" <if condition="$sort eq 'auction_count'">selected="selected"</if>>月推广量</option>
+                <option value="total_auction" <if condition="$sort eq 'total_auction'">selected="selected"</if>>总推广量</option>
+                </select>
+                
+                <!--只获取天猫：<input type="checkbox" name="only_mall" value="1" <if condition="$only_mall eq '1'">checked="checked"</if> />-->
+                
+                     &nbsp;关键字 :
+                <input name="keyword" type="text" class="input-text" size="25" value="{$keyword}" />
+                <input type="hidden" name="m" value="shops" />
+                <input type="hidden" name="a" value="taoapiadd" />
+                <input type="submit" name="search" class="button" value="淘宝搜索" />
+        	</div>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+    </form>
+
+    <form id="myform" name="myform" action="{:u('shops/taoapiadd')}" method="post" onsubmit="return check();">
+    <div class="table-list">
+    <table width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th><input type="checkbox" value="" id="check_box" onclick="selectall('id[]');"></th>
+                <th>店铺名称</th>
+                <th>等级</th>
+                <th>总推广量</a></th>
+                <th>月推广量</a></th>
+                <th>佣金比率</th>			
+                <th>店铺类型</th>			
+            </tr>
+        </thead>
+    	<tbody>
+        <volist name="shops_list" id="val" >
+        <tr>
+            <td align="center"><input type="checkbox" value="{$val.user_id}" name="id[]"></td>
+            <td align="left"><a href="{$val.click_url}" target=_blank>{$val.shop_title}</a></td>
+            <td align="center"><img src="../img/level/level_{$val.seller_credit}.gif"></a></td>
+            <td align="center">{$val.total_auction}</td>
+            <td align="center">{$val.auction_count}</td>
+            <td>{$val.commission_rate}</td>
+            <td align="center">{$val.shop_type}</td>
+        </volist>
+    	</tbody>
+    </table>
+
+    <div class="btn">
+    	<label for="check_box" style="float:left;">全选/取消</label>
+              
+        					
+        					<select onchange="get_child_cates(this,'scid');" name="pcid" id="pcid">
+			          			<option value="">--请选择采集到的类别--</option>
+			          			<volist name="first_cates_list" id="val">
+			          			<option value="{$val.id}" <if condition="$first_id eq $val['id']">selected="selected"</if>>{$val.name}</option>
+			          			</volist>
+			          		</select>&nbsp;
+                            
+                 <input type="hidden" name="keyword" value="{$keyword}" />
+                 <input type="hidden" name="setaction" value="daoru" />
+                 <input type="hidden" name="cate_id" value="{$cate_id}" />
+                 <input type="hidden" name="sort" value="{$sort}" />
+                 <input type="hidden" name="p" value="{$p}" />
+                            
+<input type="submit" class="button" name="dosubmit" value="采集选中的店铺到数据库"/>
+    	<div id="pages">{$page}</div>
+    </div>
+
+    </div>
+    </form>
+</div>
+<script language="javascript">
+$(function(){
+	$(".preview").preview();
+});
+
+var lang_cate_name = "店铺名称";
+function check(){
+	if($("#myform").attr('action') == '{:u("shops/delete")}') {
+		var ids='';
+		$("input[name='id[]']:checked").each(function(i, n){
+			ids += $(n).val() + ',';
+		});
+
+		if(ids=='') {
+			art.dialog({content:lang_please_select+lang_cate_name,lock:true,width:'200',height:'50',time:1.5},function(){});
+			return false;
+		}
+	}
+	return true;
+}
+function status(id,type){
+    $.get("{:u('shops/status')}", { id: id, type: type }, function(jsondata){
+		var return_data  = eval("("+jsondata+")");
+		$("#"+type+"_"+id+" img").attr('src', '../statics/images/status_'+return_data+'.gif')
+	}); 
+}
+function likes(id){
+	var likes	= $('#likes_'+id).val();
+	$.get("{:u('shops/likes')}", { id: id, likes: likes }, function(json){
+		//alert(likes);
+	}); 
+}
+
+
+function collect(){ 
+	$('#cmd').show();
+	
+	if($('#pcid').val()==''){ 
+		//console.log($('#cid').val());	
+		alert('请选择分类');
+		return;
+	}	
+	$.post("{:u('shops/batch_add')}",{
+		dosubmit:true,
+		urls:$('#urls').val(),
+		cid:$('#cid').val(),
+		scid:$('#scid').val(),
+		pcid:$('#pcid').val()
+	},
+	function(data){
+		$('#cmd').html("");		
+		if(data.data.code){
+			alert(data.data.msg);
+			return;
+		}
+		var html = "<div><h4>成功更新列表:</h4><div style='color:blue;'>"+data.data.success_update_list+"</div></div><br/>\
+					<div><h4>成功添加列表:</h4><div style='color:green;'>"+data.data.success_insert_list+"</div></div>\
+					<div><h4>失败列表:</h4><div style='color:red;'>"+data.data.fail_list+"</div></div>";
+		$('#cmd').append(html);					  			
+		//console.log(data);
+	},
+	'json');	
+}
+
+function get_child_cates(obj,to_id) {
+	var parent_id = $(obj).val();
+	if(to_id == 'scid') {
+		$('#cid').html( '<option value=\"\">--请选择--</option>');
+	}
+	$.get('?m=shops&a=get_child_cates&g=admin&parent_id='+parent_id,function(data){
+		var obj = eval("("+data+")");
+		$('#'+to_id).html( obj.content );
+	});
+}	
+
+</script>
+</body>
+</html>

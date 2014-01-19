@@ -1,0 +1,141 @@
+@charset "utf-8";
+/* DIVCSS5-CSS初始化模板-www.cnmysoft.com */
+body, div, address, blockquote, iframe , em , ul, ol, dl, dt, dd, li, dl, h1, h2, h3, h4, pre, table, caption, th, td, form, legend, fieldset, input, button, select, textarea {margin:0; padding:0;font-style: normal;font:12px/22px Arial, Helvetica, sans-serif;font: 12px/22px Arial, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+ol, ul ,li{list-style: none;}
+img {border: 0; vertical-align:middle;}
+body{color:#000000;background:#FFF; text-align:center;}
+.clear{clear:both;height:1px;width:100%; overflow:hidden; margin-top:-1px;}
+a{color:#000000;text-decoration:none; } 
+a:hover{color:#F60;text-decoration:underline;}
+
+.red ,.red a{ color:#F00;}
+.lan ,.lan a{ color:#1E51A2;}
+.dis{display:block;}
+.undis{display:none;}
+.lf{ float:left; text-align:left; width:400px;}
+.rt{ float:right; text-align:right; width:550px;text-overflow:ellipsis; white-space: nowrap; }
+.rt div{ float:left; display:inline;}
+
+.pl20{ padding-left:20px;}
+.pr20{ padding-right:0px;}
+.pd8{ padding-bottom:8px;}
+.pd6{padding-bottom:6px}
+.box{ width:100%; float:left;}
+.mt8{ margin-top:8px;}
+
+#at{ background:#EEE; border-bottom:1px solid #CCC; height:28px; margin:0 auto; width:100%; color:#666;}
+.a_b{
+	margin:0 auto;
+	width:1004px;
+	height: auto;
+}
+.h28{ height:28px; line-height:28px;}
+
+#hd_t{ position:relative; height:70px;}
+#hd_t h1{ text-align:left; top:18px; left:20px; color:#999; float:left;}
+#hd_t h1 a{color:#999;}#hd_t h1 a:hover{color:#F60;}
+#hd_t h1 img{ float:left; overflow:auto}
+#hd_t .tel{ position:absolute; right:0; top:10px; height:46px;}
+
+#n_bx{ height:76px; background:url(nav_bg.gif) repeat-x 0 -76px;}
+#n_bx .lbox{ float:left; width:997px; background:url(nav_bg.gif) no-repeat;height:76px; }
+#n_bx .rbg{ float:right; width:4px;background:url(nav_bg.gif) no-repeat right bottom;height:76px;}
+#n_bx .lbox #nav{ height:37px; width:933px; float:left; line-height:37px; padding-left:64px;}
+#n_bx .lbox #nav a{ display:inline; height:37px; font-size:14px; overflow:hidden; line-height:37px; float:left; padding:0 12px; color:#FFF;}
+#n_bx .lbox #nav a:hover{ text-decoration:none; background:url(nav_ov_bg.gif) repeat-x;}
+#n_bx .lbox #nav a.on{background:url(nav_ov_bg.gif) repeat-x; padding:0 12px;}
+#n_bx .lbox #n_bt{ height:38px; float:left; width:100%; position:relative; text-align:left;}
+#n_bt .c1{ position:absolute; height:38px; left:70px; line-height:38px; overflow:hidden; width:94px; top:0; font-weight:bold; padding-left:28px; background:url(swdj.gif) no-repeat; color:#666666;}
+
+#n_bt .c7{
+	position:absolute;
+	right:0;
+	top:0;
+	width:380px;
+	line-height:38px;
+	height:38px;
+	overflow:hidden;
+	text-align:right;
+}
+#n_bt .c7 em{ color:#D40E0E;}
+#n_bt .c4 ,#n_bt .c5 ,#n_bt .c6{ position:absolute; left:526px; top:6px; width:71px;height:24px; overflow:hidden; text-align:right;}
+#n_bt .c5{left:608px; }
+#n_bt .c6{left:608px; }
+#n_bt .c2 ,#n_bt .c3{ height:22px; position:absolute; border:0; border-bottom:1px solid #F3F3F3;border-right:1px solid #F3F3F3; left:188px; top:7px; background:url(srk.gif) no-repeat; width:100px; color:#666; overflow:hidden;}
+#n_bt .c3{
+	left:186px;
+	width:320px;
+	padding:0 5px;
+	line-height:22px;
+}
+
+
+.f3_l{ float:left; width:200px;}
+.f3_c{ float:left; width:594px; margin-left:10px; overflow:hidden;}
+.f3_r{ float:right; width:191px;overflow:hidden;}
+.bgC10202{ background:#C10202;}
+
+.f3_l dl.bimg{ float:left; width:100%; text-align:left;}
+.f3_l dl.bimg dt ,.f3_l .titr{ float:left; width:100%; background:url(fl_titbg.gif) no-repeat; height:30px; color:#FFF; line-height:30px; font-size:14px;}
+.f3_l dl.bimg dt a ,.f3_l .titr a{color:#FFF; padding-left:25px;}
+.f3_l dl.bimg dd{ padding:0 5px; width:190px;}
+.f3_l dl.bimg dd ul{ float:left; width:190px; padding-top:6px;background:#FFFDF2}
+.f3_l dl.bimg dd ul li{ float:left; background:#FFFDF2 url(r_j_ico.gif) no-repeat 158px 6px; border-bottom:1px solid #F7EECE; padding-left:12px; width:178px; height:24px; line-height:24px;}
+.f3_l dl.bimg dd ul li a{ float:left; height:24px; line-height:26px; font-size:14px; width:120px; overflow:hidden; padding-left:0px;}
+.bigclass a:hover{ float:left; height:24px; line-height:26px; font-size:14px;overflow:hidden; padding-left:0px; background-color:#C10202; display:block; width:150px; color:#FFFFFF; text-decoration:none;}
+.h292{ height:292px;}
+.bgD8D8D8{ background:#D8D8D8}
+
+
+
+
+.anq{ background:url(db_bg.gif) repeat-x; height:150px; text-align:left; overflow:hidden;}
+
+.anq .lfs{ float:left; width:626px; padding-left:16px; padding-top:3px;}
+.anq .rts{ float:right; width:356px; padding-top:9px; height:135px;}
+.anq .lfs .tits{ float:left; width:270px; height:33px;}
+.anq .lfs .kda{ float:left; height:104px; width:100%;}
+.anq .lfs .kda dl.fbs{ float:left; width:195px; height:96px; overflow:hidden; padding-top:5px; padding-right:10px;}
+.anq .lfs .kda dl.fbs dt{ float:left; height:30px;color:#c00; line-height:30px;width:100%; overflow:hidden;}.anq .lfs .kda dl.fbs dt a{ color:#F00;}
+.anq .lfs .kda dl.fbs dd img{ padding-right:10px; width:195px; height:66px;}
+
+.anq .rts dl.help{ background:url(gexian_1x135.gif) no-repeat 0 4px; float:left; display:inline; height:135px; width:96px; padding:10px 10px 0 12px;}
+.anq .rts dl.help dt{ height:28px; line-height:28px; color:#CC0000; width:96px; overflow:hidden; font-size:14px;}.anq .rts dl.help dt a{color:#CC0000;}
+.anq .rts dl.help dd{ float:left; line-height:22px; height:106px; overflow:hidden; color:#666666}.anq .rts dl.help dd a{color:#666666}
+
+.f_links{ margin:0 auto; width:992px; border:1px solid #DDD; text-align:left; padding:4px 5px; overflow:hidden;}
+.f_links a{ float:left; padding:0 6px; height:22px; line-height:22px;white-space:nowrap;}
+
+#footer{ line-height:24px; color:#999; padding-bottom:10px;}#footer a{color:#999}
+#tb_content *{ line-height:150%;}
+
+.page {
+	height: 46px;
+	padding-top: 17px;
+	text-align: center;
+	width: 100%;
+}
+.page1 {
+	height: 24px;
+	width: 24px;
+	line-height: 24px;
+	border: 1px solid #e4e4e4;
+	margin-right: 7px;
+	background-image: url(../images/ico41.jpg);
+	background-repeat: repeat-x;
+	color: #6a6969;
+	float: left;
+	text-align:center;
+}
+.page2 {
+	background-image: url(../images/ico42.jpg);
+	background-repeat: repeat-x;
+	border: 1px solid #970505;
+	color: #FFFFFF;
+	text-align:center;
+}
+.page3 {
+	float: right;
+
+	
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+
+
+<title>管理登录--淘客帝国快捷管理后台</title>
+<style type="text/css">
+<!--
+body {
+	margin: 0px; padding:0px; text-align:center; background:url(images/new_bg.jpg) repeat-x; background-color:#D8ECFF; font-size:12px;
+}
+-->
+</style></head>
+
+<body>
+<div align="center">
+  <table width="1004" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="109">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="400" align="center" valign="top" style="background:url(images/new_bg2.jpg) no-repeat center;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="145" colspan="2">&nbsp;</td>
+          </tr>
+        <tr>
+          <td width="53%">&nbsp;</td>
+          <FORM action=index.php?a=login method=post><td height="200" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="15%" height="40" align="right">用　户：</td>
+              <td width="74%" align="left"><input name=username class=input id=username style="width:150px; height:20px; border:#999999 solid 1px;" size=12></td>
+            </tr>
+            <tr>
+              <td height="40" align="right">密　码：</td>
+              <td align="left"><input name=password type=password class=input id=password style="width: 150px; height: 20px; border:#999999 solid 1px;"  size=12></td>
+            </tr>
+            <tr>
+              <td height="50" colspan="2" align="left"><input type=image height=44 width=124 src="images/new_login.gif" value=" 开始登录" name=Submit2>
+                <a href="#"><img src="images/new_reset.gif" width="134" height="44" border="0" /></a></td>
+              </tr>
+            <tr>
+              <td height="30" colspan="2" align="left"><?php echo $errmsg;?></td>
+            </tr>
+          </table></td></FORM>
+        </tr>
+      </table></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

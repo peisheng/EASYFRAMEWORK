@@ -1,0 +1,9 @@
+
+#限制的搜索引擎的User-Agent代码，*表示所有###########
+User-agent: *
+Crawl-delay:150
+
+Disallow: /js/
+Disallow: /template/
+Disallow: /include/
+Disallow: /gotourl.php

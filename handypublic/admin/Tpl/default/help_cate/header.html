@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<link href="../statics/admin/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="../statics/css/dialog.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript" type="text/javascript" src="../statics/js/jquery/jquery-1.4.2.min.js"></script>
+<script language="javascript" type="text/javascript" src="../statics/js/jquery/plugins/formvalidator.js"></script>
+<script language="javascript" type="text/javascript" src="../statics/js/jquery/plugins/formvalidatorregex.js"></script>
+
+<script language="javascript" type="text/javascript" src="../statics/admin/js/admin_common.js"></script>
+<script language="javascript" type="text/javascript" src="../statics/js/dialog.js"></script>
+<script language="javascript" type="text/javascript" src="../statics/js/iColorPicker.js"></script>
+
+<script language="javascript">
+var URL = '__URL__';
+var ROOT_PATH = 'ROOTROAD';
+var APP	 =	 '__APP__';
+var lang_please_select = "{$Think.lang.please_select}";
+var def={$def};
+$(function($){
+	$("#ajax_loading").ajaxStart(function(){
+		$(this).show();
+	}).ajaxSuccess(function(){
+		$(this).hide();
+	});
+});
+
+</script>
+<title>{$Think.lang.website_manage}</title>
+</head>
+<body>
+
+
+<table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#cccccc">
+  <tr>
+    <td height="30" colspan="2" align="left" bgcolor="#FFFBD9">&nbsp;&nbsp;&nbsp;&nbsp;<strong>商品管理</strong></td>
+  </tr>
+</table>
+
+<div class="height1"></div>
+<div class="small_daohang_width">
+
+
+<!--中间菜单区-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="1" bgcolor="#6699CC"><img src="images/c.gif" alt="" width="1" height="1" border="0"></td>
+    <td width="5" bgcolor="#D8ECFF"></td>
+    <td bgcolor="#D8ECFF" align="left" valign="top" class="listdh" ><table border="0" cellspacing="1" cellpadding="0">
+        <tr>
+          <td width="21">&nbsp;</td>
+          <td width="124"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle" />&nbsp;<a href="index.php?a=index&m=help">帮助列表</a></td>
+        </tr>
+      </table>
+      <table border="0" cellspacing="1" cellpadding="0">
+        <tr>
+          <td width="21">&nbsp;</td>
+          <td width="124"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle" />&nbsp;<a href="index.php?a=add&m=help">发布帮助</a></td>
+        </tr>
+      </table>
+      <table border="0" cellspacing="1" cellpadding="0">
+        <tr>
+          <td width="21">&nbsp;</td>
+          <td width="124"><img src="images/folder_a.gif" alt="" width="10" height="10" border="0" align="absmiddle" />&nbsp;<a href="index.php?m=help_cate&a=index">帮助类别管理</a></td>
+        </tr>
+      </table></td>
+    <td bgcolor="#6699CC" width="1"><img src="images/c.gif" alt="" width="1" height="1" border="0"></td>
+  </tr>
+</table>
+<div class="height1"></div>
+
+</div>
+<div id="ajax_loading">提交请求中，请稍候...</div>
+<if condition="$show_header neq false">
+<if condition="($sub_menu neq '') OR ($big_menu neq '')">
+<div class="subnav">
+    <div class="content-menu ib-a blue line-x">
+    	<notempty name="big_menu">
+    	<a class="add fb" href="{$big_menu.0}"><em>{$big_menu.1}</em></a>　
+        </notempty>
+    </div>
+</div>
