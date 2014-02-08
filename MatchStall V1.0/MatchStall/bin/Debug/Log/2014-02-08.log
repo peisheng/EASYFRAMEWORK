@@ -1,0 +1,64 @@
+发生时间：02/08/2014 10:07:55
+异常信息：Object reference not set to an instance of an object.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
+发生时间：02/08/2014 10:08:03
+异常信息：Object reference not set to an instance of an object.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
+发生时间：02/08/2014 10:08:33
+异常信息：Object reference not set to an instance of an object.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
+发生时间：02/08/2014 10:16:53
+异常信息：Object reference not set to an instance of an object.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
+发生时间：02/08/2014 10:17:08
+异常信息：Object reference not set to an instance of an object.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
+发生时间：02/08/2014 10:20:10
+异常信息：Object reference not set to an instance of an object.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
+发生时间：02/08/2014 10:23:04
+异常信息：Object reference not set to an instance of an object.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
+发生时间：02/08/2014 10:23:44
+异常信息：Object reference not set to an instance of an object.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
+发生时间：02/08/2014 10:24:39
+异常信息：Object reference not set to an instance of an object.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
+发生时间：02/08/2014 10:24:50
+异常信息：Object reference not set to an instance of an object.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
+发生时间：02/08/2014 10:25:53
+异常信息：Object reference not set to an instance of an object.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
+发生时间：02/08/2014 10:26:37
+异常信息：Object reference not set to an instance of an object.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
+发生时间：02/08/2014 10:26:57
+异常信息：Object reference not set to an instance of an object.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
+发生时间：02/08/2014 10:28:59
+异常信息：Object reference not set to an instance of an object.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
+发生时间：02/08/2014 10:46:50
+异常信息：Could not load file or assembly 'ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73' or one of its dependencies. The system cannot find the file specified.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
+发生时间：02/08/2014 10:48:43
+异常信息：Could not load file or assembly 'ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73' or one of its dependencies. The system cannot find the file specified.
+   at MatchStall.AppForm.btnChooseExcelFile_Click(Object sender, EventArgs e) in d:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\AppForm.cs:line 51
+
