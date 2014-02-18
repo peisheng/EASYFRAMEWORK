@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using ReplaceTool.Utils;
 using ReplaceTool.Entity;
 using ReplaceTool.Hepler;
+using System.Diagnostics;
 
 namespace ReplaceTool
 {
@@ -61,5 +62,13 @@ namespace ReplaceTool
             }
 
         }
+
+        private void TabControl_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+          ///  MessageBox.Show("TTTT");
+          ///  
+            Debugger.Log(1,"CCCCC","DDDDDDDDDDD");
+        }
+         
     }
 }
