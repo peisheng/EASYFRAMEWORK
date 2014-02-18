@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReplaceTool.Hepler;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -12,5 +13,11 @@ namespace ReplaceTool
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            ConfigHelper.GetSetting();
+            base.OnStartup(e);
+
+        }
     }
 }

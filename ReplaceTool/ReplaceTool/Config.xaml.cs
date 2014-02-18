@@ -57,18 +57,74 @@ namespace ReplaceTool
             {
                 if (!ConfigHelper.ConfigSetting.AllReplaceStrings.Contains(sourceString))
                 {
+                    ConfigHelper.ConfigSetting.AllReplaceStrings.Add(sourceString);
                     this.listSourceString.Items.Add(sourceString);
+
                 }
             }
+            this.txtSourceString.Text = "";
 
         }
 
         private void TabControl_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-          ///  MessageBox.Show("TTTT");
-          ///  
-            Debugger.Log(1,"CCCCC","DDDDDDDDDDD");
+            this.listGroupSetting.Items.Clear();
+           foreach(var s in ConfigHelper.ConfigSetting.AllReplaceStrings)
+           {
+               ListBoxItem item = new ListBoxItem();
+               StackPanel panel = new StackPanel();
+               panel.Orientation = Orientation.Horizontal;
+               panel.HorizontalAlignment = HorizontalAlignment.Center;
+               Label lbl = new Label();
+               lbl.Content = s;
+               lbl.BorderThickness = new Thickness(1);
+               
+               TextBlock tb = new TextBlock();
+               tb.Text =  "   =>   ";
+
+               TextBox tbox = new TextBox();
+               tbox.Width = 200;
+
+               panel.Children.Add(lbl);
+               panel.Children.Add(tb);
+               panel.Children.Add(tbox);
+               item.Content = panel;
+               this.listGroupSetting.Items.Add(item);
+               
+               
+                
+           }
         }
-         
+
+        private void txtSourceString_KeyUp(object sender, KeyEventArgs e)
+        {
+            var ch = (char)KeyInterop.VirtualKeyFromKey(e.Key);
+            if (ch == 13)
+            {
+                addSourceBtn_Click(null,null);
+            }
+            
+        }
+
+        private void txtGroupName_KeyDown(object sender, KeyEventArgs e)
+        {
+            var ch = (char)KeyInterop.VirtualKeyFromKey(e.Key);
+            if (ch == 13)
+            {
+                btnAddGroup_Click(null,null);
+            }
+             
+        }
+
+        private void btnAddGroup_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+       
+
+        
+
+        
     }
 }
