@@ -49,3 +49,12 @@ D:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\obj\x86\
 D:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\obj\x86\Debug\MatchStall.Properties.Resources.resources
 D:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\obj\x86\Debug\MatchStall.csproj.GenerateResource.Cache
 D:\搜狗高速下载\下载\MatchStall V1.0\MatchStall V1.0\MatchStall\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\git\MatchStall V1.0\MatchStall\bin\Debug\MatchStall.exe.config
+E:\git\MatchStall V1.0\MatchStall\obj\x86\Debug\MatchStall.exe
+E:\git\MatchStall V1.0\MatchStall\obj\x86\Debug\MatchStall.pdb
+E:\git\MatchStall V1.0\MatchStall\bin\Debug\MatchStall.exe
+E:\git\MatchStall V1.0\MatchStall\bin\Debug\MatchStall.pdb
+E:\git\MatchStall V1.0\MatchStall\obj\x86\Debug\MatchStall.csprojResolveAssemblyReference.cache
+E:\git\MatchStall V1.0\MatchStall\obj\x86\Debug\MatchStall.AppForm.resources
+E:\git\MatchStall V1.0\MatchStall\obj\x86\Debug\MatchStall.Properties.Resources.resources
+E:\git\MatchStall V1.0\MatchStall\obj\x86\Debug\MatchStall.csproj.GenerateResource.Cache

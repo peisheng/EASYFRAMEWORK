@@ -1,0 +1,4 @@
+E:\git\ReplaceTool\ReplaceTool.Utils\bin\Debug\ReplaceTool.Utils.dll
+E:\git\ReplaceTool\ReplaceTool.Utils\bin\Debug\ReplaceTool.Utils.pdb
+E:\git\ReplaceTool\ReplaceTool.Utils\obj\Debug\ReplaceTool.Utils.dll
+E:\git\ReplaceTool\ReplaceTool.Utils\obj\Debug\ReplaceTool.Utils.pdb
