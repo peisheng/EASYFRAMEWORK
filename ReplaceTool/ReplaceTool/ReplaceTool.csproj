@@ -79,6 +79,7 @@
     <Compile Include="Entity\ReplaceMapper.cs" />
     <Compile Include="Entity\ReplaceSettings.cs" />
     <Compile Include="Hepler\ConfigHelper.cs" />
+    <Compile Include="Hepler\ControlHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
