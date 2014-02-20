@@ -11,7 +11,7 @@ namespace ReplaceTool.Entity
         /// <summary>
         /// 配置对应需要替换的字符串组映射
         /// </summary>
-      public  List<ReplaceGroupSetting> Setting { get;set;}
+      public  List<ReplaceGroupSetting> GroupSettings { get;set;}
 
         /// <summary>
         /// 所有要替换的字符串信息

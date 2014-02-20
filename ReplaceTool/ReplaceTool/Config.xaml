@@ -7,15 +7,15 @@
         <TabControl Margin="0,0,0,81" Grid.RowSpan="2" SelectionChanged="TabControl_SelectionChanged_1" >
             <TabItem Header="源字符列表" x:Name="tabSource">
                 <Grid>
-
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="114.404"></ColumnDefinition>
-                        <ColumnDefinition Width="185.596"/>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="200"></ColumnDefinition>
+
+                        
+                        <ColumnDefinition Width="600"/>
                     </Grid.ColumnDefinitions>
-                    <ListBox Grid.Column="0" x:Name="listSourceString" SelectionMode="Multiple" Grid.ColumnSpan="2">
+                    <ListBox Grid.Column="0" x:Name="listSourceString" SelectionMode="Multiple">
                     </ListBox>
-                    <StackPanel Grid.Column="2" Orientation="Vertical" Margin="40">
+                    <StackPanel Grid.Column="1" Orientation="Vertical" Margin="24.042,40,40,40">
                         <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="20">
                             <Label>替换字符串：</Label>
                             <TextBox x:Name="txtSourceString" Width="200" KeyUp="txtSourceString_KeyUp"></TextBox>
@@ -30,20 +30,27 @@
             <TabItem Header="组映射配置" x:Name="mapperTab" Margin="-2,0,-2,-1" Height="19.96" VerticalAlignment="Bottom">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="200*"></ColumnDefinition>
+                        <ColumnDefinition Width="600*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <ListBox x:Name="listGroup" Grid.Column="0"></ListBox>
+                    <ListBox x:Name="listGroup" Grid.Column="0" SelectionChanged="listGroup_SelectionChanged"></ListBox>
                     <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="1">
                         <StackPanel Orientation="Horizontal">
                             <Label>请输入组名</Label>
                             <TextBox x:Name="txtGroupName" Width="200" KeyDown="txtGroupName_KeyDown"></TextBox>
-                            <Button x:Name="btnAddGroup" Content="添加"></Button>
+                            <Button x:Name="btnAddGroup" Content="添加" Click="btnAddGroup_Click"></Button>
                         </StackPanel>
-                        <Button Content="删除选中的组" Width="200"  Height="40" Margin="10" x:Name="btnRemoveGroup"></Button>
+                        <Button Content="删除选中的组" Width="200"  Height="40" Margin="10" x:Name="btnRemoveGroup" Click="btnRemoveGroup_Click"></Button>
                         <Button Content="保存所有" x:Name="btnSaveAllSetting"   Width="200"  Height="40" Margin="10" Click="btnSaveAll_Click"></Button>
-                        <TextBlock Text="替换的映射:"></TextBlock>
-                        <ListBox x:Name="listGroupSetting">
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <TextBlock Text="替换的映射:"></TextBlock>
+                            <TextBox x:Name="tbSouceInput" Width="200"></TextBox>
+                            <TextBlock Text=" ==>  "></TextBlock>
+                            <TextBox x:Name="tbReplaceInput" Width="200"></TextBox>
+                            <Button x:Name="btnMapAddAndModifile" Content="添加修改" Click="btnMapAddAndModifile_Click"></Button>
+                        </StackPanel>
+
+                        <ListBox x:Name="listGroupSetting" Height="260" Width="500" SelectionMode="Multiple"  >
                         </ListBox>
 
 
