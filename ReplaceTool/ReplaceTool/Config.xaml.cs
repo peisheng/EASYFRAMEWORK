@@ -30,7 +30,9 @@ namespace ReplaceTool
 
         private string tbNamePre = "_sys_tb_replace_";
         private string lblNamePre = "_sys_lbl_replace_";
+        private string stpNamePre = "_sys_stp_stp_";
         private string currentGroupName = string.Empty;
+        private List<TextBox> ListTextBox = new List<TextBox>();
         private void removeSourceBtn_Click(object sender, RoutedEventArgs e)
         {
             int count = this.listSourceString.SelectedItems.Count;
@@ -89,6 +91,7 @@ namespace ReplaceTool
             {
                 ListBoxItem item = new ListBoxItem();
                 StackPanel panel = new StackPanel();
+                panel.Name = stpNamePre + s;
                 panel.Orientation = Orientation.Horizontal;
                 panel.HorizontalAlignment = HorizontalAlignment.Center;
                 Label lbl = new Label();
@@ -102,6 +105,7 @@ namespace ReplaceTool
                 TextBox tbox = new TextBox();
                 tbox.Width = 200;
                 tbox.Name = tbNamePre + s;
+                this.ListTextBox.Add(tbox);
 
                 panel.Children.Add(lbl);
                 panel.Children.Add(tb);
@@ -199,7 +203,7 @@ namespace ReplaceTool
 
         private void btnMapAddAndModifile_Click(object sender, RoutedEventArgs e)
         {
-            string source=this.tbSouceInput.Text.Trim();
+            string source = this.tbSouceInput.Text.Trim();
             string replace = this.tbReplaceInput.Text.Trim();
             if (!ConfigHelper.ConfigSetting.AllReplaceStrings.Contains(source.ToString()))
             {
@@ -212,10 +216,49 @@ namespace ReplaceTool
             }
             else
             {
-                TextBox tb = this.listGroupSetting.FindName(tbNamePre + source) as TextBox;
-                tb.Text = replace;
+                setMapKeyValue(source, replace);
                 ConfigHelper.SetMaping(currentGroupName, source, replace);
             }
         }
+
+        private void setMapKeyValue(string source, string replace)
+        {
+            foreach (var item in this.listGroupSetting.Items)
+            {
+                ListBoxItem lbi = (ListBoxItem)item;
+                StackPanel sp = lbi.Content as StackPanel;
+                if (sp.Name == stpNamePre + source)
+                {
+                    TextBox tb = sp.Children[2] as TextBox;
+                    tb.Text = replace;
+                    break;
+                }
+            }
+        }
+
+        private ReplaceMapper getMapKeyValue(string source)
+        {
+            foreach (var item in this.listGroupSetting.Items)
+            {
+                ListBoxItem lbi = (ListBoxItem)item;
+                StackPanel sp = lbi.Content as StackPanel;
+                if (sp.Name == stpNamePre + source)
+                {
+
+                    TextBox tb = sp.Children[2] as TextBox;
+                    ReplaceMapper mapper = new ReplaceMapper();
+                    mapper.SourceString = source;
+                    if (!string.IsNullOrEmpty(tb.Text.Trim()))
+                    {
+                        mapper.ReplaceString = tb.Text;
+                        return mapper;
+                    }
+                    return null;
+                }
+            }
+            return null;
+        }
+
+
     }
 }
