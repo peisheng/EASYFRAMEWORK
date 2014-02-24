@@ -80,6 +80,14 @@ namespace ReplaceTool.Hepler
                     mapper.ReplaceString = replace;
                     return true;
                 }
+                else
+                {
+                    mapper = new ReplaceMapper();
+                    mapper.SourceString = source;
+                    mapper.ReplaceString = replace;
+                    setting.GroupReplaceItems.Add(mapper);
+
+                }
             }
             return false;
         }

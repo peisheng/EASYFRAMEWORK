@@ -4,7 +4,7 @@
         Title="配置匹配信息" Height="600" Width="800">
     <Grid >
 
-        <TabControl Margin="0,0,0,81" Grid.RowSpan="2" SelectionChanged="TabControl_SelectionChanged_1" >
+        <TabControl Margin="0,0,0,81" x:Name="tabControl" Grid.RowSpan="2" SelectionChanged="TabControl_SelectionChanged_1" >
             <TabItem Header="源字符列表" x:Name="tabSource">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -41,7 +41,9 @@
                             <Button x:Name="btnAddGroup" Content="添加" Click="btnAddGroup_Click"></Button>
                         </StackPanel>
                         <Button Content="删除选中的组" Width="200"  Height="40" Margin="10" x:Name="btnRemoveGroup" Click="btnRemoveGroup_Click"></Button>
+                        <Button Content="保存选中的组" x:Name="btnSaveGroup"   Width="200"  Height="40" Margin="10" Click="btnSaveGroup_Click"></Button>
                         <Button Content="保存所有" x:Name="btnSaveAllSetting"   Width="200"  Height="40" Margin="10" Click="btnSaveAll_Click"></Button>
+                        
                         <StackPanel Orientation="Horizontal" Margin="10">
                             <TextBlock Text="替换的映射:"></TextBlock>
                             <TextBox x:Name="tbSouceInput" Width="200"></TextBox>

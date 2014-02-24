@@ -26,6 +26,19 @@ namespace ReplaceTool
         public Config()
         {
             InitializeComponent();
+            initBindList();
+        }
+
+        private void initBindList()
+        {
+           foreach(var s in ConfigHelper.ConfigSetting.AllReplaceStrings)
+           {
+               this.listSourceString.Items.Add(s);
+           }
+           foreach (var item in ConfigHelper.ConfigSetting.GroupSettings)
+           {
+               this.listGroup.Items.Add(item.GroupName);
+           }
         }
 
         private string tbNamePre = "_sys_tb_replace_";
@@ -86,34 +99,54 @@ namespace ReplaceTool
 
         private void TabControl_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            this.listGroupSetting.Items.Clear();
-            foreach (var s in ConfigHelper.ConfigSetting.AllReplaceStrings)
+            TabItem tabItem = tabControl.SelectedItem as TabItem;
+            if (tabItem.Name == "mapperTab")
             {
-                ListBoxItem item = new ListBoxItem();
-                StackPanel panel = new StackPanel();
-                panel.Name = stpNamePre + s;
-                panel.Orientation = Orientation.Horizontal;
-                panel.HorizontalAlignment = HorizontalAlignment.Center;
-                Label lbl = new Label();
-                lbl.Content = s;
-                lbl.BorderThickness = new Thickness(1);
-                lbl.Name = lblNamePre + s;
+                this.listGroupSetting.Items.Clear();
+                foreach (var s in ConfigHelper.ConfigSetting.AllReplaceStrings)
+                {
+                    ListBoxItem item = new ListBoxItem();
+                    StackPanel panel = new StackPanel();
+                    panel.Name = stpNamePre + s;
+                    panel.Orientation = Orientation.Horizontal;
+                    panel.HorizontalAlignment = HorizontalAlignment.Center;
+                    Label lbl = new Label();
+                    lbl.Content = s;
+                    lbl.BorderThickness = new Thickness(1);
+                    lbl.Name = lblNamePre + s;
+                    
 
-                TextBlock tb = new TextBlock();
-                tb.Text = "   =>   ";
+                    TextBlock tb = new TextBlock();
+                    tb.Text = "   =>   ";
+                   
+                   
+                    TextBox tbox = new TextBox();
+                    tbox.Width = 200;
+                    tbox.Name = tbNamePre + s;
+                    tbox.ToolTip = s;
+                    this.ListTextBox.Add(tbox);
 
-                TextBox tbox = new TextBox();
-                tbox.Width = 200;
-                tbox.Name = tbNamePre + s;
-                this.ListTextBox.Add(tbox);
-
-                panel.Children.Add(lbl);
-                panel.Children.Add(tb);
-                panel.Children.Add(tbox);
-                item.Content = panel;
-                this.listGroupSetting.Items.Add(item);
+                    panel.Children.Add(lbl);
+                    panel.Children.Add(tb);
+                    panel.Children.Add(tbox);
+                    item.Content = panel;
+                    this.listGroupSetting.Items.Add(item);
+                }
             }
         }
+
+        //void tb_KeyUp(object sender, KeyEventArgs e)
+        //{
+        //    var ch = (char)KeyInterop.VirtualKeyFromKey(e.Key);
+        //    if (ch==13)
+        //    {
+        //        TextBox tb = sender as TextBox;
+        //        string replace = tb.Text;
+        //        string source = tb.ToolTip.ToString();
+        //        string groupName = currentGroupName;
+        //        ConfigHelper.SetMaping(groupName,source,replace);                 
+        //    }
+        //}
 
         private void txtSourceString_KeyUp(object sender, KeyEventArgs e)
         {
@@ -201,24 +234,52 @@ namespace ReplaceTool
             }
         }
 
+        private void btnSaveGroup_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(currentGroupName))
+            {
+                ReplaceGroupSetting setting = ConfigHelper.GetReplaceGroupSetting(currentGroupName);
+                setting.GroupReplaceItems.Clear();
+                foreach (var item in ConfigHelper.ConfigSetting.AllReplaceStrings)
+                {
+                   
+                   
+
+                    ReplaceMapper mapper = getMapKeyValue(item);
+                    if (mapper!=null)
+                    {
+                        setting.GroupReplaceItems.Add(mapper);
+                    }  
+                }
+                ConfigHelper.SetGroupSetting(setting);
+                btnSaveAll_Click(null,null);
+            }
+        }
+
         private void btnMapAddAndModifile_Click(object sender, RoutedEventArgs e)
         {
-            string source = this.tbSouceInput.Text.Trim();
-            string replace = this.tbReplaceInput.Text.Trim();
-            if (!ConfigHelper.ConfigSetting.AllReplaceStrings.Contains(source.ToString()))
+            if (!string.IsNullOrEmpty(currentGroupName))
             {
-                MessageBoxResult result = MessageBox.Show(string.Format("配置的源字符列表中不包含{0} 字符串，请检查", source), "", MessageBoxButton.OK);
-                if (result == MessageBoxResult.OK)
+                string source = this.tbSouceInput.Text.Trim();
+                string replace = this.tbReplaceInput.Text.Trim();
+                if (!ConfigHelper.ConfigSetting.AllReplaceStrings.Contains(source.ToString()))
                 {
-                    this.tbSouceInput.Text = "";
-                    return;
+                    MessageBoxResult result = MessageBox.Show(string.Format("配置的源字符列表中不包含{0} 字符串，请检查", source), "", MessageBoxButton.OK);
+                    if (result == MessageBoxResult.OK)
+                    {
+                        this.tbSouceInput.Text = "";
+                        return;
+                    }
+                }
+                else
+                {
+                    setMapKeyValue(source, replace);
+                    ConfigHelper.SetMaping(currentGroupName, source, replace);
                 }
             }
             else
-            {
-                setMapKeyValue(source, replace);
-                ConfigHelper.SetMaping(currentGroupName, source, replace);
-            }
+                MessageBox.Show("请先选择一个分组");
+           
         }
 
         private void setMapKeyValue(string source, string replace)
