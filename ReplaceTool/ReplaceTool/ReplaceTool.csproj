@@ -38,6 +38,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="Codeplex.SimpleCSV">
+      <HintPath>..\..\ComDll\SimpleCSV\Codeplex.SimpleCSV\bin\Debug\Codeplex.SimpleCSV.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationUI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="ReachFramework" />
     <Reference Include="System" />
@@ -54,10 +57,6 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="Winsoft.Csv, Version=1.0.4878.924, Culture=neutral, PublicKeyToken=c2371442b2cedf55, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ComDll\Winsoft.Csv.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

@@ -49,12 +49,18 @@ namespace Codeplex.SimpleCSV.Examples
                 }
             }
 
-            using (SimpleCSVReader reader = new SimpleCSVReader(@".\simple.csv"))
+            using (SimpleCSVReader reader = new SimpleCSVReader(@".\test.txt"))
             {
-                reader.Splitter = ',';
+                reader.Splitter = '\t';
                 reader.ReadHeader();
-                
 
+                Dictionary<string, int> i = reader.HeaderMap;
+                foreach (var item in i)
+                {
+                    string columnName = item.Key.ToString();
+                    string intS = item.Value.ToString();
+                    
+                }
                 while (reader.ReadLine())
                 {
                     Console.WriteLine("{0} - {1}", reader["A"], reader[5]);

@@ -13,6 +13,10 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ReplaceTool.Utils;
 using ReplaceTool.Entity;
+using Microsoft.Win32;
+using System.IO;
+
+using Codeplex.SimpleCSV;
 namespace ReplaceTool
 {
     /// <summary>
@@ -45,6 +49,7 @@ namespace ReplaceTool
 
 
             InitializeComponent();
+            lblReulstMsg.Content = "";
            
         }
 
@@ -52,6 +57,20 @@ namespace ReplaceTool
         {
             Config config = new Config();
             config.ShowDialog();
+        }
+        private string csvFilePath = string.Empty;
+
+        private void btnOpen_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Title = "打开文件";
+            open.Filter = "文件（.txt）|*.txt|所有文件|*.*";
+            if((bool)open.ShowDialog().GetValueOrDefault())
+            {
+                string csvFilePath = open.FileName;
+                lblReulstMsg.Content = "文件导入成功，请查看导入文件内容";
+            }
+
         }
     }
 }

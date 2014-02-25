@@ -1,0 +1,8 @@
+E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV.Examples\bin\Debug\cartoon.csv
+E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV.Examples\bin\Debug\Codeplex.SimpleCSV.Examples.exe
+E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV.Examples\bin\Debug\Codeplex.SimpleCSV.Examples.pdb
+E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV.Examples\bin\Debug\Codeplex.SimpleCSV.dll
+E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV.Examples\bin\Debug\Codeplex.SimpleCSV.pdb
+E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV.Examples\obj\x86\Debug\Codeplex.SimpleCSV.Examples.csprojResolveAssemblyReference.cache
+E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV.Examples\obj\x86\Debug\Codeplex.SimpleCSV.Examples.exe
+E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV.Examples\obj\x86\Debug\Codeplex.SimpleCSV.Examples.pdb

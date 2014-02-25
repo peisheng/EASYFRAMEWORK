@@ -1,0 +1,5 @@
+E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV\bin\Debug\Codeplex.SimpleCSV.dll
+E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV\bin\Debug\Codeplex.SimpleCSV.pdb
+E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV\obj\Debug\Codeplex.SimpleCSV.csprojResolveAssemblyReference.cache
+E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV\obj\Debug\Codeplex.SimpleCSV.dll
+E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV\obj\Debug\Codeplex.SimpleCSV.pdb

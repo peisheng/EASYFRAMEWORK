@@ -31,3 +31,6 @@ D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\ReplaceTool.pdb
 D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\ReplaceTool.Utils.dll
 D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\ReplaceTool.Utils.pdb
 D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\obj\Debug\ReplaceTool_Content.g.cs
+E:\git\ReplaceTool\ReplaceTool\obj\Debug\ReplaceTool_Content.g.cs
+E:\git\ReplaceTool\ReplaceTool\bin\Debug\Codeplex.SimpleCSV.dll
+E:\git\ReplaceTool\ReplaceTool\bin\Debug\Codeplex.SimpleCSV.pdb

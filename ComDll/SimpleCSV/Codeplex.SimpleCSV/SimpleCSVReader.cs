@@ -31,6 +31,11 @@ namespace Codeplex.SimpleCSV
         /// </summary>
         private Dictionary<string, int> _headerMap = new Dictionary<string,int>();
 
+        public Dictionary<string, int> HeaderMap
+        {
+            get { return _headerMap; }
+        }
+
         /// <summary>
         /// Remember the values
         /// </summary>
