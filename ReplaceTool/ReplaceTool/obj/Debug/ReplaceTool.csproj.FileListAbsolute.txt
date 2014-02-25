@@ -30,3 +30,4 @@ D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\ReplaceTool.exe
 D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\ReplaceTool.pdb
 D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\ReplaceTool.Utils.dll
 D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\ReplaceTool.Utils.pdb
+D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\obj\Debug\ReplaceTool_Content.g.cs

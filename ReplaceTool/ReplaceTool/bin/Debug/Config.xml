@@ -2,78 +2,48 @@
 <ReplaceSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <GroupSettings>
     <ReplaceGroupSetting>
-      <GroupName>d</GroupName>
-      <GroupReplaceItems />
-    </ReplaceGroupSetting>
-    <ReplaceGroupSetting>
-      <GroupName>dee</GroupName>
-      <GroupReplaceItems />
-    </ReplaceGroupSetting>
-    <ReplaceGroupSetting>
-      <GroupName>dd</GroupName>
-      <GroupReplaceItems />
-    </ReplaceGroupSetting>
-    <ReplaceGroupSetting>
-      <GroupName>sb</GroupName>
+      <GroupName>AGRIUP</GroupName>
       <GroupReplaceItems>
         <ReplaceMapper>
-          <SourceString>a</SourceString>
-          <ReplaceString>111</ReplaceString>
+          <SourceString>a_8827_oksjre</SourceString>
+          <ReplaceString>aaaa</ReplaceString>
         </ReplaceMapper>
         <ReplaceMapper>
-          <SourceString>b</SourceString>
-          <ReplaceString>222</ReplaceString>
-        </ReplaceMapper>
-        <ReplaceMapper>
-          <SourceString>c</SourceString>
-          <ReplaceString>333</ReplaceString>
-        </ReplaceMapper>
-        <ReplaceMapper>
-          <SourceString>d</SourceString>
-          <ReplaceString>444</ReplaceString>
-        </ReplaceMapper>
-        <ReplaceMapper>
-          <SourceString>e</SourceString>
-          <ReplaceString>5556</ReplaceString>
-        </ReplaceMapper>
-        <ReplaceMapper>
-          <SourceString>f</SourceString>
-          <ReplaceString>6666</ReplaceString>
-        </ReplaceMapper>
-      </GroupReplaceItems>
-    </ReplaceGroupSetting>
-    <ReplaceGroupSetting>
-      <GroupName>sa</GroupName>
-      <GroupReplaceItems>
-        <ReplaceMapper>
-          <SourceString>a</SourceString>
-          <ReplaceString>ccc</ReplaceString>
-        </ReplaceMapper>
-        <ReplaceMapper>
-          <SourceString>b</SourceString>
+          <SourceString>fdei7(&amp;(&amp;(&amp;^$*(</SourceString>
           <ReplaceString>bbb</ReplaceString>
         </ReplaceMapper>
         <ReplaceMapper>
-          <SourceString>c</SourceString>
-          <ReplaceString>EEE</ReplaceString>
+          <SourceString>dcjdije8(*)(</SourceString>
+          <ReplaceString>cccc</ReplaceString>
+        </ReplaceMapper>
+        <ReplaceMapper>
+          <SourceString>cd((*(&amp;^^^%&amp;(Kjih</SourceString>
+          <ReplaceString>ddd</ReplaceString>
+        </ReplaceMapper>
+        <ReplaceMapper>
+          <SourceString>cdughu)(**^&amp;%^</SourceString>
+          <ReplaceString>eee</ReplaceString>
+        </ReplaceMapper>
+        <ReplaceMapper>
+          <SourceString>bbhy&amp;(*&amp;(*7</SourceString>
+          <ReplaceString>fff</ReplaceString>
+        </ReplaceMapper>
+        <ReplaceMapper>
+          <SourceString>7(*(*09s0d8f_(_</SourceString>
+          <ReplaceString>ggg</ReplaceString>
         </ReplaceMapper>
       </GroupReplaceItems>
     </ReplaceGroupSetting>
   </GroupSettings>
   <AllReplaceStrings>
-    <string>a</string>
-    <string>b</string>
-    <string>c</string>
-    <string>d</string>
-    <string>e</string>
-    <string>f</string>
-    <string>g</string>
-    <string>v</string>
-    <string>h</string>
-    <string>j</string>
-    <string>k</string>
-    <string>l</string>
-    <string>m</string>
-    <string>n</string>
+    <string>a_8827_oksjre</string>
+    <string>fdei7(&amp;(&amp;(&amp;^$*(</string>
+    <string>dcjdije8(*)(</string>
+    <string>cd((*(&amp;^^^%&amp;(Kjih</string>
+    <string>cdughu)(**^&amp;%^</string>
+    <string>bbhy&amp;(*&amp;(*7</string>
+    <string>7(*(*09s0d8f_(_</string>
+    <string>huheug*(*()&amp;&amp;^&amp;%^()()#&amp;$</string>
+    <string>jhdfue*(*(</string>
   </AllReplaceStrings>
 </ReplaceSettings>

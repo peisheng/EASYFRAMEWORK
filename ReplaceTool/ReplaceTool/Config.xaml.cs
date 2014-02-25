@@ -15,6 +15,7 @@ using ReplaceTool.Utils;
 using ReplaceTool.Entity;
 using ReplaceTool.Hepler;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace ReplaceTool
 {
@@ -31,14 +32,14 @@ namespace ReplaceTool
 
         private void initBindList()
         {
-           foreach(var s in ConfigHelper.ConfigSetting.AllReplaceStrings)
-           {
-               this.listSourceString.Items.Add(s);
-           }
-           foreach (var item in ConfigHelper.ConfigSetting.GroupSettings)
-           {
-               this.listGroup.Items.Add(item.GroupName);
-           }
+            foreach (var s in ConfigHelper.ConfigSetting.AllReplaceStrings)
+            {
+                this.listSourceString.Items.Add(s);
+            }
+            foreach (var item in ConfigHelper.ConfigSetting.GroupSettings)
+            {
+                this.listGroup.Items.Add(item.GroupName);
+            }
         }
 
         private string tbNamePre = "_sys_tb_replace_";
@@ -100,29 +101,25 @@ namespace ReplaceTool
         private void TabControl_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             TabItem tabItem = tabControl.SelectedItem as TabItem;
-            if (tabItem.Name == "mapperTab")
+            if (tabItem.Name == "mapperTab" && e.OriginalSource is System.Windows.Controls.TabControl)
             {
                 this.listGroupSetting.Items.Clear();
                 foreach (var s in ConfigHelper.ConfigSetting.AllReplaceStrings)
                 {
                     ListBoxItem item = new ListBoxItem();
                     StackPanel panel = new StackPanel();
-                    panel.Name = stpNamePre + s;
+                     panel.Name = stpNamePre + getSafeName( s);
                     panel.Orientation = Orientation.Horizontal;
                     panel.HorizontalAlignment = HorizontalAlignment.Center;
                     Label lbl = new Label();
                     lbl.Content = s;
                     lbl.BorderThickness = new Thickness(1);
-                    lbl.Name = lblNamePre + s;
-                    
-
+                    // lbl.Name = lblNamePre + s; 
                     TextBlock tb = new TextBlock();
                     tb.Text = "   =>   ";
-                   
-                   
                     TextBox tbox = new TextBox();
                     tbox.Width = 200;
-                    tbox.Name = tbNamePre + s;
+                    // tbox.Name = tbNamePre + s;
                     tbox.ToolTip = s;
                     this.ListTextBox.Add(tbox);
 
@@ -223,12 +220,19 @@ namespace ReplaceTool
                 string groupName = this.listGroup.SelectedItems[0].ToString();
                 currentGroupName = groupName;
                 var group = ConfigHelper.ConfigSetting.GroupSettings.Where(p => p.GroupName == groupName).FirstOrDefault();
+
+
+                foreach (var item in ConfigHelper.ConfigSetting.AllReplaceStrings)
+                {
+                    setMapKeyValue(item, "");
+                }
                 if (group != null)
                 {
                     foreach (var item in group.GroupReplaceItems)
                     {
-                        TextBox tb = this.listGroupSetting.FindName(tbNamePre + item.SourceString) as TextBox;
-                        tb.Text = item.ReplaceString;
+                        //TextBox tb = this.listGroupSetting.FindName(tbNamePre + item.SourceString) as TextBox;
+                        //tb.Text = item.ReplaceString;                        
+                        setMapKeyValue(item.SourceString, item.ReplaceString);
                     }
                 }
             }
@@ -242,17 +246,14 @@ namespace ReplaceTool
                 setting.GroupReplaceItems.Clear();
                 foreach (var item in ConfigHelper.ConfigSetting.AllReplaceStrings)
                 {
-                   
-                   
-
                     ReplaceMapper mapper = getMapKeyValue(item);
-                    if (mapper!=null)
+                    if (mapper != null)
                     {
                         setting.GroupReplaceItems.Add(mapper);
-                    }  
+                    }
                 }
                 ConfigHelper.SetGroupSetting(setting);
-                btnSaveAll_Click(null,null);
+                btnSaveAll_Click(null, null);
             }
         }
 
@@ -279,7 +280,7 @@ namespace ReplaceTool
             }
             else
                 MessageBox.Show("请先选择一个分组");
-           
+
         }
 
         private void setMapKeyValue(string source, string replace)
@@ -288,7 +289,7 @@ namespace ReplaceTool
             {
                 ListBoxItem lbi = (ListBoxItem)item;
                 StackPanel sp = lbi.Content as StackPanel;
-                if (sp.Name == stpNamePre + source)
+                if (sp.Name == stpNamePre + getSafeName(source))
                 {
                     TextBox tb = sp.Children[2] as TextBox;
                     tb.Text = replace;
@@ -303,9 +304,8 @@ namespace ReplaceTool
             {
                 ListBoxItem lbi = (ListBoxItem)item;
                 StackPanel sp = lbi.Content as StackPanel;
-                if (sp.Name == stpNamePre + source)
+                if (sp.Name == stpNamePre + getSafeName(source))
                 {
-
                     TextBox tb = sp.Children[2] as TextBox;
                     ReplaceMapper mapper = new ReplaceMapper();
                     mapper.SourceString = source;
@@ -320,6 +320,36 @@ namespace ReplaceTool
             return null;
         }
 
+        private string getSafeName(string str)
+        {
+            str = str.Replace("'", "");
+            str = str.Replace(";", "");
+            str = str.Replace(":", "");
+            str = str.Replace("/", "");
+            str = str.Replace("?", "");
+            str = str.Replace("<", "");
+            str = str.Replace(">", "");
+            str = str.Replace(".", "");
+            str = str.Replace("#", "");
+            str = str.Replace("%", "");
+            str = str.Replace("&", "");
+            str = str.Replace("^", "");
+            str = str.Replace("//", "");
+            str = str.Replace("@", "");
+            str = str.Replace("(", "");
+            str = str.Replace(")", "");
+            str = str.Replace("*", "");
+            str = str.Replace("~", "");
+            str = str.Replace("`", "");
+            str = str.Replace("$", "");
+            str = str.Replace("[","");
+            str = str.Replace("]", "");
+            str = str.Replace("{", "");
+            str = str.Replace("}", "");
+            str = str.Replace("-", "");
+            str = str.Replace("|", "");
+            return str;
+        }
 
     }
 }
