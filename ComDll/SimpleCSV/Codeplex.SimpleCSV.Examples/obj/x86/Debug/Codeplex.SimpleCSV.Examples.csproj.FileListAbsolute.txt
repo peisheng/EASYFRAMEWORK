@@ -6,3 +6,5 @@ E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV.Examples\bin\Debug\Codeplex.SimpleCSV
 E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV.Examples\obj\x86\Debug\Codeplex.SimpleCSV.Examples.csprojResolveAssemblyReference.cache
 E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV.Examples\obj\x86\Debug\Codeplex.SimpleCSV.Examples.exe
 E:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV.Examples\obj\x86\Debug\Codeplex.SimpleCSV.Examples.pdb
+D:\GIT\EASYFRAMEWORK\ComDll\SimpleCSV\Codeplex.SimpleCSV.Examples\obj\x86\Debug\Codeplex.SimpleCSV.Examples.exe
+D:\GIT\EASYFRAMEWORK\ComDll\SimpleCSV\Codeplex.SimpleCSV.Examples\obj\x86\Debug\Codeplex.SimpleCSV.Examples.pdb

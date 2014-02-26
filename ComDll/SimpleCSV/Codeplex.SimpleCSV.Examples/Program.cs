@@ -52,6 +52,7 @@ namespace Codeplex.SimpleCSV.Examples
             using (SimpleCSVReader reader = new SimpleCSVReader(@".\test.txt"))
             {
                 reader.Splitter = '\t';
+               
                 reader.ReadHeader();
 
                 Dictionary<string, int> i = reader.HeaderMap;

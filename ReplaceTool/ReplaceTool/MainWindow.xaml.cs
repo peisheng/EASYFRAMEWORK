@@ -67,7 +67,7 @@ namespace ReplaceTool
             open.Filter = "文件（.txt）|*.txt|所有文件|*.*";
             if((bool)open.ShowDialog().GetValueOrDefault())
             {
-                string csvFilePath = open.FileName;
+                 csvFilePath = open.FileName;
                 lblReulstMsg.Content = "文件导入成功，请查看导入文件内容";
                 SimpleCSVReader reader = new SimpleCSVReader(csvFilePath);
                 reader.Splitter='\t';

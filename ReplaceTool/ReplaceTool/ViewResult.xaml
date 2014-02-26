@@ -1,8 +1,14 @@
 ﻿<Window x:Class="ReplaceTool.ViewResult"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="ViewResult" Height="300" Width="300">
+        Title="ViewResult" Height="600" Width="800">
     <Grid>
-        
+        <ListView HorizontalAlignment="Left" Height="600"  VerticalAlignment="Top" Width="800">
+            <ListView.View>
+                <GridView x:Name="resultGridView">
+                    
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

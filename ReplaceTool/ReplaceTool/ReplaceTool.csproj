@@ -63,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Hepler\CSVHelper.cs" />
     <Compile Include="ViewResult.xaml.cs">
       <DependentUpon>ViewResult.xaml</DependentUpon>
     </Compile>
