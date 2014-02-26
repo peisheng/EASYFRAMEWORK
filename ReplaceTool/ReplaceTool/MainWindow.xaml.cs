@@ -69,7 +69,28 @@ namespace ReplaceTool
             {
                 string csvFilePath = open.FileName;
                 lblReulstMsg.Content = "文件导入成功，请查看导入文件内容";
-            }
+                SimpleCSVReader reader = new SimpleCSVReader(csvFilePath);
+                reader.Splitter='\t';
+                reader.ReadHeader();
+                Dictionary<string, int> dict = reader.HeaderMap; 
+                comBoxList.Items.Clear();
+                foreach (var item in dict)
+                {
+                    int index=(int)item.Value-1;
+                    comBoxList.Items.Add(index.ToString()+"--"+item.Key.ToString());
+                } 
+            } 
+        }
+
+        private void btnViewSource_Click(object sender, RoutedEventArgs e)
+        {
+            ViewSource source = new ViewSource(csvFilePath);
+            source.Show();
+        }
+
+        private void btnViewResult_Click(object sender, RoutedEventArgs e)
+        {
+            
 
         }
     }
