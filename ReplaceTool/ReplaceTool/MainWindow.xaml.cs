@@ -17,6 +17,8 @@ using Microsoft.Win32;
 using System.IO;
 
 using Codeplex.SimpleCSV;
+using ReplaceTool.Hepler;
+using System.Data;
 namespace ReplaceTool
 {
     /// <summary>
@@ -25,40 +27,27 @@ namespace ReplaceTool
     public partial class MainWindow : Window
     {
         public MainWindow()
-        {
-
-            //ReplaceSettings settings = new ReplaceSettings();
-            //settings.AllReplaceStrings = new List<string>();
-            //settings.Setting = new List<ReplaceGroupSetting>();
-
-            //for (int i = 0; i < 1000; i++)
-            //{
-            //    ReplaceGroupSetting group = new ReplaceGroupSetting();
-            //    group.GroupReplaceItems = new List<ReplaceMapper>();
-            //    group.GroupName = "Group Name " + i.ToString();
-            //    for (int j = 0; j < 50; j++)
-            //    {
-            //        group.GroupReplaceItems.Add(new ReplaceMapper() { ReplaceString = "ReplaceString" + j.ToString(), SourceString = "SourceString" + j.ToString() });
-
-            //    }
-            //    settings.Setting.Add(group);
-            //}
-            //XmlUtil<ReplaceSettings>.XmlSerializeToFile(settings, "aa.xml");
-
-            ReplaceSettings setting = XmlUtil<ReplaceSettings>.XmlDeserializeFromFile("aa.xml");
-
-
+        { 
             InitializeComponent();
             lblReulstMsg.Content = "";
            
         }
+        public static string OutputFolder
+        {
+            get;
+            set;
+        }
+
+        private string csvFilePath = string.Empty;
+
+        private string ReplaceColumnName = string.Empty;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Config config = new Config();
             config.ShowDialog();
         }
-        private string csvFilePath = string.Empty;
+        
 
         private void btnOpen_Click(object sender, RoutedEventArgs e)
         {
@@ -77,7 +66,7 @@ namespace ReplaceTool
                 foreach (var item in dict)
                 {
                     int index=(int)item.Value-1;
-                    comBoxList.Items.Add(index.ToString()+"--"+item.Key.ToString());
+                    comBoxList.Items.Add(index.ToString()+"<<-->>"+item.Key.ToString());
                 } 
             } 
         }
@@ -90,7 +79,54 @@ namespace ReplaceTool
 
         private void btnViewResult_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(OutputFolder))
+            {
+                MessageBox.Show("请先选择结果输出文件夹");
+                return;
+            }
+            if (string.IsNullOrEmpty(ReplaceColumnName))
+            {
+                MessageBox.Show("你没有选择要替换的列，请选择");
+                return;
+            }
+
+            CSVHelper helper = new CSVHelper(csvFilePath,'\t');
+          
             
+            
+            foreach (var item in ConfigHelper.ConfigSetting.GroupSettings)
+            {
+                DataTable dt = helper.CsVTable.Copy();
+                string groupName = item.GroupName;
+                for (int i = 0; i<dt.Rows.Count; i++)
+                {
+                    foreach (var map in item.GroupReplaceItems)
+                    {
+                        dt.Rows[i][ReplaceColumnName] = dt.Rows[i][ReplaceColumnName].ToString().Replace(map.SourceString,map.ReplaceString);
+                    } 
+                }
+                helper.WriteDataTableToCsVFile(dt, OutputFolder+"\\"+groupName.ToLower()+"_"+csvFilePath.Substring(csvFilePath.LastIndexOf("\\")+1)); 
+            }
+            //
+        }
+        
+        private void btnSelectFolder_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Forms.FolderBrowserDialog fbd = new System.Windows.Forms.FolderBrowserDialog();
+           var result= fbd.ShowDialog();
+           if (fbd.SelectedPath!=string.Empty)
+           {
+               OutputFolder = fbd.SelectedPath;
+           }
+        }
+
+       
+
+        private void comBoxList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectItem = this.comBoxList.SelectedItem.ToString();
+            string[] arr = selectItem.Split(new string[1]{"<<-->>"},StringSplitOptions.None);
+            ReplaceColumnName = arr[1];
 
         }
     }

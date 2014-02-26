@@ -31,7 +31,7 @@ namespace ReplaceTool
             InitializeComponent();
             FilePath=filePath;
             CSVHelper helper = new CSVHelper(FilePath,'\t');
-             DataTable  dt=helper.GetCSVTable();
+            DataTable dt = helper.CsVTable;
              listView.DataContext = dt;
 
              sourceGridView.Columns.Clear();

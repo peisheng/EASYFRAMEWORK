@@ -249,56 +249,56 @@ namespace Codeplex.SimpleCSV
             for (int i = 0; i < line.Length; i++)
             {
                 // if we are in a quoted state
-                if (isQuoted)
-                {
-                    // found quotation in a quoted string
-                    if (line[i] == '"')
-                    {
-                        // if a second quotation found then write a single quote char to output
-                        if ((i + 1 < line.Length) && line[i + 1] == '"')
-                        {
-                            ++i;
-                            column.Append(line[i]);
-                            if (i + 1 >= line.Length)
-                            {
-                               // column.Append("\r\n");
-                                do
-                                {
-                                    line = _reader.ReadLine();
-                                    column.Append("\r\n");
-                                } while (String.IsNullOrEmpty(line) && !_reader.EndOfStream);
-                                i = -1;
-                                continue;
-                            }
-                        }
-                        else
-                        {
-                            // this was a single quote char - so we return from the quotation string
-                            isQuoted = false;
-                            if (i + 1 >= line.Length)
-                            {
-                                _cellDictionary.Add(columnCount++, column.ToString());
-                                column = new StringBuilder();
-                            }
-                        }
-                    }
-                    else
-                    {
-                        column.Append(line[i]);
-                        if (i + 1 >= line.Length)
-                        {
-                            do
-                            {
-                                line = _reader.ReadLine();
-                                column.Append("\r\n");
-                            } while (String.IsNullOrEmpty(line) && !_reader.EndOfStream);
-                            i = -1;
-                        }
-                    }
-                }
-                else
-                {
-                    // we are not in a quoted state
+                //if (isQuoted)
+                //{
+                //    // found quotation in a quoted string
+                //    if (line[i] == '"')
+                //    {
+                //        // if a second quotation found then write a single quote char to output
+                //        if ((i + 1 < line.Length) && line[i + 1] == '"')
+                //        {
+                //            ++i;
+                //            column.Append(line[i]);
+                //            if (i + 1 >= line.Length)
+                //            {
+                //               // column.Append("\r\n");
+                //                do
+                //                {
+                //                    line = _reader.ReadLine();
+                //                    column.Append("\r\n");
+                //                } while (String.IsNullOrEmpty(line) && !_reader.EndOfStream);
+                //                i = -1;
+                //                continue;
+                //            }
+                //        }
+                //        else
+                //        {
+                //            // this was a single quote char - so we return from the quotation string
+                //            isQuoted = false;
+                //            if (i + 1 >= line.Length)
+                //            {
+                //                _cellDictionary.Add(columnCount++, column.ToString());
+                //                column = new StringBuilder();
+                //            }
+                //        }
+                //    }
+                //    else
+                //    {
+                //        column.Append(line[i]);
+                //        if (i + 1 >= line.Length)
+                //        {
+                //            do
+                //            {
+                //                line = _reader.ReadLine();
+                //                column.Append("\r\n");
+                //            } while (String.IsNullOrEmpty(line) && !_reader.EndOfStream);
+                //            i = -1;
+                //        }
+                //    }
+                //}
+                //else
+                //{
+                //    // we are not in a quoted state
                     if (line[i] == _splitter)
                     {
                         // if this character was a splitter, then add this to a column list
@@ -310,11 +310,11 @@ namespace Codeplex.SimpleCSV
                             _cellDictionary.Add(columnCount++, column.ToString());
                         }
                     }
-                    else if (line[i] == '"')
-                    {
-                        // change to quoted state
-                        isQuoted = true;
-                    }
+                    //else if (line[i] == '"')
+                    //{
+                    //    // change to quoted state
+                    //    isQuoted = true;
+                    //}
                     else
                     {
                         column.Append(line[i]);
@@ -325,7 +325,7 @@ namespace Codeplex.SimpleCSV
                             column = new StringBuilder();
                         }
                     }
-                }
+                //}
             }
 
             // read a single row

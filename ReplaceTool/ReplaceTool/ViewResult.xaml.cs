@@ -25,7 +25,7 @@ namespace ReplaceTool
 
         private string FilePath=string.Empty;
         private int ReplaceColumnIndex = 0;
-        public ViewResult(string filePath,int replaceColIndex)
+        public ViewResult(string filePath,int replaceColIndex,string GroupName)
         {
             InitializeComponent();
             FilePath = filePath;
