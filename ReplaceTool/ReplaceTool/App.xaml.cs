@@ -18,6 +18,8 @@ namespace ReplaceTool
             ConfigHelper.GetSetting();
             base.OnStartup(e);
 
+            
+
         }
     }
 }

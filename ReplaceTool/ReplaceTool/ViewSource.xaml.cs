@@ -24,16 +24,17 @@ namespace ReplaceTool
         public ViewSource()
         {
             InitializeComponent();
+            
         }
         private string FilePath = string.Empty;
         public ViewSource(string filePath)
         {
             InitializeComponent();
+            this.Title = filePath + "的内容";
             FilePath=filePath;
             CSVHelper helper = new CSVHelper(FilePath,'\t');
             DataTable dt = helper.CsVTable;
-             listView.DataContext = dt;
-
+             listView.DataContext = dt; 
              sourceGridView.Columns.Clear();
 
              foreach (var colum in dt.Columns)
@@ -45,9 +46,7 @@ namespace ReplaceTool
                  sourceGridView.Columns.Add(column);
              }
              Binding bind = new Binding();
-             listView.SetBinding(ListView.ItemsSourceProperty, bind);
-
-             
+             listView.SetBinding(ListView.ItemsSourceProperty, bind);             
         }
     }
 }

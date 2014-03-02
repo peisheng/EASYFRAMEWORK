@@ -29,8 +29,7 @@ namespace ReplaceTool
         public MainWindow()
         { 
             InitializeComponent();
-            lblReulstMsg.Content = "";
-           
+            lblReulstMsg.Content = ""; 
         }
         public static string OutputFolder
         {
@@ -58,16 +57,22 @@ namespace ReplaceTool
             {
                  csvFilePath = open.FileName;
                 lblReulstMsg.Content = "文件导入成功，请查看导入文件内容";
-                SimpleCSVReader reader = new SimpleCSVReader(csvFilePath);
-                reader.Splitter='\t';
-                reader.ReadHeader();
-                Dictionary<string, int> dict = reader.HeaderMap; 
-                comBoxList.Items.Clear();
-                foreach (var item in dict)
-                {
-                    int index=(int)item.Value-1;
-                    comBoxList.Items.Add(index.ToString()+"<<-->>"+item.Key.ToString());
-                } 
+                using (SimpleCSVReader reader = new SimpleCSVReader(csvFilePath)) {
+                    reader.Splitter = '\t';
+                    reader.ReadHeader();
+                    Dictionary<string, int> dict = reader.HeaderMap;
+                    comBoxList.Items.Clear();
+                    LogHelper.WriteLog("原文件中的列名：");
+                    LogHelper.WriteLog("####################################################################");
+                    foreach (var item in dict)
+                    {
+                        int index = (int)item.Value - 1;
+                        comBoxList.Items.Add(index.ToString() + "<<-->>" + item.Key.ToString());
+                        LogHelper.WriteLog(item.Key.ToString()); 
+                    }
+                    LogHelper.WriteLog("####################################################################");
+                }
+               
             } 
         }
 
@@ -76,12 +81,13 @@ namespace ReplaceTool
             ViewSource source = new ViewSource(csvFilePath);
             source.Show();
         }
-
-        private void btnViewResult_Click(object sender, RoutedEventArgs e)
+        List<string> OutputList = new List<string>();
+        private void btnReplace_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(OutputFolder))
             {
                 MessageBox.Show("请先选择结果输出文件夹");
+
                 return;
             }
             if (string.IsNullOrEmpty(ReplaceColumnName))
@@ -90,23 +96,46 @@ namespace ReplaceTool
                 return;
             }
 
+           
             CSVHelper helper = new CSVHelper(csvFilePath,'\t');
-          
-            
-            
+            OutputList.Clear();
+            this.lblReulstMsg.Content = "正在转换";
             foreach (var item in ConfigHelper.ConfigSetting.GroupSettings)
             {
                 DataTable dt = helper.CsVTable.Copy();
                 string groupName = item.GroupName;
+                LogHelper.WriteLog("####################################################################");
+                LogHelper.WriteLog(string.Format("正在替换组：{0}",groupName));
+                
                 for (int i = 0; i<dt.Rows.Count; i++)
                 {
                     foreach (var map in item.GroupReplaceItems)
                     {
-                        dt.Rows[i][ReplaceColumnName] = dt.Rows[i][ReplaceColumnName].ToString().Replace(map.SourceString,map.ReplaceString);
+                        try
+                        {
+                            if (dt.Rows[i][ReplaceColumnName].ToString().IndexOf(map.SourceString) > -1)
+                            {
+                                LogHelper.WriteLog(string.Format("找到对应的配置：{0}",map.SourceString ));
+                                dt.Rows[i][ReplaceColumnName] = dt.Rows[i][ReplaceColumnName].ToString().Replace(map.SourceString, map.ReplaceString);
+                                LogHelper.WriteLog(string.Format("进行替换{0}==>：{1}", map.SourceString,map.ReplaceString)); 
+                            }
+                            
+                        }
+                        catch (Exception ex)
+                        {
+                            LogHelper.WriteLog("列替换异常：");
+                            LogHelper.WriteLog(ex.Message,ex);
+                        } 
                     } 
                 }
-                helper.WriteDataTableToCsVFile(dt, OutputFolder+"\\"+groupName.ToLower()+"_"+csvFilePath.Substring(csvFilePath.LastIndexOf("\\")+1)); 
+                string path=OutputFolder+"\\"+groupName.ToLower()+"_"+csvFilePath.Substring(csvFilePath.LastIndexOf("\\")+1);
+                LogHelper.WriteLog(string.Format("输出的转换的文件路径：{0}",path));
+                OutputList.Add(path);
+                helper.WriteDataTableToCsVFile(dt, path);
+                LogHelper.WriteLog("####################################################################");
             }
+            this.lblReulstMsg.Content = "转换完成了";
+           
             //
         }
         
@@ -127,6 +156,21 @@ namespace ReplaceTool
             string selectItem = this.comBoxList.SelectedItem.ToString();
             string[] arr = selectItem.Split(new string[1]{"<<-->>"},StringSplitOptions.None);
             ReplaceColumnName = arr[1];
+
+        }
+
+        private void btnViewResult_Click(object sender, RoutedEventArgs e)
+        {
+            if (OutputList.Count > 0)
+            {
+                foreach (string item in OutputList)
+                {
+                    ViewSource source = new ViewSource(item);
+                    source.Show();
+
+                }
+
+            }
 
         }
     }

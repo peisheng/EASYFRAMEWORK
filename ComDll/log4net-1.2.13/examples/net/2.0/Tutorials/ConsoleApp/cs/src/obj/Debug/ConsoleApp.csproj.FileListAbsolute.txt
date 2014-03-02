@@ -1,0 +1,1 @@
+E:\git\ComDll\log4net-1.2.13\examples\net\2.0\Tutorials\ConsoleApp\cs\build\debug\ConsoleApp.exe.config

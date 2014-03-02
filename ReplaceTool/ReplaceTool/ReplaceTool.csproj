@@ -42,6 +42,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ComDll\SimpleCSV\Codeplex.SimpleCSV\bin\Debug\Codeplex.SimpleCSV.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\ComDll\log4net-1.2.13\build\bin\net\2.0\debug\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationUI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="ReachFramework" />
     <Reference Include="System" />
@@ -66,9 +69,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Hepler\CSVHelper.cs" />
-    <Compile Include="ViewResult.xaml.cs">
-      <DependentUpon>ViewResult.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Hepler\LogHelper.cs" />
     <Compile Include="ViewSource.xaml.cs">
       <DependentUpon>ViewSource.xaml</DependentUpon>
     </Compile>
@@ -96,10 +97,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="ViewResult.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ViewSource.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,6 +120,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

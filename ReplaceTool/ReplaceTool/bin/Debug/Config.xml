@@ -2,48 +2,61 @@
 <ReplaceSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <GroupSettings>
     <ReplaceGroupSetting>
-      <GroupName>AGRIUP</GroupName>
+      <GroupName>MyGroup</GroupName>
       <GroupReplaceItems>
         <ReplaceMapper>
-          <SourceString>a_8827_oksjre</SourceString>
-          <ReplaceString>aaaa</ReplaceString>
+          <SourceString>2-E3SME-BLU-UK</SourceString>
+          <ReplaceString>aaa</ReplaceString>
         </ReplaceMapper>
         <ReplaceMapper>
-          <SourceString>fdei7(&amp;(&amp;(&amp;^$*(</SourceString>
+          <SourceString>0-SJP-1.2M-UK</SourceString>
           <ReplaceString>bbb</ReplaceString>
         </ReplaceMapper>
         <ReplaceMapper>
-          <SourceString>dcjdije8(*)(</SourceString>
-          <ReplaceString>cccc</ReplaceString>
+          <SourceString>3-OCWM-BLA-UK</SourceString>
+          <ReplaceString>ccc</ReplaceString>
         </ReplaceMapper>
         <ReplaceMapper>
-          <SourceString>cd((*(&amp;^^^%&amp;(Kjih</SourceString>
+          <SourceString>2-I4HBC-TUR-UK-03</SourceString>
           <ReplaceString>ddd</ReplaceString>
         </ReplaceMapper>
         <ReplaceMapper>
-          <SourceString>cdughu)(**^&amp;%^</SourceString>
+          <SourceString>8-7TPC-BLU-UK-10</SourceString>
           <ReplaceString>eee</ReplaceString>
         </ReplaceMapper>
+      </GroupReplaceItems>
+    </ReplaceGroupSetting>
+    <ReplaceGroupSetting>
+      <GroupName>MyGroup2</GroupName>
+      <GroupReplaceItems>
         <ReplaceMapper>
-          <SourceString>bbhy&amp;(*&amp;(*7</SourceString>
-          <ReplaceString>fff</ReplaceString>
+          <SourceString>2-E3SME-BLU-UK</SourceString>
+          <ReplaceString>my111</ReplaceString>
         </ReplaceMapper>
         <ReplaceMapper>
-          <SourceString>7(*(*09s0d8f_(_</SourceString>
-          <ReplaceString>ggg</ReplaceString>
+          <SourceString>0-SJP-1.2M-UK</SourceString>
+          <ReplaceString>my222</ReplaceString>
+        </ReplaceMapper>
+        <ReplaceMapper>
+          <SourceString>3-OCWM-BLA-UK</SourceString>
+          <ReplaceString>my333</ReplaceString>
+        </ReplaceMapper>
+        <ReplaceMapper>
+          <SourceString>2-I4HBC-TUR-UK-03</SourceString>
+          <ReplaceString>my444</ReplaceString>
+        </ReplaceMapper>
+        <ReplaceMapper>
+          <SourceString>8-7TPC-BLU-UK-10</SourceString>
+          <ReplaceString>my555</ReplaceString>
         </ReplaceMapper>
       </GroupReplaceItems>
     </ReplaceGroupSetting>
   </GroupSettings>
   <AllReplaceStrings>
-    <string>a_8827_oksjre</string>
-    <string>fdei7(&amp;(&amp;(&amp;^$*(</string>
-    <string>dcjdije8(*)(</string>
-    <string>cd((*(&amp;^^^%&amp;(Kjih</string>
-    <string>cdughu)(**^&amp;%^</string>
-    <string>bbhy&amp;(*&amp;(*7</string>
-    <string>7(*(*09s0d8f_(_</string>
-    <string>huheug*(*()&amp;&amp;^&amp;%^()()#&amp;$</string>
-    <string>jhdfue*(*(</string>
+    <string>2-E3SME-BLU-UK</string>
+    <string>0-SJP-1.2M-UK</string>
+    <string>3-OCWM-BLA-UK</string>
+    <string>2-I4HBC-TUR-UK-03</string>
+    <string>8-7TPC-BLU-UK-10</string>
   </AllReplaceStrings>
 </ReplaceSettings>
