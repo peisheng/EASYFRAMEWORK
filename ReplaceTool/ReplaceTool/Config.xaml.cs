@@ -324,38 +324,39 @@ namespace ReplaceTool
         {
             for (int i = 0; i < str.Length; i++)
             {
-                str = str.Replace("'", "");
-                str = str.Replace(";", "");
-                str = str.Replace(":", "");
-                str = str.Replace("/", "");
-                str = str.Replace("?", "");
-                str = str.Replace("<", "");
-                str = str.Replace(">", "");
-                str = str.Replace(".", "");
-                str = str.Replace("#", "");
-                str = str.Replace("%", "");
-                str = str.Replace("&", "");
-                str = str.Replace("^", "");
-                str = str.Replace("//", "");
-                str = str.Replace("@", "");
-                str = str.Replace("(", "");
-                str = str.Replace(")", "");
-                str = str.Replace("*", "");
-                str = str.Replace("~", "");
-                str = str.Replace("`", "");
-                str = str.Replace("$", "");
-                str = str.Replace("[", "");
-                str = str.Replace("!", "");
-                str = str.Replace("\\", "");
-                str = str.Replace("$", "");
-                str = str.Replace("]", "");
-                str = str.Replace("{", "");
-                str = str.Replace("}", "");
-                str = str.Replace("-", "");
-                str = str.Replace("|", ""); 
-                str = str.Replace(" ", "");
+                str = str.Replace("'", "a");
+                str = str.Replace(";", "b");
+                str = str.Replace(":", "c");
+                str = str.Replace("/", "d");
+                str = str.Replace("?", "e");
+                str = str.Replace("<", "f");
+                str = str.Replace(">", "g");
+                str = str.Replace(".", "h");
+                str = str.Replace("#", "i");
+                str = str.Replace("%", "j");
+                str = str.Replace("&", "k");
+                str = str.Replace("^", "l");
+                str = str.Replace("//", "m");
+                str = str.Replace("@", "n");
+                str = str.Replace("(", "o");
+                str = str.Replace(")", "p");
+                str = str.Replace("*", "q");
+                str = str.Replace("~", "r");
+                str = str.Replace("`", "s");
+                str = str.Replace("$", "t");
+                str = str.Replace("[", "u");
+                str = str.Replace("!", "v");
+                str = str.Replace("\\", "w");
+                str = str.Replace("$", "x");
+                str = str.Replace("]", "y");
+                str = str.Replace("{", "z");
+                str = str.Replace("}", "2");
+                str = str.Replace("-", "1");
+                str = str.Replace("|", "4"); 
+                str = str.Replace(" ", "6");
             }
-            
+            Regex rex = new Regex("[^a-zA-Z0-9_]{1,}");
+            str = rex.Replace(str,"ff");
             
             return str;
         }

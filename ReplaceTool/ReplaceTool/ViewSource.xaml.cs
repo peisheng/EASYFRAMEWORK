@@ -30,6 +30,10 @@ namespace ReplaceTool
         public ViewSource(string filePath)
         {
             InitializeComponent();
+            if (string.IsNullOrEmpty(filePath))
+            { MessageBox.Show("请先选择文件");
+              return;
+            }
             this.Title = filePath + "的内容";
             FilePath=filePath;
             CSVHelper helper = new CSVHelper(FilePath,'\t');

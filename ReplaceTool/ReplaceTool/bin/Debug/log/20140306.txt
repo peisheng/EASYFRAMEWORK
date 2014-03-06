@@ -1,0 +1,4 @@
+2014-03-06 20:09:00,356 [10] INFO  MyLog [(null)] - Empty path name is not legal.  Empty path name is not legal.     at System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize)
+   at System.IO.StreamReader..ctor(String path, Boolean detectEncodingFromByteOrderMarks)
+   at Codeplex.SimpleCSV.SimpleCSVReader..ctor(String path) in e:\git\ComDll\SimpleCSV\Codeplex.SimpleCSV\SimpleCSVReader.cs:line 76
+   at ReplaceTool.Hepler.CSVHelper..ctor(String filePath, Char spliter) in d:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\Hepler\CSVHelper.cs:line 15

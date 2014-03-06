@@ -78,6 +78,11 @@ namespace ReplaceTool
 
         private void btnViewSource_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(csvFilePath))
+            {
+                MessageBox.Show("请先选择文件");
+                return;
+            }
             ViewSource source = new ViewSource(csvFilePath);
             source.Show();
         }
@@ -87,7 +92,6 @@ namespace ReplaceTool
             if (string.IsNullOrEmpty(OutputFolder))
             {
                 MessageBox.Show("请先选择结果输出文件夹");
-
                 return;
             }
             if (string.IsNullOrEmpty(ReplaceColumnName))
