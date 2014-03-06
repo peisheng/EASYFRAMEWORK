@@ -322,32 +322,41 @@ namespace ReplaceTool
 
         private string getSafeName(string str)
         {
-            str = str.Replace("'", "");
-            str = str.Replace(";", "");
-            str = str.Replace(":", "");
-            str = str.Replace("/", "");
-            str = str.Replace("?", "");
-            str = str.Replace("<", "");
-            str = str.Replace(">", "");
-            str = str.Replace(".", "");
-            str = str.Replace("#", "");
-            str = str.Replace("%", "");
-            str = str.Replace("&", "");
-            str = str.Replace("^", "");
-            str = str.Replace("//", "");
-            str = str.Replace("@", "");
-            str = str.Replace("(", "");
-            str = str.Replace(")", "");
-            str = str.Replace("*", "");
-            str = str.Replace("~", "");
-            str = str.Replace("`", "");
-            str = str.Replace("$", "");
-            str = str.Replace("[","");
-            str = str.Replace("]", "");
-            str = str.Replace("{", "");
-            str = str.Replace("}", "");
-            str = str.Replace("-", "");
-            str = str.Replace("|", "");
+            for (int i = 0; i < str.Length; i++)
+            {
+                str = str.Replace("'", "");
+                str = str.Replace(";", "");
+                str = str.Replace(":", "");
+                str = str.Replace("/", "");
+                str = str.Replace("?", "");
+                str = str.Replace("<", "");
+                str = str.Replace(">", "");
+                str = str.Replace(".", "");
+                str = str.Replace("#", "");
+                str = str.Replace("%", "");
+                str = str.Replace("&", "");
+                str = str.Replace("^", "");
+                str = str.Replace("//", "");
+                str = str.Replace("@", "");
+                str = str.Replace("(", "");
+                str = str.Replace(")", "");
+                str = str.Replace("*", "");
+                str = str.Replace("~", "");
+                str = str.Replace("`", "");
+                str = str.Replace("$", "");
+                str = str.Replace("[", "");
+                str = str.Replace("!", "");
+                str = str.Replace("\\", "");
+                str = str.Replace("$", "");
+                str = str.Replace("]", "");
+                str = str.Replace("{", "");
+                str = str.Replace("}", "");
+                str = str.Replace("-", "");
+                str = str.Replace("|", ""); 
+                str = str.Replace(" ", "");
+            }
+            
+            
             return str;
         }
 

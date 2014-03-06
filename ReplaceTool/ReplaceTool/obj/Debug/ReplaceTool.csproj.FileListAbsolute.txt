@@ -14,10 +14,7 @@ D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\ReplaceTool.exe
 D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\ReplaceTool.pdb
 D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\ReplaceTool.Utils.dll
 D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\ReplaceTool.Utils.pdb
-D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\obj\Debug\ReplaceTool_Content.g.cs
-D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\obj\Debug\ViewResult.baml
 D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\obj\Debug\ViewSource.baml
-D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\obj\Debug\ViewResult.g.cs
 D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\obj\Debug\ViewSource.g.cs
 D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\Codeplex.SimpleCSV.dll
 D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\Codeplex.SimpleCSV.pdb
@@ -45,3 +42,7 @@ E:\git\ReplaceTool\ReplaceTool\bin\Debug\log4net.pdb
 E:\git\ReplaceTool\ReplaceTool\bin\Debug\log4net.xml
 E:\git\ReplaceTool\ReplaceTool\obj\Debug\ReplaceTool.exe
 E:\git\ReplaceTool\ReplaceTool\obj\Debug\ReplaceTool.pdb
+D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\ReplaceTool.exe.config
+D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\log4net.dll
+D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\log4net.pdb
+D:\GIT\EASYFRAMEWORK\ReplaceTool\ReplaceTool\bin\Debug\log4net.xml
