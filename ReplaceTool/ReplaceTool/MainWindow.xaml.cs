@@ -78,6 +78,7 @@ namespace ReplaceTool
 
         private void btnViewSource_Click(object sender, RoutedEventArgs e)
         {
+<<<<<<< Updated upstream
             if (string.IsNullOrEmpty(csvFilePath))
             {
                 MessageBox.Show("请先选择文件");
@@ -85,6 +86,19 @@ namespace ReplaceTool
             }
             ViewSource source = new ViewSource(csvFilePath);
             source.Show();
+=======
+            try
+            {
+                ViewSource source = new ViewSource(csvFilePath);
+                source.Show();
+            }
+            catch (Exception ex)
+            {
+
+                LogHelper.WriteLog(ex.Message,ex);
+            }
+           
+>>>>>>> Stashed changes
         }
         List<string> OutputList = new List<string>();
         private void btnReplace_Click(object sender, RoutedEventArgs e)
@@ -100,45 +114,55 @@ namespace ReplaceTool
                 return;
             }
 
-           
-            CSVHelper helper = new CSVHelper(csvFilePath,'\t');
-            OutputList.Clear();
-            this.lblReulstMsg.Content = "正在转换";
-            foreach (var item in ConfigHelper.ConfigSetting.GroupSettings)
+            try
             {
-                DataTable dt = helper.CsVTable.Copy();
-                string groupName = item.GroupName;
-                LogHelper.WriteLog("####################################################################");
-                LogHelper.WriteLog(string.Format("正在替换组：{0}",groupName));
-                
-                for (int i = 0; i<dt.Rows.Count; i++)
+
+                CSVHelper helper = new CSVHelper(csvFilePath, '\t');
+                OutputList.Clear();
+                this.lblReulstMsg.Content = "正在转换";
+                foreach (var item in ConfigHelper.ConfigSetting.GroupSettings)
                 {
-                    foreach (var map in item.GroupReplaceItems)
+                    DataTable dt = helper.CsVTable.Copy();
+                    string groupName = item.GroupName;
+                    LogHelper.WriteLog("####################################################################");
+                    LogHelper.WriteLog(string.Format("正在替换组：{0}", groupName));
+
+                    for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        try
+                        foreach (var map in item.GroupReplaceItems)
                         {
-                            if (dt.Rows[i][ReplaceColumnName].ToString().IndexOf(map.SourceString) > -1)
+                            try
                             {
-                                LogHelper.WriteLog(string.Format("找到对应的配置：{0}",map.SourceString ));
-                                dt.Rows[i][ReplaceColumnName] = dt.Rows[i][ReplaceColumnName].ToString().Replace(map.SourceString, map.ReplaceString);
-                                LogHelper.WriteLog(string.Format("进行替换{0}==>：{1}", map.SourceString,map.ReplaceString)); 
+                                if (dt.Rows[i][ReplaceColumnName].ToString().IndexOf(map.SourceString) > -1)
+                                {
+                                    LogHelper.WriteLog(string.Format("找到对应的配置：{0}", map.SourceString));
+                                    dt.Rows[i][ReplaceColumnName] = dt.Rows[i][ReplaceColumnName].ToString().Replace(map.SourceString, map.ReplaceString);
+                                    LogHelper.WriteLog(string.Format("进行替换{0}==>：{1}", map.SourceString, map.ReplaceString));
+                                }
+
                             }
-                            
+                            catch (Exception ex)
+                            {
+                                LogHelper.WriteLog("列替换异常：");
+                                LogHelper.WriteLog(ex.Message, ex);
+                            }
                         }
-                        catch (Exception ex)
-                        {
-                            LogHelper.WriteLog("列替换异常：");
-                            LogHelper.WriteLog(ex.Message,ex);
-                        } 
-                    } 
+                    }
+                    string path = OutputFolder + "\\" + groupName.ToLower() + "_" + csvFilePath.Substring(csvFilePath.LastIndexOf("\\") + 1);
+                    LogHelper.WriteLog(string.Format("输出的转换的文件路径：{0}", path));
+                    OutputList.Add(path);
+                    helper.WriteDataTableToCsVFile(dt, path);
+                    LogHelper.WriteLog("####################################################################");
                 }
-                string path=OutputFolder+"\\"+groupName.ToLower()+"_"+csvFilePath.Substring(csvFilePath.LastIndexOf("\\")+1);
-                LogHelper.WriteLog(string.Format("输出的转换的文件路径：{0}",path));
-                OutputList.Add(path);
-                helper.WriteDataTableToCsVFile(dt, path);
-                LogHelper.WriteLog("####################################################################");
+                this.lblReulstMsg.Content = "转换完成了";
             }
-            this.lblReulstMsg.Content = "转换完成了";
+            catch (Exception ex)
+            {
+                LogHelper.WriteLog(ex.Message, ex);
+               
+            }
+           
+           
            
             //
         }

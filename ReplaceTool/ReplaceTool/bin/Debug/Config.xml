@@ -3,6 +3,7 @@
   <GroupSettings>
     <ReplaceGroupSetting>
       <GroupName>ELINKER</GroupName>
+<<<<<<< Updated upstream
       <GroupReplaceItems />
     </ReplaceGroupSetting>
     <ReplaceGroupSetting>
@@ -651,6 +652,37 @@
         <ReplaceMapper>
           <SourceString>0-2SATA-0.4-UK</SourceString>
           <ReplaceString>Apqh184</ReplaceString>
+=======
+      <GroupReplaceItems>
+        <ReplaceMapper>
+          <SourceString>0-IUSB-WHI-UK</SourceString>
+          <ReplaceString>1223</ReplaceString>
+        </ReplaceMapper>
+        <ReplaceMapper>
+          <SourceString>2-E3SME-BLU-UK</SourceString>
+          <ReplaceString>1W2W</ReplaceString>
+        </ReplaceMapper>
+        <ReplaceMapper>
+          <SourceString>3-UCTA-PIN-UK</SourceString>
+          <ReplaceString>QQQQQ</ReplaceString>
+        </ReplaceMapper>
+      </GroupReplaceItems>
+    </ReplaceGroupSetting>
+    <ReplaceGroupSetting>
+      <GroupName>CHEAP365</GroupName>
+      <GroupReplaceItems>
+        <ReplaceMapper>
+          <SourceString>0-IUSB-WHI-UK</SourceString>
+          <ReplaceString>365-0-IUSB-WHI</ReplaceString>
+        </ReplaceMapper>
+        <ReplaceMapper>
+          <SourceString>2-E3SME-BLU-UK</SourceString>
+          <ReplaceString>12323</ReplaceString>
+        </ReplaceMapper>
+        <ReplaceMapper>
+          <SourceString>3-UCTA-PIN-UK</SourceString>
+          <ReplaceString>1213232</ReplaceString>
+>>>>>>> Stashed changes
         </ReplaceMapper>
       </GroupReplaceItems>
     </ReplaceGroupSetting>
@@ -660,6 +692,7 @@
     </ReplaceGroupSetting>
   </GroupSettings>
   <AllReplaceStrings>
+<<<<<<< Updated upstream
     <string>0-IUSB-WHI-UK2</string>
     <string>0-IUSB-WHI-UK-03</string>
     <string>0-IUSB-WHI-UK-04</string>
@@ -866,5 +899,10 @@
     <string>1-2TSSP-WHI-UK</string>
     <string>1-2SSBP-BLAC-UK</string>
     <string>1-2SSBP-BLAC-UK-01</string>
+=======
+    <string>0-IUSB-WHI-UK</string>
+    <string>2-E3SME-BLU-UK</string>
+    <string>3-UCTA-PIN-UK</string>
+>>>>>>> Stashed changes
   </AllReplaceStrings>
 </ReplaceSettings>
