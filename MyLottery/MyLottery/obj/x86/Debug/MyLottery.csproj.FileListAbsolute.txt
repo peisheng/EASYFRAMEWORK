@@ -1,0 +1,25 @@
+c:\users\peisheng\documents\visual studio 2010\Projects\MyLottery\MyLottery\bin\Debug\MyLottery.exe
+c:\users\peisheng\documents\visual studio 2010\Projects\MyLottery\MyLottery\bin\Debug\MyLottery.pdb
+c:\users\peisheng\documents\visual studio 2010\Projects\MyLottery\MyLottery\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\peisheng\documents\visual studio 2010\Projects\MyLottery\MyLottery\obj\x86\Debug\MainWindow.baml
+c:\users\peisheng\documents\visual studio 2010\Projects\MyLottery\MyLottery\obj\x86\Debug\MainWindow.g.cs
+c:\users\peisheng\documents\visual studio 2010\Projects\MyLottery\MyLottery\obj\x86\Debug\App.g.cs
+c:\users\peisheng\documents\visual studio 2010\Projects\MyLottery\MyLottery\obj\x86\Debug\MyLottery_MarkupCompile.cache
+c:\users\peisheng\documents\visual studio 2010\Projects\MyLottery\MyLottery\obj\x86\Debug\MyLottery.g.resources
+c:\users\peisheng\documents\visual studio 2010\Projects\MyLottery\MyLottery\obj\x86\Debug\MyLottery.Properties.Resources.resources
+c:\users\peisheng\documents\visual studio 2010\Projects\MyLottery\MyLottery\obj\x86\Debug\GenerateResource-ResGen.read.1.tlog
+c:\users\peisheng\documents\visual studio 2010\Projects\MyLottery\MyLottery\obj\x86\Debug\GenerateResource-ResGen.write.1.tlog
+c:\users\peisheng\documents\visual studio 2010\Projects\MyLottery\MyLottery\obj\x86\Debug\MyLottery.exe
+c:\users\peisheng\documents\visual studio 2010\Projects\MyLottery\MyLottery\obj\x86\Debug\MyLottery.pdb
+F:\BaiduYunDownload\MyLottery\MyLottery\obj\x86\Debug\MyLottery.exe
+F:\BaiduYunDownload\MyLottery\MyLottery\obj\x86\Debug\MyLottery.pdb
+F:\BaiduYunDownload\MyLottery\MyLottery\bin\Debug\MyLottery.exe
+F:\BaiduYunDownload\MyLottery\MyLottery\bin\Debug\MyLottery.pdb
+F:\BaiduYunDownload\MyLottery\MyLottery\obj\x86\Debug\MainWindow.baml
+F:\BaiduYunDownload\MyLottery\MyLottery\obj\x86\Debug\MainWindow.g.cs
+F:\BaiduYunDownload\MyLottery\MyLottery\obj\x86\Debug\App.g.cs
+F:\BaiduYunDownload\MyLottery\MyLottery\obj\x86\Debug\MyLottery_MarkupCompile.cache
+F:\BaiduYunDownload\MyLottery\MyLottery\obj\x86\Debug\MyLottery.g.resources
+F:\BaiduYunDownload\MyLottery\MyLottery\obj\x86\Debug\MyLottery.Properties.Resources.resources
+F:\BaiduYunDownload\MyLottery\MyLottery\obj\x86\Debug\MyLottery.csproj.GenerateResource.Cache
+F:\BaiduYunDownload\MyLottery\MyLottery\obj\x86\Debug\MyLottery.csprojResolveAssemblyReference.cache
