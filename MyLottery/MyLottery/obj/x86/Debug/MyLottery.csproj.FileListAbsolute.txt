@@ -23,3 +23,15 @@ F:\BaiduYunDownload\MyLottery\MyLottery\obj\x86\Debug\MyLottery.g.resources
 F:\BaiduYunDownload\MyLottery\MyLottery\obj\x86\Debug\MyLottery.Properties.Resources.resources
 F:\BaiduYunDownload\MyLottery\MyLottery\obj\x86\Debug\MyLottery.csproj.GenerateResource.Cache
 F:\BaiduYunDownload\MyLottery\MyLottery\obj\x86\Debug\MyLottery.csprojResolveAssemblyReference.cache
+E:\git\EasyFramework\MyLottery\MyLottery\obj\x86\Debug\MyLottery.exe
+E:\git\EasyFramework\MyLottery\MyLottery\obj\x86\Debug\MyLottery.pdb
+E:\git\EasyFramework\MyLottery\MyLottery\bin\Debug\MyLottery.exe
+E:\git\EasyFramework\MyLottery\MyLottery\bin\Debug\MyLottery.pdb
+E:\git\EasyFramework\MyLottery\MyLottery\obj\x86\Debug\MyLottery.csprojResolveAssemblyReference.cache
+E:\git\EasyFramework\MyLottery\MyLottery\obj\x86\Debug\MainWindow.baml
+E:\git\EasyFramework\MyLottery\MyLottery\obj\x86\Debug\MainWindow.g.cs
+E:\git\EasyFramework\MyLottery\MyLottery\obj\x86\Debug\App.g.cs
+E:\git\EasyFramework\MyLottery\MyLottery\obj\x86\Debug\MyLottery_MarkupCompile.cache
+E:\git\EasyFramework\MyLottery\MyLottery\obj\x86\Debug\MyLottery.g.resources
+E:\git\EasyFramework\MyLottery\MyLottery\obj\x86\Debug\MyLottery.Properties.Resources.resources
+E:\git\EasyFramework\MyLottery\MyLottery\obj\x86\Debug\MyLottery.csproj.GenerateResource.Cache
