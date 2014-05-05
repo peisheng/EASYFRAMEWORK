@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="hadoop-annotations/src/main/java"/>
+	<classpathentry kind="src" path="hadoop-auth-examples/src/main/java"/>
+	<classpathentry kind="src" path="hadoop-auth/src/main/java"/>
+	<classpathentry kind="src" path="hadoop-auth/src/test/java"/>
+	<classpathentry kind="src" path="hadoop-common/src/main/java"/>
+	<classpathentry kind="src" path="hadoop-common/src/test/aop"/>
+	<classpathentry kind="src" path="hadoop-common/src/test/java"/>
+	<classpathentry kind="src" path="hadoop-minikdc/src/main/java"/>
+	<classpathentry kind="src" path="hadoop-minikdc/src/test/java"/>
+	<classpathentry kind="src" path="hadoop-nfs/src/main/java"/>
+	<classpathentry kind="src" path="hadoop-nfs/src/test/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

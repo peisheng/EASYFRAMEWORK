@@ -78,7 +78,7 @@ namespace ReplaceTool
 
         private void btnViewSource_Click(object sender, RoutedEventArgs e)
         {
-<<<<<<< Updated upstream
+
             if (string.IsNullOrEmpty(csvFilePath))
             {
                 MessageBox.Show("请先选择文件");
@@ -86,19 +86,7 @@ namespace ReplaceTool
             }
             ViewSource source = new ViewSource(csvFilePath);
             source.Show();
-=======
-            try
-            {
-                ViewSource source = new ViewSource(csvFilePath);
-                source.Show();
-            }
-            catch (Exception ex)
-            {
 
-                LogHelper.WriteLog(ex.Message,ex);
-            }
-           
->>>>>>> Stashed changes
         }
         List<string> OutputList = new List<string>();
         private void btnReplace_Click(object sender, RoutedEventArgs e)
@@ -133,7 +121,7 @@ namespace ReplaceTool
                         {
                             try
                             {
-                                if (dt.Rows[i][ReplaceColumnName].ToString().IndexOf(map.SourceString) > -1)
+                                if (dt.Rows[i][ReplaceColumnName].ToString().Trim()==map.SourceString.Trim())
                                 {
                                     LogHelper.WriteLog(string.Format("找到对应的配置：{0}", map.SourceString));
                                     dt.Rows[i][ReplaceColumnName] = dt.Rows[i][ReplaceColumnName].ToString().Replace(map.SourceString, map.ReplaceString);
