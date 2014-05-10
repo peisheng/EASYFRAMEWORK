@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B9F2B603-44BA-42A4-93A4-A4EEAFB9F82E}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>l3v5y.Wordpress</RootNamespace>
+    <AssemblyName>Wordpress</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Servicemodel" />
+    <Reference Include="System.Servicemodel.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\DateIndex.cs" />
+    <Compile Include="Post\CreatePost.cs" />
+    <Compile Include="Data\Attachment.cs" />
+    <Compile Include="Data\Author.cs" />
+    <Compile Include="Data\AuthorIndex.cs" />
+    <Compile Include="Data\Category.cs" />
+    <Compile Include="Data\CategoryIndex.cs" />
+    <Compile Include="Data\Comment.cs" />
+    <Compile Include="Data\Controller.cs" />
+    <Compile Include="Data\Image.cs" />
+    <Compile Include="Data\Images.cs" />
+    <Compile Include="Data\DataItem.cs" />
+    <Compile Include="Data\ListableItem.cs" />
+    <Compile Include="Data\Nonce.cs" />
+    <Compile Include="Data\Post.cs" />
+    <Compile Include="Data\PostList.cs" />
+    <Compile Include="Data\Response.cs" />
+    <Compile Include="Data\SinglePost.cs" />
+    <Compile Include="Data\Tag.cs" />
+    <Compile Include="Data\Info.cs" />
+    <Compile Include="Data\TagIndex.cs" />
+    <Compile Include="Core\GetRecentPosts.cs" />
+    <Compile Include="Core\GetPost.cs" />
+    <Compile Include="Core\GetCategoryPosts.cs" />
+    <Compile Include="Core\GetPage.cs" />
+    <Compile Include="Core\GetAuthorPosts.cs" />
+    <Compile Include="Core\GetCategoryIndex.cs" />
+    <Compile Include="Core\GetAuthorIndex.cs" />
+    <Compile Include="Core\GetDateIndex.cs" />
+    <Compile Include="Core\NotImpl\GetDatePosts.cs" />
+    <Compile Include="Core\GetNonce.cs" />
+    <Compile Include="Core\GetSearchResults.cs" />
+    <Compile Include="Core\GetTagPosts.cs" />
+    <Compile Include="Core\GetTagIndex.cs" />
+    <Compile Include="Core\NotImpl\GetPageIndex.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Core\Info.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Respond\SubmitComment.cs" />
+    <Compile Include="Wordpress.cs" />
+    <Compile Include="WordpressEventArgs.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
