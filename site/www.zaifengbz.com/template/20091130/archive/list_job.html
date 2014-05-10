@@ -1,0 +1,83 @@
+{template 'header.html'}
+<table width="1003" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:1px;">
+  <tr>
+    <td valign="top" style="background:url({$skin_path}/main_bg.jpg) repeat-x left top;">
+	
+	{template 'left.html'}
+</td>
+        <td width="765" align="left" valign="top"><table width="736" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="736"><img src="{$skin_path}/bt9.gif" width="80" height="13" /></td>
+          </tr>
+          <tr>
+            <td height="21"><img src="{$skin_path}/line_2.gif" width="100%" height="1" /></td>
+          </tr>
+          <tr>
+            <td align="center"><img src="{$skin_path}/tt.gif" width="1" height="6" /></td>
+          </tr>
+          <tr>
+            <td align="center">{template 'position.html'}</td>
+          </tr>
+          <tr>
+            <td align="center"><img src="{$skin_path}/tt.gif" width="1" height="6" /></td>
+          </tr>
+          <tr>
+            <td>
+			<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+             
+			  <tr>
+            <td><table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="700" style="font-size:14px; line-height:30px;">
+
+<!-- 内容列表开始 -->
+<table id="talbe" width="100%" border="1" align="center" cellpadding="8" cellspacing="0" bordercolor="#CCCCCC"> 
+<tr> 
+<td width="44" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('no.')}</strong></td> 
+<td width="184" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('RecruitmentPost')}</strong></td> 
+<td width="199" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('RecruitingDepartment')}</strong></td> 
+<td width="84" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('ReleaseTime')}</strong></td> 
+<td width="101" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('intro')}</strong></td> 
+</tr> 
+{loop $archives $i $archive}
+<tr> 
+<td height="20" align="center" style="color:#999999; font-size:11px;">{=$i+1}</td> 
+<td height="20" align="center"><a title="{$archive['stitle']}" target="_blank" href="{$archive['url']}">{$archive['title']}</a></td> 
+<td height="20" align="center">{$archive['my_zhaopinbumen']}</td> 
+<td height="20" align="center" style="color:#999999; font-size:11px;"><span style="color:#999999">{$archive['adddate']}</span></td> 
+<td height="20" align="center"><a title="{$archive['stitle']}" target="_blank" href="{$archive['url']}"><img src="{$skin_path}/images/btn_jobs.gif" alt="{lang('more')}" width="80" height="21" border="0" /></a></td> 
+</tr> 
+{/loop}
+</table>
+<!-- 内容列表结束 -->
+
+<div class="blank30"></div>
+
+<!-- 列表分页开始 -->
+{if isset($pages)}
+{category_pagination($catid)}
+{/if}
+<!-- 列表分页结束 -->
+
+</td>
+              </tr>
+            </table></td>
+          </tr>
+              <tr>
+                <td height="20" colspan="3">&nbsp;</td>
+                </tr>
+       
+              <tr>
+                <td colspan="3">&nbsp;</td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+{template 'footer.html'}

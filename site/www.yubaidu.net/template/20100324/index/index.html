@@ -1,0 +1,96 @@
+{template 'header.html'}
+<div id="bd" style="background:none;">
+    	<div id="bd_left">
+        	<div class="left_box1">
+                <div class="title">
+                    <div class="title_fh"><img src="{$skin_path}/rj_5.gif" /></div>
+                    <div class="title_wd">Video</div>
+                    <div class="title_more"><a href="#"><img src="{$skin_path}/rj_4.gif" border="0" /></a></div>
+                </div>
+                <div class="content">
+                    <div class="shipin"><img src="{$skin_path}/rj_14.gif" /></div>
+                </div>
+			</div> 
+            
+            <div class="left_box2">
+                <div class="title">
+                    <div class="title_fh"><img src="{$skin_path}/rj_5.gif" /></div>
+                    <div class="title_wd">Search</div>
+                </div>
+              <div class="content1">
+                <form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+
+                <div class="Forms_dw"><input type="text" class="input"name="keyword" value="请输入您的关键词！"  height="24" size="24"/>
+                </div>
+                <div class="Forms_dw"><input name='submit' type="image" src="{$skin_path}/rj_8.gif" /></div>
+				</form>
+                <div class="Forms_dw1">
+
+                </div><div class="blank30"></div>
+              </div>
+			</div> 
+		</div>
+		<div id="bd_right">
+        	<div class="bd_right_l">
+            	<div class="left_box1">
+                    <div class="title">
+                        <div class="title_fh"><img src="{$skin_path}/rj_5.gif" /></div>
+                        <div class="title_wd"><?php $t=position_p($catid=1);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></div>
+                        <div class="title_more"><?php $t=position_p($catid=1);?><a href="{$t.url}"><img src="{$skin_path}/rj_4.gif" border="0" /></a></div>
+                    </div>
+                    <div class="content2">
+                        <div class="p"><img src="{$skin_path}/rj_15.gif"  class="imgp"/>　　<strong style="color:#FF6600">{get(sitename)}</strong>{tag_公司简介} </div>
+                        
+                    </div>
+				</div>
+                <div class="left_box2">
+                    <div class="title">
+                        <div class="title_fh"><img src="{$skin_path}/rj_5.gif" /></div>
+                        <div class="title_wd"><?php $t=position_p($catid=2);?>
+<a href="{$t.url}">{$t['name']}</a></div>
+                        <div class="title_more"><?php $t=position_p($catid=2);?>
+<a href="{$t.url}"><img src="{$skin_path}/rj_4.gif" border="0" /></a></div>
+                    </div>
+                    <div class="content" style="height:160px;">
+					<ul class="ul2">
+                        {loop archive(2,0,0,'0,0,0',16,'aid',5,false,0) $i $archive} 
+            <li><span class="date">{$archive[adddate]}</span><a href="{$archive[url]}">{$archive[title]}</a></li>
+                {/loop}
+					</ul>
+                    </div>
+				</div> 
+            </div>
+            <div class="bd_right_r">
+            	<div class="left_box1">
+                    <div class="titleg">
+                        <div class="titleg_wd"><?php $t=position_p($catid=3);?>
+<a href="{$t.url}">{$t['name']}</a></div>
+                        <div class="title_more"><?php $t=position_p($catid=1);?>
+<a href="{$t.url}"><img src="{$skin_path}/rj_4.gif" border="0" /></a></div>
+                    </div>
+                    <div class="content" style="padding:8px 0px 0px 3px;">
+       
+                        <div class="pro_pic"><a href="#"><img src="{$skin_path}/rj_9.gif" border="0" /></a></div>
+              
+                        <div class="pro_pic"><a href="#"><img src="{$skin_path}/rj_10.gif" border="0" /></a></div>
+                    </div>
+				</div>
+                <div class="left_box1">
+                    <div class="titleg">
+                        <div class="titleg_wd">{lang(contactus)}</div>
+                    </div>
+                    <div class="content3" style="height:173px;;padding:10px 15px;">
+                        <div class="p2"><strong>{lang(address)}：</strong>{get(address)}<br /> 
+                      <strong>{lang(tel)}：</strong>{get(tel)}<br /> 
+                      <strong>{lang(fax)}：</strong>{get(fax)}<br /> 
+                      <strong>{lang(email)}：</strong>{get(email)}<br /> 
+                      </div>
+                    </div>
+				</div>
+            </div>
+        </div>
+		<div class="clear"></div>
+    </div>
+{template 'footer.html'}

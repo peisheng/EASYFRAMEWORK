@@ -1,0 +1,94 @@
+{template 'header.html'}
+   <div id="bd">
+    	<div id="bd_left">
+        
+        	<div class="left_box1">
+            <div class="title"><div class="title_l"><img src="{$skin_path}/jt_12.gif" /></div><div class="title_r"><img src="{$skin_path}/jt_13.gif" /></div><div class="title_c"><?php $t=position_p($catid=3);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div></div>
+            <div class="content">
+              <div class="yw">
+              	<ul class="ul4">
+{loop categories(3) $t1}
+<li>▪ <a href="{$t1[url]}" title="{$t1[catname]}">{$t1[catname]}</a></li>
+{/loop}
+                </ul>
+              </div>
+              <div class="yw_tp"><a href="#"><img src="{$skin_path}/jt_17.gif" border="0" /></a></div>
+            </div>
+            </div>
+            <div class="left_box1">
+            <div class="title"><div class="title_l"><img src="{$skin_path}/jt_12.gif" /></div><div class="title_r"><img src="{$skin_path}/jt_13.gif" /></div>
+            <div class="title_c"><?php $t=position_p($catid=4);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div>
+            </div>
+            <div class="contentg">
+              <ul class="ul2">
+                <!-- {loop archive(2,0,0,'0,0,0',16,'aid',4,false,0) $i $archive} -->
+                <li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+			   <!-- {/loop} -->
+                </ul>
+            </div>
+            </div>
+        </div>
+      <div id="bd_right">
+      	<div class="right_l">
+        	<div class="right_box1">
+        	<div class="title1"><div class="title1_img"><img src="{$skin_path}/jt_15.gif" /></div><div class="title1_l"><?php $t=position_p($catid=1);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div><div class="title1_r"><?php $t=position_p($catid=1);?>
+<a href="{$t.url}" title="{$t['name']}"><img src="{$skin_path}/jt_16.gif" alt="查看更多" border="0" /></a></div>
+        	</div>
+            <div class="content1">
+            	<div class="about_left">
+<img src="{$skin_path}/jt_2.jpg" width="174" height="135" border="0"  class="picys"/>                </div>
+              <div class="p">　　<span style="font-weight:bold; color:#D9271F;">{get(sitename)}</span>{tag_公司简介}</div>
+            </div>
+            </div>
+            <div class="right_box1 clear">
+        	<div class="title1"><div class="title1_img"><img src="{$skin_path}/jt_15.gif" /></div>
+        	<div class="title1_l"><?php $t=position_p($catid=3);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div><div class="title1_r"><?php $t=position_p($catid=3);?>
+<a href="{$t.url}" title="{$t['name']}"><img src="{$skin_path}/jt_16.gif" alt="{lang(more)}" border="0" /></a></div>
+        	</div>
+            <div class="content1">
+			 {loop archive(3,0,0,'0,0,0',20,'aid',3,true,0) $i $archive}
+<div class="prod_box"><a href="{$archive[url]}"><img src="{$archive[sthumb]}"  class="prod" alt="{$archive[stitle]}" /></a><br />
+                <a href="{$archive[url]}" class="prod_font">{$archive[title]}</a></div> 
+{/loop}
+             
+            </div>
+            </div>
+        </div>
+        <div class="right_r">
+        	<div class="left_box1">
+            <div class="title"><div class="title_l"><img src="{$skin_path}/jt_12.gif" /></div><div class="title_r"><img src="{$skin_path}/jt_13.gif" /></div>
+            <div class="title_c"><?php $t=position_p($catid=2);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div>
+            </div>
+            <div class="content">
+              <ul class="ul2" style="width:160px;">
+			  <!--  {loop archive(2,0,0,'0,0,0',20,'aid',10,false,0) $i $archive} -->
+                <li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+			 <!-- {/loop} -->
+                </ul>
+            </div>
+            </div>
+            <div class="left_box1">
+            <div class="title"><div class="title_l"><img src="{$skin_path}/jt_12.gif" /></div><div class="title_r"><img src="{$skin_path}/jt_13.gif" /></div>
+            <div class="title_c">{lang(contactus)}</div>
+            </div>
+            <div class="content">
+              <div class="p">
+<ul class="news_list">
+<li><strong>{lang(address)}：</strong>{get(address)}</li>
+<li><strong>{lang(tel)}：</strong>{get(tel)}</li>
+<li><strong>{lang(fax)}：</strong>{get(fax)}</li>
+<li><strong>{lang(email)}：</strong>{get(email)}</li>
+</ul>
+            </div>
+            </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+<!--bd部结束-->
+   {template 'footer.html'}

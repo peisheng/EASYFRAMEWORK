@@ -1,0 +1,79 @@
+{template 'header.html'}
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="4" background="{$skin_path}/middle_bg1.jpg"><img width="4" height="1" /></td>
+    <td width="940">
+	<table width="920" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:6px;" id="menu">
+      <tr>
+        <td height="35" background="{$skin_path}/menu_bg.jpg">
+		<a title="{lang(backhome)}" href="{$base_url}/" {if $catid==0}class="aA"{/if}>{lang(homepage)}</a>
+{loop categories_nav() $t}
+<span><img src="{$skin_path}/split.gif" width="2" height="11" /></span>
+<a title="{$t[catname]}" href="{$t[url]}"{if isset($topid) && $topid==$t[catid]} class="aA"{/if}>{$t[catname]}</a>
+{/loop}
+        </td>
+      </tr>
+    </table>
+      
+      <div style="margin:10px;padding:20px;height:auto;overflow:auto;">
+      <div style="background:url({$skin_path}/arr3.gif) left 5px no-repeat;padding:0px 0px 0px 20px;"><strong>{get('sitename')}</strong></div>
+      <div style="line-height:26px; padding-top:6px; font-family:Arial;overflow:auto;">
+       {get('site_description')}
+      </div>
+<div class="blank10"></div>
+
+<div style="background:url({$skin_path}/arr3.gif) left 5px no-repeat;padding:0px 0px 0px 20px;"><strong><?php $t=position_p($catid=3);?>
+<a href="{$t.url}">{$t['name']}</a><?php?></strong></div>
+<div id="jsweb8_cn_left" style="overflow:hidden;width:880px;height:140px;">
+<table cellpadding="0" cellspacing="0" border="0">
+<tr><td id="jsweb8_cn_left1" valign="top" align="center">
+<table cellpadding="2" cellspacing="0" border="0">
+<tr align="center">
+{loop archive(3,0,0,'0,0,0',20,'aid',10,true,0) $i $archive}
+<td width="164px" height="150">
+<a href="{$archive[url]}" title="{$archive[stitle]}"><img src="{$archive[sthumb]}" alt="{$archive[stitle]}" onerror='this.src="{$base_url}/{config::get('onerror_pic')}"' class="advice_pic" /></a>
+<a href="{$archive[url]}">{$archive[title]}</a>
+</td><td width="10">&nbsp;</td>
+{/loop}
+</tr>
+</table>
+</td>
+<td id="jsweb8_cn_left2" valign="top"></td>
+</tr>
+</table>
+</div>
+<style>
+#jsweb8_cn_left1 td a {display:block;width:150px;overflow:hidden;}
+.advice_pic {height:100px;}
+</style>
+<script>
+var speed=30//速度数值越大速度越慢
+jsweb8_cn_left2.innerHTML=jsweb8_cn_left1.innerHTML
+function Marquee3(){
+if(jsweb8_cn_left2.offsetWidth-jsweb8_cn_left.scrollLeft<=0)
+jsweb8_cn_left.scrollLeft-=jsweb8_cn_left1.offsetWidth
+else{
+jsweb8_cn_left.scrollLeft++
+}
+}
+var MyMar3=setInterval(Marquee3,speed)
+jsweb8_cn_left.onmouseover=function() {
+clearInterval(MyMar3)}
+jsweb8_cn_left.onmouseout=function() {
+MyMar3=setInterval(Marquee3,speed)
+}
+</script>
+
+<div class="clear"></div>
+      </div>
+      
+
+    <td width="4" background="{$skin_path}/middle_bg2.jpg"> </td>
+  </tr>
+</table>
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="948"><img src="{$skin_path}/btm_bg.jpg" width="948" height="7" /></td>
+  </tr>
+</table>
+{template 'footer.html'}

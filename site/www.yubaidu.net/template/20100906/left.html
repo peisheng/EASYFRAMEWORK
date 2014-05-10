@@ -1,0 +1,57 @@
+<div id="bd_left">
+    	  <div class="box">
+          <!--左侧栏目导航开始-->
+<script language="javascript" type="text/javascript">
+var labelarr = new Array();
+function displaynone(id){
+	document.getElementById(id).style.display='none';
+}
+function displayblock(labelarr){
+	for(i=0;i<=labelarr.length;i++){
+		document.getElementById(labelarr[i]).style.display='block';
+	}	
+}
+</script>
+
+            	<div class="content">
+<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+
+<dl id="leftmenu" class="treemenu">
+{loop categories() $t}
+{if $t[catid]==$__pid}
+<div class="title">
+                	<div class="title_wde"><img src="{$skin_path}/lvsb_6.gif" /></div>
+                	<div class="title_wd" onclick="displayblock(labelarr)">{$t[catname]}</div>
+            </div>
+<dd class="child">
+{loop categories($t[catid]) $t1}
+<a title="{$t1[catname]}" href="{$t1[url]}"{if $t1[catid]==$catid} class="on"{/if}>&nbsp;└	{$t1[catname]}</a>
+{loop categories($t1[catid]) $t2}  
+<a title="{$t2[catname]}" href="{$t2[url]}"{if $t2[catid]==$catid} class="on"{/if}>&nbsp;&nbsp;└{$t2[catname]}</a>  
+{loop categories($t2[catid]) $t3}  
+<a title="{$t3[catname]}" href="{$t3[url]}"{if $t3[catid]==$catid}  class="on"{/if}>&nbsp;&nbsp;&nbsp;└{$t3[catname]}</a>  
+{/loop}  
+{/loop}  
+{/loop}
+</dd>{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+</dl>
+                </div>
+            </div>
+            
+            <div class="box1">
+            	<div class="title">
+                	<div class="title_wde"><img src="{$skin_path}/lvsb_6.gif" /></div>
+                	<div class="title_wd">{lang(contactus)}</div>
+              </div>
+            	<div class="content">
+                	<div class="p"><strong>{lang(address)}：</strong>{get(address)} <br />
+                <strong>{lang(tel)}：</strong>{get(tel)}<br />
+                <strong>{lang(fax)}：</strong>{get(fax)}<br />
+                <strong>{lang(email)}：</strong>{get(email)}<br />
+                <strong>{lang(servers)}：</strong>{get(qq1)}</div>
+                </div>
+            </div>
+    	</div>

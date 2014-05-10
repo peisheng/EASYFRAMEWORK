@@ -1,0 +1,93 @@
+{template 'header.html'}
+<div id="bd">
+    	<div id="bd_left">
+        	<div class="box1">
+            	<div class="title1">
+                	<div class="ico"><img src="{$skin_path}/hh_7.gif" /></div>
+                	<div class="title1_wd">{lang(contactus)}</div>
+                </div>
+                <div class="content">
+                	<div class="pic"><img src="{$skin_path}/hh_19.gif" /></div>
+                    <div class="p">
+<li>{lang(address)}：{get(address)}</li>
+<li>{lang(tel)}：{get(tel)}</li>
+<li>{lang(fax)}：{get(fax)}</li> 
+<li>{lang(email)}：{get(email)}</li> 
+</div>
+                </div>
+            </div>
+            
+            <div class="box1">
+           	  <div class="title2">
+               	  <div class="ico"><img src="{$skin_path}/hh_20.gif" /></div>
+                	<div class="title1_wd"><?php $t=position_p($catid=4);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></div>
+              </div>
+                <div class="content">
+                  <div class="ditu"><img src="{$skin_path}/hh_13.gif" /></div>
+                </div>
+            </div>
+            
+        </div>
+      <div id="bd_right">
+      	<div class="bd_right_left">
+        	<div class="box2">
+            	<div class="title3">
+                	<div class="ico3"><img src="{$skin_path}/hh_10.gif" /></div>
+                	<?php $t=position_p($catid=1);?>	<div class="title3_wd">
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+</div>
+                    <div class="more"><a href="{$t.url}" title="{$t['name']}"><img src="{$skin_path}/hh_11.gif" /></a></div><?php?>
+                </div>
+                <div class="content3">
+                	<div class="pg"><div class="picys"><img src="{$skin_path}/hh_12.gif" /></div>
+                	　　{tag_公司简介}</div>
+                </div>
+            </div>
+        </div>
+        <div class="bd_right_right">
+        	<div class="box2">
+            	<div class="title3">
+                	<div class="ico3"><img src="{$skin_path}/hh_10.gif" /></div>
+                	<?php $t=position_p($catid=2);?>	<div class="title3_wd">
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+</div>
+                    <div class="more"><a href="{$t.url}" title="{$t['name']}"><img src="{$skin_path}/hh_11.gif" /></a></div><?php?>
+                </div>
+                <div class="content3">
+                	<ul class="ul2">
+                   {loop archive(2,0,0,'0,0,0',16,'aid',8,false,0) $i $archive} 
+<li><span class="date">{$archive[adddate]}</span><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+				</ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bd_right_g">
+        <div class="box2">
+            	<div class="title3">
+                	<div class="ico3"><img src="{$skin_path}/hh_10.gif" /></div>
+                <?php $t=position_p($catid=3);?>	<div class="title3_wd">
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+</div>
+                    <div class="more"><a href="{$t.url}" title="{$t['name']}"><img src="{$skin_path}/hh_11.gif" /></a></div><?php?>
+                </div>
+                <div class="content3">
+
+ {loop archive(3,0,0,'0,0,0',20,'aid',6,true,0) $i $archive}
+<div class="prod_box"> <a href="{$archive[url]}" title="{$archive[stitle]}"><img src="{$archive[sthumb]}" alt="{$archive[stitle]}" /></a><br />
+             <a href="{$archive[url]}" class="prod_font">{$archive[title]}</a>
+</div>
+ {/loop}
+
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <!--bd部结束-->
+
+{template 'footer.html'}

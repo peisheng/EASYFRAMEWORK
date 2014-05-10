@@ -1,0 +1,43 @@
+<div id="bd_left2">
+    	  <div class="box1">
+       
+        	<div class="title1">
+            	<div class="title1_left"><img src="{$skin_path}/xx_25.gif" /></div>
+                <div class="title1_ioc"><img src="{$skin_path}/xx_27.gif" /></div>
+                <div class="title1_wd"><a href="javascript:void(0)" id="listnav" onclick="displayblock(labelarr)" style="text-decoration:none; color:#FFF">{lang(quicknav)}</a></div>
+                <div class="more"><img src="{$skin_path}/xx_26.gif" /></div>
+            </div>
+            <div class="content">
+            	<ul class="ul2ggg">
+                    <!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li{if $type[catid]==$catid} class="on"{/if}><a href="{$type[url]}" title="{$type[catname]}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+				</ul>
+            </div>
+        </div> 
+        <div class="box1g"><img src="{$skin_path}/zxbm.gif" /></div>
+        <div class="box1g">
+        	<div class="title1">
+            	<div class="title1_left"><img src="{$skin_path}/xx_25.gif" /></div>
+                <div class="title1_ioc"><img src="{$skin_path}/xx_27.gif" /></div>
+                <div class="title1_wd"><?php $t=position_p($catid=2);?>{$t['name']}</div>
+                <div class="more"><a href="{$t.url}"><img src="{$skin_path}/xx_26.gif" /></a></div>
+            </div>
+            <div class="content">
+            	<ul class="ul2">
+                    {loop archive(2,0,0,'0,0,0',20,'aid',6,false,0) $i $archive} 
+                    <li><a href="{$archive[url]}">{$archive[title]}</a></li>
+                {/loop}
+				</ul>
+            </div>
+        </div>              
+   	  </div>
+

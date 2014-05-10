@@ -1,0 +1,48 @@
+{template 'header.html'}
+<style>
+	.NewsTitle{ text-align:center;font-size:16px;font-weight:bold;}
+	.PostDate{border-bottom:1px dotted #666666;text-align:center;padding:4px;}
+	.NewsContent{font-size:14px;line-height:20px;padding:10px;}
+	.NewsContent p{ margin:5px;padding:0px; }
+</style>
+
+<div id="main">
+	<div id="MainLeftNav">
+{template 'left.html'}
+
+	</div>
+	<div id="MainRight">
+		{template 'position.html'}
+		<div style="padding:10px 25px">
+			<div class="PostDate"></div>
+			<div class="NewsContent" >
+				<div id="content" style="width:680px;" class="pd">
+        	
+            <div class="content2">
+                       <div id="content" style="width:680px;" class="pd">
+<div class="blank10"></div>
+<!-- 专题图片 -->
+<img src="{$special[banner]}" style="float:left;margin:0px 20px 20px 0px;" />
+<!-- 专题介绍 -->
+{$special[description]}
+
+<div class="blank30"></div>
+
+<ul class="news_list">
+{loop $archives $i $sp}
+<li><span class="date">{$sp[adddate]}</span><a title="{$sp[title]}" target="_blank" href="{$sp[url]}">{$sp[title]}</a></li>
+{/loop}
+</ul>
+<div class="blank10"></div>
+<!-- 内容列表分页 -->
+{if isset($pages)}
+{tag::pagination($tag)}
+{/if}
+<div class="blank30"></div>
+	</div>
+		</div>
+				</div>
+		</div>
+	</div>
+</div>
+{template 'footer.html'}

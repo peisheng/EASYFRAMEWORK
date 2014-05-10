@@ -1,0 +1,30 @@
+ <div id="footer">
+    	<div class="footer_left"><a href="#"><img src="{$skin_path}/yx_25.gif" border="0" /></a></div>
+        <div class="footer_right"><?php $t=position_p($typeid=1);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>	|	
+<?php?>
+<!-- {loop archive(1,0,0,'0,0,0',20,'aid',10,false,0) $i $archive} -->
+<a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[stitle]}</a>	|	
+<!-- {/loop} --><?php $t=position_p($typeid=5);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>	|	
+<?php?>
+<a href="#">TOP</a></div>
+{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a> All Rights Reserved.      
+<div class="blank5"></div>
+{getcnzzcount()}&nbsp;&nbsp;<a href="http://www.miibeian.gov.cn/" target="_blank">{get('site_icp')}</a>
+  </div>
+</div>
+<div class="blank10"></div>
+<!-- 非商业用户请勿删除 -->
+<div class="copyright">{if $topid==0}<!-- 热门关键词 -->
+<div class="hot_keys">{lang(hotkeys)}： {gethotsearch(10)}</div>{/if}</div>
+<div class="clear"></div>
+<div class="blank10"></div>
+<!-- 在线客服 -->
+{template 'system/servers.html'}
+<!-- 短信 -->
+{template 'system/sms.html'}
+
+{if get('lang_type')=='cn'}<script type="text/javascript" src="{$base_url}/js/tc.js"></script>{/if}
+</body>
+</html>

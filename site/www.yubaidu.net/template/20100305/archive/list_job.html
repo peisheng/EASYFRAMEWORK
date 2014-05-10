@@ -1,0 +1,87 @@
+{template 'header.html'}
+<table width="931" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="210" height="365" align="center" valign="top" bgcolor="#F6F6F6" class="bgys3">
+    {template 'left.html'}
+
+    </td>
+   <td width="16">&nbsp;</td>
+    <td width="705" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td height="137" align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+     {template 'position.html'}
+      <tr>
+        <td colspan="3" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          
+          <tr>
+            <td><div class="pd">
+
+<!-- 内容列表开始 -->
+<table id="talbe" width="100%" border="1" align="center" cellpadding="8" cellspacing="0" bordercolor="#CCCCCC"> 
+<tr> 
+<td width="44" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('no.')}</strong></td> 
+<td width="184" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('RecruitmentPost')}</strong></td> 
+<td width="199" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('RecruitingDepartment')}</strong></td> 
+<td width="84" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('ReleaseTime')}</strong></td> 
+<td width="101" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('intro')}</strong></td> 
+</tr> 
+{loop $archives $i $archive}
+<tr> 
+<td height="20" align="center" style="color:#999999; font-size:11px;">{=$i+1}</td> 
+<td height="20" align="center"><a title="{$archive['stitle']}" target="_blank" href="{$archive['url']}">{$archive['title']}</a></td> 
+<td height="20" align="center">{$archive['my_zhaopinbumen']}</td> 
+<td height="20" align="center" style="color:#999999; font-size:11px;"><span style="color:#999999">{$archive['adddate']}</span></td> 
+<td height="20" align="center"><a title="{$archive['stitle']}" target="_blank" href="{$archive['url']}"><img src="{$skin_path}/images/btn_jobs.gif" alt="{lang('more')}" width="80" height="21" border="0" /></a></td> 
+</tr> 
+{/loop}
+</table>
+<!-- 内容列表结束 -->
+
+<div class="blank30"></div>
+
+<!-- 列表分页开始 -->
+{if isset($pages)}
+{category_pagination($catid)}
+{/if}
+<!-- 列表分页结束 -->
+
+</div>
+</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+            </tr>
+    </table> 
+        
+        
+        </td>
+        </tr>
+    </table>
+    
+    
+    </td>
+  </tr>
+</table>
+
+
+<script> 
+function resizeImg(obj)
+{ 
+var obj = document.getElementById(obj); 
+var objContent = obj.innerHTML;
+var imgs = obj.getElementsByTagName('img'); 
+if(imgs==null) return; 
+for(var i=0; i<imgs.length; i++) 
+{ 
+if(imgs[i].width>parseInt(obj.style.width)) 
+{ 
+imgs[i].width = parseInt(obj.style.width);
+} 
+} 
+} 
+window.onload = function() {resizeImg('content');
+} 
+</script>
+{template 'footer.html'}

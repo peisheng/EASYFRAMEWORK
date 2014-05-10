@@ -1,0 +1,32 @@
+
+			<h4 style="color:#ad9163;line-height:30px;margin:20px 20px 0px 20px;background:url(img/icon01.gif) right center no-repeat;">{lang(quicknav)}</h4>
+			<div id="l_menu">
+		<ul>
+		<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on{/if}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+			</ul>
+			</div>
+		
+
+<div id="contact" style="margin:10px 15px 10px 10px;color:#999;">
+<div>{lang(tel)}：{get(tel)}</div>
+<div>{lang(fax)}：{get(fax)}</div>
+<div>{lang(email)}：{get(email)}</div>
+</div>
+
+
+<div id="search">
+<h5>{lang(search)}</h5>
+<form name='search_form' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+<p><input  id="keyword" name="keyword" type="text" value="<?php echo get('keyword');?>" /></p>
+<p><input type="submit" name='submit' value=" {lang(search)} " id="search_btn" /></p>
+</form>
+</div>

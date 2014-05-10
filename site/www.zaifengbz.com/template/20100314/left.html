@@ -1,0 +1,66 @@
+<div id="bd_leftp">
+
+<div id="bd_leftp_title"><span class="title">{lang(quicknav)}</span></div>
+            	<ul class="ul2p">
+<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on{/if}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+                </ul>
+				<div class="blank10"></div>
+
+		
+
+
+<div id="bd_leftp_title"><span class="title">{lang(siteannoun)}</span></div>
+            	<ul class="ul2p">
+        {loop announ(5) $an}
+			<li><a href="{$an[url]}">{$an[title]}</a></li>
+			{/loop}
+                </ul>
+				<div class="blank10"></div>
+
+
+
+<div id="bd_leftp1">
+        	<div id="bd_leftp1_title"><span class="title">快速搜索</span></div>
+			<div class="blank10"></div>
+<div id="search">
+<form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+<input  id="inputsearch" name="keyword" type="text" align="absmiple" />&nbsp; 
+<input type="submit" class="s_btn" align="absmiple" name='submit' value=" " />
+</form>
+</div>
+<div class="blank10"></div>
+</div>
+
+<div class="blank10"></div>
+
+<div id="bd_leftp_title"><span class="title">相关文章</span></div>
+            	<ul class="ul2p">
+               {loop archive($catid,0,0,'0,0,0',16,'aid',5,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+                </ul>
+				<div class="blank10"></div>
+
+                <div id="bd_leftp1">
+        	<div id="bd_leftp1_title"><span class="title">{lang(contactus)}</span></div>
+            	<div class="bd_right_content1">
+<ul>
+<li>{lang(address)}：{get(address)}</li>
+<li>{lang(tel)}：{get(tel)}</li>
+<li>{lang(fax)}：{get(fax)}</li> 
+<li>{lang(email)}：{get(email)}</li> 
+</ul>
+            </div>
+				<div style="height:24px;"></div>
+      </div>
+      		</div>

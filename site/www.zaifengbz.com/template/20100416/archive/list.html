@@ -1,0 +1,36 @@
+{template 'header.html'}
+<!--head部结束-->
+<div id="bd">
+{template 'left.html'}
+<!--left_1 end-->
+
+<div class="right_2">
+<div class="rl_box2g">
+    {template 'position.html'}
+
+<div id="title">
+			
+			<div class="text">
+
+<ul class="news_list">
+			{loop $archives $i $archive}
+			<li><span class="date">{$archive[adddate]}</span><a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}">{$archive[title]}</a></li>
+			{/loop}
+		</ul>
+		<div class="blank10"></div>
+		{if isset($pages)}
+{category_pagination($catid)}
+{/if}
+</div>
+			<div class="blank10"></div>
+		</div>
+		<div class="blank30"></div>
+		<a title="返回顶部" href="#" class="clear floatright"><img alt="返回顶部" src="{$skin_url}/gotop.gif"></a>
+	<div class="clear"></div>
+    </div>
+  <div class="clear"></div>
+  </div>
+<div class="clear"></div>
+</div>
+<!--box end-->
+{template 'footer.html'}

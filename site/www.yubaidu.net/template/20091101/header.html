@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{if !empty($archive[mtitle])}{$archive[mtitle]}-{elseif !empty($archive[title])}{$archive[title]}-{/if}{if $type[meta_title]}{$type[meta_title]}-{elseif typename($type[typeid])}{typename($type[typeid])}-{/if}{if $category[$catid][meta_title]}{$category[$catid][meta_title]}-{elseif !empty($catid)}{catname($catid)}-{/if}{get('fullname')}</title>
+<meta name="keywords" content="{if $archive[keyword]}{$archive[keyword]}{else}{if $type[keyword]}{$type[keyword]}{elseif $category[$catid][keyword]}{$category[$catid][keyword]}{else}{get('site_keyword')}{/if}{/if}" />
+<meta name="description" content="{if $archive[description]}{$archive[description]}{else}{if $type[description]}{$type[description]}{elseif $category[$catid][description]}{$category[$catid][description]}{else}{get('site_description')}{/if}{/if}" />
+<meta name="author" content="CmsEasy Team" />
+<link rel="icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link href="{$skin_path}/style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript">
+<!-- 
+function ResumeError()  
+{ 
+    return true; 
+} 
+window.onerror = ResumeError; 
+function check()
+{
+if(document.search.keyword.value.length==0){
+     alert("{lang(pleaceinputtext)}");
+     document.search.keyword.focus();
+     return false;
+    }
+
+	}
+// --> 
+</script>
+<!--用于PNG图片在IE6下透明-->
+<!--[if IE 6]>
+<script src="{$skin_path}/js/png.js"></script>
+<script>
+  DD_belatedPNG.fix('.logo');
+  DD_belatedPNG.fix(' .cfooter');
+  DD_belatedPNG.fix('.cleft_box .cright');
+  DD_belatedPNG.fix('.cleft_box_content .cfooter');
+  DD_belatedPNG.fix('.cleft_box_content .cheader');
+</script>
+<![endif]--> 
+</head>
+
+<body>
+
+<table width="940" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="940" height="32" background="{$skin_path}/top_bg.jpg"><div id="topMenu">
+	<a title="{lang(sitewap)}" href="{$base_url}/wap/" class="a1">{lang(sitewap)}</a>
+<a href="<?php echo url('archive/orders');?>" class="a2">{lang(shoppingcart)}</a>
+<a title="{lang(feedback)}" href="{url('guestbook')}" target="_blank" class="a3">{lang(feedback)}</a>
+{if get('lang_type')=='cn'}<a id="StranLink" title="繁简转换" class="a4">繁体</a>&nbsp;{/if}
+&nbsp;&nbsp;{login_js()}
+	</div></td>
+  </tr>
+</table>
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="4" valign="top" background="{$skin_path}/middle_bg1.jpg"><img src="{$skin_path}/left_bg.jpg" width="4" /></td>
+    <td width="940" valign="top" style="background:url({$skin_path}/top_bg2.jpg) repeat-x; background-color:#FFFFFF;">
+    <table width="920" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="516" height="58"><a href="{$base_url}/"><img src="{$base_url}/{get('site_logo')}" alt="{$sitename}" width="{get('logo_width')}" style="margin-left:8px;" /></a></td>
+    <td width="404" align="right" valign="top">
+<form name='search_form' action="<?php echo url('archive/search');?>"  onsubmit="if(document.getElementById('keys').value=='{lang(search)}' || document.getElementById('keys').value==''){alert('{lang(search)}');return false;}" method="post">
+      <input id="inputsearch" name="keyword" type="text" style="background:url({$skin_path}/sear_bg.gif) no-repeat 3px 3px; background-color:#FFFFFF; padding-left:22px; width:138px; vertical-align:middle; margin-top:16px;" value="{lang(search)}" onfocus="if(this.value=='{lang(search)}'){this.value='';}" onblur="if(this.value==''){this.value='{lang(search)}';}" />
+      <input type="image" src="{$skin_path}/btn1.gif" name='submit' style="vertical-align:middle; border:0px none; margin-top:17px; padding:0px; margin-left:3px; margin-right:8px;" />
+    </form></td>
+  </tr>
+</table>
+
+{if $topid==0}
+{else}
+<div id="mainnav">
+
+<ul id="navmenu"> 
+<li class="one{if $topid==0} on{/if}"><a title="{lang(backhome)}" href="{$base_url}/">{lang(homepage)}</a></li>
+{loop categories_nav() $t}
+<span><img src="{$skin_path}/nav_line.gif" width="1" height="40" /></span>
+<li class="one{if isset($topid) && $topid==$t[catid]} on{/if}"><a href="{$t[url]}" title="{$t[catname]}" target="{if config::get('nav_blank')==1} _blank{/if}">{$t[catname]}</a>
+{if count(categories($t[catid]))}<ul>
+{loop categories($t[catid]) $t1}
+<li><a title="{$t1[catname]}" href="{$t1[url]}">{$t1[catname]}</a>
+{if count(categories($t1[catid]))}<ul>{loop categories($t1[catid]) $t2}<span></span>
+<li><a title="{$t2[catname]}" href="{$t2[url]}">{$t2[catname]}</a>
+{if count(categories($t2[catid]))}<ul>{loop categories($t2[catid]) $t3}<span></span>
+<li><a title="{$t3[catname]}" href="{$t3[url]}">{$t3[catname]}</a>
+{if count(categories($t3[catid]))}<ul>{loop categories($t3[catid]) $t4}<span></span>
+<li><a title="{$t4[catname]}" href="{$t4[url]}">{$t4[catname]}</a>
+{if count(categories($t4[catid]))}<ul>{loop categories($t4[catid]) $t5}<span></span>
+<li><a title="{$t5[catname]}" href="{$t5[url]}">{$t5[catname]}</a></li> 
+{/loop}</ul>{/if}
+</li> 
+{/loop}</ul>{/if}
+</li>
+{/loop}</ul>{/if}
+</li>
+{/loop}</ul>{/if}
+</li> 
+{/loop}</ul>{/if}
+</li>{/loop}
+</ul>
+
+</div>
+{/if}
+    <table width="920" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="920">
+				<div style="width:920px;overflow:hidden;">
+				{template 'system/slide.html'}
+</div>
+			</td>
+        </tr>
+      </table></td>
+    <td width="4" valign="top" background="{$skin_path}/middle_bg2.jpg"><img src="{$skin_path}/right_bg.jpg" width="4" /></td>
+  </tr>
+</table>
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+     <td width="4" background="{$skin_path}/middle_bg1.jpg"></td>
+    <td width="940" height="10" valign="top">
+<td width="4" valign="top" background="{$skin_path}/middle_bg2.jpg"></td>
+  </tr>
+</table>
+

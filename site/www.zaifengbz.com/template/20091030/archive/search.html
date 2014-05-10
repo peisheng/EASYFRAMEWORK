@@ -1,0 +1,39 @@
+{template 'header.html'}
+<style>
+	.NewsTitle{ text-align:center;font-size:16px;font-weight:bold;}
+	.PostDate{border-bottom:1px dotted #666666;text-align:center;padding:4px;}
+	.NewsContent{font-size:14px;line-height:20px;padding:10px;}
+	.NewsContent p{ margin:5px;padding:0px; }
+</style>
+
+<div id="main">
+	<div id="MainLeftNav">
+{template 'left.html'}
+
+	</div>
+	<div id="MainRight">
+		{template 'position.html'}
+		<div style="padding:10px 25px">
+
+			<div class="PostDate"></div>
+			<div class="NewsContent" >
+				<div id="content" style="width:680px;" class="pd">
+<div style="margin-top:20px;"></div>
+<h5 style="margin-left:30px;">Did you mean to search for	 :	<span> “{$keyword}” </span></h5>
+<div style="margin-top:20px;"></div>
+					<table width="680" align="center" border="0" cellpadding="10">
+{loop $articles $article}<tr><td width="90" height="50"><p class="postdate">{$article['adddate']}</p></td><td  width="590" align=left><p>[<a href="{$article[caturl]}">{$article[catname]}</a>]  <a href="{$article[url]}"><?php if($keyword) echo str_replace($keyword,"<strong>$keyword</strong>",$article['title']); else { ?>{$article[title]}<?php } ?></a><br /><p>{cut(strip_tags($archive['content']),140)}...</p></td></tr>{/loop}
+</table>
+
+<div class="blank30"></div>
+<div class="pages">
+		<?php echo pagination::html($record_count,5); ?>
+	</div>
+		<div class="blank30"></div>
+</table>
+</div>
+				</div>
+		</div>
+	</div>
+</div>
+{template 'footer.html'}

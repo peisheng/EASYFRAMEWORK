@@ -1,0 +1,45 @@
+{template 'header.html'}
+<table width="1003" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:1px;">
+  <tr>
+    <td valign="top" style="background:url({$skin_path}/main_bg.jpg) repeat-x left top;">
+	
+	{template 'left.html'}
+</td>
+        <td width="765" align="left" valign="top"><table width="736" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="736"><img src="{$skin_path}/bt9.gif" width="80" height="13" /></td>
+          </tr>
+          <tr>
+            <td height="21"><img src="{$skin_path}/line_2.gif" width="100%" height="1" /></td>
+          </tr>
+          <tr>
+            <td align="center"><img src="{$skin_path}/tt.gif" width="1" height="6" /></td>
+          </tr>
+          <tr>
+            <td align="center">{template 'position.html'}</td>
+          </tr>
+          <tr>
+            <td align="center"><img src="{$skin_path}/tt.gif" width="1" height="6" /></td>
+          </tr>
+          <tr>
+            <td>
+<ul class="news_list">
+{loop $archives $i $archive}
+<li class="list{=$i+1}"><span class="date">{$archive[adddate]}</span><a href="{$archive[url]}">{$archive[title]}</a></li>
+{/loop}
+</ul>
+<div class="blank30"></div>
+{if isset($pages)}
+{category_pagination($catid)}
+{/if}			
+</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+{template 'footer.html'}

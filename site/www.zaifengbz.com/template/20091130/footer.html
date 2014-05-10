@@ -1,0 +1,27 @@
+<table width="1003" height="80" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:15px;">
+  <tr>
+    <td background="{$skin_path}/bottom_bg.jpg"><table width="1003" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="237" align="center" style="border-right:1px solid #DDDDDD;"><img src="{$skin_path}/logo_bottom.gif" width="153" height="35" /></td>
+        <td width="524" style="line-height:20px; color:#999999">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php $t=position_p($typeid=1);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>	|	
+<?php?>
+<!-- {loop archive(1,0,0,'0,0,0',20,'aid',10,false,0) $i $archive} -->
+<a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a>	|	
+<!-- {/loop} --><?php $t=position_p($typeid=5);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>	|	
+<?php?>
+<a href="#">TOP</a>&nbsp;&nbsp;&nbsp;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size:11px;">Copyright © 2010 <a href="{$base_url}/">{get(sitename)}</a>. All Rights Reserved.
+</span></td>
+        <td width="242" align="center" style="line-height:20px;"><a href="http://www.miibeian.gov.cn/" target="_blank">{get('site_icp')}</a><br />
+            </td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<div class="copyright">&nbsp;&nbsp;{getcnzzcount()}</div>
+</div>
+{template 'system/servers.html'}
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{if !empty($archive[mtitle])}{$archive[mtitle]}-{elseif !empty($archive[title])}{$archive[title]}-{else}{if $type[meta_title]}    {$type[meta_title]}-{elseif typename($type[typeid])}{typename($type[typeid])}-{/if}{if $category[$catid][meta_title]}{$category[$catid][meta_title]}-{elseif !empty($catid)}{catname($catid)}-{/if}{/if}{get('fullname')}</title>
+<meta name="keywords" content="{if $archive[keyword]}{$archive[keyword]}{else}{if $type[keyword]}{$type[keyword]}{elseif $category[$catid][keyword]}{$category[$catid][keyword]}{else}{get('site_keyword')}{/if}{/if}" />
+<meta name="description" content="{if $archive[description]}{$archive[description]}{else}{if $type[description]}{$type[description]}{elseif $category[$catid][description]}{$category[$catid][description]}{else}{get('site_description')}{/if}{/if}" />
+<meta name="author" content="CmsEasy Team" />
+<link rel="icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link href="{$skin_path}/reset.css" rel="stylesheet" type="text/css" />
+<link href="{$skin_path}/style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript">
+<!-- 
+function ResumeError()  
+{ 
+    return true; 
+} 
+window.onerror = ResumeError; 
+function check()
+{
+if(document.search.keyword.value.length==0){
+     alert("{lang(pleaceinputtext)}");
+     document.search.keyword.focus();
+     return false;
+    }
+
+	}
+// --> 
+</script>
+<!--用于PNG图片在IE6下透明-->
+<!--[if IE 6]>
+<script src="{$skin_path}/js/png.js"></script>
+<script>
+  DD_belatedPNG.fix('.logo');
+  DD_belatedPNG.fix(' .cfooter');
+  DD_belatedPNG.fix('.cleft_box .cright');
+  DD_belatedPNG.fix('.cleft_box_content .cfooter');
+  DD_belatedPNG.fix('.cleft_box_content .cheader');
+</script>
+<![endif]--> 
+</head>
+<body>
+<div id="main">
+<table width="931" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="324" align="left" valign="top" style="padding:10px 0px 5px 10px;"><a href="{$site_url}"><img src="{$base_url}/{get('site_logo')}" alt="{$sitename}" width="{get('logo_width')}"></a></td>
+    <td>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="48" align="right">
+		<table width="380" border="0" cellpadding="0" cellspacing="0" class="chengwd12">
+          <tr>
+            <td align="center" valign="middle">在线咨询：</td>
+            <td align="center" valign="middle"><a href="tencent://message/?uin={get(qq1)}&Site=您的建站服务专家&Menu=yes"><img src="{$skin_path}/mb_2.gif" width="59" height="21" /></a></td>
+            <td align="center" valign="middle"><img src="{$skin_path}/mb_3.gif" width="24" height="21" /></td>
+            <td align="center" valign="middle">销售热线：{get(tel)}</td>
+            <td width="25"> </td>
+			 <td align="center" valign="middle"><img src="{$skin_path}/mb_3.gif" width="24" height="21" /></td>
+            <td align="center" valign="middle"><a title="{lang(feedback)}" href="{url('guestbook')}" target="_blank">{lang(feedback)}</a></td>
+            <td width="25"> </td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+<table width="931" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td width="16"><img src="{$skin_path}/mb_4.gif" width="16" height="33" /></td>
+            <td background="{$skin_path}/mb_5.gif"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="baiwd12">
+              <tr>
+                <td align="center" valign="middle"><strong><a title="{lang(backhome)}" href="{$base_url}/" class="on">{lang(homepage)}</a></strong></td>		
+{loop categories_nav() $t}
+<td align="center" valign="middle"><img src="{$skin_path}/mb_7.gif" width="16" height="33" /></td>
+<td align="center" valign="middle"><strong><a title="{$t[catname]}" href="{$t[url]}"{if isset($topid) && $topid==$t[catid]} class="on"{/if}>{$t[catname]}</a></strong></td>
+{/loop}
+              </tr>
+            </table></td>
+            <td width="17"><img src="{$skin_path}/mb_6.gif" width="17" height="33" /></td>
+          </tr>
+        </table>
+
+		<div style="height:10px;overflow:hidden;"><table width="931" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td width="7"><img src="{$skin_path}/mb_8.gif" width="7" height="11" /></td>
+            <td background="{$skin_path}/mb_10.gif" height="11"> </td>
+            <td width="7"><img src="{$skin_path}/mb_9.gif" width="17" height="11" /></td>
+          </tr>
+        </table>
+</div>
+
+		<table width="931" border="0" align="center" cellpadding="0" cellspacing="0" align="center">
+  <tr>
+    <td><div style="width:930px;overflow:hidden;">
+{template 'system/slide.html'}
+</div>
+</td>
+  </tr>
+</table>
+<table width="931" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="10"> </td>
+  </tr>
+</table>

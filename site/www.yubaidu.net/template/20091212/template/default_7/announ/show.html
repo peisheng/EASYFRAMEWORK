@@ -1,0 +1,23 @@
+{template 'header.html'}
+<div id="c">
+<div id="left">
+{template 'left.html'}
+</div>
+
+<div id="right">
+{template 'position.html'}
+<div id="text">
+<h1 class="title">{$announ[title]}&nbsp;{$announ[adddate]}</h1>
+<div class="blank10"></div>
+
+<div class="contenttext">
+{$announ[content]}
+
+</div>
+<div class="blank10"></div>
+
+</div>
+</div>
+<div class="clear"></div>
+</div>
+{template 'footer.html'}

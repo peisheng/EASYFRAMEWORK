@@ -1,0 +1,34 @@
+<div id="footer" style="width:945px;clear:both;height:28px;margin:0px auto;background:url(./images/foot_bg.gif) bottom repeat-x;background-color:#3F4A52;text-align:left;font-size:11px;color:#949CA1;line-height:21px;">
+	<div style="width:500px;height:21px;float:left;padding-left:20px;">{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a> All Rights Reserved.
+	</div>
+	<div style="width:405px;height:21px;float:right;padding-right:20px;text-align:right;">
+		{tag_网站页底关于我们等说明}
+<a href="#">TOP</a>
+	</div>
+	<br /><br />
+		<a href="http://www.miibeian.gov.cn/" target="_blank">{get('site_icp')}</a>	
+&nbsp;&nbsp;{getcnzzcount()}
+
+<!-- 友情链接 -->
+{if $topid==0}<select name="website" onchange="javascript:window.open(this.options[this.selectedIndex].value)" style="float:right; margin-top:10px;">
+<option value="default">{lang('links')}</option>
+{loop friendlink('text',0,20) $flink}
+<option value="{$flink[url]}">{$flink[name]}</option>
+{/loop}
+</select>{/if}
+
+</div>
+</div>
+</div>
+
+{if $topid==0}<!-- 热门关键词 -->
+<div class="hot_keys" style="clear:both;margin:10px 0px;text-align:center;">{lang(hotkeys)}： {gethotsearch(10)}</div>{/if}
+
+<!-- 在线客服 -->
+{template 'system/servers.html'}
+<!-- 短信 -->
+{template 'system/sms.html'}
+
+{if get('lang_type')=='cn'}<script type="text/javascript" src="{$base_url}/js/tc.js"></script>{/if}
+</body>
+</html>

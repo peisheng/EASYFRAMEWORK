@@ -1,0 +1,49 @@
+{template 'header.html'}
+<div id="bd">
+    	<div class="bd_bg_left">
+        	<div class="bd_bg_right">
+            
+            	<div id="bd_leftg">
+                	{template 'left.html'}
+                        
+
+                </div>
+                <div id="bd_rightg">
+                	<div class="right_content">
+                    	<div class="titleg">
+<div class="dh_wd"><a title="{get('sitename')}" href="{$base_url}">{get('sitename')}</a> >> {type::getpositionhtml($type['typeid'])}</div>
+</div>
+                        <div class="content">
+
+                            <div class="content_content">
+
+                       <div class="pd">
+		<ul class="news_list">
+{loop $archives $i $archive}
+			<li><span class="date">{$archive[adddate]}</span><a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}">{$archive[title]}</a></li>
+			{/loop}
+		</ul>
+		<div class="blank10"></div>
+		{if isset($pages)}
+		{type_pagination($typeid)}
+		{/if}
+					   <div class="blank30"></div>
+		<a title="返回顶部" href="#" class="clear floatright"><img alt="返回顶部" src="{$skin_url}/gotop.gif"></a>
+	<div class="clear"></div>
+					   </div>
+
+                        </div>
+               	  </div>
+                </div>
+                <div class="clear"></div>
+                <div class="bd_bgb">
+                    <div class="bd_bgb_left">
+                    <div class="bd_bgb_right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+<div class="clear"></div>
+    </div>
+{template 'footer.html'}

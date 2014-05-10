@@ -1,0 +1,53 @@
+<div id="bd_left">
+<!--左侧栏目导航开始-->
+
+<div class="left_box1" id="menu">
+            	<div class="box1_title">
+                <div class="box1_title_l"><img src="{$skin_path}/fdc_7.gif" /></div>
+                <div class="box1_title_c"><span><img src="{$skin_path}/fdc_9.gif" /></span><a href="javascript:void(0)" class="home" id="listnav" onclick="displayblock(labelarr)">　{lang(quicknav)}　</a><span><img src="{$skin_path}/fdc_10.gif" /></span></div>
+                </div>
+                <div class="box1_content">
+                  <ul class="ul2">
+<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+<li><a title="{$t[catname]}" href="{$t[url]}"{if isset($topid) && $topid==$t[catid]} class="on"{/if}>{$t[catname]}</a></li>
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on{/if}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+</ul>
+</div>
+
+</div>
+
+
+        	<div class="left_box1">
+            	<div class="box1_title">
+                <div class="box1_title_l"><img src="{$skin_path}/fdc_7.gif" /></div>
+                <div class="box1_title_c"><span><img src="{$skin_path}/fdc_9.gif" /></span>　相关内容　<span><img src="{$skin_path}/fdc_10.gif" /></span></div>
+                </div>
+                <div class="box1_content">
+                  <ul class="ul2">
+		{loop archive($catid,0,0,'0,0,0',13,'aid',5,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+            </ul>
+              </div>
+            </div>
+            
+            <div class="left_box2">
+           	  <div class="input_box">
+			  <form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+ <div class="input_boxl">
+			  <input type="text"  name="keyword" class="sinput" value="请输入关键字！"  style="width:140px;height:18px;line-height:18px;border:1px solid #ccc;font-size:12px;padding-left:5px;color:#ccc;" />
+              </div>
+              <div class="input_img"><input  name='submit' type="image" src="{$skin_path}/fdc_12.gif" /></div>
+			  </form>
+              </div>
+           	  
+            </div>
+        </div>

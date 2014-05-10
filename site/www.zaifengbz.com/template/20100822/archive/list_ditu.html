@@ -1,0 +1,53 @@
+{template 'header.html'}
+ <div id="bd">
+    	<div class="bd_up">
+        	<div class="bd_up_left">
+            	{template 'left.html'}
+            
+        </div>
+      <div id="bd_right">     
+        <div class="box">
+            	{template 'position.html'}
+                <div class="content">
+                	<div class="pd_title">{$category[$catid][catname]}</div>
+                       <div class="pd">
+
+<!-- 内容 -->
+{$category[$catid][categorycontent]}
+
+<div class="blank30"></div>
+
+{template 'ditu.html'}
+
+ <div class="blank30"></div>
+<a title="{lang(gotop)}" href="#" class="clear floatright"><img alt="{lang(gotop)}" src="{$skin_url}/gotop.gif"></a>
+<div class="blank30"></div>
+					   </div>
+            
+<div class="clear"></div>        
+                </div>
+            </div>
+        
+      </div>
+      <div class="clear"></div>
+    </div>
+
+<script> 
+function resizeImg(obj)
+{ 
+var obj = document.getElementById(obj); 
+var objContent = obj.innerHTML;
+var imgs = obj.getElementsByTagName('img'); 
+if(imgs==null) return; 
+for(var i=0; i<imgs.length; i++) 
+{ 
+if(imgs[i].width>parseInt(obj.style.width)) 
+{ 
+imgs[i].width = parseInt(obj.style.width);
+} 
+} 
+} 
+window.onload = function() {resizeImg('content');
+} 
+</script>
+{template 'footer.html'}

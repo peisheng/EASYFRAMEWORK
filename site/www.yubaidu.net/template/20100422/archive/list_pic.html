@@ -1,0 +1,34 @@
+{template 'header.html'}
+<div class="box line_4">
+{template 'left.html'}
+<!--left_1 end-->
+
+<div class="right_2">
+  <img src="{$skin_url}/hb_9.gif" style="float:left;padding:2px -3px 0px 5px;"/><h3>{$category[$catid][catname]}</h3>
+{template 'position.html'}
+ <div class="r-line"></div>
+<div class="blank30"></div>
+<!-- 内容缩略图列表 -->
+<ul id="list-view">
+{loop $archives $i $archive}
+{if $i%4==0}<div class="clear blank5"></div>{else}{/if}
+<li><div class="img-wrap"><a title="{$archive['stitle']}" target="_blank" href="{$archive['url']}"><img alt="{$archive['stitle']}" src="{$archive['sthumb']}" onerror='this.src="{$base_url}/{config::get('onerror_pic')}"' /></a></div>
+<h5><a title="{$archive['stitle']}" target="_blank" href="{$archive['url']}">{$archive['title']}</a></h5>{if $archive['attr2']}{lang(price)}	:	<span>{$archive['attr2']}</span>{lang(unit)}{/if}
+</li>
+{/loop}
+</ul>
+<!-- 内容缩略图列表结束 -->
+		
+		<div class="clear"></div>
+		<div class="blank10"></div>
+		{if isset($pages)}
+		{category_pagination($catid)}
+		{/if}
+		<div class="blank30"></div>
+		<a title="{lang(gotop)}" href="#" class="clear floatright"><img alt="{lang(gotop)}" src="{$skin_url}/gotop.gif"></a>
+	<div class="clear"></div>
+
+</div>
+
+<!--box end-->
+{template 'footer.html'}

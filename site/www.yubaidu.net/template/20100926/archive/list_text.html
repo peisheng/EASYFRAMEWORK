@@ -1,0 +1,37 @@
+{template 'header.html'}
+<div id="bd">
+      <div id="bd_right">
+        <div class="bd_right_gg">
+        <div class="box2">
+		{template 'position.html'}
+                <div class="content3">
+                       <div class="pd">
+<!-- 内容_内容简介列表 -->
+{loop $archives $i $archive}
+		<div class="news_text">
+			<h5><span class=date>{$archive[adddate]}</span><a title="{$archive[stitle]}" href="{$archive[url]}">{$archive[title]}</a>{if $archive[attr2]}&nbsp;&nbsp;<a title="{lang(makeorders)}" target="_blank" href="{url('archive/orders/aid/'.$archive[aid],true)}" class="orders">{lang(makeorders)}</a>{/if}</h5>
+			<p>{cut(strip_tags($archive['introduce']),100)}…<a title="{$archive[stitle]}" href="{$archive[url]}">[{lang(more)}]</a><p>
+			<div class="clear"></div>
+		</div>
+		{/loop}
+<div class="blank30"></div>
+<!-- 内容列表分页 -->
+{if isset($pages)}
+{category_pagination($catid)}
+{/if}
+
+</div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+	  <div id="bd_left">
+        	{template 'left.html'}
+        </div>
+
+      <div class="clear"></div>
+    </div>
+
+
+{template 'footer.html'}

@@ -1,0 +1,66 @@
+{template 'header.html'}
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="4" background="{$skin_path}/middle_bg1.jpg"> </td>
+    <td valign="top">
+	{template 'left.html'}
+	</td>
+        <td width="724" valign="top">{template 'position.html'}
+		</td>
+          </tr>
+
+                    <tr>
+                      <td height="28"></td>
+                    </tr>          <tr>
+            <td><img src="{$skin_path}/t.gif" width="1" height="6" /></td>
+          </tr>
+          <tr>
+            <td align="right" style="font-size:11px; color:#BCBCBC;"></td>
+          </tr>
+          <tr>
+            <td height="16"> </td>
+          </tr>
+          <tr>
+            <td class="newsCon">
+
+
+<!-- 内容列表开始 -->
+{loop $archives $i $archive}
+<div class="news_text_pic">
+<div class="list_text_pic"><div class="img-wrap"><a title="{$archive['stitle']}" target="_blank" href="{$archive['url']}">{if $archive['thumb']}<img alt="{$archive['stitle']}" src="{$archive['sthumb']}" />{else}<img src="{$base_url}/{config::get('onerror_pic')}" />{/if}</a></div></div>
+<h5><span class="date">{$archive[adddate]}</span><a title="{$archive[stitle]}" href="{$archive[url]}">{$archive[title]}</a></h5>
+<p>{lang(view)}：{view_js($archive[aid])}</p>
+<p>{lang(strgrade)}：{$archive[strgrade]}</p>
+<p>{lang(nowdownload)}：{if $archive['attachment_id']}{attachment_js($archive['aid'])}{else}{lang(NoDownload)}{/if}</p>
+
+<div class="clear"></div>
+</div>
+{/loop}
+<!-- 内容列表结束 -->
+
+<div class="blank30"></div>
+
+<!-- 内容列表分页开始 -->
+{if isset($pages)}
+{category_pagination($catid)}
+{/if}
+<!-- 内容列表分页开始 -->
+
+</td>
+          </tr>
+          <tr>
+            <td height="16" style="border-bottom:1px dotted #E6E6E6;"> </td>
+          </tr>
+
+        </table></td>
+      </tr>      
+    </table></td>
+    <td width="4" background="{$skin_path}/middle_bg2.jpg"> </td>
+  </tr>
+</table>
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="948"><img src="{$skin_path}/btm_bg.jpg" width="948" height="7" /></td>
+  </tr>
+</table>
+{template 'footer.html'}

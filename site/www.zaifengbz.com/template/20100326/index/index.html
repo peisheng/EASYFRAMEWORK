@@ -1,0 +1,37 @@
+{template 'header.html'}
+<div id="bd">
+        	<div id="bd_left">
+            	<div class="title"><span class="more"><?php $t=position_p($typeid=2);?>
+<a href="{$t.url}">+MORE</a></span></div>
+                <div class="content">
+                	<ul class="ul2">
+{loop archive(2,0,0,'0,0,0',16,'aid',5,false,0) $i $archive} 
+<li><span class="date">{=sdate($archive[adddate],'Y-m')}</span><a href="{$archive[url]}">{$archive[title]}</a></li>
+{/loop}
+					</ul>
+                </div>
+            </div>
+            <div id="bd_center">
+            	<div class="title1"><span class="more"><?php $t=position_p($typeid=3);?>
+<a href="{$t.url}">+MORE</a></span></div>
+                <div class="content">
+ {loop archive(3,0,0,'0,0,0',14,'aid',1,true,0) $i $archive}
+<div class="pro"><a href="{$archive[url]}"><img src="{$archive[sthumb]}" alt="{$archive[stitle]}" width="104" height="97" /></a></div>
+                    <div class="p"><strong>商品名称：</strong><a href="{$archive[url]}">{$archive[title]}</a><br />
+                      <strong>特点：</strong>{cut(strip_tags($archive['content']),45)}<span class="gengduo"><a href="{$archive[url]}"><img src="{$skin_path}/gd_16.gif" border="0" /></a></span></div>
+{/loop}
+                </div>
+            </div>
+            <div id="bd_right">
+            	<div class="title2"></div>
+                <div class="content">
+                	<div class="prog"><img src="{$skin_path}/gd_21.gif" /></div>
+                    <div class="p"><strong>电话：</strong>{get(tel)}<br /> 
+                      <strong>传真：</strong>{get(fax)}<br /> 
+                      <strong>邮箱：</strong>{get(email)}<br /> 
+                      <strong>客服：</strong>{get(qq1)}</div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+{template 'footer.html'}

@@ -1,0 +1,65 @@
+<div class="box1">
+           	  <div class="title1">
+                <div class="title1_right"><img src="{$skin_path}/dz_13.gif" /></div>
+                    <div class="title1_wd">{lang(siteannoun)}</div>
+                    </div>
+           	  <div class="content">
+                	<ul class="ul2g">
+                    {loop announ(5) $an}
+	<li><a href="{$an[url]}" title="{$an[title]}">{$an[title]}</a></li>
+	{/loop}
+                    </ul>
+              </div>
+            </div>
+
+<div class="box1">
+
+					<div class="title1">
+                <div class="title1_right"><img src="{$skin_path}/dz_13.gif" /></div>
+                    <div class="title1_wd">{lang(vieworders)}</div>
+                    </div>
+           	  <div class="content">
+                	<div class="p">
+
+<input size="20" id="oid" class="oid" name="oid" type="text" align="absmiple"value=" {lang(orderid)}… " onfocus="if(this.value==' {lang(orderid)}… ') {this.value=''}" onblur="if(this.value=='') this.value=' {lang(orderid)}… '" /> 
+<input type="submit" id="search_btn" align="absmiple" name='submit' value=" {lang(look)} " onclick="javascript:window.location.href='<?php echo url('archive/orders');?>&oid='+document.getElementById('oid').value;" class="oidbtn" />
+
+</div>
+              </div>
+            </div>
+
+<div class="box1">
+           	  <div class="title1">
+                <div class="title1_right"><img src="{$skin_path}/dz_13.gif" /></div>
+                    <div class="title1_wd">{lang(categorylist)}</div>
+                    </div>
+           	  <div class="content">
+                	<ul class="ul2g">
+                    <!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+{if $t[catid]==$__pid}
+{loop category::listcategorydata($__pid) $type}
+<li><a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on{/if}">{$type[catname]}</a></li>
+{/loop}
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+                    </ul>
+              </div>
+            </div>
+            
+            <div class="box1">
+           	  <div class="title1g">
+                <div class="title1g_right"><img src="{$skin_path}/dz_13g.gif" /></div>
+                    <div class="title1g_wd">{lang(contactus)}</div>
+                    </div>
+           	  <div class="content">
+                	<div class="p">
+						  <strong>{lang(address)}：</strong>{get(address)}<br /> 
+						  <strong>{lang(tel)}：</strong>{get(tel)}<br /> 
+						  <strong>{lang(fax)}：</strong>{get(fax)}<br /> 
+						  <strong>{lang(email)}：</strong>{get(email)}
+						  </div>
+              </div>
+            </div>

@@ -1,0 +1,41 @@
+{template 'header.html'}
+<div id="bd2j">
+      <div id="bd_box">
+          <div id="bd_leftg">
+			{template 'left.html'}
+			<div>
+			<img src="{$skin_path}/hy_11.gif" width="250" height="62" /></div>
+          </div>
+        <div id="bd_rightg">
+          	{template 'position.html'}
+            <div class="pd_title">{$announ[title]}</div>
+                       <div class="pd">
+					   <div id="content" style="width:620px;">
+					   {$announ[content]}
+					   </div>
+					   </div>
+        </div>
+          <div class="clear"></div>
+    </div>
+	<script> 
+function resizeImg(obj)
+{ 
+var obj = document.getElementById(obj); 
+var objContent = obj.innerHTML;
+var imgs = obj.getElementsByTagName('img'); 
+if(imgs==null) return; 
+for(var i=0; i<imgs.length; i++) 
+{ 
+if(imgs[i].width>parseInt(obj.style.width)) 
+{ 
+imgs[i].width = parseInt(obj.style.width);
+} 
+} 
+} 
+window.onload = function() {resizeImg('textDiv');
+} 
+</script>
+<div class="clear"></div>
+</div>
+<!--box end-->
+{template 'footer.html'}

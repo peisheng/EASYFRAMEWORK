@@ -1,0 +1,37 @@
+<div class="box1">
+            	<div class="title"><div class="title_wd"><?php $t=position_p($catid=2);?><h2><a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></h2><span class="title_more1"><a href="{$t.url}" title="{$t['name']}">{lang(more)}</a></span><?php?></div>
+            	</div>
+                <div class="content">
+                    <ul class="ul2">
+                    {loop archive(2,0,0,'0,0,0',16,'aid',6,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="box1">
+            	<div class="title"><div class="title_wd"><?php $t=position_p($catid=3);?><h2><a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></h2><span class="title_more1"><a href="{$t.url}" title="{$t['name']}">{lang(more)}</a></span><?php?></div>
+            	</div>
+                <div class="content">
+                	<ul class="ul2">
+                   {loop categories(3) $t1}
+ <li><a href="{$t1[url]}" title="{$t1[catname]}">{$t1[catname]}</a></li>
+{/loop}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="box1">
+            	<div class="title2"><div class="title2_wd">{lang(contactus)}</div></div>
+                <div class="content">
+                	<ul class="ul2g">
+<li><strong>{lang(address)}：</strong></li>
+<li>{get(address)}</li>
+<li><strong>{lang(tel)}：</strong>{get(tel)}</li>
+<li><strong>{lang(fax)}：</strong>{get(fax)}</li> 
+<li><strong>{lang(email)}：</strong>{get(email)}</li> 
+                    </ul>
+                </div>
+            </div>

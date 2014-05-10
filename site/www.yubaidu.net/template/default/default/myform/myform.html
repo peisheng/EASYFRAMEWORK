@@ -1,0 +1,79 @@
+{template 'header.html'}
+<script type="text/javascript" src="{$base_url}/common/js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="{$base_url}/common/js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="{$base_url}/common/js/ThumbAjaxFileUpload.js"></script>
+
+<link rel="stylesheet" href="{$base_url}/common/js/jquery/ui/ui.datepicker.css" type="text/css" media="screen" title="core css file" charset="utf-8" />
+<script language="javascript" src="{$base_url}/common/js/jquery/ui/ui.datepicker.js"></script>
+<script type="text/javascript" src="{$base_url}/common/js/common.js"></script>
+<script type="text/javascript">
+function checkform() {	
+	{loop $field $f}
+	<?php $name=$f['name']; ?>
+	if(!document.form1.{$f[name]}.value){
+		alert("请填写{$name|lang}");
+		document.form1.{$f[name]}.focus();
+		return false;
+	}
+	{/loop}
+	return true;
+}
+</script>
+<form method="post" action="" name="form1" onsubmit="return checkform();">
+	<div class="outerBox_t">
+        	<div class="outerBox_b">
+                <div class="topBar">
+                	<strong>{=setting::$var[$manage]['myform']['cname']}</strong><br />
+                    温馨提示：为了您得到更好的服务（到期提醒、质量检验、优惠活动通知、发票邮寄等），<br />
+                    标有“*”的信息为必填，请务必填写真实有效的信息（姓名、证件号、电话等）。
+                    <div class="clear"></div>
+                </div>
+                <div class="iBox">
+                	<div class="regBox">
+                    	<div class="t">
+                        	<div class="b">
+                            	<h6>账号密码</h6>
+                            	<ul>
+								{loop $field $f}
+                <?php
+  $name=$f['name'];
+                if($name==$primary_key) continue; ?>
+                                	<li>
+                                    	<div class="tle"><font color="#FF0000">*</font>{$name|lang}：</div>
+                                        <div class="ipt"> {form::getform($name,@$form,$field,@$data)}</div>
+                                        <div id="div_name" class="inf"></div>	
+                                    </li>
+                                	
+                {/loop}
+<?php if(config::get('verifycode')){ ?>
+<li>
+                                    	<div class="tle"><font color="#FF0000">*</font>{lang(verifycode)}</div>
+                                        <div class="ipt"><input type='text' id="verify"  tabindex="3"  name="verify" class="input" style="width:100px;" />&nbsp;{verify()}</div>
+                                        <div id="div_name" class="inf"></div>	
+                                    </li>
+<?php  } ?>
+
+	                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+
+					
+
+					<div class="air"></div>
+                    <input type="submit" name="submit" value="{lang(submit)}" />
+                    <div class="air"></div>
+                    <div class="wrd">
+                        <h6>注册用户的好处</h6>
+                        <ul>
+                            <li>1.拥有各项查询功能，如查询您申请的所有域名或空间，查询支持情况等</li>
+                            <li>2.拥有各项管理功能，您可以通过该会员来实时管理您的域名或空间等服务</li>
+                            <li>3.可以通过登录本系统获得本站最新优惠资讯，以最优惠的价格享受同等服务</li>
+                            <li>4.可以接受到本站发出的最新通知，如公告，变更等。 </li>
+                        </ul>
+                    </div>
+
+{/form}
+
+{template 'footer.html'}

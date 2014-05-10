@@ -1,0 +1,31 @@
+{template 'header.html'}
+<div class="box line_4">
+{template 'left.html'}
+<!--left_1 end-->
+
+<div class="right_2">
+<img src="{$skin_url}/hb_9.gif" style="float:left;padding:2px -3px 0px 5px;"/><h3>{$category[$catid][catname]}</h3>
+{template 'position.html'}
+<div class="r-line"></div>
+		{loop type($typeid) $i $t}
+		<div class="category_title">
+			<span><a title="{$type[typename]}" href="{typeurl($t[typeid])}">更多</a></span><a title="{$type[typename]}" href="{typeurl($t[typeid])}"><h4>{$t[typename]}</h4></a>
+		</div>
+		{loop article($t[typeid],20,'aid',8,true,'') $i $archive}
+			<div class="product_box">
+			<a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}"><img alt="{$archive[stitle]}" src="{$archive['sthumb']}" /></a>
+			<h5><a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}">{$archive[title]}</a></h5>
+		</div>
+			{/loop}
+		
+		{/loop}
+
+<div class="blank30"></div>
+		<a title="{lang(gotop)}" href="#" class="clear floatright"><img alt="{lang(gotop)}" src="{$skin_url}/gotop.gif"></a>
+
+<div class="clear"></div>
+</div>
+<div class="clear"></div>
+</div>
+<!--box end-->
+{template 'footer.html'}

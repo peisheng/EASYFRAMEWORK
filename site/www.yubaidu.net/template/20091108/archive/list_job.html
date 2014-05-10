@@ -1,0 +1,67 @@
+{template 'header.html'}
+<div id="mid">
+ {template 'left.html'}
+  <table width="628" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-left:22px;">
+    <tr>
+      <td>
+{template 'position.html'}
+</td>
+    </tr>
+    <tr>
+      <td height="16">&nbsp;</td>
+    </tr>
+    <tr>
+      <td>
+			
+            <table width="628" border="1" cellpadding="7" cellspacing="0" bordercolor="#EDEDED" style="margin-bottom:20px;">
+              <tr>
+                <td bgcolor="#EDEDED"><img src="{$skin_path}/arr3.gif" width="10" height="8" align="absmiddle" style="margin-right:6px;" /><font color="#CC0000"><strong>{$category[$catid][catname]}</strong></font> --- List</td>
+              </tr>
+              <tr>
+                <td>
+                
+               <div style="padding:10px 25px">
+	
+			<div class="NewsContent" >
+
+<!-- 内容列表开始 -->
+<table id="talbe" width="100%" border="1" align="center" cellpadding="8" cellspacing="0" bordercolor="#CCCCCC"> 
+<tr> 
+<td width="44" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('no.')}</strong></td> 
+<td width="184" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('RecruitmentPost')}</strong></td> 
+<td width="199" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('RecruitingDepartment')}</strong></td> 
+<td width="84" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('ReleaseTime')}</strong></td> 
+<td width="101" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('intro')}</strong></td> 
+</tr> 
+{loop $archives $i $archive}
+<tr> 
+<td height="20" align="center" style="color:#999999; font-size:11px;">{=$i+1}</td> 
+<td height="20" align="center"><a title="{$archive['stitle']}" target="_blank" href="{$archive['url']}">{$archive['title']}</a></td> 
+<td height="20" align="center">{$archive['my_zhaopinbumen']}</td> 
+<td height="20" align="center" style="color:#999999; font-size:11px;"><span style="color:#999999">{$archive['adddate']}</span></td> 
+<td height="20" align="center"><a title="{$archive['stitle']}" target="_blank" href="{$archive['url']}"><img src="{$skin_path}/images/btn_jobs.gif" alt="{lang('more')}" width="80" height="21" border="0" /></a></td> 
+</tr> 
+{/loop}
+</table>
+<!-- 内容列表结束 -->
+
+<div class="blank30"></div>
+
+<!-- 列表分页开始 -->
+{if isset($pages)}
+{category_pagination($catid)}
+{/if}
+<!-- 列表分页结束 -->
+
+</div>
+		</div>
+                </td>
+              </tr>
+            </table>
+            
+      </td>
+    </tr>
+  </table>
+  <div style="clear:both; height:1px; font-size:1px;">&nbsp;</div>
+</div>
+{template 'footer.html'}

@@ -1,0 +1,96 @@
+{template 'header.html'}
+<script type="text/javascript" src="{$skin_path}/js/jquery-1.3.2.min.js"></script>
+	<div class="sidebar">
+<div class="title_red">
+	<strong><?php $t=position_p($catid=2);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></strong><span> - News</span>
+</div>
+<div class="blank5"></div>
+<ul class="padding10 news">
+	<!-- {loop archive(2,0,0,'0,0,0',15,'aid',5,false,0) $i $archive}  -->
+	<li><strong>"</strong> <a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+	<!-- {/loop} -->
+</ul>
+<div class="blank10"></div>
+<div class="title_gray">
+	<h5><strong>{lang(contactus)}</strong><span> - Contact</span></h5>
+</div>
+<div class="blank5"></div>
+<ul class="padding5">
+	<li><strong>{lang(address)}：</strong>{get('address')}</li>
+	<li><strong>{lang(tel)}：</strong>{get('tel')}</li>
+	<li><strong>{lang(fax)}：</strong>{get('fax')}</li>
+	<li><strong>{lang(email)}：</strong>{get('email')}</li>
+</ul>
+	</div>
+	<!--  -->
+	<div class="middle">
+<div id="announce" style="width:468px;height:20px;line-height:20px;overflow:hidden;">
+	{loop announ(5) $an}
+	<p><a href="{$an[url]}" title="{$an[title]}">{$an[title]}</a> [{$an[adddate]}]</p>
+	{/loop}
+</div>
+
+<div class="blank10"></div>
+<div class="title_gray">
+	<h5><strong><?php $t=position_p($catid=1);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></strong><span> - About </span></h5>
+</div>
+<div class="about">
+	<img src="{$skin_path}/about.jpg" style="float:left;width:100px;margin:0px 10px 10px 0px;" />
+	<p style="float:right;width:340px;height:76px;padding:10px;margin:text-indent:20px;background:#F5F5F5;overflow:auto;">{tag_公司简介}</p>
+</div>
+<div class="blank5"></div>
+<div class="title">
+	<strong><?php $t=position_p($catid=3);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></strong><span> - Products List</span><img src="{$skin_path}/more.gif" />
+</div>
+
+<div class="blank5"></div>
+
+<!-- 滚动图片开始 -->
+<script type="text/javascript" src="{$skin_path}/js/jquery.bxSlider.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+<!--用于滚动图片-->
+    if($('#scroll a').length > 0){
+	$('#scroll').bxSlider({
+		auto: true,
+		displaySlideQty:3,
+		prevText: '',
+		nextText: '',
+		moveSideQty: 1
+	});
+	}
+});
+</script>
+
+<div class="scroll">
+<ul id="scroll" class="list-view">
+{tag_首页滚动图片}
+</ul>
+</div>
+<!-- 滚动图片结束 -->
+
+
+	</div>
+	<div class="i_news">
+<div class="title_black">
+	<strong>{lang(userlogin)}</strong><span> - Login</span>
+</div>
+
+<div id="login">
+	 {login_js()}
+ </div>
+<div class="blank10"></div>
+<div class="title_gray">
+	<h5><strong>{lang(vote)}</strong><span> - Vote</span></h5>
+</div>
+<div class="blank5"></div>
+	{ballot(1)}
+</div>
+	<div class="blank10"></div>
+	{template 'footer.html'}

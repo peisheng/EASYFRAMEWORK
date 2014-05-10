@@ -1,0 +1,76 @@
+{template 'header.html'}
+<div id="bd"><!--bd部开始-->
+    	<div id="bd_left">
+        	{template 'left.html'}
+        </div>
+        <div id="bd_right">
+        	<div class="bd_right_L1">
+            	<div class="title1">
+				<?php $t=position_p($typeid=1);?>
+				<div class="title1_t"><a href="{$t.url}">{$t['name']}</a></div><div class="more"><a href="{$t.url}">MORE>></a></div><?php?>
+            	</div>
+            	<div class="bd_right_L1n">
+                	<div class="p1">　　{tag_公司简介}……</div>
+                </div>
+            </div>
+            <div class="bd_right_r">
+			<?php $t=position_p($typeid=1);?>
+            	<div class="title2"><div class="title2_t"><a href="{$t.url}">+ 查看更多 >></a></div></div><?php?>
+            	<div class="bd_right_rn">
+                	<ul class="ul2">
+					{loop archive(2,0,0,'0,0,0',16,'aid',6,false,0) $i $archive} 
+<li><span class="date">{$archive[adddate]}</span><a href="{$archive[url]}" title="{$archive[stitle]}">· {$archive[title]}</a></li>
+{/loop}
+                	</ul>
+					
+                </div>
+            </div>
+			<div class="blank10"></div>
+            <div class="bd_right_L2">
+            	<div class="title3"><div class="title3_t">产品展示</div><div class="more"><a href="#">MORE>></a></div>
+            	</div>
+            	<div class="bd_right_L2n">
+				<div style="padding:0px 15px;">
+
+<div id="jsweb8_cn_left" style="overflow:hidden;width:702px;height:190px;"> 
+<div id="jsweb8_cn_left1" valign="top" align="center" style="width:800%;">  
+{loop archive(3,0,0,'0,0,0',16,'aid',18,true,0) $i $archive} 
+<div class="product">
+<div class="product_pic"> <a href="{$archive[url]}" title="{$archive[stitle]}"><img src="{$archive[sthumb]}" alt="{$archive[stitle]}" /></a></div>
+<div class="product_font"><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></div>
+</div>
+{/loop}
+</div> 
+<div id="jsweb8_cn_left2" valign="top"></div> 
+
+</div> 
+<script> 
+var speed=50//速度数值越大速度越慢 
+jsweb8_cn_left2.innerHTML=jsweb8_cn_left1.innerHTML 
+function Marquee3()
+{ 
+if(jsweb8_cn_left2.offsetWidth-jsweb8_cn_left.scrollLeft<=0) 
+jsweb8_cn_left.scrollLeft-=jsweb8_cn_left1.offsetWidth 
+else{ 
+jsweb8_cn_left.scrollLeft++ 
+} 
+} 
+var MyMar3=setInterval(Marquee3,speed) 
+jsweb8_cn_left.onmouseover=function() 
+{
+clearInterval(MyMar3)
+} 
+jsweb8_cn_left.onmouseout=function() 
+{
+MyMar3=setInterval(Marquee3,speed)
+} 
+</script> 
+
+					<div class="clear"></div>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div><!--bd部结束-->
+    <div class="blank10"></div>
+{template 'footer.html'}

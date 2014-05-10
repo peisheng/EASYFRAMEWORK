@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{=setting::$var[$manage]['myform']['cname']}</title>
+<meta name="keywords" content="{if $archive[keyword]}{$archive[keyword]}{else}{if $type[keyword]}{$type[keyword]}{elseif $category[$catid][keyword]}{$category[$catid][keyword]}{else}{get('site_keyword')}{/if}{/if}" />
+<meta name="description" content="{if $archive[description]}{$archive[description]}{else}{if $type[description]}{$type[description]}{elseif $category[$catid][description]}{$category[$catid][description]}{else}{get('site_description')}{/if}{/if}" />
+<meta name="author" content="CmsEasy Team" />
+<link rel="icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link href="/c2/template/admin/skin/admin.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+body {font-size:12px;}
+td.td_left,td.td_right {padding:3px 15px;}
+td.td_left {text-align:right;width:20%;}
+.back {
+  display:block;
+  width:72px;
+  height:21px;
+  line-height:20px;
+  padding-left:10px;
+  background:url({$skin_path}/images/back.gif) left top no-repeat;
+  text-align:center;
+  color:white;
+  font-size:12px;
+  text-decoration: none;
+  border:none;
+}
+.title h1 {
+  line-height:40px;
+  padding-top:20px;
+  font-size:22px;
+  text-align:center;
+  background:url({$skin_path}/images/point.gif) left bottom repeat-x;
+  color:#333;
+  font-weight:normal;
+  font-family:'微软雅黑';
+}
+.back a,.back a:hover {text-decoration: none;color:white;}
+.f a {color:#ccc;text-decoration: none;}
+
+.blank30 {clear:both;height:30px;}
+.blank10 {clear:both;height:10px;}
+.box {clear:both; width:699px;margin:0px auto;padding:0px auto;overflow:hidden;}
+.c_top {
+  clear:both;
+  height:10px;
+  background:url({$skin_path}/images/c_top.gif) -280px top no-repeat;
+}
+
+.c_bg {
+  background:url({$skin_path}/images/c_bg.gif) left top repeat-y;
+}
+
+.c_bottom {
+  clear:both;
+  height:10px;
+  background:url({$skin_path}/images/c_bottom.gif) left top no-repeat;
+}
+
+textarea {margin:5px 0px;}
+
+</style>
+</head>
+<body>
+
+<!-- 中部开始 -->
+<div class="clear box c_bg">
+<div class="c_top"></div>
+<div style="padding:0px 20px;">
+<!-- 内容标题 -->
+<div class="title"><h1>{=setting::$var[$manage]['myform']['cname']}</h1></div>
+<div id="content" class="clear">
+
+<script type="text/javascript" src="{$base_url}/js/jquery.min.js"></script>
+<script type="text/javascript" src="{$base_url}/common/js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="{$base_url}/common/js/ThumbAjaxFileUpload.js"></script>
+
+<link rel="stylesheet" href="{$base_url}/common/js/jquery/ui/ui.datepicker.css" type="text/css" media="screen" title="core css file" charset="utf-8" />
+<script language="javascript" src="{$base_url}/common/js/jquery/ui/ui.datepicker.js"></script>
+<script type="text/javascript" src="{$base_url}/js/common.js"></script>
+<script type="text/javascript" src="{$base_url}/common/swfupload/swfupload.js"></script>
+    <script type="text/javascript" src="{$base_url}/common/swfupload/swfupload.queue.js"></script>
+    <script type="text/javascript" src="{$base_url}/common/swfupload/fileprogress.js"></script>
+    <script type="text/javascript" src="{$base_url}/common/swfupload/handlers.js"></script>
+<script type="text/javascript">
+function checkform() {	
+	{loop $field $f}
+	<?php $name=$f['name']; ?>
+	if(!document.form1.{$f[name]}.value){
+		alert("{lang('pinput')}{$name|lang}");
+		document.form1.{$f[name]}.focus();
+		return false;
+	}
+	{/loop}
+	return true;
+}
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var swfu;
+        var settings = {
+            flash_url : "{$base_url}/common/swfupload/swfupload.swf",
+            upload_url: "{url('tool/uploadimage/site/'.front::get('site'),false)}",
+            post_params: {"PHPSESSID" : "<?php echo session_id(); ?>"},
+            file_size_limit : "{ini_get('upload_max_filesize')}B",
+            file_types : "*.jpg;*.gif;*.png;*.bmp",
+            file_types_description : "图片", //All Files
+            file_upload_limit : 100,
+            file_queue_limit : 0,
+            custom_settings : {
+progressTarget : "fsUploadProgress",
+cancelButtonId : "btnCancel"
+            },
+            debug: false,
+
+            // Button settings
+            //button_image_url: "",
+            button_width: "141",
+            button_height: "41",
+            button_placeholder_id: "spanButtonPlaceHolder",
+            button_text: '<span class="theFont"></span>',
+            //button_text_style: ".theFont{clear:both;colro:#9999;font-size:12px;width:141px;height:41px;line-height:41px;}",
+            //button_text_left_padding: 7,
+            //button_text_top_padding: 5,
+            button_disabled : false,
+            button_window_mode: SWFUpload.WINDOW_MODE.TRANSPARENT,
+            button_cursor: SWFUpload.CURSOR.HAND,
+
+            // The event handler functions are defined in handlers.js
+            file_queued_handler : fileQueued,
+            file_queue_error_handler : fileQueueError,
+            file_dialog_complete_handler : fileDialogComplete,
+            upload_start_handler : uploadStart,
+            upload_progress_handler : uploadProgress,
+            upload_error_handler : uploadError,
+            upload_success_handler : uploadSuccess,
+            upload_complete_handler : uploadComplete,
+            queue_complete_handler : queueComplete	// Queue plugin event
+        };
+
+        swfu = new SWFUpload(settings);
+    });
+</script>
+
+
+
+
+<center><strong style="color:red;">{message()}</strong></center>
+    <form method="post" action="" name="form1" onsubmit="return checkform();">
+
+        <table width="100%" border="1" align="center" cellpadding="8" cellspacing="0" bordercolor="#CCCCCC" style="border-collapse:collapse;" bgcolor="#F9F9F9">
+     
+                {loop $field $i $f}
+                <?php
+
+                $name=$f['name'];
+                if($f['type'] == 'mediumtext'){$contentname=$name;}
+                if($name==$primary_key) continue; ?>
+                <tr>
+                    <td class="td_left">{$name|lang}</td>
+                    <td class="td_right">
+                        {form::getform($name,@$form,$field,@$data)}
+                    </td>
+                </tr>
+                {/loop}
+<?php if(config::get('verifycode')){ ?>
+<tr onmouseover="this.bgColor='#F5F5F5';" onmouseout="this.bgColor='ffffff';" bgcolor="#ffffff">
+<td>{lang(verifycode)}</td>
+<td><input type='text' id="verify"  tabindex="3"  name="verify" class="input" style="width:100px;" />&nbsp;{verify()}</td>
+</tr>
+<?php  } ?>
+</table>
+
+<div class="blank30"></div>
+<div class="fieldset flash" id="fsUploadProgress">
+    <span class="legend"></span>
+</div>
+<div id="divStatus"></div>
+<input type="submit" name="submit" value="{lang(submit)}" class="back" />
+
+</form>
+
+
+
+
+
+<script>
+
+var isIE = (document.all) ? true : false;
+
+var isIE6 = isIE && ([/MSIE (\d)\.0/i.exec(navigator.userAgent)][0][1] == 6);
+
+var BoxObj = function (id) {
+	return "string" == typeof id ? document.getElementById(id) : id;
+};
+
+var Class = {
+	create: function() {
+		return function() { this.initialize.apply(this, arguments); }
+	}
+}
+
+var Extend = function(destination, source) {
+	for (var property in source) {
+		destination[property] = source[property];
+	}
+}
+
+var Bind = function(object, fun) {
+	return function() {
+		return fun.apply(object, arguments);
+	}
+}
+
+var Each = function(list, fun){
+	for (var i = 0, len = list.length; i < len; i++) { fun(list[i], i); }
+};
+
+var Contains = function(a, b){
+	return a.contains ? a != b && a.contains(b) : !!(a.compareDocumentPosition(b) & 16);
+}
+
+
+var OverLay = Class.create();
+OverLay.prototype = {
+  initialize: function(options) {
+
+	this.SetOptions(options);
+
+	this.Lay = BoxObj(this.options.Lay) || document.body.insertBefore(document.createElement("div"), document.body.childNodes[0]);
+
+	this.Color = this.options.Color;
+	this.Opacity = parseInt(this.options.Opacity);
+	this.zIndex = parseInt(this.options.zIndex);
+
+	with(this.Lay.style){ display = "none"; zIndex = this.zIndex; left = top = 0; position = "fixed"; width = height = "100%"; }
+
+	if(isIE6){
+		this.Lay.style.position = "absolute";
+		this._resize = Bind(this, function(){
+			this.Lay.style.width = Math.max(document.documentElement.scrollWidth, document.documentElement.clientWidth) + "px";
+			this.Lay.style.height = Math.max(document.documentElement.scrollHeight, document.documentElement.clientHeight) + "px";
+		});
+		this.Lay.innerHTML = '<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;filter:alpha(opacity=0);"></iframe>'
+	}
+  },
+  SetOptions: function(options) {
+    this.options = {
+		Lay:		null,
+		Color:		"#000",
+		Opacity:	50,
+		zIndex:		1000
+    };
+    Extend(this.options, options || {});
+  },
+  Show: function() {
+	if(isIE6){ this._resize(); window.attachEvent("onresize", this._resize); }
+
+	with(this.Lay.style){
+		isIE ? filter = "alpha(opacity:" + this.Opacity + ")" : opacity = this.Opacity / 100;
+		backgroundColor = this.Color; display = "block";
+	}
+  },
+  Close: function() {
+	this.Lay.style.display = "none";
+	if(isIE6){ window.detachEvent("onresize", this._resize); }
+  }
+};
+
+
+
+var LightBox = Class.create();
+LightBox.prototype = {
+  initialize: function(box, options) {
+
+	this.Box = BoxObj(box);
+
+	this.OverLay = new OverLay(options);
+
+	this.SetOptions(options);
+
+	this.Fixed = !!this.options.Fixed;
+	this.Over = !!this.options.Over;
+	this.Center = !!this.options.Center;
+	this.onShow = this.options.onShow;
+
+	this.Box.style.zIndex = this.OverLay.zIndex + 1;
+	this.Box.style.display = "none";
+
+
+	if(isIE6){
+		this._top = this._left = 0; this._select = [];
+		this._fixed = Bind(this, function(){ this.Center ? this.SetCenter() : this.SetFixed(); });
+	}
+  },
+  SetOptions: function(options) {
+    this.options = {
+		Over:	true,
+		Fixed:	true,
+		Center:	true,
+		onShow:	function(){}
+	};
+    Extend(this.options, options || {});
+  },
+  SetFixed: function(){
+	this.Box.style.top = document.documentElement.scrollTop - this._top + this.Box.offsetTop + "px";
+	this.Box.style.left = document.documentElement.scrollLeft - this._left + this.Box.offsetLeft + "px";
+
+	this._top = document.documentElement.scrollTop; this._left = document.documentElement.scrollLeft;
+  },
+  SetCenter: function(){
+	this.Box.style.marginTop = document.documentElement.scrollTop - this.Box.offsetHeight / 2 + "px";
+	this.Box.style.marginLeft = document.documentElement.scrollLeft - this.Box.offsetWidth / 2 + "px";
+  },
+  Show: function(options) {
+	  if('image' == options){ $("#d_idBoxSure").attr('alt','image');}
+	  if('undefined' == typeof(options)){ $("#d_idBoxSure").attr('alt','content');}
+	this.Box.style.position = this.Fixed && !isIE6 ? "fixed" : "absolute";
+
+	this.Over && this.OverLay.Show();
+
+	this.Box.style.display = "block";
+
+	if(this.Center){
+		this.Box.style.top = this.Box.style.left = "50%";
+		if(this.Fixed){
+			this.Box.style.marginTop = - this.Box.offsetHeight / 2 + "px";
+			this.Box.style.marginLeft = - this.Box.offsetWidth / 2 + "px";
+		}else{
+			this.SetCenter();
+		}
+	}
+
+	if(isIE6){
+		if(!this.Over){
+			this._select.length = 0;
+			Each(document.getElementsByTagName("select"), Bind(this, function(o){
+				if(!Contains(this.Box, o)){ o.style.visibility = "hidden"; this._select.push(o); }
+			}))
+		}
+		this.Center ? this.SetCenter() : this.Fixed && this.SetFixed();
+		this.Fixed && window.attachEvent("onscroll", this._fixed);
+	}
+
+	this.onShow();
+  },
+  Close: function() {
+	this.Box.style.display = "none";
+	this.OverLay.Close();
+	if(isIE6){
+		window.detachEvent("onscroll", this._fixed);
+		Each(this._select, function(o){ o.style.visibility = "visible"; });
+	}
+  }
+};
+
+</script>
+<div id="idBox" class="lightbox">
+<input name="" type="button" value="" id="idBoxCancel" />
+
+		<div class="box_nav">
+		   <a href="javascript:void(0)" class="box_nav_on">本地上传</a>
+		   <a href="javascript:void(0)" class="box_nav_out">图库选择</a>
+		   <a href="javascript:void(0)" class="box_nav_out">网络图片</a>
+		</div>
+		<div class="box_con">
+		   <div id="box_con_0" class="box_main">
+				<div style="width:141px;margin:0px auto;padding-top:135px;">
+				<span id="spanButtonPlaceHolder"></span>
+				<input id="btnCancel" type="button" value="取消" disabled="disabled" style="display:none;" />
+		</div>
+		    </div>
+		   <div id="box_con_1" class="box_main">
+		       <div style="margin-left:10px;">
+			      <span style="font-size:12px;color:#3e4558;">选择图库：</span>
+			      <select name="img_dir" id="image_select">
+				      <option value="default">请选择图库</option>
+                     {loop $image_dir $k $v}
+					  <option value="{$v}">{$v}</option>
+					  {/loop}
+			      </select>
+</div>
+			   <div id="image_show" class="image_show" style="clear:both; width:638px;height:230px;margin:10px;overflow:auto; overflow-x:hidden;">
+				</div>
+<div style="margin-left:10px;">
+			       <input type="button" alt="content" class="btn_e" value="确定" id="d_idBoxSure"/>
+				   <input type="button" class="btn_d" value="取消" id="d_idBoxCancel"/>
+				   </div>
+		   </div>
+		   <div id="box_con_2"  class="box_main">
+              <div style="margin:0px auto;width:300px;padding-top:65px;">
+			   请输入图片地址:
+			   <input type="text" name="network_image_url" id="network_image_url" value="" style="clear:both; width:285px;font-size:14px;margin:10px 0px;line-height:22px;height:22px;"/>
+			   <input type="button" name="net_idBoxSure" alt="content" class="btn_e" id="net_idBoxSure" value="添加"/>
+			   </div>
+		   </div>
+		</div>
+
+</div>
+<script>
+
+var box = new LightBox("idBox");
+
+BoxObj("idBoxCancel").onclick = function(){ box.Close(); }
+BoxObj("d_idBoxCancel").onclick = function(){ box.Close(); }
+$('#idBoxCancel').mouseover(function(){
+    $(this).css('opacity','0.5');
+}).mouseout(function(){
+    $(this).css('opacity','1');
+});
+$(".box_nav > a").click(function(){
+    $(".box_nav > a").each(function(){
+	    $(this).removeClass('box_nav_on');
+
+	});
+	$(this).addClass('box_nav_on');
+
+	$(".box_con > div").each(function(){
+	    $(this).css('display','none');
+	});
+	switch($(this).text()){
+	     case '本地上传':
+		    $("#box_con_0").css('display','block');break;
+		 case '图库选择':
+		    $("#box_con_1").css('display','block');break;
+	     case '网络图片':
+		    $("#box_con_2").css('display','block');break;
+	}
+});
+
+$("#image_select").change(function(){
+    if($(this).val() == 'default') return;
+    $("#image_show").load('index.php?case=table&act=add&table=archive&admin_dir=admin&site=default&ajax='+$(this).val());
+
+});
+
+function select_img(name){
+   var obj = $("#"+name);
+   var border = obj.css('border');
+   if(border == 0){
+      obj.css('border','2px solid red');
+   }else{
+      obj.css('border','');
+   }
+}
+$(".box_button").mouseover(function(){
+    $(this).css('background-color','#d9e7f5');
+}).mouseout(function(){
+    $(this).css('background-color','#F3F4F5');
+});
+$("#d_idBoxSure").click(function(){
+   $(".image_show > img").each(function(){
+       var border  = $(this).css('border');
+	   if(border != 0){
+	       var url = 'http://<?php echo $_SERVER['HTTP_HOST'].config::get('base_url');?>/'+$(this).attr("src");
+	       getEditor('{$contentname}').InsertHtml('<p><img src="'+url+'"/></p>');
+		   $(this).css('border','');
+	   }
+   });
+    box.Close();
+});
+$("#net_idBoxSure").click(function(){
+   var val = $("#network_image_url").val();
+   if(val.length < 4){
+       alert('这不是一个有效的链接');
+	   return false;
+   }
+   getEditor('{$contentname}').InsertHtml('<p><img src="'+val+'"/></p>');
+   box.Close();
+});
+</script>
+
+
+
+
+
+
+
+<div class="blank30"></div>
+<div class="clear"></div>
+</div>
+
+
+
+<div class="clear"></div>
+
+<!-- 中部结束 -->
+
+</div>
+<div class="c_bottom"></div>
+<div class="clear"></div>
+</div>
+<div class="blank10"></div>
+<div class="f" style="color:#ccc;text-align:center;">
+{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a> All Rights Reserved.      <a href="http://www.cmseasy.cn" title="Powered by CmsEasy" target="_blank">Powered by CmsEasy</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<table width="931" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="10"> </td>
+  </tr>
+</table>
+<table width="931" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><div class="p" style="background:#F5F5F5;border-top:1px solid #ccc;">Copyright © 2010 <a href="{$base_url}/">{get(sitename)}</a>. All Rights Reserved.
+	<div class="blank5"></div>
+
+	 &nbsp;&nbsp;<a href="http://www.miibeian.gov.cn/" target="_blank">{get('site_icp')}</a>&nbsp;&nbsp;{getcnzzcount()}
+	<div class="blank5"></div>{if $topid==0}<!-- 热门关键词 -->
+<div class="hot_keys" style="clear:both;text-align:center;"><strong>{lang(hotkeys)}：</strong> {gethotsearch(10)}</div>{/if}
+<div class="clear"></div>
+	<!-- 友情链接 -->
+{if $topid==0}<select name="website" onchange="javascript:window.open(this.options[this.selectedIndex].value)" style="float:right; margin:10px;">
+<option value="default">{lang('links')}</option>
+{loop friendlink('text',0,20) $flink}
+<option value="{$flink[url]}">{$flink[name]}</option>
+{/loop}
+</select>{/if}<div class="clear"></div>
+	</div></td>
+  </tr>
+</table>
+
+<!-- 在线客服 -->
+{template 'system/servers.html'}
+<!-- 短信 -->
+{template 'system/sms.html'}
+
+{if get('lang_type')=='cn'}<script type="text/javascript" src="{$base_url}/js/tc.js"></script>{/if}
+</body>
+</html>

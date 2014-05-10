@@ -1,0 +1,113 @@
+{template 'header.html'}
+<div id="bd">
+		<div class="left_box">    	
+            {template 'left.html'}
+   		</div>
+    	<div id="bd_rightg">
+          {template 'position.html'}
+                    <div class="content1">
+                        <div class="pd_title">{$archive[title]}</div>
+                       <div class="pd">
+					  
+<div class="contentinfo">作者：{$archive[author]}&nbsp;&nbsp; 发布时间：{$archive[adddate]}&nbsp;&nbsp; 浏览 :{view_js($archive[aid])}</div>
+
+<div class="blank10"></div>
+<!-- 正文 -->
+<div id="content" style="width:640px;" class="text">{$archive[content]}</div>
+<div class="blank30"></div>
+{if $pages>1}
+<div class="blank10"></div>
+<div class="pages">
+{archive_pagination($archive)}
+</div>
+<div class="blank30"></div>
+{/if}
+<!--自动调用自定义字段-->
+{cb_data($archive)}
+{loop $archive $key $value}
+<?php if(setting::$var['archive'][$key]['typeid'] && setting::$var['archive'][$key]['typeid']!=$typeid){
+  unset($field[$name]);
+  continue;
+}?>
+<?php if(!eregi('^my',$key) || !$value) continue; ?>
+<p> {=setting::$var['archive'][$key]['cname']}: {$value}</p>
+{/loop}
+<div class="blank20"></div>
+<?php if(archive_attachment($archive['aid'],'id')) { ?>
+<p>
+附件：{attachment_js($archive['aid'])}
+</p>
+<?php } ?>
+<div class="blank30"></div>
+
+<?php if(hasflash()) { ?>
+        <div style="color:red;font-size:16px;"><?php echo showflash(); ?></div><?php } ?>
+
+        {vote_js($archive[aid])}
+
+<!-- 自定义表单开始 -->
+{if $archive['showform']}<div class="blank30"></div>
+{template 'myform/nrform.html'}
+{/if}
+<!-- 自定义表单结束 -->
+
+
+<script language="JavaScript">
+function shutwin(){
+window.close();
+return;}
+</script>
+
+<div class="blank30"></div>
+<div id="tool">
+<ul>
+<li><a href="javascript:window.print()" class="print">打印本文</a></li>
+<li><a href="javascript:shutwin()" class="close">关闭本页</a></li>
+<li style="width:65px;"><a href='<?php echo url('comment/list/aid/'.$archive['aid']); ?>' class="t_4">评论</a></li>
+<li style="width:60px;">推荐度：</li>
+<li style="width:100px;">{$archive[strgrade]}</li>
+</ul>
+</div>
+<div class="blank30"></div>
+<div id="page">
+{if $archive['p']['aid']}
+<strong>上一篇：</strong><a href="{$archive['p']['url']}">{$archive['p']['title']}</a>
+{else}
+<strong>上一篇：</strong>无	
+{/if}
+<div class="clear"></div>
+{if $archive['n']['aid']}
+ <strong>下一篇：</strong><a href="{$archive['n']['url']}">{$archive['n']['title']}</a>
+{else}
+<strong>下一篇：</strong>无	
+{/if}
+</div>
+
+					   <div class="blank30"></div>
+		<a title="返回顶部" href="#" class="clear floatright"><img alt="返回顶部" src="{$skin_url}/gotop.gif"></a>
+	<div class="clear"></div>
+					   </div>
+          </div>
+    	</div>
+    </div>
+<div class="clear"></div>
+
+<script> 
+function resizeImg(obj)
+{ 
+var obj = document.getElementById(obj); 
+var objContent = obj.innerHTML;
+var imgs = obj.getElementsByTagName('img'); 
+if(imgs==null) return; 
+for(var i=0; i<imgs.length; i++) 
+{ 
+if(imgs[i].width>parseInt(obj.style.width)) 
+{ 
+imgs[i].width = parseInt(obj.style.width);
+} 
+} 
+} 
+window.onload = function() {resizeImg('content');
+} 
+</script>
+{template 'footer.html'}

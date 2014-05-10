@@ -1,0 +1,47 @@
+{template 'header.html'}
+<div id="bd">
+    	<div id="bd_box">
+        <div style="height:16px;"></div>
+		
+          <div id="bd_left">
+		  {template 'left.html'}
+          	
+          </div>
+          <div id="bd_right">
+          
+            <div class="right_box1">
+           	<div class="title2"><div class="title_img"><img src="{$skin_path}/lvse_25.gif" /></div>
+<div class="title_wd">{lang(announ)}</div>
+{template 'position.html'}
+</div>
+                <div class="contentg">
+                	<div class="pd_title">{$announ[adddate]}</div>
+                      
+					   <div id="content" style="width:600px;" class="text">
+					  {$announ[content]}
+		
+                </div>
+            </div>
+            
+          </div><div class="clear"></div>
+        </div>
+    </div>
+	<script> 
+function resizeImg(obj)
+{ 
+var obj = document.getElementById(obj); 
+var objContent = obj.innerHTML;
+var imgs = obj.getElementsByTagName('img'); 
+if(imgs==null) return; 
+for(var i=0; i<imgs.length; i++) 
+{ 
+if(imgs[i].width>parseInt(obj.style.width)) 
+{ 
+imgs[i].width = parseInt(obj.style.width);
+} 
+} 
+} 
+window.onload = function() {resizeImg('content');
+} 
+</script>
+{template 'footer.html'}

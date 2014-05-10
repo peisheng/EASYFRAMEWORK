@@ -1,0 +1,51 @@
+{template 'header.html'}
+<table width="931" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="210" height="365" align="center" valign="top" bgcolor="#F6F6F6" class="bgys3">
+    {template 'left.html'}
+
+    </td>
+   <td width="16">&nbsp;</td>
+    <td width="705" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td height="137" align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+     {template 'position.html'}
+      <tr>
+        <td colspan="3" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td height="32" align="center" class="lanwd14"><strong><span style="color:red;font-weight:bold;"> “{$keyword}” </span>的查询结果：</strong></td>
+          </tr>
+          <tr>
+            <td height="16" align="center" class="bgys">&nbsp;</td>
+          </tr>
+          <tr>
+            <td>
+<ul class="news_list">
+		{loop $articles $article}
+		{cb_data($article)}
+		<li>[<a href="{$article[typeurl]}">{$article[typename]}</a>] <a href="{$article[url]}"><?php if($keyword) echo str_replace($keyword,"<span style=color:red;font-weight:bold;>$keyword</span>",$article['title']); else { ?>{$article[title]}<?php } ?></a> ({$article['adddate']})
+		{/loop}
+	</ul>
+	<div class="blank10"></div>
+	<div class="pages">
+		<?php echo pagination::html($record_count,5); ?>
+	</div>
+</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+            </tr>
+    </table> 
+        
+        
+        </td>
+        </tr>
+    </table>
+    
+    
+    </td>
+  </tr>
+</table>
+{template 'footer.html'}

@@ -1,0 +1,44 @@
+{template 'header.html'}
+<div id="bd">
+    	<div id="bd_box">
+        <div style="height:16px;"></div>
+		
+          <div id="bd_left">
+		  {template 'left.html'}
+          	
+          </div>
+          <div id="bd_right">
+          
+            <div class="right_box1">
+           	 {template 'position.html'}
+                <div class="contentg">
+                	<div class="pd_title">{$category[$catid][catname]}</div>
+                      
+					   <div id="content" style="width:600px;" class="text">
+					  {$category[$catid][categorycontent]}
+		
+                </div>
+            </div>
+            
+          </div><div class="clear"></div>
+        </div>
+    </div>
+	<script> 
+function resizeImg(obj)
+{ 
+var obj = document.getElementById(obj); 
+var objContent = obj.innerHTML;
+var imgs = obj.getElementsByTagName('img'); 
+if(imgs==null) return; 
+for(var i=0; i<imgs.length; i++) 
+{ 
+if(imgs[i].width>parseInt(obj.style.width)) 
+{ 
+imgs[i].width = parseInt(obj.style.width);
+} 
+} 
+} 
+window.onload = function() {resizeImg('content');
+} 
+</script>
+{template 'footer.html'}

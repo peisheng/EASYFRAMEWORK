@@ -1,0 +1,80 @@
+<!-- 页底 -->
+<div id="footer" class="mt10">
+<div class="box">
+<div class="footer">
+<!-- 友情logo -->
+<div class="links">
+{if $topid==0}
+{loop friendlink('image',0,20) $flink}
+<a href="{$flink[url]}" title="{$flink[name]}"><img src="{$flink[logo]}" /></a>
+{/loop}
+{else}
+{lang(hotkeys)}： {gethotsearch(10)}
+{/if}
+</div>
+<!-- 页底导航 -->
+<div class="about">
+ 
+{tag_网站页底关于我们等说明}
+<a href="#">TOP</a>
+</div>
+
+<div class="copyright">
+<!-- 友情链接 -->
+{if $topid==0}<select name="website" onchange="javascript:window.open(this.options[this.selectedIndex].value)" style="float:right; margin-top:10px;">
+<option value="default">{lang('links')}</option>
+{loop friendlink('text',0,20) $flink}
+<option value="{$flink[url]}">{$flink[name]}</option>
+{/loop}
+</select>{/if}
+<!-- 页底说明 -->
+{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a> All Rights Reserved.   {login_js()}
+<div class="blank5"></div>
+{getcnzzcount()}  <a href="http://www.yubaidu.net" title="Powered by 誉百度工作室" target="_blank">Powered by 誉百度工作室</a>  <a href="http://www.miibeian.gov.cn/" target="_blank">{get('site_icp')}</a>
+</div>
+<div class="clear"></div>
+</div>
+{if $topid==0}<!-- 热门关键词 -->
+<div class="hot_keys">{lang(hotkeys)}： {gethotsearch(10)}</div>{/if}
+</div>
+</div>
+
+
+<script type="text/javascript"> 
+// 公告滚动js
+var t=setInterval(myfunc,1000); 
+var oBox=document.getElementById("announ"); 
+function myfunc(){ 
+var o=oBox.firstChild 
+oBox.removeChild(o) 
+oBox.appendChild(o) 
+} 
+oBox.onmouseover=function()
+{
+clearInterval(t)
+} 
+oBox.onmouseout=function()
+{
+t=setInterval(myfunc,2000)//滚动时间，默认2秒
+} 
+</script>
+
+<!-- 在线客服 -->
+{template 'system/servers.html'}
+<!-- 短信 -->
+{template 'system/sms.html'}
+
+
+{if get('lang_type')=='cn'}
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&img=6&pos=right&uid=620555" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+		var bds_config = {"bdTop":150};
+		document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->
+{/if}
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<div class="left_box1 mb10">
+                <div class="title">
+                    <div class="title_fh"><img src="{$skin_path}/rj_5.gif" /></div>
+                    <div class="title_wd">公司公告</div>
+             	</div>
+                <div class="content">
+                    <ul class="ul2g an">
+{loop announ(5,10) $an}
+			<li><a href="{$an[url]}">{$an[title]}</a></li>
+			{/loop}
+					</ul>
+                </div>
+			</div> 

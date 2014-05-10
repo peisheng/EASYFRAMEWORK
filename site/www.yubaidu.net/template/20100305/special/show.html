@@ -1,0 +1,49 @@
+{template 'header.html'}
+<table width="931" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="210" height="365" align="center" valign="top" bgcolor="#F6F6F6" class="bgys3">
+    {template 'left.html'}
+
+    </td>
+   <td width="16">&nbsp;</td>
+    <td width="705" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td height="137" align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          {template 'position.html'}
+      <tr>
+        <td colspan="3" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><div class="pd">
+<!-- 内容_内容简介列表 -->
+<ul class="news_list">
+{loop $archives $i $sp}
+<li><span class="date">{$sp[adddate]}</span><a title="{$sp[title]}" target="_blank" href="{$sp[url]}">{$sp[title]}</a></li>
+{/loop}
+</ul>
+<div class="blank10"></div>
+<!-- 内容列表分页 -->
+{if isset($pages)}
+{special::pagination()}
+{/if}
+
+</div>
+</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+            </tr>
+    </table> 
+        
+        
+        </td>
+        </tr>
+    </table>
+    
+    
+    </td>
+  </tr>
+</table>
+<!-- 调用页底模板 -->
+{template 'footer.html'}

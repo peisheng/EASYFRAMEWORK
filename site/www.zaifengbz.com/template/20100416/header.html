@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{if !empty($archive[mtitle])}{$archive[mtitle]}-{elseif !empty($archive[title])}{$archive[title]}-{/if}{if $type[meta_title]}{$type[meta_title]}-{elseif typename($type[typeid])}{typename($type[typeid])}-{/if}{if $category[$catid][meta_title]}{$category[$catid][meta_title]}-{elseif !empty($catid)}{catname($catid)}-{/if}{get('fullname')}</title>
+<meta name="keywords" content="{if $archive[keyword]}{$archive[keyword]}{else}{if $type[keyword]}{$type[keyword]}{elseif $category[$catid][keyword]}{$category[$catid][keyword]}{else}{get('site_keyword')}{/if}{/if}" />
+<meta name="description" content="{if $archive[description]}{$archive[description]}{else}{if $type[description]}{$type[description]}{elseif $category[$catid][description]}{$category[$catid][description]}{else}{get('site_description')}{/if}{/if}" />
+<meta name="author" content="CmsEasy Team" />
+<link rel="icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link href="{$skin_path}/reset.css" rel="stylesheet" type="text/css" />
+<link href="{$skin_path}/style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript">
+<!-- 
+function ResumeError()  
+{ 
+    return true; 
+} 
+window.onerror = ResumeError; 
+function check()
+{
+if(document.search.keyword.value.length==0){
+     alert("请输入查询信息！");
+     document.search.keyword.focus();
+     return false;
+    }
+
+	}
+// --> 
+</script>
+<script language=javascript type=text/javascript>
+//<!CDATA[
+function g(o){return document.getElementById(o);}
+//参数说明:n为标签编号,m为标签数量,q为标签名称的前缀，如id=tb_1中的"tb_",p为内容层的前缀,如id=tbc_01的"tbc_0"
+function HoverLi(n,m,q,p){
+//m为标签数量 m=6
+//q为前缀  q=tb_
+//如果有N个标签,就将i<=N;
+//兼容IE7,FF,IE6
+
+for(var i=1;i<=m;i++)
+{
+g(q +i).className='normaltab';
+g(p+i).className='undis';
+}
+g(p+n).className='dis';
+g(q+n).className='hovertab';
+}
+//如果要做成点击后再转到请将<li>中的onmouseover 改成 onclick;
+//]]>
+</script>
+<script type=text/javascript><!--//--><![CDATA[//><!--
+function menuFix() {
+ var sfEls = document.getElementById("nav").getElementsByTagName("li");
+ for (var i=0; i<sfEls.length; i++) {
+  sfEls[i].onmouseover=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseDown=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onMouseUp=function() {
+  this.className+=(this.className.length>0? " ": "") + "sfhover";
+  }
+  sfEls[i].onmouseout=function() {
+  this.className=this.className.replace(new RegExp("( ?|^)sfhover\\b"), 
+"");
+  }
+ }
+}
+window.onload=menuFix;
+//--><!]]>
+</script>
+<style type="text/css">
+.logo {width:{get('logo_width')}px; height:{get('logo_height')}px; background:url({$base_url}/{get('site_logo')}) center center no-repeat;}
+</style>
+<!--用于PNG图片在IE6下透明-->
+<!--[if IE 6]>
+<script src="{$skin_path}/js/png.js"></script>
+<script>
+  DD_belatedPNG.fix('.logo');
+  DD_belatedPNG.fix(' .cfooter');
+  DD_belatedPNG.fix('.cleft_box .cright');
+  DD_belatedPNG.fix('.cleft_box_content .cfooter');
+  DD_belatedPNG.fix('.cleft_box_content .cheader');
+</script>
+<![endif]--> 
+</head>
+
+<body>
+<div id="main">
+  <div id="header">
+  	<div class="logo"><a title="{get(sitename)}" href="{$base_url}/"></a></div>
+     <div class="top">
+   	    <div class="topwd"><div class="pic"><img src="{$skin_path}/jt_3.gif" /></div>
+   	    <a title="{lang(feedback)}" href="{url('guestbook')}" target="_blank">{lang(feedback)}</a></div>
+    	<div class="topwd"><div class="pic"><img src="{$skin_path}/jt_4.gif" /></div>
+   	    <a href="{$site_url}" onclick="window.external.addFavorite(this.href,this.title);return false;" title='{get(sitename)}' rel="sidebar">{lang(favorite)}</a></div>
+		<div class="topwd"><div class="pic"><img src="{$skin_path}/jt_4.gif" /></div>
+   	    <a href="{url('user')}" title="{lang(login)}">{lang(login)}</a></div>
+    	<div class="topwd"><div class="pic"><img src="{$skin_path}/jt_5.gif" /></div>
+   	    <a href="{$base_url}/">{lang(homepage)}</a></div>
+    </div>
+    <div class="nav">
+    	<div class="nav_l"><img src="{$skin_path}/jt_6.gif" /></div>
+   		<div class="header_nav">
+    	<div id="nav">
+			<ul>
+			<li><a title="{lang(backhome)}" href="{$base_url}/" {if $catid==0} class="on"{/if}>{lang(homepage)}</a></li>
+			{loop categories() $t}
+		<li><a title="{$t[catname]}" target="_blank" href="{$t[url]}"{if isset($topid) && $topid==$t[catid]} class="on"{/if}>{$t[catname]}</a>
+	   <ul>
+		   {loop categories($t[catid]) $t1}
+				<li><a title="{$t1[catname]}" target="_blank" href="{$t1[url]}">{$t1[catname]}</a></li>
+				{/loop}
+	   </ul>
+		</li>
+{/loop}
+          </ul>
+        </div>
+        </div>	
+    </div>
+    <div class="nav_yy"></div>
+    <div class="banner"><img src="{$skin_path}/jt_1.jpg" /></div>
+  </div>
+<!--head部结束-->
+	<div class="blank5"></div>

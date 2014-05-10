@@ -1,0 +1,56 @@
+{template 'header.html'}
+<table width="1003" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:1px;">
+  <tr>
+    <td valign="top" style="background:url({$skin_path}/main_bg.jpg) repeat-x left top;">
+	
+	{template 'left.html'}
+</td>
+        <td width="765" align="left" valign="top"><table width="736" border="0" align="center" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="736"><img src="{$skin_path}/bt9.gif" width="80" height="13" /></td>
+          </tr>
+          <tr>
+            <td height="21"><img src="{$skin_path}/line_2.gif" width="100%" height="1" /></td>
+          </tr>
+          <tr>
+            <td align="center"><img src="{$skin_path}/tt.gif" width="1" height="6" /></td>
+          </tr>
+          <tr>
+            <td align="center">{template 'position.html'}</td>
+          </tr>
+          <tr>
+            <td align="center"><img src="{$skin_path}/tt.gif" width="1" height="6" /></td>
+          </tr>
+          <tr>
+            <td>
+<center><form name='search_form' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+
+<span class="greencu">请输入关键字：</span>
+<input name="keyword" type="text" align="absmiple" id="keys" style="vertical-align:middle;" size="16" />
+<input type="image" src="{$skin_path}/searbtn.jpg" style="border:0px none; vertical-align:middle;"  align="absmiple" name='submit' value="搜索" />
+</form>
+</center>
+<div class="blank10"></div>
+<h4><span style="color:red;font-weight:bold;"> “{$keyword}” </span>的查询结果：</h4>
+<ul class="news_list">
+{loop $articles $article}
+		{cb_data($article)}
+		<li><span class="date">{$article['adddate']}</span>[<a href="{$article[caturl]}">{$article[catname]}</a>] <a href="{$article[url]}"><?php if($keyword) echo str_replace($keyword,"<span style=color:red;font-weight:bold;>$keyword</span>",$article['title']); else { ?>{$article[title]}<?php } ?></a>
+		{/loop}
+</ul>
+
+<div class="blank10"></div>
+<div class="pages">
+<?php echo pagination::html($record_count,5); ?>
+</div>		
+</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+{template 'footer.html'}

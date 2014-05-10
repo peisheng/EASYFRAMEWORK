@@ -1,0 +1,148 @@
+{template 'header.html'}
+<div id="bd">
+    	<div class="bd_up">
+        	<div class="bd_up_left">
+            	<div class="input1">搜索：</div>
+              <div class="input2"><input type="text" size="14" />
+              </div>
+                <div class="input3"><input name="" type="image" src="{$skin_path}/lan_18.gif" /></div>
+            </div>
+            <div class="bd_up_right">
+
+			<div id="announ">
+	{loop announ(5) $an}
+	<p><a href="{$an[url]}" title="{$an[title]}">{$an[title]}</a> [{$an[adddate]}]</p>
+	{/loop}
+</div>
+<script type="text/javascript"> 
+//
+var t=setInterval(myfunc,2000); 
+var oBox=document.getElementById("announ"); 
+function myfunc(){ 
+var o=oBox.firstChild 
+oBox.removeChild(o) 
+oBox.appendChild(o) 
+} 
+oBox.onmouseover=function()
+{
+clearInterval(t)
+} 
+oBox.onmouseout=function()
+{
+t=setInterval(myfunc,2000)
+} 
+</script>
+            </div>
+        </div>
+    	<div id="bd_left">
+        	<div class="box">
+            	<div class="title">
+                	<div class="title_wd"><?php $t=position_p($catid=3);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></div>
+                    <div class="title_wde">PRODUCT</div>
+                    <div class="more"></div>
+                </div>
+                <div class="content">
+                	<ul class="ul2">
+                    {loop categories(3) $t1}
+<li><a href="{$t1[url]}" title="{$t1[catname]}">{$t1[catname]}</a></li>
+{/loop}
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="box1">
+            	<div class="title1">
+                	<div class="title1_wd"><?php $t=position_p($catid=5);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></div>
+                    <div class="title1_wde">CONTENT US</div>
+                    <div class="more"></div>
+                </div>
+                <div class="content">
+                	<div class="p">
+					<ul>
+					<li>{lang(address)}：{get(address)}</li>
+<li>{lang(tel)}：{get(tel)}</li>
+<li>{lang(fax)}：{get(fax)}</li> 
+<li>{lang(email)}：{get(email)}</li> 
+</ul>
+</div>
+                </div>
+            </div>
+            
+        </div>
+      <div id="bd_right">
+      	<div class="bd_right_left">
+        	<div class="box">
+            	<div class="title1">
+                	<div class="title1_wd"><?php $t=position_p($catid=1);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></div>
+                    <div class="title1_wde">ABOUT US</div>
+                    <div class="more"><?php $t=position_p($catid=1);?>
+<a href="{$t.url}" title="{$t['name']}"><img src="{$skin_path}/lan_3.gif" /></a>
+<?php?></div>
+                </div>
+                <div class="content">
+               	  <div class="abouts">
+                    <div class="pro_r"><div class="pro_l"><img src="{$skin_path}/lan_20.gif" /></div> 
+                      <span class="chengwd"><strong><a href="{$base_url}/">{get(sitename)}</a></strong></span>{tag_公司简介}<span class="chengwd"><?php $t=position_p($catid=3);?>
+<a href="{$t.url}" title="{$t['name']}">[{lang(more)}]</a>
+<?php?></span></div>
+				  </div>
+<div class=" clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="bd_right_right">
+        	<div class="box">
+            	<div class="title1">
+                	<div class="title1_wd"><?php $t=position_p($catid=2);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></div>
+                    <div class="title1_wde">NEWS</div>
+                    <div class="more"><?php $t=position_p($catid=2);?>
+<a href="{$t.url}" title="{$t['name']}"><img src="{$skin_path}/lan_3.gif" /></a>
+<?php?></div>
+                </div>
+                <div class="content">
+                	<ul class="ul2g">
+                    {loop archive(2,0,0,'0,0,0',16,'aid',6,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+                    </ul>
+                </div>
+            </div>
+        </div>
+<div class="clear"></div>        
+        <div class="box1">
+            	<div class="title1">
+                	<div class="title1_wd"><?php $t=position_p($catid=3);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></div>
+                    <div class="title1_wde">PRODUCT SHOW</div>
+                    <div class="more"><?php $t=position_p($catid=3);?>
+<a href="{$t.url}" title="{$t['name']}"><img src="{$skin_path}/lan_3.gif" /></a>
+<?php?></div>
+                </div>
+                <div class="content">
+                	
+            
+            {loop archive(3,0,0,'0,0,0',20,'aid',8,true,0) $i $archive}
+<div class="prod_box">
+                     <a href="{$archive[url]}" title="{$archive[stitle]}"><img src="{$archive[sthumb]}" alt="{$archive[stitle]}" class="prod" /></a><br />
+                    <a href="{$archive[url]}" class="prod_font">{$archive[title]}</a>
+            </div>
+ {/loop}
+            
+<div class="clear"></div>        
+                </div>
+            </div>
+        
+      </div>
+      <div class="clear"></div>
+    </div>
+    <!--bd部结束-->
+{template 'footer.html'}

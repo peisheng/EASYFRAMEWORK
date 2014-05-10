@@ -1,0 +1,50 @@
+{if vote::title($aid,1)}
+<hr>
+<form name="voteform" method="post" action="<?php echo url('vote/do'); ?>">
+    <input type="hidden" name="aid" value="{$aid}"/>
+
+        <div>
+            {if !vote::voted($aid,$user['username'])}
+            <ul>投票 ：
+                <?php $i=1; while(vote::title($aid,$i)) { ?>
+
+                <li>
+                    {$i} {vote::title($aid,$i)}
+                    {if vote::img($aid,$i)}
+                    <img src="{vote::img($aid,$i)}" width="60" />
+                    {/if}
+                    {=form::radio('vote',$i,0)} 
+                </li>
+
+                <?php $i++; } unset($i); ?>
+
+            </ul>
+
+            {form::submit()}
+            {else}
+
+            <ul>
+                投票结果：
+                
+                <?php $i=1; while(vote::title($aid,$i)) { ?>
+
+                <li>
+                    <span style="float:left;width:100px">{$i} {vote::title($aid,$i)}
+                        {if vote::img($aid,$i)}
+                        <img src="{vote::img($aid,$i)}" width="60" />
+                        {/if}
+                    </span>
+                    <div class=optionbar><div style="width: {=vote::get($aid,$i)*3+5}px"> </div>
+                    </div>
+                    {=vote::get($aid,$i)}
+                    <div class="clear">&nbsp;</div>
+                </li>
+
+                <?php $i++; } unset($i);?>
+
+            </ul>
+
+            {/if}
+            </div>
+</form>
+{/if}

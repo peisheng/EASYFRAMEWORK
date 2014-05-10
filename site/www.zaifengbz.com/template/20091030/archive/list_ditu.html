@@ -1,0 +1,54 @@
+{template 'header.html'}
+<style>
+	.NewsTitle{ text-align:center;font-size:16px;font-weight:bold;}
+	.PostDate{border-bottom:1px dotted #666666;text-align:center;padding:4px;}
+	.NewsContent{font-size:14px;line-height:20px;padding:10px;}
+	.NewsContent p{ margin:5px;padding:0px; }
+</style>
+
+<div id="main">
+	<div id="MainLeftNav">
+{template 'left.html'}
+
+	</div>
+	<div id="MainRight">
+		{template 'position.html'}
+		<div style="padding:10px 25px">
+			<div class="NewsTitle" >{$category[$catid][catname]}</div>
+			<div class="PostDate"></div>
+			<div class="NewsContent" >
+				<div id="content" style="width:680px;" class="pd">
+
+<!-- 内容 -->
+{$category[$catid][categorycontent]}
+
+<div class="blank30"></div>
+
+{template 'ditu.html'}
+
+</div>
+				</div>
+		</div>
+	</div>
+</div>
+
+
+<script> 
+function resizeImg(obj)
+{ 
+var obj = document.getElementById(obj); 
+var objContent = obj.innerHTML;
+var imgs = obj.getElementsByTagName('img'); 
+if(imgs==null) return; 
+for(var i=0; i<imgs.length; i++) 
+{ 
+if(imgs[i].width>parseInt(obj.style.width)) 
+{ 
+imgs[i].width = parseInt(obj.style.width);
+} 
+} 
+} 
+window.onload = function() {resizeImg('content');
+} 
+</script>
+{template 'footer.html'}

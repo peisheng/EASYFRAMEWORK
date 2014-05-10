@@ -1,0 +1,37 @@
+{template 'header.html'}<!-- 调用页头模板 -->
+<div id="c">
+{template 'position.html'}<!-- 调用导航模板 -->
+
+<div id="right">
+<div style="padding:30px 0px 0px 15px;">
+<!-- 内容_缩略图_内容简介列表 -->
+<ul class="news_text_pic">
+<!-- 内容缩略图列表 -->
+		{loop $archives $i $arc}		
+			<li><div class="img-wrap"><a href="{$arc[url]}" class="news_text_img"><img src="{$base_url}/{$arc[thumb]}" alt="{$arc[stitle]}" onerror='this.src="{$base_url}/{config::get('onerror_pic')}"' /></a></div>
+			<h5><span class=date>{$arc[adddate]}</span><a title="{$arc[stitle]}" href="{$arc[url]}">{$arc[title]}</a></h5>
+			<p>{cut(strip_tags($arc['introduce']),100)}…<a title="{$arc[stitle]}" href="{$arc[url]}">[{lang(more)}]</a></p>
+			<span class="strgrade">{lang(strgrade)}：{$arc[strgrade]}</span>
+			
+		</li><div class="blank10"></div>
+		{/loop}
+		</ul>
+<div class="blank30"></div>
+<!-- 内容列表分页 -->
+{if isset($pages)}
+{category_pagination($catid)}
+{/if}
+
+<div class="blank30"></div>
+<a title="{lang(gotop)}" href="#" class="clear floatright"><img alt="{lang(gotop)}" src="{$skin_url}/gotop.gif"></a>
+<div class="blank30"></div>
+
+</div>
+</div>
+
+{template 'left.html'}<!-- 调用通用左栏 -->
+
+<div class="clear"></div>
+</div>
+<!-- 调用页底模板 -->
+{template 'footer.html'}

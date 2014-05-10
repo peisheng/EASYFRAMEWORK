@@ -1,0 +1,1148 @@
+/*
+ * 易通CMS Style
+ * ============================================================================
+ * 版权所有 2008-2009 易通CMS，并保留所有权利。
+ * -------------------------------------------------------
+ * 这不是一个自由软件！
+ * 也不是一个开源软件！
+ * 本软件已经申请软件版权保护！
+ * 您不能在任何目的的前提下对程序代码进行破解、修改和使用；
+ * 不允许对程序代码以任何形式任何目的的再发布。
+ * ============================================================================
+ * @author:     九州易通科技有限公司
+ * @version:    v1.0
+ * ---------------------------------------------
+ * $Id: Style Sat Dec 06 09:50:51 CST 2008
+	
+	---------------------------------------------------------------
+	1. base (全局基本属性)
+	---------------------------------------------------------------
+	2.link (链接)
+	---------------------------------------------------------------
+	3.font (字体)
+	---------------------------------------------------------------
+	4. layout (框架)
+	---------------------------------------------------------------
+	5. header (头部)
+	---------------------------------------------------------------
+	6.content (页中)
+	---------------------------------------------------------------
+	7.footer (页底)
+	---------------------------------------------------------------
+	8. search (当前位置/文章搜索)
+	---------------------------------------------------------------
+	9.assist (辅助)
+	---------------------------------------------------------------
+	10.ad (广告)
+	---------------------------------------------------------------
+	
+*/
+
+
+/* 
+	--------------------------------------
+	*****    1. base(全局基本属性)     *****
+	--------------------------------------
+*/
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    font:12px Arial,微软雅黑,Helvetica,sans-serif;
+    line-height:200%;
+    color:#808080;
+    text-align:left;
+	background:#FFF;
+	white-space:normal; 
+    word-break:break-all;
+}
+form, fieldset, legend, button, input, textarea, table, tr, td
+{margin:0px;padding:0px;}
+div,form,img,ul,ol,li,dl,dt,dd,p {
+    margin:0;
+	padding:0;
+	border:0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin:0;
+	padding:0;
+}
+
+table,td,tr,th{
+    font-size:12px;
+}
+
+ul,ol,li {
+    list-style:none;
+}
+
+img {
+    border:0;
+}
+
+.clear {
+    clear:both;
+}
+
+.floatleft {
+    float:left;
+}
+
+.floatright {
+    float:right;
+}
+
+.clear {
+    clear:both;
+}
+
+table,td,tr,th{
+    font-size:12px;
+}
+
+table {
+    width:100%;
+	line-height:12px;
+	margin-top:10px;
+	background:#EEE;
+	border:0px;
+}
+
+table th {
+    height:20px;
+    line-height:20px;
+	padding:0px 10px;
+	background:#F5F5F5;
+}
+
+table td {
+    line-height:26px;
+	padding:3px 10px;
+    font-size:12px;
+	background:#FFF;
+}
+
+/* 
+	--------------------------------------
+	*****    2. link(链接)     *****
+	--------------------------------------
+*/
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color:#CC0000;
+	text-decoration: underline; 
+}
+
+/* 
+	--------------------------------------
+	*****    3. font (字体)     *****
+	--------------------------------------
+*/
+
+h4,h5 {
+    font-size:12px;
+}
+
+.green {
+    color:#409357;
+}
+
+.orange {
+    color:#FF9933;
+}
+
+/* 
+	--------------------------------------
+	*****    4. layout (框架)     *****
+	--------------------------------------
+*/
+
+/* 总体宽度 */
+#wrapper {
+    clear:both;
+	width:1000px;
+	min-height:600px;
+	margin:0px auto;
+	padding:0px auto;
+}
+
+/* 
+	--------------------------------------
+	*****    5. header (页头)     *****
+	--------------------------------------
+*/
+#header {
+width:1000px;
+    height:222px;
+	background:url(headbg.jpg) right top no-repeat;
+}
+
+#top a {
+    color:#FFF;
+}
+
+#top {
+    float:right;
+	width:700px;
+    height:25px;
+	text-align:right;
+	color:#FFF;
+}
+
+#logo {
+    clear:both;
+    float:left;
+
+	background:#FFF;
+}
+
+#nav {
+    float:right;
+	width:700px;
+	line-height:87px;
+}
+
+#nav a {
+    padding:0px 10px;
+	color:#06416B;
+	font-weight:bold;
+} 
+
+#nav .on {
+    color:#F9883C;
+}
+
+#nav a:hover,#nav .current {
+    padding:3px 10px;
+    color:#FFF;
+	background:#06416B;
+} 
+
+#subnav {
+    float:left;
+	width:220px;
+	height:90px;
+	line-height:28px;
+	padding:14px 0px 6px 30px;
+	background:#00364A url(subnavbg.gif) left top repeat-y;
+	color:#FFF;
+	overflow:hidden;
+}
+
+#subnav a {
+    color:#FFF;
+}
+
+#subnav ul li {
+    width:220px;
+	height:24px;
+	line-height:24px;
+	overflow:hidden;
+}
+
+#banner {
+    float:right;
+	width:750px;
+    height:110px;
+    background:url(banner.jpg) right top no-repeat;overflow:hidden;
+}
+
+/* 
+	--------------------------------------
+	*****    6. content (页中)     *****
+	--------------------------------------
+*/
+#container {
+	width:1000px;
+		background:#FAFAFA url(bg.jpg) right 2px no-repeat;
+}
+
+#containerbottom {
+    clear:both;
+	height:15px;
+	background:url(containerbottom.gif) left bottom repeat-x;
+}
+
+#sidebar {
+    clear:both;
+    float:left;
+	width:235px;
+    padding:10px 5px 30px 10px;
+	background:#CED7E0 url(sidebarbottom.gif) left bottom no-repeat;
+}
+
+#main {
+    float:right;
+	width:690px;
+	min-height:400px;
+	padding:10px 30px 0px 20px;
+}
+
+#myinfo {
+
+}
+
+#myinfo h4,#list h4,#content h4 {
+	margin-bottom:10px;
+	padding:14px 0px 0px 30px;
+	border-bottom:1px solid #ccc;
+	background:url(toptitle.jpg) 0px 15px no-repeat;
+}
+
+#content h4 a.i,#list h4 a.i {
+    padding:0px 0px 0px 20px;
+ 	background:url(position.gif) 8px 1px no-repeat;
+}
+
+#rightbox {
+    clear:both;
+	height:365px;
+	background:url(rightboxbottom.gif) left bottom no-repeat;
+}
+
+#products {
+    float:left;
+	width:520px;
+	height:356px;
+	background:#FFF url(products.gif) left top repeat-y;
+}
+
+#links {
+    float:right;
+	width:170px;
+	height:356px;
+	background:#7C7C7C url(links.png) left top no-repeat;
+	text-align:center;
+}
+
+#links ul {
+    margin:0px 15px;
+}
+
+#links ul li a {
+    float:left;
+    padding:2px 5px;
+	/*  display:inline;*/
+    white-space: nowrap;
+    color:#CCC;
+}
+
+#links .title {
+    line-height:42px;
+	padding-left:30px;
+    background:url(rank_3.gif) 10px 15px no-repeat;
+	color:#CCC;
+	text-align:left;
+}
+
+#links .title a {
+    color:#CCC;
+}
+
+#products .top {
+    height:46px;
+	background:url(products.png) left top no-repeat;
+}
+
+#products .top h5 {
+    padding-left:30px;
+    background:url(rank_3.gif) 10px 10px no-repeat;
+}
+
+/* 
+	--------------------------------------
+	*****    7. footer (页底)     *****
+	--------------------------------------
+*/
+#footer {
+    clear:both;
+	margin:5px 0px;
+	padding:2px 10px;
+	text-align:right;
+	background:#7C7C7C;
+	color:#FFF;
+}
+
+#footer a {
+	color:#FFF;
+	text-decoration: underline; 
+}
+
+/* 
+	--------------------------------------
+	*****    8. search (搜索)     *****
+	--------------------------------------
+*/
+#search {
+    float:right;
+	padding:0px 10px;
+}
+
+.key {
+    width:100px;
+    height:14px;
+    background:#FFF url(key.gif) left top repeat-x;
+	border:1px solid #ccc;;
+}
+
+.searchbutton {
+    width:47px;
+	height:18px;
+	line-height:14px;
+    border:1px solid #ccc;
+    color:#999;
+}
+
+#list h4 span,.searchlist strong {
+    color:#CC0000;
+}
+
+
+/* 
+	--------------------------------------
+	*****    9. assist (辅助)     *****
+	--------------------------------------
+*/
+.p5 {
+    padding:5px;
+}
+
+.p10 {
+    padding:10px;
+}
+
+.blank5 {
+    clear:both;
+    height:5px;
+    overflow:hidden;
+}
+
+.blank10 {
+    clear:both;
+    height:10px;
+    overflow:hidden;
+}
+
+.padding10 {
+    padding:10px;
+}
+
+.margin5 {
+    margin:5px;
+}
+
+.padding5 {
+    padding:5px;
+}
+
+.blank5 {
+    clear:both;
+	height:5px;
+	overflow:hidden;
+}
+
+.hr {
+    clear:both;
+	height:1px;
+	background:url(point.gif) repeat-x;
+}
+
+.greenbutton {
+    width:113px;
+	height:34px;
+	line-height:14px;
+	text-align:center;
+	border:none;
+    background:url(greenbtn.png) 0px 4px no-repeat;
+	color:#FFF;
+}
+
+.shadow {
+    height:14px;
+	line-height:14px;
+	FILTER:dropshadow(color=#000000,offx=1,offy=1);
+}
+
+
+/* 
+	--------------------------------------
+	*****    10. ad (广告)     *****
+	--------------------------------------
+*/
+
+.boxtop {
+   
+	background:url(boxtop.gif) right top no-repeat;
+}
+
+.top {
+    height:24px;
+	line-height:34px;
+	padding-left:15px;
+	background:url(top.gif) left top no-repeat;
+	color:#1B679C;
+	overflow:hidden;
+}
+
+.box {
+    background:#FAFAFC url(boxbg.gif) right bottom repeat-x;
+}
+
+.boxright {
+    padding:6px;
+	background:url(boxright.gif) right top repeat-y;
+}
+
+.boxright ul {
+    margin:0px 15px 0px 10px;
+}
+
+.boxright ul li {
+    color:#06416B;
+	padding-left:45px;
+	height:34px;
+	line-height:34px;
+	background:url(telline.gif) left center no-repeat;
+}
+
+.boxright ul li a {
+    display:block;
+}
+
+.boxright ul li a.catwo,.boxright ul li a.cathree,.boxright ul li a.catfour {
+    height:24px;
+	line-height:24px;
+	font-weight:normal;
+	overflow:hidden;
+	background:none;
+}
+
+.boxright ul li a.cathree {
+    padding-left:15px;
+}
+
+.boxright ul li a {
+    color:#06416B;
+	font-weight:bold;
+}
+
+.boxbottom {
+	background:url(boxbottom.gif) right bottom no-repeat;
+}
+
+.bottom {
+    height:12px;
+	background:url(bottom.gif) left top no-repeat;
+	overflow:hidden;
+}
+
+.contactus h5 {
+    padding-left:20px;
+	color:#333;
+}
+
+.contactus ul  li {
+    margin-left:35px;
+	color:#555;
+}
+
+
+#newsbox {
+    clear:both;
+	height:135px;
+	margin:0px 10px 0px 10px;
+	padding:0px 10px;
+	background:url(spoint.gif) 250px 35px repeat-y; 
+}
+
+#newsbox ul li {
+    float:left;
+	width:230px;
+	height:24px;
+	overflow:hidden;
+	padding:0px 0px 0px 10px;
+	color:#333;
+}
+
+#products .title h4 {
+    line-height:30px;
+	margin:0px 20px 5px 15px;
+	padding-left:30px;
+	font-size:12px;
+	border-top:1px dotted #ccc;
+	border-bottom:1px dotted #ccc;
+	background:url(rank_3.gif) 10px 10px no-repeat;
+	color:#1B679C;
+}
+
+#picbox {
+    float:left;
+	width:442px;
+	height:105px;
+    margin:0px 10px;
+	padding-bottom:10px;
+	overflow:hidden;
+}
+
+#picbox .pic {
+    float:left;
+	width:105px;
+	margin:0px 3px 0px 3px;
+	text-align:center;
+}
+
+#picbox .pic img {
+    width:95px;
+	height:69px;
+}
+
+#picbox .pic h5 {
+    height:32px;
+    font-weight:normal;
+	line-height:16px;
+	overflow:hidden;
+}
+
+.pic img {
+    padding:3px;
+	border:1px solid #ccc;
+}
+
+
+.dis{
+    float:left;
+    width:8px;
+    height:52px;
+    text-align: center;
+    padding-top:10px
+}
+
+#list ul li {
+    line-height:28px;
+	padding:0px 10px 0px 20px;
+	font-size:12px;
+    border-bottom:1px dotted #ccc;
+	background:url(greendot.gif) 5px 10px no-repeat;
+}
+
+#list ul li p {
+    padding:5px 30px;
+}
+
+#list ul li p a {
+    color:#999;
+}
+
+.date {
+    float:right;
+
+}
+
+
+/* 
+	--------------------------------------
+	*****    7. footer (页底)     *****
+	--------------------------------------
+*/
+
+#content h1 {
+    line-height:40px;
+	font-size:16px;
+	text-align:center;
+	background:url(point.gif) left bottom repeat-x;
+	color:#CC0000;
+}
+
+.contentinfo {
+    line-height:24px;
+    text-align:center;
+}
+
+.contenttext {
+    padding:10px 0px;
+	text-align:14px;
+	line-height:200%;
+	color:#333;
+}
+
+.pages {
+    clear:both;
+}
+
+.pages strong {
+	color:#FFF;
+	display:block;
+	height:18px;
+	line-height:18px;
+	float:left;
+	padding:0px 8px;
+	background:#CED7E0;
+	border:1px solid #73AAF7;
+	margin: 0px 3px 0px 0px;
+}
+.pages a {
+	display:block;
+	height:18px;
+	line-height:18px;
+	float:left;
+	padding:0px 8px;
+	border:1px solid #CCC;
+	text-decoration:none;
+	margin: 0px 3px 0px 0px;
+	color:#73aaf7;
+}
+
+.pages span {
+    float:right;
+	padding-right:10px;
+}
+
+/****************评论*/
+#comment {
+    margin-top:20px;
+}
+
+#comment .input {
+    height:18px;
+	line-height:18px;
+	border:none;
+	background:#CCC;
+}
+
+.comm {
+    height:28px;
+	line-height:28px;
+	padding-left:35px;
+	border-top:1px solid #ccc;
+	background:url(comment.gif) 10px 7px no-repeat;
+}
+
+#textarea {
+    width:685px;
+	height:50px;
+    background:#FFF url(cmslogo.jpg) right bottom no-repeat;
+}
+
+
+#productslist .pic {
+    float:left;
+	width:315px;
+	height:130px;
+	margin:0px 10px 10px;
+	overflow:hidden;
+}
+
+#productslist .pic img {
+    float:left;
+	width:100px;
+	height:120px;
+	margin-right:20px;
+}
+
+#productslist .pic p,#productslist .pic h5 {
+    float:left;
+	width:160px;
+	line-height:28px;
+	color:#333;
+}
+
+#productscontent {
+    clear:both;
+	margin:20px;
+}
+
+#productscontent h1 {
+    line-height:30px;
+	background:none;
+	text-align:left;
+	color:#CC0000;
+}
+
+#productscontent p,#productscontent h5 {
+    float:left;
+	width:360px;
+	line-height:28px;
+	color:#333;
+}
+
+#productscontent img {
+    float:left;
+	width:140px;
+	height:180px;
+	margin-right:20px;
+	padding:3px;
+	border:1px solid #ccc;
+	background:#FFF;
+}
+
+/********投票*/
+
+.optionbar {
+    background: #CAD9EA;
+    border:1px solid #CAD9EA;
+    float:left;
+    height:12px;
+    margin-right:0.5em;
+}
+.optionbar div {
+    border:1px solid #FFFFFF;
+    float:left;
+    height:10px;
+    overflow:hidden;
+}
+
+.votelist {
+    clear:both;
+}
+
+
+.icon {
+    clear:both;
+	height:22px;
+	line-height:22px;
+}
+.icon .topnum {
+    width:22px;
+	line-height:22px;
+	text-align:center;
+	float:left;
+	font:bold 10px/23px Tahoma;
+	margin:0 1px;
+	background:url(rank_2.gif) center center  no-repeat; 
+	color:white;
+}
+
+#login {
+  padding:15px 25px 0px;
+  text-align:left;
+  background:#F5F5F5;
+}
+
+.login_input {
+  width:108px;
+  margin:2px 0px;
+  border:1px solid #CCC;
+  color:#888;
+}
+
+#checkcode {
+  clear:both;
+  float:left;
+  width:54px;
+  height:19px;
+  margin-top:2px;
+}
+.loginbtn {
+  width:54px;
+  height:43px;
+  border:none;
+  background:url(login.gif) left top no-repeat;
+}
+
+ul#navmenu {z-index:99;position: relative; }
+
+ul#navmenu li { 
+margin: 0; 
+border: 0 none; 
+padding: 0; 
+float: left; /*For Gecko*/ 
+display: inline; 
+list-style: none; 
+position: relative; 
+
+} 
+ul#navmenu ul { 
+margin: 0; 
+border: 0 none; 
+padding: 0; 
+width: 200px; 
+list-style: none; 
+display: none; 
+position: absolute; 
+top: 38px; 
+left: 0; 
+
+} 
+ul#navmenu ul li { 
+line-height:28px;
+float: none; /*For Gecko*/ 
+display: block !important; 
+display: inline; /*For IE*/ 
+} 
+
+ul#navmenu ul li a {
+background:url(images/navmenu_bg.png) repeat-y left top;
+background:url(images/navmenu_bg.png) no-repeat left top !important; 
+/*For Firefox*/
+*background:none;
+/*For IE7 & IE6*/
+_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/navmenu_bg.png',sizingMethod='crop');
+width:180px;
+height:28px;
+line-height:28px;
+display:block;
+}
+
+/* 2nd Menu */ 
+ul#navmenu li:hover li a, 
+ul#navmenu li.iehover li a { 
+float: none; 
+color: #FFF; 
+font-size:12px;
+height:28px;
+line-height:28px;
+font-weight:normal;
+padding:0px 10px 0px 10px;
+border-bottom:1px solid #888;
+} 
+/* 2nd Menu Hover Persistence */ 
+ul#navmenu li:hover li a:hover, 
+ul#navmenu li:hover li:hover a, 
+ul#navmenu li.iehover li a:hover, 
+ul#navmenu li.iehover li.iehover a { 
+color: #FFF; 
+background:none;
+} 
+/* 3rd Menu */ 
+ul#navmenu li:hover li:hover li a, 
+ul#navmenu li.iehover li.iehover li a { 
+color: #FFF; 
+} 
+/* 3rd Menu Hover Persistence */ 
+ul#navmenu li:hover li:hover li a:hover, 
+ul#navmenu li:hover li:hover li:hover a, 
+ul#navmenu li.iehover li.iehover li a:hover, 
+ul#navmenu li.iehover li.iehover li.iehover a { 
+color: #FFF; 
+} 
+/* 4th Menu */ 
+ul#navmenu li:hover li:hover li:hover li a, 
+ul#navmenu li.iehover li.iehover li.iehover li a { 
+color: #FFF; 
+} 
+/* 4th Menu Hover */ 
+ul#navmenu li:hover li:hover li:hover li a:hover, 
+ul#navmenu li.iehover li.iehover li.iehover li a:hover { 
+color: #FFF; 
+} 
+ul#navmenu ul ul, 
+ul#navmenu ul ul ul { 
+display: none; 
+position: absolute; 
+top: 0; 
+left: 200px; 
+} 
+/* Do Not Move - Must Come Before display:block for Gecko */ 
+ul#navmenu li:hover ul ul, 
+ul#navmenu li:hover ul ul ul, 
+ul#navmenu li.iehover ul ul, 
+ul#navmenu li.iehover ul ul ul { 
+display: none; 
+} 
+ul#navmenu li:hover ul, 
+ul#navmenu ul li:hover ul, 
+ul#navmenu ul ul li:hover ul, 
+ul#navmenu li.iehover ul, 
+ul#navmenu ul li.iehover ul, 
+ul#navmenu ul ul li.iehover ul { 
+display: block; 
+} 
+
+#content {line-height:200%;font-size:14px;}
+#content table {font-size:12px;}
+
+
+#list-view li {
+float:left; 
+width:160px; 
+text-align:center; 
+overflow:hidden; 
+margin:0 0px 5px; 
+padding:0 5px; 
+vertical-align:100%;
+}
+
+.img-wrap{
+  margin:0 auto;
+  width:90%;
+  height:150px;
+  overflow:hidden; 
+  /*非IE的主流浏览器识别的垂直居中的方法*/
+  display: table-cell;
+  vertical-align:middle;
+  /*设置水平居中*/
+  text-align:center;
+  /* 针对IE的Hack */
+  *display: block;
+  *font-size: 139px;/*约为高度的0.873，200*0.873 约为175*/
+  *font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/
+}
+.img-wrap img {
+  display:block;
+  width:136px;
+  width:80%\0;
+  _width:120px;
+  margin:0px auto;
+  vertical-align:middle;
+  padding:5px;
+  border:1px solid #ccc;
+  _border:none;
+  background:url(images/pic_bg.gif) left top no-repeat;
+  border-right:1px solid white; 
+  border-bottom:1px solid white;
+   /*非IE的主流浏览器识别的垂直居中的方法*/
+  display: table-cell;
+  vertical-align:middle;
+  /*设置水平居中*/
+  text-align:center;
+  /* 针对IE的Hack */
+  *display: block;
+  *font-size: 139px;/*约为高度的0.873，200*0.873 约为175*/
+  *font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/
+  }
+
+.list_text_pic {float:left;width:140px; height:120px; vertical-align:100%;}
+.list_text_pic .img-wrap {height:120px;}
+
+#list-view h5 a {
+clear:both;
+  width:142px;
+  overflow:hidden;
+  height:18px;
+  line-height:18px;
+  margin-top:10px;
+  font-size:12px;
+   text-align:center;
+  font-weight:normal;
+}
+#list-view span {color:red;}
+#list-view h5 p {height:18px;
+  line-height:18px;}
+.back,.btn {
+  display:block;
+  clear:both;
+  width:72px;
+  height:21px;
+  line-height:20px;
+  margin:15px 0px;
+  padding-left:10px;
+  background:url(images/back.gif) left top no-repeat;
+  text-align:center;
+  color:white;
+  font-size:12px;
+  text-decoration: none;
+  border:none;
+}
+
+.back a,.back a:hover {text-decoration: none;color:white;}
+
+.input_d {
+  width:190px;
+  height:29px;
+  line-height:29px;
+  padding:0px 10px;
+  background:url(images/input_bg_d.gif) left top no-repeat;
+  border:none;
+  font-size:12px;
+}
+
+
+
+.input_c {
+  width:39px;
+  height:21px;
+  line-height:21px;
+  padding:0px 10px;
+  background:url(images/input_bg_c.gif) left top no-repeat;
+  border:none;
+  font-size:12px;
+}
+
+#addcontentuser {
+  padding:5px;background:#E47C01;color:white;
+}
+
+#catid {height:27px;
+  line-height:27px;border:1px solid #999;color:#333;}
+.top_input{ float:left; padding-left:8px;}
+
+.top_inputimg{ 
+float:left; margin-left:8px; padding:0px 8px;height:27px;
+  line-height:27px;color:white;
+  background:url(images/btn.gif) right top no-repeat;border:none;
+  }
+
+.top_input input {margin:10px 0px;
+	background-image: url(sm_2.gif);
+	background-repeat: no-repeat;
+	background-position: left;
+	border:1px solid #999;color:#999;
+	height:25px;
+  line-height:25px;
+	text-align: left;
+	text-indent: 24px;
+	color:#CCC;
+	font-size:12px;
+}
+
+
+/****************评论*/
+#comment {
+  margin-top:20px;
+  font-size:12px;
+}
+
+#comment input {font-size:12px;}
+
+.comm {
+  height:28px;
+  line-height:28px;
+  padding-left:35px;
+  background:url(images/comment.gif) 10px 7px no-repeat;
+}
+
+.input {
+  width:72px;
+  height:21px;
+  line-height:21px;
+  padding-left:10px;
+  border:none;
+  font-weight:bold;
+  font-size:12px;
+}
+
+#textarea {
+  width:100%;
+  height:50px;
+  background:#FFF url(images/cmslogo.gif) right bottom no-repeat;
+  border-top:1px solid #E0DDDD;
+  border-right:1px solid #E0DDDD;
+  border-bottom:1px solid #E0DDDD;
+  border-left:1px solid #E0DDDD;
+}
+.comment_list {padding:0px 20px;}
+.comment_list dd {font-size:12px;background:url(images/point.gif) left bottom repeat-x;}
+.comment_list dt span {float:right;color:#ccc;}
+
+.commentnumber {padding:0px 5px;color:#CC0000;}
+
+.comment_list dt strong {color: #70AADA;}
+
+.comment_list dd.admin_reply  {margin:10px; padding:10px;border:1px dotted #ccc; background:#FFFFEE;}
+
+.p_info,.d_info {
+  height:20px;
+  line-height:20px;
+  padding-left:20px;
+  background:url(images/rank_1.gif) left center no-repeat;
+  color:#0D61BA;
+  font-size:14px;
+  font-weight:bold;
+}
+

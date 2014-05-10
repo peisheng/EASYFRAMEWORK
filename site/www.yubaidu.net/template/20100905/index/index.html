@@ -1,0 +1,97 @@
+{template 'header.html'}
+<!--head部结束-->
+    <div id="bd">
+    	<div id="bd_left">
+    	  <div class="box1">
+          	<div class="boxd">
+            	<ul class="ul2g">
+				{loop categories(3) $t1}
+<li><a href="{$t1[url]}" title="{$t1[catname]}">{$t1[catname]}</a></li>
+{/loop}
+            </ul>
+            </div>
+          </div>
+          <div class="boxb">
+          	<div class="titleg">
+           	  <div class="title_left"><img src="{$skin_path}/men_20.gif" /></div>
+            	<div class="title_wd"><div class="title_ico"><img src="{$skin_path}/men_10.gif" /></div><?php $t=position_p($catid=5);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?><span class="eng">CONTACT</span></div>
+                
+                </div>
+          	<div class="content">
+            	<div class="p"><ul>
+<li>{lang(address)}：{get(address)}</li>
+<li>{lang(tel)}：{get(tel)}</li>
+<li>{lang(fax)}：{get(fax)}</li> 
+<li>{lang(email)}：{get(email)}</li> 
+</ul></div>
+            </div>
+          </div>
+   	  </div>
+      <div id="bd_right">
+      	<div class="bd_right_left">
+       	  <div class="boxa">
+          	<div class="title">
+            	<div class="title_left"><img src="{$skin_path}/men_20.gif" /></div>
+            	<div class="title_wd"><div class="title_ico"><img src="{$skin_path}/men_10.gif" /></div><?php $t=position_p($catid=2);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?><span class="eng">FAQ</span></div>
+                
+                <div class="more"><a href="index.php?case=archive&act=list&catid=2"><img src="{$skin_path}/men_11.gif" border="0" /></a></div>
+            </div>
+            <div class="content">
+            	<ul class="ul2">
+            {loop archive(2,0,0,'0,0,0',16,'aid',6,false,0) $i $archive} 
+<li><span class="date">{$archive[adddate]}</span><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[stitle]}</a></li>
+{/loop}
+            </ul>
+            </div>
+          </div>
+        </div>
+        <div class="bd_right_right">
+        	<div class="boxa">
+          	<div class="title">
+            	<div class="title_left"><img src="{$skin_path}/men_20.gif" /></div>
+            	<div class="title_wd"><div class="title_ico"><img src="{$skin_path}/men_10.gif" /></div><?php $t=position_p($catid=1);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?><span class="eng">ABOUT US</span></div>
+                
+                <div class="more"><a href="index.php?case=archive&act=list&catid=1"><img src="{$skin_path}/men_11.gif" border="0" /></a></div>
+            </div>
+            <div class="content">
+            	<div class="p1" style="height:105px;margin:10px 0px;overflow:auto;"><div class="p_pic"><img src="{$skin_path}/men_19.gif" /></div><?php $t=position_p($catid=1);?>
+<a href="{$t.url}" title="{$t['name']}">{tag_公司简介}</a>
+<?php?></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="boxb">
+          	<div class="title">
+            	<div class="title_left"><img src="{$skin_path}/men_20.gif" /></div>
+            	<div class="title_wd"><div class="title_ico"><img src="{$skin_path}/men_10.gif" /></div><?php $t=position_p($catid=3);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?><span class="eng">PRODUCTS</span></div>
+                
+                <div class="more"><a href="index.php?case=archive&act=list&catid=3"><img src="{$skin_path}/men_11.gif" border="0" /></a></div>
+            </div>
+          <div class="content1">
+
+		   
+<ul id="list-view">
+{loop archive(3,0,0,'0,0,0',20,'aid',8,true,0) $i $archive}
+{if $i%4==0}<div class="clear blank5"></div>{else}{/if}
+<li><div class="img-wrap"><a title="{$archive['stitle']}" target="_blank" href="{$archive['url']}"><img alt="{$archive['stitle']}" src="{$archive['sthumb']}" onerror='this.src="{$base_url}/{config::get('onerror_pic')}"' /></a></div>
+<h5><a title="{$archive['stitle']}" target="_blank" href="{$archive['url']}">{$archive['title']}</a></h5>{if $archive['attr2']}{lang(price)}	:	<span>{$archive['attr2']}</span>{lang(unit)}{/if}
+</li>
+{/loop}
+</ul>
+
+            </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <!--bd部结束-->
+    {template 'footer.html'}

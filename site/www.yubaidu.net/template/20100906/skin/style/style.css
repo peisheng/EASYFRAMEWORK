@@ -1,0 +1,243 @@
+@charset "utf-8";
+
+/*
+		拓荒.NET(www.tuohuang.net)
+		QQ:52643547
+		Email:xlqstar@tuohuang.net
+
+			[index]
+			0    - Reset
+			1    - Text
+			2    - Global
+			2.1  - header
+			2.1.1  - Nav
+			2.2  - footer
+			3    -  home
+			4    -  list	
+ */
+
+
+/* =0 Reset
+--------------------------------------------------------------*/
+html, body, div, span, iframe,h1, h2, h3, h4, h5, h6, p, a, abbr, acronym, address, big, cite, code, em, font, img, strong, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0;padding: 0;border: 0;outline: 0;font-size: 12px;vertical-align: baseline;background: transparent;}
+body {color:#333;font: 12px/1.5 Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif; text-align:left;}
+ol, ul { list-style:none;}
+a:link, a:visited{color: #333;text-decoration:none;}a:hover{color:#333; text-decoration:none;}
+p{margin-top:20px;}
+
+/* =1 Text
+--------------------------------------------------------------*/
+.bold {font-weight:bold;}
+.note {color:#aeaeae;}
+.red {color:#ee0d0d;}
+.black {color:#1e1e1e;}
+.white {color:#FFF;}
+.middle_size {font-size:14px;}
+.large_size {font-size:16px;}
+
+/* =2 Globle
+--------------------------------------------------------------*/
+#container { width:910px; margin:25px auto; }
+#header { height: 130px; width: 910px; float: left; font-weight:bold }
+	#logo{ width:294px; height:56px; float:left;}
+	#switch{ width:150px; height:25px; line-height:25px; float:right;}
+	#search{ width:200px; height:25px; margin-top:20px; margin-bottom:20px; line-height:25px; float:right;  clear:right;}
+		#keywords{ width:120px; height:20px; line-height:20px; margin-left:10px; background:#F0F0F0; border:0px;}
+		#magnifying{ width:30px; height:25px; margin-left:10px; background:#F7F7F7;}
+	#ul_nav{ width:910px; height:34px; background:url(../nav_bg.gif); float:left; }
+		#ul_nav li{ height:34px; line-height:34px; float:left; width: 80px; background: url(../li1.gif) no-repeat left; padding-left:20px; margin-left: 10px; }
+#footer{ width:910px; height:25px; line-height:25px; background:url(../bg_footer.gif) repeat-x bottom; clear:both; }
+	#footer a{ margin:auto 10px; float:left; }
+	#footer #copyright{ width:250px; float:right;}
+
+/* =2 Home
+--------------------------------------------------------------*/
+#main{ width:910px; height:590px; margin-bottom:20px; float:left; position:relative;}
+	#slide{ width:910px; height:282px; background:url(../slide.gif); float:left; }
+.rollBox{ width:932px; overflow:hidden; margin:10px auto; float:left; float:left; position:absolute; left: -12px; top: 293px; }
+.rollBox .LeftBotton{ height:20px; width:11px; background:url(../button.gif) no-repeat left; overflow:hidden; float:left; display:inline; margin:25px 0 0 0; cursor:pointer; }
+.rollBox .RightBotton{height:20px;width:11px;background:url(../button.gif) no-repeat right;overflow:hidden;float:left;display:inline;margin:25px 0 0 0;cursor:pointer;}
+.rollBox .Cont{ width:910px; overflow:hidden; float:left; }
+.rollBox .ScrCont{width:10000000px;}
+.rollBox .Cont .pic{ width:303px; float:left; text-align:center; }
+.rollBox .Cont .pic img{padding:0px;background:#fff;border:1px solid #ccc;display:block;margin:0 auto;}
+.rollBox .Cont .pic p{line-height:26px;color:#505050;}
+.rollBox .Cont a:link,.rollBox .Cont a:visited{color:#626466;text-decoration:none;}
+.rollBox .Cont a:hover{color:#f00;text-decoration:underline;}
+.rollBox #List1,.rollBox #List2{float:left;}
+
+
+#con { FONT-SIZE: 12px; margin-top:130px; WIDTH: 603px; float:left; }
+#tags {PADDING: 0px; MARGIN: 0px; WIDTH: 400px;  HEIGHT: 27px ;}
+#tags LI {FLOAT: left; MARGIN-RIGHT: 1px; LIST-STYLE-TYPE: none; HEIGHT: 27px; width:83px; text-align:center;}
+#tags LI A { PADDING-RIGHT: 10px; PADDING-LEFT: 10px; PADDING-BOTTOM: 0px; COLOR: #999; LINE-HEIGHT: 27px; PADDING-TOP: 0px; HEIGHT: 27px; TEXT-DECORATION: none }
+#tags LI.emptyTag {BACKGROUND: none transparent scroll repeat 0% 0%; WIDTH: 4px;}
+#tags LI.selectTag { BACKGROUND-POSITION: left top; POSITION: relative; HEIGHT: 27px; BACKGROUND: url(../bg1.gif) no-repeat right top; }
+#tags LI.selectTag A {BACKGROUND-POSITION: right top; COLOR: #000; HEIGHT: 27px; LINE-HEIGHT: 27px;}
+#tagContent { }
+.tagContent {DISPLAY: none;BACKGROUND: url(../bg2.gif) repeat-x; WIDTH: 583px; COLOR: #474747; HEIGHT: 135px; padding:5px 10px;}
+.tagContent img{float:left; margin-right:20px;}
+.tagContent ul li{ height:27px; line-height:27px;}
+#tagContent DIV.selectTag {DISPLAY: block}
+
+#case { width:298px; height:170px; float:right; margin-top:130px; }
+
+/* =2 List
+--------------------------------------------------------------*/
+#sidebar{ width:200px; float:left; margin-top:20px; }
+	#sidebar ul li{ background:url(../bg3.jpg); height:21px; line-height:21px; margin-top:3px; padding-left: 25px; }
+	#sidebar ul li:hover{ background:url(../bg4.jpg);}
+#community{ margin-bottom:20px;}
+#content{ float:left; margin-top:20px; width:700px; margin-left: 10px; margin-bottom: 20px; }
+	#content h1{ color:#8D1816;}
+#list #slide{ width:910px; height:238px; float: left; }
+
+
+.ul2g{
+	clear:both;
+	margin:0px;
+	padding:6px 8px 8px 12px;
+	text-align:left;
+	font-family:Arial, "宋体";
+	font-size:12px;
+	}	
+.ul2g li{
+	font-family:Arial, "宋体";
+	font-size:12px;
+	line-height:28px;
+	height:28px;
+	list-style-type: none;
+	color:#666666;
+	display:block;
+	padding:0px;
+	display:block;
+	background:url(mb_14g.gif) no-repeat left bottom;
+	white-space:nowrap;
+	}	
+.ul2g li a{
+	color:#666666;
+	text-decoration: none;
+	margin-left:15px;
+	}	
+.ul2g li a:hover{
+	color:#ff8707;
+	}
+.ul2g .date{
+	color:#999999;
+	float:right;
+	width:55px;
+	font-size:10px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.blank5,.blank10,.blank30 {clear:both;height:5px;overflow:hidden;}
+.blank10 {height:10px;}
+.blank30 {height:30px;}
+
+/*工具*/
+#tool a{
+	color:#666666;
+	text-decoration: none;
+	margin-left:2px;
+	}	
+#tool a:hover{
+	color:#ff8707;
+	}
+
+#tool {
+	font-size:12px;
+	line-height:20px;
+	border-top:1px solid #DDD;
+	border-bottom:1px solid #DDD;
+	height:20px;
+	margin:10px 0;
+	padding:10px 0 10px 10px;
+	overflow: hidden;
+}
+#tool ul {
+	float:left;
+	list-style-type:none;
+}
+#tool ul li {
+	float:left;
+	width:90px;
+	line-height:20px;
+}
+#tool .commentary, #tool .print, #tool .copy, #tool .email, #tool .close, #tool .rss_2, #tool .t_1, #tool .t_2, #tool .t_3 {
+	background-image: url(tool.gif);
+	background-repeat: no-repeat;
+	background-position: left -20px;
+	height:20px;
+	line-height:20px;
+	padding:0 0 0 25px;
+	display:block;
+	margin:0 10px 0 0;
+	color:#333;
+}
+#tool .print {
+	background-position: left -40px;
+}
+#tool .copy {
+	background-position: left -80px;
+}
+#tool .email {
+	background-position: left -100px;
+}
+#tool .close {
+	background-position: left -60px;
+}
+#tool .rss_2 {
+	background-position: left -120px;
+}
+#tool .t_1 {
+	background-position: left -140px;
+}
+#tool .t_2 {
+	background-position: left -160px;
+}
+#tool .t_3 {
+	background-position: left -180px;
+}
+
+#tool .t_4 {padding-left:20px;background:url(comment.gif) left -1px no-repeat;}
+#tool .orders {padding-left:20px;background:url(orders.gif) left 2px no-repeat;}
+#tool .sinaicon {padding-left:20px;background:url(sinaicon.png) left -3px no-repeat;}
+
+/************* 分页 */
+
+.pages {
+  clear:both;
+  margin:0px 10px;
+}
+
+.pages strong {
+  color:#555;
+  display:block;
+  float:left;
+  height:18px;
+  line-height:18px;
+  float:left;
+  padding:0px 8px;
+  background:#F5F5F5;
+  border:1px solid #ccc;
+  margin: 0px 3px 0px 0px;
+}
+.pages a {
+  display:block;
+  float:left;
+  height:18px;
+  line-height:18px;
+  float:left;
+  padding:0px 8px;
+  border:1px solid #CCC;
+  text-decoration:none;
+  margin: 0px 3px 0px 0px;
+  color:#555;
+}
+
+.pages span {
+  float:right;
+}
+.prodg_box{float:left;display:block;text-align:center; padding-left:16px; padding-top:16px;}
+img.prodg{border:1px solid #ececec;width:130px;height:113px;background:#FFffff; padding:5px;}
+a.prodg_font{padding:0px;text-decoration:none;color:#0da401; line-height:26px;}
+a:hover.prodg_font{padding:0px;text-decoration:none;color:#ff8707; line-height:26px;}

@@ -1,0 +1,42 @@
+{template 'header.html'}
+<!--head部结束-->
+<div id="bd">
+{template 'left.html'}
+<!--left_1 end-->
+
+<div class="right_2">
+<div class="rl_box2g">
+ <div class="rl_box2_title">
+    <div class="rl_box2_titlelg">{$special[title]}</div>
+<div id="position">
+        <strong>当前位置：</strong><a title="{get('sitename')}" href="{$base_url}">{get('sitename')}</a><a title="{$t['name']}" href="{$t.url}">{$special[title]}</a>
+    </div>
+ </div>
+
+<div id="title">
+			
+			<div class="text">
+
+<ul class="news_list">
+{loop $archives $i $sp}
+<li><span class="date">{$sp[adddate]}</span><a title="{$sp[title]}" target="_blank" href="{$sp[url]}">{$sp[title]}</a></li>
+{/loop}
+</ul>
+<div class="blank10"></div>
+<!-- 内容列表分页 -->
+{if isset($pages)}
+{tag::pagination($tag)}
+{/if}
+</div>
+			<div class="blank10"></div>
+		</div>
+		<div class="blank30"></div>
+
+	<div class="clear"></div>
+    </div>
+  <div class="clear"></div>
+  </div>
+<div class="clear"></div>
+</div>
+<!--box end-->
+{template 'footer.html'}

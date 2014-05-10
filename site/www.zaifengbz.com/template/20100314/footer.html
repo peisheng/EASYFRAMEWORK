@@ -1,0 +1,26 @@
+    <div id="footer">
+    	<div id="footer_nav"><span class="fooer_words">
+		<?php $t=position_p($typeid=1);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>	|	
+<?php?>
+<!-- {loop archive(1,0,0,'0,0,0',20,'aid',10,false,0) $i $archive} -->
+<a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[stitle]}</a>	|	
+<!-- {/loop} --><?php $t=position_p($typeid=5);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>	|	
+<?php?>
+<a href="#">TOP</a></span></div>
+			   <div id="footer_cp">{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a> All Rights Reserved. {lang(address)}：{get(address)} {lang(tel)}：{get(tel)} {lang(fax)}：{get(fax)} {lang(email)}：{get(email)}
+			   
+			   <br />热门关键词：{gethotsearch(10)}<br />
+			   <div class="copyright">   {getcnzzcount()}</div><div class="blank10"></div>
+			   </div>
+			   <div class="blank10"></div>
+   </div>
+<!-- 非商业用户请勿删除 -->
+
+</div>
+</div>
+</div>
+{template 'system/servers.html'}
+</body>
+</html>

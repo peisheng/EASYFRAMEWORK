@@ -1,0 +1,33 @@
+{template 'header.html'}
+<div id="bd2j">
+      <div id="bd_box">
+          <div id="bd_leftg">
+			{template 'left.html'}
+			<div>
+			<img src="{$skin_path}/hy_11.gif" width="250" height="62" /></div>
+          </div>
+        <div id="bd_rightg">
+          	{template 'position.html'}
+
+                       <div class="pd">
+
+<ul class="news_list">
+			{loop $archives $i $archive}
+			<li class="list{=$i+1}"><span class="date">{$archive[adddate]}</span><a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}">{$archive[title]}</a></li>
+			{/loop}
+		</ul>
+		<div class="blank10"></div>
+{if isset($pages)}
+{category_pagination($catid)}
+{/if}
+
+<div class="blank30"></div>
+<a title="{lang(gotop)}" href="#" class="clear floatright"><img alt="{lang(gotop)}" src="{$skin_url}/gotop.gif"></a>
+<div class="blank30"></div>
+		<div class="clear"></div>
+
+</div>
+        </div>
+          <div class="clear"></div>
+    </div>
+{template 'footer.html'}

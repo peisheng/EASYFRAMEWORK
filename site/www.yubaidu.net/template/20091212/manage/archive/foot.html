@@ -1,0 +1,37 @@
+<div id="footer">
+<div style="text-align:right;"><a href="#" class="gotop">&nbsp;</a></div>
+&copy; 2008-2009&nbsp;<a href="{$base_url}/" target="_blank">{get('fullname')}</a>&nbsp;All&nbsp;Rights&nbsp;Reserved.&nbsp;&nbsp;Power&nbsp;by&nbsp;<a href="http://www.cmseasy.cn" target="_blank">{config::get('version')}</a> .</div>
+</div>
+<?php ?>
+</div>
+</div>
+</div>
+
+<script language="JavaScript">
+var number=12; //定义条目数
+
+function lmYC()
+	{
+var lbmc;
+    for (i=1;i<=number;i++)
+		{
+        lbmc = eval('lm' + i);
+        lbmc.style.display = 'none';
+    }
+}
+ 
+function ShowFLT(i) 
+	{
+    lbmc = eval('lm' + i);
+    if (lbmc.style.display == 'none') 
+		{
+        lmYC();
+        lbmc.style.display = '';
+    }
+    else {
+        lbmc.style.display = 'none';
+    }
+}
+</script>
+</body>
+</html>

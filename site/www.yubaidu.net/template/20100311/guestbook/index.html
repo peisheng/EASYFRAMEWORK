@@ -1,0 +1,79 @@
+{template 'header.html'}
+<div id="bd">
+		<div class="left_box">    	
+            {template 'left.html'}
+   		</div>
+    	<div id="bd_rightg">
+          {template 'position.html'}
+                    <div class="content1">
+                        <div class="pd_title">{$type[$typeid][typename]}</div>
+                       <div class="pd">
+					  <div style="text-align:center;color:red;"><?php if(hasflash()) { ?>
+<?php echo showflash(); ?>
+<?php } ?>
+</div>
+
+<form method="post" action="" name="form1">
+		  <table width="640" border="0" align="center" cellpadding="7" cellspacing="0">
+             <tr>
+                <td width="100">&nbsp;&nbsp;&nbsp;联系人：</td>
+                <td>{form::input('nickname',get('username'))}
+                <span style="color:#FF0000"> *</span></td>
+                <td width="100"></td>
+              </tr>
+			  <tr>
+                <td width="100">&nbsp;&nbsp;&nbsp;联系电话：</td>
+                <td>{form::input('guesttel',get('guesttel'))}
+                <span style="color:#FF0000"> *</span></td>
+                <td width="100"></td>
+              </tr>
+			  <tr>
+                <td width="100">&nbsp;&nbsp;&nbsp;联系邮箱：</td>
+                <td>{form::input('guesttel',get('guestemail'))}
+                <span style="color:#FF0000"> *</span></td>
+                <td width="100"></td>
+              </tr>
+			  <tr>
+                <td width="100">&nbsp;&nbsp;&nbsp;联系QQ：</td>
+                <td>{form::input('guesttel',get('guestqq'))}
+                <span style="color:#FF0000"> *</span></td>
+                <td width="100"></td>
+              </tr>
+			  {loop $field $f}
+<?php
+ $name=$f['name'];
+ if($name==$primary_key) continue; ?>
+<tr>
+                <td>&nbsp;&nbsp;&nbsp;{$name|lang}：</td>
+                <td colspan="2">{form::getform($name,@$form,$field,@$data)} </td>
+              </tr>
+ {/loop}
+  <tr>
+                <td colspan="3" align="center" height="10">&nbsp;
+                  </td>
+              </tr>
+            
+              <tr>
+                <td>&nbsp;&nbsp;&nbsp;验证码：</td>
+                <td colspan="2"><span style="float:left;">{verify()}</span><span style="float:left;padding-left:10px;"><input type='text' id="verify"  name="verify" size="10" style="height:16px;" /></span><span style="color:#FF0000;float:left;">*</span>&nbsp;&nbsp;&nbsp;</td>
+              </tr>
+			  <tr>
+                <td colspan="3" align="center" height="10">&nbsp;
+                  </td>
+              </tr>
+              <tr>
+                <td colspan="3" align="center"><input type="submit" name="submit" value="提交" style="float:right;padding:2px; background:none; border:0px none; background-color:#DDDDDD; color:#000000; width:70px;height:20px;line-height:20px;font-size:12px;" />
+                  </td>
+              </tr>
+            </table>
+</form>
+					   <div class="blank30"></div>
+		<a title="返回顶部" href="#" class="clear floatright"><img alt="返回顶部" src="{$skin_url}/gotop.gif"></a>
+	<div class="clear"></div>
+					   </div>
+          </div>
+    	</div>
+    </div>
+<div class="clear"></div>
+
+{template 'footer.html'}

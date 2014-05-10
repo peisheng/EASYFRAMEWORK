@@ -1,0 +1,131 @@
+{template 'header.html'}
+<div id="bd">
+	<div id="bd_left">
+    	<div class="bd_left1">
+        	<div class="bd_left1_title">
+           	  <div class="title1_img"><img src="{$skin_path}/img_13.gif" /></div>
+                <div class="title1"><?php $t=position_p($typeid=2);?>
+<a href="{$t.url}">{$t['name']}</a></div>
+                <div class="more1"><a href="{$t.url}">MORE..</a></div>
+            </div>
+            <div class="bd_left1_content">
+            	<ul class="ul2">
+					{loop archive(2,0,0,'0,0,0',12,'aid',7,false,0) $i $archive} 
+ <li><a href="{$archive[url]}">{$archive[title]}</a>
+{/loop}
+                </ul>
+            </div> 
+        </div>
+        
+        <div class="bd_left2">
+        	<div class="bd_left1_title">
+            	<div class="title1_img"><img src="{$skin_path}/img_14.gif" /></div>
+                <div class="title1">站内搜索</div>
+            </div>
+            <div class="bd_left2_content">
+           	 <div style="margin:16px;">
+           	  <form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+                <div><input  id="inputsearch" type="text" name="keyword" class="input" value="请输入关键字！" size="21" /></div>
+				<div class="blank10"></div>
+                <div><input name='submit' type="image" src="{$skin_path}/mb_15.gif" style="float:right;" /></div>
+				</form>
+				</div>
+            </div> 
+        </div>
+    </div>
+    <div id="bd_right">
+    	<div id="bd_rightL">
+        	<div class="bd_rightL1">
+            	<div class="bd_rightL1_title">
+                    <div class="title1_img"><img src="{$skin_path}/img_15.gif" /></div>
+                    <div class="title1"><?php $t=position_p($typeid=1);?>
+<a href="{$t.url}">{$t['name']}</a></div>
+                    <div class="more2"><a href="{$t.url}">MORE..</a></div>
+                </div>
+                <div class="bd_rightL1_content">
+                	<div class="p"><img src="{$skin_path}/mb_17.gif"  class="imgp"/>　　<strong style="color:#FF6600">{get(sitename)}</strong>{tag_公司简介}</div>
+                </div>
+            </div>
+           
+            <div class="bd_rightL2">
+            	<div class="bd_rightL1_title">
+                	<div class="title1_img"><img src="{$skin_path}/img_16.gif" /></div>
+                    <div class="title1"><?php $t=position_p($typeid=3);?>
+<a href="{$t.url}">{$t['name']}</a></div>
+                    <div class="more2"><a href="{$t.url}">MORE..</a></div>
+                </div>
+                <div class="bd_rightL2_content" id="jsweb8_cn_left"> 
+<div id="jsweb8_cn_left1" valign="top" align="center" style="width:800%;"> 
+<ul class="list_2"> 
+<!-- {loop archive(3,0,0,'0,0,0',20,'aid',10,true,0) $i $archive}  -->
+<div class="prod_box">
+                        <a href="{$archive[url]}"><img src="{$archive[sthumb]}" alt="{$archive[stitle]}"  class="prod"/></a><br />
+                        <a href="{$archive[url]}" title="{$archive[stitle]}" class="prod_font">{$archive[title]}</a>
+           		  	</div>
+<!-- {/loop} -->
+</ul> 
+</div> 
+<div id="jsweb8_cn_left2" valign="top"></div> 
+
+</div> 
+<script> 
+var speed=50//速度数值越大速度越慢 
+jsweb8_cn_left2.innerHTML=jsweb8_cn_left1.innerHTML 
+function Marquee3()
+{ 
+if(jsweb8_cn_left2.offsetWidth-jsweb8_cn_left.scrollLeft<=0) 
+jsweb8_cn_left.scrollLeft-=jsweb8_cn_left1.offsetWidth 
+else{ 
+jsweb8_cn_left.scrollLeft++ 
+} 
+} 
+var MyMar3=setInterval(Marquee3,speed) 
+jsweb8_cn_left.onmouseover=function() 
+{
+clearInterval(MyMar3)
+} 
+jsweb8_cn_left.onmouseout=function() 
+{
+MyMar3=setInterval(Marquee3,speed)
+} 
+</script> 
+           
+            </div>
+        </div>
+        
+        <div id="bd_rightR">
+        	
+            <div class="bd_left2g" style="height:200px;">
+           	  <div class="bd_left1_title">
+            	<div class="title1_img"><img src="{$skin_path}/img_17.gif" /></div>
+                <div class="title1">{lang(siteannoun)}</div>
+                <div class="more1"></div>
+           	  </div>
+                <div class="bd_rightR2_content">
+                	<ul class="ul2 announ">
+                   {loop announ(6) $an}
+			<li><a href="{$an[url]}">{$an[title]}</a></li>
+			{/loop}
+                </ul>
+                </div>
+            </div>
+
+			<div class="bd_left2g" style="height:191px;">
+            	<div class="bd_left1_title">
+            	<div class="title1_img"><img src="{$skin_path}/img_18.gif" /></div>
+                <div class="title1">{lang(servertel)}</div>
+            	</div>
+                <div class="bd_rightR1_content">
+                	<div class="p"><strong>{lang(address)}：</strong>{get(address)}<br /> 
+                      <strong>{lang(tel)}：</strong>{get(tel)}<br /> 
+                      <strong>{lang(fax)}：</strong>{get(fax)}<br /> 
+                      <strong>{lang(email)}：</strong>{get(email)}<br /> 
+                      </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+{template 'footer.html'}

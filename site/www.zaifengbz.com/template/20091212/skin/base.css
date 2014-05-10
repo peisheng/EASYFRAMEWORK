@@ -1,0 +1,629 @@
+/*
+ * 易通CMS Style
+ * ============================================================================
+ * 版权所有 2008-2009 易通CMS，并保留所有权利。
+ * -------------------------------------------------------
+ * 这不是一个自由软件！
+ * 也不是一个开源软件！
+ * 本软件已经申请软件版权保护！
+ * 您不能在任何目的的前提下对程序代码进行破解、修改和使用；
+ * 不允许对程序代码以任何形式任何目的的再发布。
+ * ============================================================================
+ * @author:   九州易通科技有限公司
+ * @version:  v1.0
+ * ---------------------------------------------
+ * $Id: Style Sat Dec 06 09:50:51 CST 2008
+  
+  ---------------------------------------------------------------
+  1. base (全局基本属性)
+  ---------------------------------------------------------------
+  2.link (链接)
+  ---------------------------------------------------------------
+  3.font (字体)
+  ---------------------------------------------------------------
+  4. layout (框架)
+  ---------------------------------------------------------------
+  5. header (头部)
+  ---------------------------------------------------------------
+  6.content (页中)
+  ---------------------------------------------------------------
+  7.footer (页底)
+  ---------------------------------------------------------------
+  8. search (当前位置/文章搜索)
+  ---------------------------------------------------------------
+  9.assist (辅助)
+  ---------------------------------------------------------------
+  10.tab (切换)
+  ---------------------------------------------------------------
+  11.ad (广告)
+  ---------------------------------------------------------------
+  
+*/
+
+
+/* 
+  --------------------------------------
+  *****  1. base(全局基本属性)   *****
+  --------------------------------------
+*/
+
+html {
+  scrollbar-face-color : #635F5C;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  font:12px Arial,微软雅黑,Helvetica,sans-serif;
+  line-height:180%;
+  color:#333;
+  text-align:left;
+  background:#635F5C ;
+  white-space:normal; 
+  word-break:break-all;
+}
+
+div,form,img,ul,ol,li,dl,dt,dd,p {
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin:0;
+  padding:0;
+  font-size:100%;
+  color:#555;
+}
+
+h1 span,h2 span,h3 span,h4 span, h5 span {
+  color:#999;
+  padding-left:6px;
+  font-weight:normal;
+}
+
+table,td,tr,th{
+  font-size:12px;
+}
+
+ul,ol,li {
+  list-style:none;
+}
+
+img {
+  border:0;
+}
+
+.clear {
+  clear:both;
+}
+
+.floatleft {
+  float:left;
+}
+
+.floatright {
+  float:right;
+}
+
+.clear {
+  clear:both;
+}
+
+/* table */
+
+
+/* 
+  --------------------------------------
+  *****  2. link(链接)   *****
+  --------------------------------------
+*/
+
+a {
+  text-decoration: none;
+  color:#8F8F8F;
+}
+
+a:hover {
+  color:#333;
+  text-decoration: underline; 
+}
+
+/* 
+  --------------------------------------
+  *****  3. font (字体)   *****
+  --------------------------------------
+*/
+
+.green {
+  color:#5FA540;
+}
+
+.orange {
+  color:#FF9933;
+}
+
+.gray {
+  color:#ccc;
+}
+
+/* 
+  --------------------------------------
+  *****  4. layout (框架)   *****
+  --------------------------------------
+*/
+
+#body {
+  margin:0px auto;
+  padding:0px auto;
+  width:910px;
+  background:#fef9f1 url(main_bg.gif) ;
+}
+
+#main {
+  background:url(bg.gif) 828px top repeat-y;padding-bottom:3px;
+}
+
+#sidebar {
+  
+  padding:0px 80px 0px 4px;
+}
+
+/* 
+  --------------------------------------
+  *****  5. header (页头)   *****
+  --------------------------------------
+*/
+
+.logo {
+  float:left;
+  margin:10px 10px 10px 20px;
+}
+
+#top {
+  float:right;
+  margin:10px;
+  line-height:34px;
+}
+
+
+/* 
+  --------------------------------------
+  *****  6. content (页中)   *****
+  --------------------------------------
+*/
+#banner {
+  clear:both;
+}
+
+#c {
+  width:100%;
+  background:url(c_bg.jpg) left top no-repeat;
+}
+
+#nav {
+  clear:both;
+  height:27px;
+  line-height:27px;
+  text-align:center;
+  margin:10px 6px 10px 0px;
+  padding-bottom:5px;
+  border-bottom:2px solid #cc0000;
+
+}
+
+#nav a {
+  width:140px;
+  height:27px;
+  color:#333;
+  padding:0px 10px;
+  border-left:1px solid #333;
+}
+
+#nav a:hover {
+  padding:0px 8px;
+  border-left:5px solid #CC0000;
+  color:#cc0000;
+}
+
+#left {
+  float:left;
+  width:228px;
+  height:550px;
+  margin:0px;
+  background:white url(left_bg.jpg) left top no-repeat;
+}
+
+#right {
+  float:left;
+  width:572px;
+  padding:15px 10px;
+}
+
+#text {
+  padding:20px;
+}
+
+
+#text h1.title {
+  line-height:30px;
+  padding:20px 0px 10px;
+  text-align:center;
+  font-size:16px;
+  background:url(dot.gif) left bottom repeat-x;
+}
+
+.text_info {
+  margin:10px 0px 20px;
+  text-align:center;
+  color:#999;
+}
+
+#contact div {
+  margin-bottom:5px;
+  padding:6px 6px 6px 25px;
+  border:1px solid #ccc;
+  background:url(img/icon05.gif) 10px center no-repeat;
+}
+
+#l_menu ul li {
+  line-height:30px;
+  padding:0px 15px 0px 35px;
+  background:url(dot.gif) left bottom repeat-x;
+  font-weight:bold;
+}
+
+#position {
+  height:26px;
+  line-height:26px;
+  padding-bottom:15px;
+  border-bottom:1px solid #EEE;
+  text-align:right;
+  color:#999;
+}
+
+#position a {
+  height:26px;
+  line-height:26px;
+  padding:0px 10px;
+  background:url(icon01.gif) left center no-repeat;
+  color:#999;
+}
+
+#position h5 {
+  float:left;
+  width:200px;
+  padding-left:35px;
+  text-align:left;
+  color:#5FA540;
+}
+
+#introduce {
+  clear:both;
+  margin:30px 0px;
+}
+
+#introduce h1,#introduce h4 {
+  line-height:30px;
+  padding-left:35px;
+  color:#FF9933;
+  font-size:18px;
+  font-weight:bold;
+  background:url(h4_bg.gif) left top no-repeat;
+}
+
+.news_list {
+  padding:10px;
+}
+
+.news_list li {
+  line-height:30px;
+  margin:5px 0px;
+  padding:10px 20px;
+}
+
+.news_list .date {
+  padding-left:10px;
+  color:#999;
+}
+
+.news_list p {
+  /*text-indent : 20px;*/
+  line-height:20px;
+  color:#999;
+}
+
+.news_list a {
+  color:#80C353;
+  font-weight:bold;
+  font-size:14px;
+}
+
+.news_list h5 {
+  float:left;
+  width:40px;
+  font-size:14px;
+  font-weight:bold;
+  color:#89A244;
+}
+
+/************* 分页 */
+
+.pages {
+  clear:both;
+}
+
+.pages strong {
+  color:#91877B;
+  display:block;
+  float:left;
+  height:18px;
+  line-height:18px;
+  float:left;
+  padding:0px 8px;
+  background:#F5F5F5;
+  border:1px solid #91877B;
+  margin: 0px 3px 0px 0px;
+}
+.pages a {
+  display:block;
+  float:left;
+  height:18px;
+  line-height:18px;
+  float:left;
+  padding:0px 8px;
+  border:1px solid #CCC;
+  text-decoration:none;
+  margin: 0px 3px 0px 0px;
+  color:#91877B;
+}
+
+.pages span {
+  float:right;
+  padding-right:10px;
+}
+
+/****************评论*/
+#comment {
+  margin-top:20px;
+}
+
+#comment .input {
+  width:108px;
+  height:27px;
+  border:1px solid #5FA540;
+  background:url(search_btn.gif) left top no-repeat;
+  font-weight:bold;
+  color:#5FA540;
+  font-size:12px;
+}
+
+.comm {
+  height:28px;
+  line-height:28px;
+  padding-left:35px;
+  border-top:1px solid #ccc;
+  background:url(comment.gif) 10px 7px no-repeat;
+}
+
+#textarea {
+  width:525px;
+  height:50px;
+  background:#FFF url(cmslogo.jpg) right bottom no-repeat;
+  border:1px solid #D4E3A4;
+}
+
+
+/****************产品*/
+#product_pic {
+  float:left;
+  width:198px;
+  height:214px;
+  padding:10px;
+  border:1px solid #ccc;
+  overflow:hidden;
+}
+
+img#product_pic  {
+  width:198px;
+  height:214px;
+}
+
+#product_info {
+  float:left;
+  width:240px;
+  height:200px;
+  margin:0px 20px;
+}
+
+#product_info ul {
+  margin-top:20px;
+}
+
+#product_info ul li {
+  clear:both;
+  line-height:30px;
+}
+
+#product_info ul li strong {
+  display:block;
+  float:left;
+  width:100px;
+  text-align:right;
+}
+
+#product_info ul li a {
+  text-decoration: underline;
+}
+
+
+.product_box {
+  float:left;
+  width:165px;
+  margin:5px;
+  padding:5px;
+  background:#F5F5F5;
+  border:1px solid #DDD;
+}
+
+.product_box a {
+  display:block;
+  height:120px;
+  overflow:hidden;
+}
+
+.product_box img {
+  width:165px;
+  border:1px solid #DDD;
+}
+
+.product_box h5 {
+  margin-top:5px;
+  background:#FFF;
+  border:1px solid #DDD;
+  text-align:center;
+}
+
+.product_box h5 a {
+  height:22px;
+}
+
+/* 
+  --------------------------------------
+  *****  7. footer (页底)   *****
+  --------------------------------------
+*/
+#footer {
+  clear:both;
+  margin:0px 6px 0px 0px;
+
+  padding:15px 20px 15px 150px;
+  text-align:left;
+  color:#999;
+  background:#E9E7D8 url(foot_logo.gif) 30px center no-repeat;
+}
+
+#footer a {
+  /*text-decoration: underline; */
+  color:#999;
+}
+
+
+
+/* 
+  --------------------------------------
+  *****  8. search (搜索)   *****
+  --------------------------------------
+*/
+
+
+#search h5 {
+  height:30px;
+  line-height:26px;
+  padding-left:5px;
+  font-weight:bold;
+  color:red;
+}
+
+#keyword {
+  width:152px;
+}
+
+#search p {
+  height:30px;
+  line-height:30px;
+}
+
+#keyword {
+  height:18px;
+  line-height:18px;
+  padding-left:5px;
+  border:1px solid #91877B;
+  font-size:12px;
+}
+
+#search_btn {
+  width:108px;
+  height:27px;
+  line-height:27px;
+  border:none;
+  background:url(search_btn.gif) left top no-repeat;
+  font-weight:bold;
+  color:#91877B;
+  font-size:12px;
+
+}
+
+#left #search {
+  clear:both;
+  margin-left:5px;
+  color:#CC0000;
+}
+
+
+
+/* 
+  --------------------------------------
+  *****  9. assist (辅助)   *****
+  --------------------------------------
+*/
+.p5 {
+  padding:5px;
+}
+
+.p10 {
+  padding:10px;
+}
+
+.blank5 {
+  clear:both;
+  height:5px;
+  overflow:hidden;
+}
+
+.blank10,.blank30 {
+  clear:both;
+  height:10px;
+  overflow:hidden;
+}
+
+.blank20 {
+  height:20px;
+}
+
+.blank30 {
+  height:30px;
+}
+
+.padding10 {
+  padding:10px;
+}
+
+.margin5 {
+  margin:5px;
+}
+
+.padding5 {
+  padding:5px;
+}
+
+.blank5 {
+  clear:both;
+  height:5px;
+  overflow:hidden;
+}
+
+.hr {
+  clear:both;
+  height:1px;
+  background:url(point.gif) repeat-x;
+}
+
+
+/* 
+  --------------------------------------
+  *****  10.ad (广告)   *****
+  --------------------------------------
+*/
+
+

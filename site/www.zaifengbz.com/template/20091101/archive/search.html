@@ -1,0 +1,61 @@
+{template 'header.html'}
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="4" background="{$skin_path}/middle_bg1.jpg">&nbsp;</td>
+    <td valign="top">
+	<table width="880" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
+
+      <tr>
+        <td style="border-bottom:1px dotted #E4E4E4; font-weight:bold; ">
+
+	<script>
+		function search_check() {
+		word=dojo.byId('keyword').value;
+		if(!word) {
+		alert('请输入查询信息！');
+		return false;
+		}
+		else return true;
+		}
+	</script>
+	<center>
+		<form name='search_form' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+			<span class="greencu">请输入关键字：</span>
+			<select name="typeid">
+				<option value="0">所有分类</option>
+				{loop $type $tp}
+				<option value="{$tp['typeid']}">{$tp['typename']}</option>
+				{/loop}
+			</select>
+			<input name="keyword" type="text" align="absmiple" />&nbsp;
+			<input type="submit" align="absmiple" name='submit' value="搜索" />
+		</form>
+	</center>
+	<div class="blank30"></div>
+	<h4><span style="color:red;font-weight:bold;"> “{$keyword}” </span>的查询结果：</h4>
+	<ul class="news_list">
+		{loop $articles $article}
+		<li>[<a href="{$article[typeurl]}">{$article[typename]}</a>] <a href="{$article[url]}"><?php if($keyword) echo str_replace($keyword,"<span style=color:red;font-weight:bold;>$keyword</span>",$article['title']); else { ?>{$article[title]}<?php } ?></a> ({$article['adddate']})
+		{/loop}
+	</ul>
+	<div class="blank30"></div>
+	<div class="pages">
+		<?php echo pagination::html($record_count,5); ?>
+	</div>
+	<div class="blank30"></div>
+	<a href="#" class="clear" style="float:right;"><img src="{$skin_url}/gotop.gif"></a>
+
+
+</td>
+      </tr>
+    </table>
+	</td>
+    <td width="4" background="{$skin_path}/middle_bg2.jpg">&nbsp;</td>
+  </tr>
+</table>
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="948"><img src="{$skin_path}/btm_bg.jpg" width="948" height="7" /></td>
+  </tr>
+</table>
+{template 'footer.html'}

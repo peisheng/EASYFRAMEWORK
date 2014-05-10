@@ -1,0 +1,35 @@
+{template 'header.html'}<!-- 调用页头模板 -->
+<div id="c">
+{template 'position.html'}<!-- 调用导航模板 -->
+
+<div id="right">
+<div style="padding:30px 0px 0px 15px;">
+<!-- 内容_缩略图_内容简介列表 -->
+		{loop $archives $i $archive}
+		<div class="news_text_pic">
+			<a href="{$archive[url]}" class="news_text_img"><img src="{$archive[sthumb]}" alt="{$archive[stitle]}" onerror='this.src="{$base_url}/{config::get('onerror_pic')}"' width="110" height="110" /></a>
+			<h5><span class=date>{$archive[adddate]}</span><a title="{$archive[stitle]}" href="{$archive[url]}">{$archive[title]}</a></h5>
+			<p>{cut(strip_tags($archive['introduce']),100)}…<a title="{$archive[stitle]}" href="{$archive[url]}">[{lang(more)}]</a></p>
+			<span class="strgrade">{lang(strgrade)}：{$archive[strgrade]}</span>
+			<div class="clear"></div>
+		</div>
+		{/loop}
+<div class="blank30"></div>
+<!-- 内容列表分页 -->
+{if isset($pages)}
+{category_pagination($catid)}
+{/if}
+
+<div class="blank30"></div>
+<a title="{lang(gotop)}" href="#" class="clear floatright"><img alt="{lang(gotop)}" src="{$skin_url}/gotop.gif"></a>
+<div class="blank30"></div>
+
+</div>
+</div>
+
+{template 'left.html'}<!-- 调用通用左栏 -->
+
+<div class="clear"></div>
+</div>
+<!-- 调用页底模板 -->
+{template 'footer.html'}

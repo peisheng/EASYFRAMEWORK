@@ -1,0 +1,26 @@
+{if type($typeid)}
+<div id="bd_leftg">
+			  <div class="titleg"><div class="title_w"><a href="{$typeurl($typeid)}" title="{$type[$typeid][typename]}">{$type[$typeid][typename]}</a></div><div class="title_r"><img src="{$skin_path}/ls_13.gif" /></div>
+				</div>
+                <div class="content1g">
+                        <ul class="ul2g">
+                           {loop type($typeid) $type}
+<li><a href="{typeurl($type['typeid'])}" title="{$type['typename']}">{$type['typename']}</a></li>
+{/loop}
+                        </ul>
+                    </div>
+            </div>
+{/if}
+{if $parentid}
+<div id="bd_leftg">
+			  <div class="titleg"><div class="title_w"><a href="{typeurl($parentid)}" title="{typename($parentid)}">{typename($parentid)}</a></div><div class="title_r"><img src="{$skin_path}/ls_13.gif" /></div>
+				</div>
+                <div class="content1g">
+                        <ul class="ul2g">
+                          {loop type($parentid) $type}
+<li><a href="{typeurl($type['typeid'])}" title="{$type['typename']}">{$type['typename']}</a></li>
+{/loop}
+                        </ul>
+                    </div>
+            </div>
+{/if}

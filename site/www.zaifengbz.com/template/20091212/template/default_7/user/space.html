@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{lang(membercenter)} - <?php echo get('sitename');?></title>
+<link href="{$base_url}/images/user/skin/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="main">
+     <div id="top"><img src="{$base_url}/{get(site_logo)}" width="{get(logo_width)}" alt="{get(sitename)}" /></div>
+     <div id="menu">
+      <div class="menu1">欢迎来到{$user.username}的空间！</div>
+       <div class="menu2">  
+        <ul>
+<li><a href="?m={$user.userid}" class="mhover" style="color:#0d2b61">空间首页</a></li>
+<li><a href="{url('index')}">网站首页</a></li>
+</ul>
+       </div>
+     </div>
+     <div style="background:url({$base_url}/images/user/skin/images/bg_foot.jpg) repeat-x; width:960px; margin:0px auto; height:21px;"></div>
+     
+     <div class="center">
+      <div class="center_left">
+
+  
+              <h2><a href="#">我的资料</a></h2>
+              <ul>
+              <li>ID:{$user[username]}</li>
+              <li>TEL:{$user[tel]}</li>
+              <li>EMail:{$user[e_mail]}</li>
+              </ul>        
+               
+
+        
+       </div>
+        <div class="center_right"> 
+        
+        <table border="0" cellspacing="0" cellpadding="4" class="list" name="table" id="table" width="100%">
+        <thead>
+            <tr>
+                <!--<th width="60" align="center">{lang(allselect)}<br /><input onclick="CheckAll(this.form)" type="checkbox" name="chkall" class="checkbox" /> </th>-->
+               <!-- <th align="center">{lang(order)}</th>-->
+                <th align="center"><!--aid-->{lang(id)}</th>
+                <th align="center"><!--catid-->{lang(category)}</th>
+                <th align="left"><!--title-->{lang(title)}</th>
+                <th align="center"><!--username-->{lang(author)}</th>
+                <th align="center"><!--view-->{lang(view)}</th>
+                <th align="center"><!--adddate-->{lang(adddate)}</th>
+                <th align="center"><!--checked-->{lang(checked)}</th>          
+                
+            </tr>
+
+        </thead>
+        <tbody>
+            {loop $data $d}
+            <tr class="s_out" onmouseover="m_over(this)" onmouseout="m_out(this)">
+
+                <!--<td align="center"><input onclick="c_chang(this)" type="checkbox" value="{$d.$primary_key}" name="select[]" class="checkbox" /> </td>-->
+               <!-- <td align="center">{form::input("listorder[$d[$primary_key]]",$d['listorder'],'size=3')}</td>-->
+
+                <td align="center">{cut($d['aid'])}</td>
+                <td align="center"><a href="<?php echo url("archive/list/catid/".$d[catid],false);?>" target="_blank">{catname($d['catid'])}</a></td>
+                <td align="left">{cut($d['title'])}</td>
+                <td align="center">{cut($d['username'])}</td>
+                <td align="center">{cut($d['view'])}</td>
+                <td align="center">{cut($d['adddate'])}</td>
+                <td align="center">{helper::yes($d['checked'])}</td>
+
+                
+            </tr>
+            {/loop}
+
+
+        </tbody>
+    </table>
+        
+       
+       
+      
+ 
+    </div>
+</div>
+    <div class="clear"></div>
+     
+
+</div>
+
+{template 'user/foot.html'}
+       
+       
+

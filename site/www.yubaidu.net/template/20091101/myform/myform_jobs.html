@@ -1,0 +1,303 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{get('fullname')}{if isset($typeid)}-{typename($typeid)}{/if}{if isset($archive[title])}-{$archive[title]}{/if}</title>
+<meta name="keywords" content="{if isset($archive[keyword])}{$archive[keyword]},{/if}{if isset($typeid)}{$type[$typeid][keyword]},{/if}{get('site_keyword')}" />
+<meta name="description" content="{if isset($archive[description])}{$archive[description]},{/if}{if isset($typeid)}{$type[$typeid][description]},{/if}{get('site_description')}" />
+<meta name="author" content="saiermuju.com[武汉赛尔汽车模具有限公司] & 262476621[qq] & wl--lx@163.com[e-mail]" />
+<link rel="stylesheet" type="text/css" href="{$skin_path}/base.css" media="screen" title="shandesigns (screen)" />
+<script language="javascript" type="text/javascript">
+function search_check() {
+	word=dojo.byId('keyword').value;
+	if(!word) {
+		alert('请输入查询信息！');
+		return false;
+	}
+	else return true;
+}
+</script>
+<link href="{$skin_path}/base.css" rel="stylesheet" type="text/css" />
+<style>
+#my_xingbie,#my_jisuanji  {border:none;}
+#my_xuexijingli,#my_gongzuojingli,#my_gerenjianli {width:580px;}
+</style>
+</head>
+
+<body>
+<table width="940" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="940" height="32" background="{$skin_path}/top_bg.jpg"><div id="topMenu"><a href="{$base_url}/" class="a1">网站首页</a>   <a href="{url('guestbook')}" class="a2">访客留言</a><!--    <a href="{url('user')}" class="a3">用户登录</a> --></div></td>
+  </tr>
+</table>
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="4" valign="top" background="{$skin_path}/middle_bg1.jpg"><img src="{$skin_path}/left_bg.jpg" width="4" height="338" /></td>
+    <td width="940" height="281" valign="top" style="background:url({$skin_path}/top_bg2.jpg) repeat-x; background-color:#FFFFFF;">
+    <table width="920" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="516" height="58"><a href="{$base_url}/"><img src="{get('site_logo')}" alt="{$sitename}" width="{get('logo_width')}" style="margin-left:8px;" /></a></td>
+    <td width="404" align="right" valign="top">
+	<form name='search_form' action="<?php echo url('archive/search');?>"  onsubmit="if(document.getElementById('keys').value=='产品搜索...' || document.getElementById('keys').value==''){alert('请输入关键词后再搜索！');return false;}" method="post">
+      <input id="inputsearch" name="keyword" type="text" style="background:url({$skin_path}/sear_bg.gif) no-repeat 3px 3px; background-color:#FFFFFF; padding-left:22px; width:138px; vertical-align:middle; margin-top:16px;" value="内容检索..." onfocus="if(this.value=='产品搜索...'){this.value='';}" onblur="if(this.value==''){this.value='产品搜索...';}" />
+      <input type="image" src="{$skin_path}/btn1.gif" name='submit' style="vertical-align:middle; border:0px none; margin-top:17px; padding:0px; margin-left:3px; margin-right:8px;" />
+    </form></td>
+  </tr>
+</table>
+<div id="mainnav">
+<a title="网站首页" href="{$base_url}/" {if $typeid==0}class="aA"{/if}>首页</a>
+		{loop type('0','-hide') $t}
+		<span><img src="{$skin_path}/nav_line.gif" width="1" height="40" /></span>
+		<a title="{$t[typename]}" href="{$t[url]}"{if isset($topid) && $topid==$t[typeid]}	class="aA"{/if}>{$t[typename]}</a>
+		{/loop}
+</div>
+    <table width="920" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="920" height="220" bgcolor="#333333">
+				<script>
+					var NowFrame = 1;
+					var MaxFrame = 5;
+					var bStart = 0;
+					function fnToggle() {
+					var next = NowFrame + 1;
+					if(next == MaxFrame+1) 
+					{
+					NowFrame = MaxFrame;
+					next = 1;
+					}
+					if(bStart == 0)
+					{
+					bStart = 1;
+			  
+					setTimeout('fnToggle()', 3000);
+					return;
+					}
+					else
+					{
+					oTransContainer.filters[0].apply();
+					document.images['odiv'+next].style.display = "";
+					document.images['odiv'+NowFrame].style.display = "none"; 
+					oTransContainer.filters[0].Play(duration=5);
+					if(NowFrame == MaxFrame) 
+					NowFrame = 1;
+					else
+					NowFrame++;
+					} setTimeout('fnToggle()', 6000);
+					}
+					fnToggle();
+				</script>
+
+			<div id=oTransContainer style="FILTER: progid:DXImageTransform.Microsoft.Wipe(GradientSize=1.0, wipeStyle=0, motion='forward'); width: 920px; height: 220px;overflow:hidden;">
+				<a title="{get(slide_pic1_title)}" href="{get(slide_pic1_url)}" target=_blank><img id=odiv1 style="display: yes;" src="{$skin_path}/banner01.jpg" alt="{get(slide_pic1_title)}" /></a>
+				<a title="{get(slide_pic2_title)}" href="{get(slide_pic2_url)}" target=_blank><img id=odiv2 style="display: none;" src="{$skin_path}/banner02.jpg" alt="{get(slide_pic2_title)}" /></a>
+				<a title="{get(slide_pic3_title)}" href="{get(slide_pic3_url)}" target=_blank><img id=odiv3 style="display: yes;" src="{$skin_path}/banner03.jpg" alt="{get(slide_pic3_title)}" /></a>
+				<a title="{get(slide_pic4_title)}" href="{get(slide_pic4_url)}" target=_blank><img id=odiv4 style="display: none;" src="{$skin_path}/banner04.jpg" alt="{get(slide_pic4_title)}" /></a>
+				<a title="{get(slide_pic5_title)}" href="{get(slide_pic5_url)}" target=_blank><img id=odiv5 style="display: yes;" src="{$skin_path}/banner05.jpg" alt="{get(slide_pic5_title)}" /></a>
+				
+			</div>
+			</td>
+        </tr>
+      </table></td>
+    <td width="4" valign="top" background="{$skin_path}/middle_bg2.jpg"><img src="{$skin_path}/right_bg.jpg" width="4" height="338" /></td>
+  </tr>
+</table>
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+     <td width="4" background="{$skin_path}/middle_bg1.jpg"></td>
+    <td width="940" height="10" valign="top">
+<td width="4" valign="top" background="{$skin_path}/middle_bg2.jpg"></td>
+  </tr>
+</table>
+
+<script type="text/javascript" src="{$base_url}/common/js/jquery-1.2.6.min.js"></script>
+<script type="text/javascript" src="{$base_url}/common/js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="{$base_url}/common/js/ThumbAjaxFileUpload.js"></script>
+
+<link rel="stylesheet" href="{$base_url}/common/js/jquery/ui/ui.datepicker.css" type="text/css" media="screen" title="core css file" charset="utf-8" />
+<script language="javascript" src="{$base_url}/common/js/jquery/ui/ui.datepicker.js"></script>
+<script type="text/javascript" src="{$base_url}/common/js/common.js"></script>
+<script type="text/javascript">
+function checkform() {
+	{loop $field $f}
+	<?php
+	//var_dump($f);
+	$name = $f['name'];
+	if(!eregi('^my_',$f[name]) || !$f[notnull]) {
+    continue;
+    }
+	?>
+	if(!document.form1.{$f[name]}.value){
+		alert("请填写{$name|lang}");
+		document.form1.{$f[name]}.focus();
+		return false;
+	}
+	{/loop}
+	return true;
+}
+</script>
+
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="4" background="{$skin_path}/middle_bg1.jpg"> </td>
+    <td valign="top">
+	{template 'left.html'}
+	</td>
+        <td width="724" valign="top">
+		<table width="706" border="0" align="right" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="706" height="28" style="background:url({$skin_path}/btbg.gif) repeat-x left bottom;"><table width="706" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="470" style="color:#999999" id="position"><a title="{get('sitename')}" href="{$base_url}"><img src="{$skin_path}/arr4.gif" width="11" height="11" style="margin-right:6px;" align="absmiddle" />{get('sitename')}</a>{loop position($typeid) $t}<a title="{$t['name']}" href="{$t.url}">{$t['name']}</a>{/loop}</td>
+                <td width="236" align="right" style="color:#CC0000"><img src="{$skin_path}/arr4.gif" width="11" height="11" style="margin-right:6px;" align="absmiddle" />{typename($typeid)}</td>
+              </tr>
+            </table></td>
+          </tr>
+
+<tr>
+            <td height="20"> </td>
+          </tr>
+		<tr>
+            <td height="20">  {message()}</td>
+          </tr>
+
+<tr>
+            <td height="20"> </td>
+          </tr>
+
+          <tr>
+            <td>
+           <form method="post" action="" name="form1" onsubmit="return checkform();">
+<table width="704" border="1" align="center" cellpadding="7" cellspacing="0" bordercolor="#EDEDED">
+                <tr>
+                  <td width="72" bgcolor="#F7F7F7">姓&nbsp;&nbsp;&nbsp;名</td>
+                  <td width="126">{form::getform('my_xingming',$form,$field,$data)}
+                      </td>
+                  <td width="58" bgcolor="#F7F7F7">性&nbsp;&nbsp;&nbsp;别</td>
+                  <td width="137">{form::getform('my_xingbie',$form,$field,$data)}</td>
+                  <td width="58" bgcolor="#F7F7F7">年&nbsp;&nbsp;&nbsp;龄</td>
+                  <td width="165">{form::getform('my_nianling',$form,$field,$data)}
+                      </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#F7F7F7">民&nbsp;&nbsp;&nbsp;族</td>
+                  <td>{form::getform('my_minzu',$form,$field,$data)}</td>
+                  <td bgcolor="#F7F7F7">出生年月</td>
+                  <td>{form::getform('my_chushengnianyue',$form,$field,$data)}
+                      </td>
+                  <td bgcolor="#F7F7F7">身&nbsp;&nbsp;&nbsp;高</td>
+                  <td>{form::getform('my_shengao',$form,$field,$data)}</td>
+                </tr>
+                <tr>
+                  <td bgcolor="#F7F7F7">身份证号</td>
+                  <td>{form::getform('my_shenfenzheng',$form,$field,$data)}
+                      </td>
+                  <td bgcolor="#F7F7F7">籍&nbsp;&nbsp;&nbsp;贯</td>
+                  <td>{form::getform('my_jiguan',$form,$field,$data)}
+                      </td>
+                  <td bgcolor="#F7F7F7">学&nbsp;&nbsp;&nbsp;历</td>
+                  <td>{form::getform('my_xueli',$form,$field,$data)}
+                      </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#F7F7F7">暂住地址</td>
+                  <td colspan="3">{form::getform('my_zanzhudizhi',$form,$field,$data)}</td>
+                  <td bgcolor="#F7F7F7">专&nbsp;&nbsp;&nbsp;业</td>
+                  <td>{form::getform('my_zhuanye',$form,$field,$data)}
+                      </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#F7F7F7">毕业时间</td>
+                  <td>{form::getform('my_biyeshijian',$form,$field,$data)}
+                      </td>
+                  <td bgcolor="#F7F7F7">毕业院校</td>
+                  <td>{form::getform('my_biyeyuanxiao',$form,$field,$data)}</td>
+                  <td bgcolor="#F7F7F7">外语水平</td>
+                  <td>{form::getform('my_waiyushuiping',$form,$field,$data)}</td>
+                </tr>
+                <tr>
+                  <td bgcolor="#F7F7F7">计算机能力</td>
+                  <td colspan="5">{form::getform('my_jisuanji',$form,$field,$data)}</td>
+                </tr>
+                <tr>
+                  <td bgcolor="#F7F7F7">专业特长</td>
+                  <td colspan="5">{form::getform('my_zhuanyetechang',$form,$field,$data)}</td>
+                </tr>
+                <tr>
+                  <td bgcolor="#F7F7F7">职&nbsp;&nbsp;&nbsp;称</td>
+                  <td>{form::getform('my_zhicheng',$form,$field,$data)}</td>
+                  <td bgcolor="#F7F7F7">工&nbsp;&nbsp;&nbsp;龄</td>
+                  <td>{form::getform('my_gongling',$form,$field,$data)}
+                      </td>
+                  <td bgcolor="#F7F7F7">应聘岗位</td>
+                  <td>{form::getform('my_yingpingangwei',$form,$field,$data)}
+                      </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#F7F7F7">待遇要求</td>
+                  <td colspan="5">{form::getform('my_my_daiyuyaoqiu',$form,$field,$data)}</td>
+                </tr>
+                <tr>
+                  <td bgcolor="#F7F7F7">联系电话</td>
+                  <td>{form::getform('my_lianxidianhua',$form,$field,$data)}
+                      </td>
+                  <td bgcolor="#F7F7F7">手&nbsp;&nbsp;&nbsp;机</td>
+                  <td>{form::getform('my_shouji',$form,$field,$data)}</td>
+                  <td bgcolor="#F7F7F7">EMAIL</td>
+                  <td>{form::getform('my_email',$form,$field,$data)}
+                      </td>
+                </tr>
+                <tr>
+                  <td bgcolor="#F7F7F7">学习经历</td>
+                  <td colspan="5">{form::getform('my_xuexijingli',$form,$field,$data)}</td>
+                </tr>
+                <tr>
+                  <td bgcolor="#F7F7F7">工作经历</td>
+                  <td colspan="5">{form::getform('my_gongzuojingli',$form,$field,$data)}</td>
+                </tr>
+                <tr>
+                  <td bgcolor="#F7F7F7">个人简历</td>
+                  <td colspan="5">{form::getform('my_gerenjianli',$form,$field,$data)}</td>
+                </tr>
+                <tr>
+                  <td height="30" colspan="6" align="center" bgcolor="#F7F7F7">
+				  <input type='text' id="verify"  tabindex="3"  name="verify" class="input" style="width:100px;" />&nbsp;{verify()}
+				  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				  <input type="submit" name="submit" class="btn1" value="提  交" style="border:0px none; background:url({$skin_path}/btnjobself.gif) no-repeat; width:80px; height:24px;" /></td>
+                </tr>
+              </table>
+			  </form>
+</td>
+          </tr>
+	
+                    <tr>
+                      <td height="28"></td>
+                    </tr>          <tr>
+            <td><img src="{$skin_path}/t.gif" width="1" height="6" /></td>
+          </tr>
+          <tr>
+            <td align="right" style="font-size:11px; color:#BCBCBC;"></td>
+          </tr>
+          <tr>
+            <td height="16"> </td>
+          </tr>
+          <tr>
+            <td class="newsCon">
+				{$type[$typeid][typecontent]}
+			</td>
+          </tr>
+          <tr>
+            <td height="16" style="border-bottom:1px dotted #E6E6E6;"> </td>
+          </tr>
+
+        </table></td>
+      </tr>      
+    </table></td>
+    <td width="4" background="{$skin_path}/middle_bg2.jpg"> </td>
+  </tr>
+</table>
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="948"><img src="{$skin_path}/btm_bg.jpg" width="948" height="7" /></td>
+  </tr>
+</table>
+
+{template 'footer.html'}

@@ -1,0 +1,50 @@
+<div style="width:185px;margin-left:11px;">
+			<div class="DialogTitle1">
+				<div class="DialogTitle2">{lang(vieworders)}</div>
+			</div>
+			<div class="DialogContent1">
+				<div class="DialogContent2">
+					<div style="padding:14px 0px 15px 20px;">
+					 
+<input size="20" id="oid" class="oid" name="oid" type="text" align="absmiple"value=" {lang(orderid)}… " onfocus="if(this.value==' {lang(orderid)}… ') {this.value=''}" onblur="if(this.value=='') this.value=' {lang(orderid)}… '" /> 
+<input type="submit" id="search_btn" align="absmiple" name='submit' value=" {lang(look)} " onclick="javascript:window.location.href='<?php echo url('archive/orders');?>&oid='+document.getElementById('oid').value;" class="oidbtn" />
+
+					</div>
+				</div>
+			</div>
+			<div class="DialogBottom1">
+				<div class="DialogBottom2"></div>
+			</div>
+		</div>
+		<div style="width:185px;margin-left:11px;">
+			<div class="DialogTitle1">
+				<div class="DialogTitle2">{lang(categorylist)}</div>
+			</div>
+			<div class="DialogContent1">
+				<div class="DialogContent2">
+					<div style="padding:4px 0px 25px 0px;">
+						<ul class="LeftNavList">
+						<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><img src="{$skin_path}/dot_1.gif" align="absmiddle" />&nbsp;<a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on{/if}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="DialogBottom1">
+				<div class="DialogBottom2"></div>
+			</div>
+		</div>
+		<div style="font-size:11px;padding:20px 30px;line-height:20px;">
+		<strong>Related links</strong><br />
+			&nbsp; &middot; &nbsp;{get('tel')}<br />
+			&nbsp; &middot; &nbsp;{get('address')}<br />
+			&nbsp; &middot; &nbsp;{get('msn')}
+		</div>

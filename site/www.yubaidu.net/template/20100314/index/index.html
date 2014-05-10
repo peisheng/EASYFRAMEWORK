@@ -1,0 +1,64 @@
+{template 'header.html'}
+  <div id="bd">
+    	<div id="bd_left"><?php $t=position_p($catid=2);?>
+<div id="bd_left_title"><span class="title"><a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></span><span class="more"><a href="{$t.url}">>>MORE</a></span></div><?php?>
+<div class="blank10"></div>
+          <ul class="news_list">
+{loop archive(2,0,0,'0,0,0',16,'aid',5,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+
+		  </ul>
+      </div>
+        <div id="bd_center"><?php $t=position_p($catid=1);?>
+       	  <div id="bd_center_title"><div class="title_leftimg"><img src="{$skin_path}/sen_10.gif" /></div>
+        	<span class="title1">> <a href="{$t.url}" title="{$t['name']}" style="color:white;">{$t['name']}</a></span> <span class="more1"><a href="{$t.url}" title="{$t['name']}">>>MORE</a></span></div><?php?>
+            <div id="bd_center_content">　　<span style="color:#FF0000; font-weight:bold">{get(sitename)}</span>{tag_公司简介}
+            </div>
+        </div>
+		<div id="bd_right">
+	
+       	  <div id="bd_right_title"><div class="title_leftimg"><img src="{$skin_path}/sen_10.gif" /></div><span class="title1"> > {lang(contactus)}</span> <span class="more1"><?php $t=position_p($catid=2);?><a href="{$t.url}" title="{$t['name']}">>>MORE</a><?php?></span></div>
+            <div class="bd_right_content1"> {lang(address)}：{get(address)}<br />{lang(tel)}：{get(tel)}<br />{lang(fax)}：{get(fax)}<br />{lang(email)}：{get(email)}
+            </div>
+            <div id="bd_right_content2">
+
+			<form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+<div class="input1"><input  id="inputsearch" name="keyword" cat="text" align="absmiple" class="input-word" /></div>
+<div class="button" style="float:left;">
+<input type="submit" id="i_search_btn" class="s_btn" align="absmiple" name='submit' value=" " />
+</div>
+</form>
+            </div>
+        </div>
+        <div style="height:8px; clear:both;"></div>
+        <div id="bd_product">
+
+	<script type="text/javascript" src="{$skin_path}/js/jquery-1.3.2.min.js"></script>	
+		<!-- 滚动图片开始 -->
+<script type="text/javascript" src="{$skin_path}/js/jquery.bxSlider.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+<!--用于滚动图片-->
+    if($('#scroll a').length > 0){
+	$('#scroll').bxSlider({
+		auto: true,
+		displaySlideQty:6,
+		prevText: '',
+		nextText: '',
+		moveSideQty: 1
+	});
+	}
+});
+</script>
+
+<div class="scroll">
+<ul id="scroll" class="list-view">
+{tag_首页滚动图片}
+</ul>
+</div>
+<!-- 滚动图片结束 -->
+
+		<div class="clear"></div>
+    </div>
+ {template 'footer.html'}

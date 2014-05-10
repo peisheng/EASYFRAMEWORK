@@ -1,0 +1,22 @@
+<div class="sidebartop"></div>
+<div class="sidebar">
+<h4>欢迎你， {$user.username}!</h4>
+<h5><a href="{url('user/logout')}">退出</a></h5>
+{if $user['username']=='admin'}
+<h5><a href="/admin" target="_blank">后台管理</a></h5>
+{/if}
+<div class="clear"></div>
+</div>
+<div class="sidebarbt"></div>
+<div class="blank5"></div>
+<!-- 提示信息 -->
+<div class="sidebartop"></div>
+<div class="sidebar">
+<h5><a href="{url('user/changepassword')}">更改密码</a></h5>
+<h5><a href="{url('manage/add/manage/archive')}">发表文章</a></h5>
+<h5><a href="{url('/manage/list/manage/archive/needcheck/1')}">待审核文章</a></h5>
+<h5><a href="{url('/manage/list/manage/archive')}">已审核文章</a></h5>
+<div class="clear"></div>
+</div>
+<div class="sidebarbt"></div>
+</div>

@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{if !empty($archive[mtitle])}{$archive[mtitle]}-{elseif !empty($archive[title])}{$archive[title]}-{/if}{if $type[meta_title]}{$type[meta_title]}-{elseif typename($type[typeid])}{typename($type[typeid])}-{/if}{if $category[$catid][meta_title]}{$category[$catid][meta_title]}-{elseif !empty($catid)}{catname($catid)}-{/if}{get('fullname')}</title>
+<meta name="keywords" content="{if $archive[keyword]}{$archive[keyword]}{else}{if $type[keyword]}{$type[keyword]}{elseif $category[$catid][keyword]}{$category[$catid][keyword]}{else}{get('site_keyword')}{/if}{/if}" />
+<meta name="description" content="{if $archive[description]}{$archive[description]}{else}{if $type[description]}{$type[description]}{elseif $category[$catid][description]}{$category[$catid][description]}{else}{get('site_description')}{/if}{/if}" />
+<meta name="author" content="CmsEasy Team" />
+<link rel="icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link href="{$skin_path}/reset.css" rel="stylesheet" type="text/css" />
+<link href="{$skin_path}/style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript">
+<!-- 
+function ResumeError()  
+{ 
+    return true; 
+} 
+window.onerror = ResumeError; 
+function check()
+{
+if(document.search.keyword.value.length==0){
+     alert("{lang(pleaceinputtext)}");
+     document.search.keyword.focus();
+     return false;
+    }
+
+	}
+// --> 
+</script>
+<!--用于PNG图片在IE6下透明-->
+<!--[if IE 6]>
+<script src="{$skin_path}/js/png.js"></script>
+<script>
+  DD_belatedPNG.fix('.logo');
+  DD_belatedPNG.fix(' .cfooter');
+  DD_belatedPNG.fix('.cleft_box .cright');
+  DD_belatedPNG.fix('.cleft_box_content .cfooter');
+  DD_belatedPNG.fix('.cleft_box_content .cheader');
+</script>
+<![endif]--> 
+</head>
+
+<body>
+<div id="main">
+  <div id="header">
+  	<div id="header_logo"><img src="{$skin_path}/hy_2.gif" /></div>
+    <div id="header_top">
+	<table width="310" border="0" cellpadding="0" cellspacing="0" class="chengwd12">
+          <tr>
+            <td align="center" valign="middle">在线咨询：</td>
+            <td align="center" valign="middle"><a title="在线客服" href="tencent://message/?uin={get(qq1)}&Site=您的建站服务专家&Menu=yes"><img src="{$skin_path}/mb_2.gif" width="59" height="21" alt="{get(qq1)}" /></a></td>
+            <td align="center" valign="middle"><img src="{$skin_path}/mb_3.gif" width="24" height="21" /></td>
+            <td align="center" valign="middle">{get(tel)}</td>
+            <td width="25">&nbsp;</td>
+          </tr>
+        </table>
+	</div>
+    <div class="header_yy"><img src="{$skin_path}/hy_3.gif" /></div>
+    <div id="header_nav">
+      <div class="header_navr">
+       	<div class="navl">
+          <ul class="nav_ul">
+		  <li class="navr">
+		  <form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+<input name="keyword" type="text" align="absmiple" class="input" /><input name="" type="image" src="{$skin_path}/hy_8.gif" class="but" />
+</form>
+</li>
+<li{if $catid==0} class="m"{/if}><a title="{lang(backhome)}" href="{$base_url}/">{lang(homepage)}</a></li>
+{loop categories_nav() $t}
+<li{if isset($topid) && $topid==$t[catid]} class="m"{/if}><a title="{$t[catname]}" href="{$t[url]}">{$t[catname]}</a></li>
+{/loop}
+          </ul>
+        </div> 
+      </div>
+        <div class="clear"></div>
+    </div>
+    <div id="header_banner">
+	{if $typeid==0}<div style="width:924px;overflow:hidden;">
+{template 'system/slide.html'}</div>
+	{else}<img src="{$skin_path}/hy_2.jpg" />{/if}</div>
+  </div>

@@ -1,0 +1,40 @@
+{template 'header.html'}
+
+
+<div id="bd">
+      {template 'left.html'}<!-- 调用通用左栏 -->	
+      <div id="bd_right2">
+      	<div class="box1">
+        	<div class="title1g">
+            	<div class="title1g_left"><img src="{$skin_path}/xx_25g.gif" /></div>
+                <div class="title1g_ioc"><img src="{$skin_path}/xx_27g.gif" /></div>
+              <div class="title1g_wd">{lang(nowposition)}</div>
+                <div class="moreg"><a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a> &gt;&gt; <a title="{lang(searchresult)}" href="#">{lang(searchresult)}</a></div>
+          </div>
+            <div class="content">
+           	  <div class="pd_title"><span style="color:red;font-weight:bold;"> "{$keyword}" </span>{lang(searchresults)}：</div>
+                       <div class="pd">　
+                       
+                       <!-- 内容_内容简介列表 -->
+<ul class="news_list">
+		{loop $articles $article}
+		{cb_data($article)}
+		<li><span class="date">{$article['adddate']}</span>[<a href="{$article[caturl]}">{$article[catname]}</a>] <a href="{$article[url]}"><?php if($keyword) echo str_replace($keyword,"<span style=color:red;font-weight:bold;>$keyword</span>",$article['title']); else { ?>{$article[title]}<?php } ?></a>
+		{/loop}
+	</ul>
+	<div class="blank10"></div>
+	<!-- 内容列表分页 -->
+	<div class="pages">
+		<?php echo pagination::html($record_count,5); ?>
+	</div>
+<div class="blank10"></div>
+                       
+                       
+                       </div>
+            </div>
+        </div>
+        </div>
+      <div class="clear"></div>
+    </div>
+
+{template 'footer.html'}

@@ -1,0 +1,28 @@
+<div style="clear:both;height:10px;"></div>
+<div class="bottom clear">
+<div class="bottom_menu">
+{tag_网站页底关于我们等说明}
+<a href="#">TOP</a>
+</div>
+<p>
+{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a> All Rights Reserved.  
+<br />
+<a href="http://www.miibeian.gov.cn/" target="_blank">{get('site_icp')}</a>{getcnzzcount()}
+</p>
+</div>
+<!-- 非商业用户请勿删除 -->
+
+</div>
+</div>
+
+{if $topid==0}<!-- 热门关键词 -->
+<div class="hot_keys" style="clear:both;margin:10px 0px;text-align:center;">{lang(hotkeys)}： {gethotsearch(10)}</div>{/if}
+
+<!-- 在线客服 -->
+{template 'system/servers.html'}
+<!-- 短信 -->
+{template 'system/sms.html'}
+
+{if get('lang_type')=='cn'}<script type="text/javascript" src="{$base_url}/js/tc.js"></script>{/if}
+</body>
+</html>

@@ -1,0 +1,35 @@
+<div class="left_1">
+
+<!--左侧栏目导航开始-->
+<div class="t_1 mb5"><div><h3>+	快速导航</h3></div></div>
+<ul class="leftmenu mb10">
+<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+<li><a title="{$t[catname]}" href="{$t[url]}"{if isset($topid) && $topid==$t[catid]} class="on"{/if}>{$t[catname]}</a></li>
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on{/if}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+</ul>
+<!--左侧栏目导航结束-->
+{template 'left/quick.html'}
+{template 'left/search.html'}
+
+<div class="t_1 mb10"><div><h3>专题</h3></div></div>
+<ul class="f_link">
+<!-- {loop special::listdata() $special} -->
+<li><a href="{$special[url]}" title="{$special[title]}">{$special[title]}</a></li>
+<!-- {/loop} -->
+</ul>
+
+<div class="t_1 mb10"><div><h3>相关内容</h3></div></div>
+<ul class="f_link">
+<!-- {loop archive($catid,0,0,'0,0,0',20,'aid',5,false,0) $i $archive} -->
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+<!-- {/loop} -->
+</ul>
+</div>

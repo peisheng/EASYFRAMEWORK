@@ -1,0 +1,31 @@
+{template 'header.html'}
+ <div id="bd">
+ <div class="bd_top"><img src="{$skin_url}/gg_8.gif" /></div>
+{template 'left.html'}
+<!--left_1 end-->
+
+<div class="right_2">
+<div class="r_b_box">
+     <div class="title">
+      <img src="{$skin_url}/gg_18.gif" style="float:left;margin-left:15px;" /><h3>{$type[$typeid][typename]}</h3>
+         {template 'position.html'}
+      </div>
+      <div class="box_borderg">
+         <ul class="news_list">
+			{loop $archives $i $archive}
+			<li class="list{=$i+1}"><span class="date">{$archive[adddate]}</span><span class=date>评分{$archive[strgrade]}</span><a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}">{$archive[title]}</a></li>
+			{/loop}
+		</ul>
+		<div class="blank10"></div>
+	{if isset($pages)}
+		{category_pagination($catid)}
+		{/if}
+<div class="blank30"></div>
+		<a title="返回顶部" href="#" class="goback"><img alt="返回顶部" src="{$skin_url}/gotop.gif"></a>
+		<div class="clear"></div>
+	 </div>
+</div>
+<div class="clear"></div>
+</div>
+<!--box end-->
+{template 'footer.html'}

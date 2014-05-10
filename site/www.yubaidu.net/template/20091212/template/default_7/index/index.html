@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{if !empty($archive[mtitle])}
+  {$archive[mtitle]}-
+{elseif !empty($archive[title])}
+  {$archive[title]}-
+{else}
+  {if $type[meta_title]}
+    {$type[meta_title]}-
+  {elseif typename($type[typeid])}
+    {typename($type[typeid])}-
+  {/if}
+  {if $category[$catid][meta_title]}
+    {$category[$catid][meta_title]}-
+  {elseif !empty($catid)}
+    {catname($catid)}-
+  {/if}
+{/if}
+{get('fullname')}</title>
+<meta name="keywords" content="{if $archive[keyword]}{$archive[keyword]}{else}{if $type[keyword]}{$type[keyword]}{elseif $category[$catid][keyword]}{$category[$catid][keyword]}{else}{get('site_keyword')}{/if}{/if}" />
+<meta name="description" content="{if $archive[description]}{$archive[description]}{else}{if $type[description]}{$type[description]}{elseif $category[$catid][description]}{$category[$catid][description]}{else}{get('site_description')}{/if}{/if}" />
+<meta name="author" content="CmsEasy Team" />
+<link rel="icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link href="{$skin_path}/reset.css" rel="stylesheet" type="text/css" />
+<link href="{$skin_path}/base.css" rel="stylesheet" type="text/css" />
+<script>
+function search_check() {
+	word=dojo.byId('keyword').value;
+	if(!word) {
+		alert('请输入查询信息！');
+		return false;
+	}
+	else return true;
+}
+</script>
+<script type="text/javascript">
+<!-- 
+function ResumeError()  
+{ 
+    return true; 
+} 
+window.onerror = ResumeError; 
+// --> 
+</script>
+<style type="text/css">
+#sidebar {
+  background:url({$skin_path}/sidebar.jpg) 824px 81px no-repeat;
+}
+#banner {
+  clear:both;
+  height:294px;
+}
+
+#i_pic {
+  float:left;
+  width:292px;
+  height:120px;
+  margin:0px 10px;
+}
+
+#i_pic img {
+  float:left;
+  margin:1px 2px 0px 0px;
+  border:2px solid #ccc;
+}
+
+#contact {
+  float:left;
+  width:195px;
+}
+
+#contact div {
+  width:160px;
+}
+
+.dis {
+ display:block;
+}
+
+.undis {
+ display:none;
+}
+
+#tab {
+  float:left;
+  width:300px;
+}
+
+.tab_m {
+  height:20px;
+  line-height:18px;
+  padding-right:20px;
+  background:url({$skin_path}/tab_m_bg.gif) left center no-repeat;
+}
+
+.tab_m ul li {
+  float:right;
+  width:70px;
+  margin-right:5px;
+  border-top:1px solid #ccc;
+  border-right:1px solid #ccc;
+  border-left:1px solid #ccc;
+  text-align:center;
+  color:#ccc;
+}
+
+.tab_m ul li.s {
+  border-top:1px solid #333;
+  border-right:1px solid #333;
+  border-left:1px solid #333;
+  color:#333;
+}
+
+#tab_box {
+  clear:both;
+  width:295px;
+  height:110px;
+  margin:5px 5px 0px 10px;
+}
+
+#tab_box ul li {
+  width:285px;
+  height:20px;
+  line-height:20px;
+  padding-left:10px;
+  background:url({$skin_path}/icon1.gif) left 8px no-repeat;
+  overflow:hidden;
+}
+
+#links {
+  clear:both;
+  height:25px;
+  line-height:25px;
+  margin:10px 6px 10px 0px;
+  padding:0px 10px;
+  background:url({$skin_path}/links_bg.gif) left top no-repeat;
+  border:1px dotted #ccc;
+  color:#888;
+}
+#links a {
+  float:left;
+  /*display:inline;*/
+  padding:0px 5px;
+  white-space: nowrap;
+}
+</style>
+<script language="javascript" type="text/javascript" src="{$base_url}/js/flash.js"></script>
+</head>
+<body>
+<div id="body">
+<div id="main">
+
+<div id="sidebar">
+<!-- logo -->
+<div id="logo"><a href="{$base_url}"><img src="{$skin_path}/logo.gif" /></a></div>
+<div id="top">
+<a id="StranLink" title="繁简转换">&nbsp;繁体 -	&nbsp;</a>
+<a title="{lang(feedback)}" href="{url('guestbook')}" target="_blank">&nbsp;{lang(feedback)} -	</a>
+<a href="{$site_url}" onclick="window.external.addFavorite(this.href,this.title);return false;" title='{get(sitename)}' rel="sidebar">&nbsp;{lang(favorite)} -	</a>
+</div>
+
+<div id="nav">
+<a title="{lang(backhome)}" href="{$base_url}/" {if $catid==0} class="on"{/if} style="border:none;">{lang(homepage)}</a>
+{loop categories_nav() $t}
+<a title="{$t[catname]}" href="{$t[url]}"{if isset($topid) && $topid==$t[catid]} class="on"{/if}>{$t[catname]}</a>
+{/loop}
+</div>
+
+<div id="banner">
+<script language='Javascript' type='text/javascript'>LoadFlash("{$skin_path}/i_banner.swf","transparent",875,279)</script>
+</div>
+
+
+
+<div id="tab">
+
+<div class="tab_m">
+<ul>
+<li class="s" onMouseOver="tab_m(this,'tab_box')" onclick="('tab',1)">最新资讯</li>
+<li onMouseOver="tab_m(this,'tab_box')" onclick="('tab',2)">网站公告</li>
+</ul>
+</div>
+<div id="tab_box">
+
+<div class="dis" onclick="('tab',1)">
+<ul>
+{loop archive(2,0,0,'0,0,0',16,'aid',5,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a>{$archive[adddate]}</li>
+{/loop}
+</ul>
+</div>
+<div class="undis" onclick="('tab',2)">
+<ul>
+{loop announ(5) $an}
+<li><a href="#" onclick="window.open('{$an[url]}','Sample','height=520,width=524,scrollbars=yes')">{$an[title]}</a></li>
+{/loop}
+</ul>
+</div>
+
+</div>
+</div>
+
+<div id="i_pic">
+<img src="{$skin_path}/i_pic.jpg" style="float:right;margin:0px;border:none;" />
+<img src="{$skin_path}/i01.jpg" style="float:left;filter:alpha(opacity=30)" onMouseOver="makevisible(this,0)" onMouseOut="makevisible(this,1)" />
+<img src="{$skin_path}/i02.jpg" style="float:left;filter:alpha(opacity=30)" onMouseOver="makevisible(this,0)" onMouseOut="makevisible(this,1)" />
+<img src="{$skin_path}/i03.jpg" style="float:left;filter:alpha(opacity=30)" onMouseOver="makevisible(this,0)" onMouseOut="makevisible(this,1)" />
+<img src="{$skin_path}/i04.jpg" style="float:left;filter:alpha(opacity=30)" onMouseOver="makevisible(this,0)" onMouseOut="makevisible(this,1)" />
+<img src="{$skin_path}/i05.jpg" style="float:left;filter:alpha(opacity=30)" onMouseOver="makevisible(this,0)" onMouseOut="makevisible(this,1)" />
+<img src="{$skin_path}/i06.jpg" style="float:left;filter:alpha(opacity=30)" onMouseOver="makevisible(this,0)" onMouseOut="makevisible(this,1)" />
+</div>
+
+<div id="contact">
+<div>{lang(tel)}：{get(tel)}</div>
+<div>{lang(fax)}：{get(fax)}</div>
+<div>{lang(email)}：{get(email)}</div>
+</div>
+
+<div id="links">
+<div id="ScrollBox" style="float:right;width:650px;height:25px;overflow:hidden;line-height:25px;">
+{loop friendlink('text',0,20) $flink}
+{$flink[link]}
+{/loop}
+</div>
+<span style="float:left;padding-left:20px;">Friends Links</span>
+</div>
+<script type="text/javascript">
+<!--
+var t=setInterval(myfunc,3000); 
+var oBox=document.getElementById("ScrollBox"); 
+function myfunc()
+{ 
+var o=oBox.firstChild 
+oBox.removeChild(o) 
+oBox.appendChild(o) 
+} 
+oBox.onmouseover=function()
+{
+clearInterval(t)
+} 
+oBox.onmouseout=function()
+{
+t=setInterval(myfunc,1000)
+} 
+
+
+function tab_m(obj,name)
+{
+var p = obj.parentNode.getElementsByTagName("li");
+var p1 = document.getElementById(name).getElementsByTagName("div");
+for(i=0;i<p1.length;i++)
+{
+if(obj==p[i])
+{
+p[i].className = "s";
+p1[i].className = "dis";
+}
+else
+{
+p[i].className = "#";
+p1[i].className = "undis";
+}
+}
+}
+
+function makevisible(cur,which)
+{
+if (which==0)
+cur.filters.alpha.opacity=100
+else
+cur.filters.alpha.opacity=30
+}
+//-->
+</script>
+{template 'footer.html'}

@@ -1,0 +1,215 @@
+{template 'header.html'}
+    <div id="bd">
+    	<div id="bd_left">
+        	<div class="box">
+            	<div class="title">
+
+
+                	<div class="title_wd"><!-- 医院动态 --><?php $t=position_p($catid=1);?><span class="title_ioc"><img src="{$skin_path}/xxi_13.gif" /></span><a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div>
+                    <div class="more"><a href="{$t.url}">{lang(more)}...</a><?php?></div>
+              </div>
+                <div class="content">
+                	<div class="news_left" style="width:238px;height:194px;overflow:hidden;">
+{template 'system/slide.html'}
+</div>
+                    <div class="news_right">
+                    	<ul class="ul2">
+                   {loop archive(2,0,0,'0,0,0',16,'aid',7,false,0) $i $archive} 
+<li><span class="date">{$archive[adddate]}</span><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+				</ul>
+                    </div>
+                </div>
+<div class="clear"></div>
+            </div>
+            <div class="box1"><img src="{$skin_path}/xxi_20.gif" /></div>
+            
+            <div class="bd_left_left">
+            	<div class="box1">
+            	<div class="title">
+                	<div class="title_wd"><!-- 专家介绍 --><?php $t=position_p($catid=3);?><span class="title_ioc"><img src="{$skin_path}/xxi_13.gif" /></span><a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div>
+                    <div class="more"><a href="{$t.url}">{lang(more)}...</a><?php?></div>
+                </div>
+                <div class="content">
+				 {loop archive(3,0,0,'0,0,0',4,'aid',2,true,0) $i $archive}
+<div class="prod_box">
+                         <a href="{$archive[url]}" title="{$archive[stitle]}"><img src="{$archive[sthumb]}" alt="{$archive[stitle]}" class="prod"/></a><br />
+             <a href="{$archive[url]}" class="prod_font">{$archive[title]}</a>                      </div>
+ {/loop}
+  
+<div class="clear"></div>
+
+                </div>
+            </div>
+            </div>
+            <div class="bd_left_right">
+            	<div class="box1">
+            	<div class="title">
+                	<div class="title_wd"><!-- 特色疗法 --><?php $t=position_p($catid=2);?><span class="title_ioc"><img src="{$skin_path}/xxi_13.gif" /></span><a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div>
+                    <div class="more"><a href="{$t.url}">{lang(more)}...</a><?php?></div>
+                </div>
+                <div class="content">
+                	<ul class="ul2">
+                    {loop archive(2,0,0,'0,0,0',16,'aid',7,false,0) $i $archive} 
+<li><span class="date">{$archive[adddate]}</span><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+				</ul>
+                </div>
+            </div>
+            </div>
+<div class="clear"></div>            
+            <div class="box1">
+            	<div class="title">
+                	<div class="title_wd"><!-- 设备展示 --><?php $t=position_p($catid=4);?><span class="title_ioc"><img src="{$skin_path}/xxi_13.gif" /></span><a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div>
+                    <div class="more"><a href="{$t.url}">{lang(more)}...</a><?php?></div>
+                </div>
+                <div class="content">
+				 {loop archive(3,0,0,'0,0,0',8,'aid',4,true,0) $i $archive}
+<div class="prodg_box">
+                         <a href="{$archive[url]}" title="{$archive[stitle]}"><img src="{$archive[sthumb]}" alt="{$archive[stitle]}" class="prodg"/></a><br />
+             <a href="{$archive[url]}" class="prodg_font">{$archive[title]}</a>                      </div>
+ {/loop}
+            
+<div class="clear"></div>
+              </div>
+            </div>
+    	</div>
+      <div id="bd_right">
+      	<div class="box2">
+        	<div class="title2">
+            	<div class="title2_ioc"><img src="{$skin_path}/xxi_17.gif" /></div>
+                <div class="title2_wd">就医指南</div>
+            </div>
+            <div class="content2">
+                <ul class="ul2g">
+                     {loop archive(2,0,0,'0,0,0',10,'aid',5,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+				</ul>
+                <div class="rexian">
+                	<div class="rexian_left"><img src="{$skin_path}/xxi_18.gif" /></div>
+                  <div class="rexian_right">{lang(tel)}：<br />
+                    <span class="huang16">{get(tel)}</span></div>
+                </div>
+            </div>
+        </div>
+      	<div class="box1">
+            	<div class="title">
+                	<div class="title_wd"><!-- 典型病例 --><?php $t=position_p($catid=1);?><span class="title_ioc"><img src="{$skin_path}/xxi_13.gif" /></span><a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div>
+                    <div class="more"><a href="{$t.url}">{lang(more)}...</a><?php?></div>
+                </div>
+                <div class="content">
+                	<ul class="ul2">
+                    {loop archive(2,0,0,'0,0,0',16,'aid',7,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+				</ul>
+                </div>
+            </div>
+            
+            <div class="box1">
+            	<div class="title">
+                	<div class="title_wd"><!-- 教学研究 --><?php $t=position_p($catid=1);?><span class="title_ioc"><img src="{$skin_path}/xxi_13.gif" /></span><a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div>
+                    <div class="more"><a href="{$t.url}">{lang(more)}...</a><?php?></div>
+                </div>
+                <div class="content">
+                	<ul class="ul2">
+                    {loop archive(2,0,0,'0,0,0',16,'aid',6,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+				</ul>
+                </div>
+            </div>
+      </div>
+
+    </div>
+ 
+    <div id="bd1">
+    	<div class="bd1_ad"><img src="{$skin_path}/xxi_21.gif" /></div>
+    	<div class="bd1_left">
+        	<div class="box">
+            	<div class="title">
+                	<div class="title_wd"><!-- 医院简报 --><?php $t=position_p($catid=1);?><span class="title_ioc"><img src="{$skin_path}/xxi_13.gif" /></span><a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div>
+                    <div class="more"><a href="{$t.url}">{lang(more)}...</a><?php?></div>
+                </div>
+                <div class="content">
+                	<ul class="ul2">
+                    {loop archive(2,0,0,'0,0,0',16,'aid',7,false,0) $i $archive} 
+<li><span class="date">{$archive[adddate]}</span><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+				</ul>
+                </div>
+            </div>
+        </div>
+        <div class="bd1_center">
+        	<div class="box">
+            	<div class="title">
+                	<div class="title_wd"><!-- 政策法规 --><?php $t=position_p($catid=1);?><span class="title_ioc"><img src="{$skin_path}/xxi_13.gif" /></span><a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div>
+                    <div class="more"><a href="{$t.url}">{lang(more)}...</a><?php?></div>
+                </div>
+                <div class="content">
+                	<ul class="ul2">
+                   {loop archive(2,0,0,'0,0,0',16,'aid',7,false,0) $i $archive} 
+<li><span class="date">{$archive[adddate]}</span><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+				</ul>
+                </div>
+            </div>
+        </div>
+        <div class="bd1_right">
+        	<div class="box">
+            	<div class="title">
+                	<div class="title_wd"><!-- 护理园地 --><?php $t=position_p($catid=1);?><span class="title_ioc"><img src="{$skin_path}/xxi_13.gif" /></span><a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div>
+                    <div class="more"><a href="{$t.url}">{lang(more)}...</a><?php?></div>
+                </div>
+                <div class="content">
+                	<ul class="ul2">
+                    {loop archive(2,0,0,'0,0,0',16,'aid',7,false,0) $i $archive} 
+<li><span class="date">{$archive[adddate]}</span><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+				</ul>
+                </div>
+            </div>
+        </div>
+<div class="clear"></div>        
+        <div class="bd1_ad1">
+        	<div class="box1">
+            	<div class="title">
+                	<div class="title_wd"><!-- 医院图库 --><?php $t=position_p($catid=1);?><span class="title_ioc"><img src="{$skin_path}/xxi_13.gif" /></span><a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div>
+                    <div class="more"><a href="{$t.url}">{lang(more)}...</a><?php?></div>
+                </div>
+                <div class="content">
+				 {loop archive(3,0,0,'0,0,0',8,'aid',6,true,0) $i $archive}
+<div class="prodt_box">
+                         <a href="{$archive[url]}" title="{$archive[stitle]}"><img src="{$archive[sthumb]}" alt="{$archive[stitle]}" class="prodt"/></a><br />
+             <a href="{$archive[url]}" class="prodt_font">{$archive[title]}</a>                      </div>
+ {/loop}
+<div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--bd部结束-->
+    <div id="footer">
+    	<div class="youqing">
+        	<div class="title2g">
+                <div class="title2g_wd">{lang(links)}</div>
+            </div>
+            <div class="youqing_content">
+            	<div class="links_box">
+{loop friendlink('text',0,18) $flink}
+<div class="prodgg_box">{$flink[link]}</div>
+{/loop}<br />
+
+
+{loop friendlink('image',0,18) $flink}
+<div class="prodgg_box">{$flink[link]}</div>
+{/loop}
+
+                        
+<div class="clear"></div> 
+			  </div>
+            </div>
+        </div>
+{template 'footer.html'}

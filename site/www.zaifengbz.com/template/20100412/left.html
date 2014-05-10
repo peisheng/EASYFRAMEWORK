@@ -1,0 +1,30 @@
+ <div id="bd_left">
+        	<div class="l_box1">
+            	<div class="title"><div class="tubiao"><img src="{$skin_url}/gg_18.gif" /></div>
+            	<div class="lan14c">快捷导航</div>
+            	</div>
+            	<div class="box_border">
+					<div class="l_box1_content">
+                        <ul class="ul2g">
+                     <!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on{/if}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+                </ul>
+					</div>
+                    <div class="l_box2">
+                    	<div class="kj_1"><img src="{$skin_url}/gg_13.gif" /></div>
+                        <div class="kj_1"><img src="{$skin_url}/gg_14.gif" /></div>
+                    </div>
+                   
+                </div>
+            </div>
+            
+        </div>

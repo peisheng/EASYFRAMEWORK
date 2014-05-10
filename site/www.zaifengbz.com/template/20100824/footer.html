@@ -1,0 +1,40 @@
+<div id="footer">
+    	<div class="foot_cprt">
+        <?php $t=position_p($typeid=1);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>	|	
+<?php?>
+<!-- {loop archive(1,0,0,'0,0,0',20,'aid',10,false,0) $i $archive} -->
+<a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[stitle]}</a>	|	
+<!-- {/loop} --><?php $t=position_p($typeid=5);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>	|	
+<?php?>{login_js()}	|	
+<a href="#">TOP</a><br />
+        	{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a> All Rights Reserved.      
+<div class="blank5"></div>
+{getcnzzcount()}&nbsp;&nbsp;<a href="http://www.miibeian.gov.cn/" target="_blank">{get('site_icp')}</a>  
+<div class="blank5"></div>
+
+<!-- 友情链接 -->
+{if $topid==0}<select name="website" onchange="javascript:window.open(this.options[this.selectedIndex].value)" style="float:right; margin-top:10px;">
+<option value="default">{lang('links')}</option>
+{loop friendlink('text',0,20) $flink}
+<option value="{$flink[url]}">{$flink[name]}</option>
+{/loop}
+</select>{/if}
+<div class="blank5"></div>
+{if $topid==0}<!-- 热门关键词 -->
+<div class="hot_keys" sytle="text-align:center;">{lang(hotkeys)}： {gethotsearch(10)}</div>{/if}
+</div>
+
+    </div><!--fooder部结束-->
+</div>
+
+
+<!-- 在线客服 -->
+{template 'system/servers.html'}
+<!-- 短信 -->
+{template 'system/sms.html'}
+
+{if get('lang_type')=='cn'}<script type="text/javascript" src="{$base_url}/js/tc.js"></script>{/if}
+</body>
+</html>

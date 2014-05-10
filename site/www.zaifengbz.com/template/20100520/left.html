@@ -1,0 +1,72 @@
+<div class="left_content">
+
+<div class="left2ji_box1">
+                    	<div class="title"><div class="title_img"><img src="{$skin_path}/11.gif" /></div>
+                    	<div class="title_wd">网站公告<span class="title_wde">Announ</span></div>
+                    	</div>
+						<div class="content">
+                       	  
+                <ul class="ul2g">
+{loop announ(5) $an}
+			<li><a href="{$an[url]}">{$an[title]}</a></li>
+			{/loop}
+ </ul>
+</div>
+                        </div>
+						<div class="clear"></div>
+
+<!--左侧栏目导航开始-->
+<script language="javascript" type="text/javascript">
+var labelarr = new Array();
+function displaynone(id){
+	document.getElementById(id).style.display='none';
+}
+function displayblock(labelarr){
+	for(i=0;i<=labelarr.length;i++){
+		document.getElementById(labelarr[i]).style.display='block';
+	}	
+}
+</script>
+<div id="menu" class="left2ji_box1">
+                    	<div class="title"><div class="title_img"><img src="{$skin_path}/11.gif" /></div>
+                    	<div class="title_wd">
+<a href="javascript:void(0)" class="home" id="listnav" onclick="displayblock(labelarr)">+{lang(quicknav)}</a><span class="title_wde">Navigation</span></div>
+                    	</div>
+						<div class="content">
+                        <div class="kjdh">
+<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<div class="kjdh_wd"><a href="{$type[url]}" title="{$type[catname]}"{if $type[catid]==$catid} class="on"{/if}>{$type[catname]}</a></div>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+
+
+
+</div>
+<!--左侧栏目导航结束-->
+
+</div>
+
+                        </div>
+						<div class="clear"></div>
+
+
+                        
+                        <div class="left2ji_box2">
+                    	<div class="title"><div class="title_img"><img src="{$skin_path}/11.gif" /></div><div class="title_wd">相关内容<span class="title_wde">Service</span></div></div>
+						
+                          <ul class="ul2g">
+							<!--  {loop archive($catid,0,0,'0,0,0',20,'aid',6,false,0) $i $archive} -->
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+<!-- {/loop} -->
+                          </ul>
+                        </div>
+                        </div>
+<div class="clear"></div>
+                    </div>

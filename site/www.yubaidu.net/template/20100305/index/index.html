@@ -1,0 +1,206 @@
+{template 'header.html'}
+<table width="931" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:5px;">
+  <tr>
+    <td width="320" height="31" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="20" height="25" align="center" valign="middle"><img src="{$skin_path}/mb_11.gif" width="11" height="15" /></td>
+            <td valign="middle" class="lanwd12"><strong><!-- 新闻中心 --><?php $t=position_p($catid=2);?>
+<a href="{$t.url}">{$t['name']}</a></strong></td>
+            <td width="64" align="center" valign="middle" class="picydd"><?php $t=position_p($catid=2);?>
+<a href="{$t.url}"><img src="{$skin_path}/mb_12.gif" width="44" height="12" border="0" /></a></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td class="bgys"> </td>
+      </tr>
+      <tr>
+        <td align="left" valign="top">
+        <ul class="ul">
+{loop archive(2,0,0,'0,0,0',16,'aid',8,false,0) $i $archive} 
+<li><span class="date">{$archive[adddate]}</span>·<a href="{$archive[url]}">{$archive[title]}</a></li>  
+{/loop}
+        </ul>
+        
+        
+        </td>
+      </tr>
+    </table></td>
+    <td width="16"> </td>
+    <td width="347" align="left" valign="top">
+    
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="20" height="25" align="center" valign="middle"><img src="{$skin_path}/mb_11.gif" width="11" height="15" /></td>
+            <td valign="middle" class="lanwd12"><strong><!-- 公司简介 --><?php $t=position_p($catid=1);?>
+<a href="{$t.url}">{$t['name']}</a></strong></td>
+            <td width="64" align="center" valign="middle" class="picydd"><?php $t=position_p($catid=1);?>
+<a href="{$t.url}"><img src="{$skin_path}/mb_12.gif" width="44" height="12" border="0" /></a></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td class="bgys"> </td>
+      </tr>
+      <tr>
+        <td valign="top"><div class="p"><img src="{$skin_path}/mb_15.gif" width="103" height="100"  class="picys2"/>   　　<strong>{get(sitename)}</strong>{tag_公司简介}……[<span class="chengwd12"><?php $t=position_p($catid=1);?>
+<a href="{$t.url}">详细</a></span>]</div></td>
+      </tr>
+    </table>
+    
+    
+    </td>
+    <td width="16"> </td>
+    <td width="232" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="20" height="25" align="center" valign="middle"><img src="{$skin_path}/mb_11.gif" width="11" height="15" /></td>
+            <td valign="middle" class="lanwd12"><strong>最新公告</strong></td>
+            <td width="64" align="center" valign="middle" class="picydd"><a href="#"><img src="{$skin_path}/mb_12.gif" width="44" height="12" border="0" /></a></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td class="bgys"> </td>
+      </tr>
+      <tr>
+        <td class="bgys1">
+        
+        <ul class="ul1">
+		{loop announ(5) $an}
+<li>·<a href="{$an[url]}" title="{$an[title]}">{$an[title]}</a></li>
+{/loop}
+        </ul>          </td>
+      </tr>
+      <tr>
+        <td height="64" align="right" class="picydd"><!-- 留言 --><a href="{$base_url}/index.php?case=guestbook&act=index"><img src="{$skin_path}/mb_17.gif" width="225" height="54" border="0" /></a></td>
+      </tr>
+    </table>  
+    </td>
+  </tr>
+</table>
+<table width="931" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="683" height="31" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="23" align="center" background="{$skin_path}/mb_19.gif"><img src="{$skin_path}/mb_18.gif" width="12" height="6" /></td>
+        <td width="596" background="{$skin_path}/mb_19.gif" class="lanwd12"><strong><!-- 产品展示 --><?php $t=position_p($catid=3);?>
+<a href="{$t.url}">{$t['name']}</a></strong></td>
+        <td width="64" height="32" background="{$skin_path}/mb_19.gif" class="picydd"><?php $t=position_p($catid=3);?>
+<a href="{$t.url}"><img src="{$skin_path}/mb_12.gif" width="44" height="12" border="0" /></a></td>
+      </tr>
+      <tr>
+        <td colspan="3">
+		
+		 <style cat="text/css">
+    <!--
+    #demo {
+     overflow:hidden;
+     width: 680px;
+    }
+    #demo ul li {
+     float:left;
+	 width:120px;
+    }
+    #indemo {
+     float: left;
+     width: 800%;
+    }
+    #demo1 {
+     float: left;
+    }
+    #demo2 {
+     float: left;
+    }
+    -->
+    </style>
+
+<div id="demo">
+    <div id="indemo">
+    <div id="demo1">
+	<ul>
+<!--  {loop archive(3,0,0,'0,0,0',20,'aid',10,true,0) $i $archive} -->
+<li>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="137" align="center" valign="middle" class="bgys2"><a href="{$archive[url]}"><img src="{$archive[sthumb]}" alt="{$archive[stitle]}" width="91" height="83" border="0" /></a></td>
+          </tr>
+          <tr>
+            <td height="21" align="center" valign="top" class="lanwd12"><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></td>
+          </tr>
+        </table>
+		</li>
+<!-- {/loop} -->
+
+		</ul>
+    </div>
+    <div id="demo2"></div>
+    </div>
+    </div>
+
+
+    <script>
+    <!--
+    var speed=30; //数字越大速度越慢
+    var tab=document.getElementById("demo");
+    var tab1=document.getElementById("demo1");
+    var tab2=document.getElementById("demo2");
+    tab2.innerHTML=tab1.innerHTML;
+    function Marquee(){
+    if(tab2.offsetWidth-tab.scrollLeft<=0)
+    tab.scrollLeft-=tab1.offsetWidth
+    else{
+    tab.scrollLeft++;
+    }
+    }
+    var MyMar=setInterval(Marquee,speed);
+    tab.onmouseover=function() {
+	clearInterval(MyMar)
+	};
+    tab.onmouseout=function() {
+	MyMar=setInterval(Marquee,speed)
+	};
+    -->
+    </script>
+		
+		</td>
+        </tr>
+    </table></td>
+    <td width="16"> </td>
+    <td align="left" valign="top">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="20" height="25" align="center" valign="middle"><img src="{$skin_path}/mb_11.gif" width="11" height="15" /></td>
+            <td valign="middle" class="lanwd12"><strong>{lang(contactus)}</strong></td>
+            <td width="64" height="32"><?php $t=position_p($catid=5);?>
+<a href="{$t.url}"><img src="{$skin_path}/mb_12.gif" width="44" height="12" border="0" /></a></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td class="bgys"> </td>
+      </tr>
+      <tr>
+        <td class="bgys1">
+        <div class="p1">
+          {lang(address)}：{get(address)}
+            <br />
+            {lang(tel)}：{get(tel)}
+            <br />
+            {lang(fax)}：{get(fax)}
+            <br />
+            {lang(email)}：{get(email)}</p>
+        </div>      </td>
+      </tr>
+      
+    </table>    </td>
+  </tr>
+</table>
+{template 'footer.html'}

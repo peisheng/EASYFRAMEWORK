@@ -1,0 +1,134 @@
+<div class="l_box">
+<?php
+if(front::get('case') == 'area'){
+?>
+<dl id="leftmenu">
+<dt class="parent" id="p1">{area::getpositonhtml(get('province_id'),get('city_id'),get('section_id'),get('id'))}</dt>
+</dl>           
+<?php
+}elseif(front::get('case') == 'announ'){
+?>
+<dl id="leftmenu">
+<dt class="parent" id="p1"><a>{lang(siteannoun)}</a></dt>
+</dl>
+<?php
+}elseif(front::get('case') == 'guestbook'){
+?>
+<dl id="leftmenu">
+<dt class="parent" id="p1"><a>{lang('guestbook')}</a></dt>
+</dl>
+<?php
+}elseif(front::get('case') == 'comment'){
+?>
+<dl id="leftmenu">
+<dt class="parent" id="p1"><a>{lang('commentlist')}</a></dt>
+</dl>
+<?php
+}elseif(front::get('case') == 'type'){
+?>
+
+
+
+<dl id="leftmenu">
+
+{loop type() $t}
+<dt class="parent" id="p1"><a href="{$t[url]}" {if isset($topid) && $topid==$t[typeid]}class="current"{/if}>{$t[typename]}</a></dt>
+<!--loop一级目录-->
+<dd class="child">{loop type($t) $t1}
+<a href="{$t1[url]}" {if isset($typeid) && $typeid==$t1[typeid]}class="current"{/if}>&nbsp;└	{$t1[typename]}</a>
+<!--loop二级目录...-->
+{loop type($t1) $t2}
+<a href="{$t2[url]}" {if isset($typeid) && $typeid==$t2[typeid]}class="current"{/if}>&nbsp;&nbsp;└{$t2[typename]}</a>
+<!--loop三级目录...-->
+{loop type($t2) $t3}
+<a href="{$t3[url]}" {if isset($typeid) && $typeid==$t3[typeid]}class="current"{/if}>&nbsp;&nbsp;&nbsp;└{$t3[typename]}</a>
+{/loop}
+{/loop}
+{/loop}
+</dd>
+{/loop}
+</dl>     
+
+<?php
+}elseif(front::get('case') == 'special'){
+?>
+<dl id="leftmenu">
+<dt class="parent" id="p1"><a>{$special[title]}</a></dt>
+</dl>              
+<?php
+}elseif(front::get('case') == 'tag'){
+?>
+<dl id="leftmenu">
+<dt class="parent" id="p1"><a>{$tag}</a></dt>
+</dl>
+<?php
+}elseif(front::get('case') == 'mailsubscription'){
+?>
+<dl id="leftmenu">
+<dt class="parent" id="p1"><a>{lang(mailsubscription)}</a></dt>
+<?php
+}else{
+?>
+
+
+
+<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+
+<dl id="leftmenu">
+{loop categories() $t}
+{if $t[catid]==$__pid}
+<dt class="parent"{if isset($topid) && $topid==$t[catid]} id="p1"{/if}><a>{$t[catname]}</a></dt>
+<dd class="child">
+{loop categories($t[catid]) $t1}
+<a title="{$t1[catname]}" href="{$t1[url]}"{if $t1[catid]==$catid} class="on"{/if}>&nbsp;└	{$t1[catname]}</a>
+{loop categories($t1[catid]) $t2}  
+<a title="{$t2[catname]}" href="{$t2[url]}"{if $t2[catid]==$catid} class="on"{/if}>&nbsp;&nbsp;└{$t2[catname]}</a>  
+{loop categories($t2[catid]) $t3}  
+<a title="{$t3[catname]}" href="{$t3[url]}"{if $t3[catid]==$catid}  class="on"{/if}>&nbsp;&nbsp;&nbsp;└{$t3[catname]}</a>  
+{/loop}  
+{/loop}  
+{/loop}
+</dd>{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+</dl>
+
+<?php
+}
+?>
+
+</div>
+<div class="l_box_bottom"></div>
+
+
+<!-- 订单查询 -->
+<div class="title mt20 mb20">
+<h3><a>{lang(vieworders)}</a>/<span>Order</span></h3>
+</div>
+
+
+<div class="l_box_top"></div>
+<div class="l_box">
+<div class="order">
+<input size="20" id="oid" class="o_text" name="oid" type="text" align="absmiple"value=" {lang(orderid)}… " onfocus="if(this.value==' {lang(orderid)}… ') {this.value=''}" onblur="if(this.value=='') this.value=' {lang(orderid)}… '" /> 
+<input type="submit" id="search_btn" align="absmiple" name='submit' value=" {lang(look)} " onclick="javascript:window.location.href='<?php echo url('archive/orders');?>&oid='+document.getElementById('oid').value;" class="o_btn" />
+</div>
+</div>
+<div class="l_box_bottom"></div>
+
+
+<!-- 联系我们 -->
+<div class="title mt20 mb20">
+<h3><a>{lang(contactus)}</a>/<span>Contact Us</span></h3>
+</div>
+
+<div class="l_box_top"></div>
+<div class="l_box">
+<ul class="news_list">
+<li><strong>{lang(address)}：</strong>{get(address)}</li>
+<li><strong>{lang(tel)}：</strong>{get(tel)}</li>
+<li><strong>{lang(fax)}：</strong>{get(fax)}</li>
+<li><strong>{lang(email)}：</strong>{get(email)}</li>
+</ul></div>
+<div class="l_box_bottom"></div>

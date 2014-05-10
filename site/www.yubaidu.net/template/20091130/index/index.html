@@ -1,0 +1,183 @@
+{template 'header.html'}
+<table width="1003" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-top:1px;">
+  <tr>
+    <td valign="top" style="background:url({$skin_path}/main_bg.jpg) repeat-x left top;">
+	<table width="208" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-left:14px; margin-top:22px; display:inline">
+      <tr>
+        <td width="208" style="font-weight:bold;"> | <?php $t=position_p($catid=2);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></td>
+      </tr>
+      <tr>
+        <td><img src="{$skin_path}/tt.gif" width="1" height="10" /></td>
+      </tr>
+      <tr>
+        <td>
+		{loop archive(2,0,0,'0,0,0',10,'aid',2,false,0) $i $archive} 
+            <a href="{$archive[url]}" class="menu">{$archive[title]}</a>
+                {/loop}
+</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td style="font-weight:bold;"> | 产品搜索</td>
+      </tr>
+      <tr>
+        <td><img src="{$skin_path}/tt.gif" width="1" height="8" /></td>
+      </tr>
+      <tr>
+        <td height="60" style="border:1px solid #DDDDDD; border-left:1px dotted #DDDDDD; border-right:1px dotted #DDDDDD;">
+		<form name='search_form' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+      <table width="206" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="55" rowspan="2" align="center"><img src="{$skin_path}/seararr.gif" width="42" height="40" /></td>
+          <td width="151" style="color:#999999;">请输入关键字：</td>
+        </tr>
+        <tr>
+          <td>
+		  <input name="keyword" type="text" align="absmiple" id="keys" style="vertical-align:middle;" size="16" />
+<input type="image" src="{$skin_path}/searbtn.jpg" style="border:0px none; vertical-align:middle;"  align="absmiple" name='submit' value="搜索" />
+</td>
+        </tr>
+      </table>
+    </form></td>
+      </tr>
+      
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="48" valign="top" style="background:url({$skin_path}/img1.jpg) no-repeat; cursor:pointer;" onclick="location='service2';"><table width="186" border="0" align="right" cellpadding="0" cellspacing="0">
+            <tr>
+              <td height="38"><a href="{$base_url}/index.php?case=form&act=add&form=my_dinggou">产品在线订购</a></td>
+            </tr>
+        </table>
+		
+		</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      
+      <tr>
+        <td height="48"><a href="{url('guestbook')}" title="{lang(feedback)}"><img src="{$skin_path}/guestfeedback.jpg" alt="{lang(feedback)}" width="208" height="48" border="0" /></a></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+      <table width="545" border="0" align="left" cellpadding="0" cellspacing="0" style="margin-top:22px;">
+        <tr>
+          <td align="center" valign="top" style="background:url({$skin_path}/main_line.gif) repeat-y left top;"><table width="490" border="0" cellspacing="0" cellpadding="0">
+
+            <tr>
+              <td align="left"><img src="{$skin_path}/tt.gif" width="1" height="11" /></td>
+            </tr>
+            <tr>
+              <td align="left"><table width="490" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="166"><img src="{$skin_path}/200711240942469.gif" alt="" width="156" height="118" border="0" /></td>
+                  <td width="324" align="left" valign="middle" style="line-height:23px;">
+                    <div style="width:324px;height:110px;overflow:auto;color:#333"> {tag_公司简介}</div></td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td><img src="{$skin_path}/tt.gif" width="1" height="8" /></td>
+            </tr>
+
+		 	
+ 
+            <tr>
+              <td><img src="{$skin_path}/tt.gif" width="1" height="10" /></td>
+            </tr>
+            <tr>
+              <td align="left"><table width="490" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="375" style="font-weight:bold;"> | <?php $t=position_p($catid=3);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></td>
+                  <td width="115" align="right"><img src="{$skin_path}/more1.gif" alt="" width="33" height="5" border="0" /></td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td><img src="{$skin_path}/tt.gif" width="1" height="10" /></td>
+            </tr>
+            <tr>
+              <td align="left"><table width="490" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+{loop archive(3,0,0,'0,0,0',20,'aid',4,true,0) $i $archive}
+                  <td width="122" align="center"><table width="110" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td height="90"><a href="{$archive[url]}"><img alt="{$archive[stitle]}" src="{$archive[sthumb]}" width="110" height="90" border="0" /></a></td>
+                    </tr>
+                    <tr>
+                      <td height="26" align="center" background="{$skin_path}/case_bg.gif"><a href="{$archive[url]}">{$archive[title]}</a></td>
+                    </tr>
+                  </table></td>
+                 {/loop}
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td align="left">&nbsp;</td>
+            </tr>
+          </table></td>
+        </tr>
+      </table><table width="224" border="0" cellspacing="0" cellpadding="0" style="margin-top:22px;">
+	  <tr>
+    <td><table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#EDEDED">
+	<tr>
+    <td style="font-weight:bold;"> | {lang(siteannoun)}</td>
+  </tr>
+  <tr>
+    <td><img src="{$skin_path}/tt.gif" width="1" height="10" /></td>
+  </tr>
+ 
+        <tr>
+          <td><div style="padding:0px 10px;">
+		 <ul class="announ">
+		 {loop announ(4) $an}
+<li><a href="{$an[url]}">{$an[title]}</a></li>
+{/loop}
+		  </ul>
+		  </div>
+</td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="5">&nbsp;</td>
+  </tr>
+
+
+  
+  <tr>
+    <td style="font-weight:bold;"> | {lang(contactus)}</td>
+  </tr>
+  <tr>
+    <td><img src="{$skin_path}/tt.gif" width="1" height="10" /></td>
+  </tr>
+  <tr>
+    <td><table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#EDEDED">
+        <tr>
+          <td height="56"><div style="padding:0px 10px;">
+		 <ul class="lian">
+		 <li>{lang(address)}：{get(address)}</li>
+<li>{lang(tel)}：{get(tel)}</li>
+<li>{lang(fax)}：{get(fax)}</li> 
+<li>{lang(email)}：{get(email)}</li> 
+		  </ul>
+		  </div>
+</td>
+        </tr>
+    </table></td>
+  </tr>
+</table>
+</td>
+  </tr>
+</table>
+{template 'footer.html'}

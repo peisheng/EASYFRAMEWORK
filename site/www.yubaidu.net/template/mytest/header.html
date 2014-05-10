@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{if !empty($archive[mtitle])}{$archive[mtitle]}-{elseif !empty($archive[title])}{$archive[title]}-{else}{if $type[meta_title]}    {$type[meta_title]}-{elseif typename($type[typeid])}{typename($type[typeid])}-{/if}{if $category[$catid][meta_title]}{$category[$catid][meta_title]}-{elseif !empty($catid)}{catname($catid)}-{/if}{/if}{get('fullname')}</title>
+<meta name="keywords" content="{if $archive[keyword]}{$archive[keyword]}{else}{if $type[keyword]}{$type[keyword]}{elseif $category[$catid][keyword]}{$category[$catid][keyword]}{else}{get('site_keyword')}{/if}{/if}" />
+<meta name="description" content="{if $archive[description]}{$archive[description]}{else}{if $type[description]}{$type[description]}{elseif $category[$catid][description]}{$category[$catid][description]}{else}{get('site_description')}{/if}{/if}" />
+<meta name="author" content="CmsEasy Team" />
+<link rel="icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link href="{$skin_path}/reset.css" rel="stylesheet" type="text/css" />
+<link href="{$skin_path}/style.css" rel="stylesheet" type="text/css" />
+<!--用于PNG图片在IE6下透明-->
+<!--[if IE 6]>
+<script src="{$base_url}/js/png.js"></script>
+<script>
+  DD_belatedPNG.fix('.logo');
+  DD_belatedPNG.fix('.cleft_box .cright');
+  DD_belatedPNG.fix('.cleft_box_content .cfooter');
+  DD_belatedPNG.fix('.cleft_box_content .cheader');
+</script>
+<![endif]--> 
+<script type="text/javascript">
+sfHover = function() {
+var sfEls = document.getElementById("nav").getElementsByTagName("LI");
+for (var i=0; i<sfEls.length; i++) {
+sfEls[i].onmouseover=function() {
+    this.className+=" sfhover";
+}
+sfEls[i].onmouseout=function() {
+    this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+}
+}
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
+</script>
+</head>
+<body>
+<div class="header box">
+<div class="logo"><a href="{$site_url}"><img src="{$base_url}/{get('site_logo')}" alt="{$sitename}" width="{get('logo_width')}"></a></div>
+<div class="topnav">
+<a title="{lang(sitewap)}" href="{$base_url}/wap/">{lang(sitewap)}</a>  -  <a href="<?php echo url('archive/orders');?>">{lang(shoppingcart)}</a>  -  
+<a title="{lang(feedback)}" href="{url('guestbook')}" target="_blank">{lang(feedback)}</a>  -  
+{if get('lang_type')=='cn'}<a id="StranLink" title="繁简转换">繁体</a>  -  {/if}
+{login_js()}
+</div>
+<div class="blank10"></div>
+<div class="topmenu">
+<!-- 网站导航 -->
+<div class="topmenu">
+<div>
+<ul id="navmenu"> 
+<li class="one{if $topid==0} on{/if}"><a title="{lang(backhome)}" href="{$base_url}/">{lang(homepage)}</a></li>
+{loop categories_nav() $t}
+<li class="one{if isset($topid) && $topid==$t[catid]} on{/if}"><a href="{$t[url]}" title="{$t[catname]}" target="{if config::get('nav_blank')==1} _blank{/if}">{$t[catname]}</a>
+{if count(categories($t[catid]))}<ul>
+{loop categories($t[catid]) $t1}
+<li><a title="{$t1[catname]}" href="{$t1[url]}">{$t1[catname]}</a>
+{if count(categories($t1[catid]))}<ul>{loop categories($t1[catid]) $t2}<span></span>
+<li><a title="{$t2[catname]}" href="{$t2[url]}">{$t2[catname]}</a>
+{if count(categories($t2[catid]))}<ul>{loop categories($t2[catid]) $t3}<span></span>
+<li><a title="{$t3[catname]}" href="{$t3[url]}">{$t3[catname]}</a>
+{if count(categories($t3[catid]))}<ul>{loop categories($t3[catid]) $t4}<span></span>
+<li><a title="{$t4[catname]}" href="{$t4[url]}">{$t4[catname]}</a>
+{if count(categories($t4[catid]))}<ul>{loop categories($t4[catid]) $t5}<span></span>
+<li><a title="{$t5[catname]}" href="{$t5[url]}">{$t5[catname]}</a></li> 
+{/loop}</ul>{/if}
+</li> 
+{/loop}</ul>{/if}
+</li>
+{/loop}</ul>{/if}
+</li>
+{/loop}</ul>{/if}
+</li> 
+{/loop}</ul>{/if}
+</li>{/loop}
+</ul>
+</div>
+</div>
+<!-- 导航结束 -->
+</div>
+</div>
+<div class="blank10"></div>
+<div class="banner_1 box" style="width:970px;overflow:hidden;">
+{template 'system/slide.html'}
+</div>
+<div class="blank10"></div>

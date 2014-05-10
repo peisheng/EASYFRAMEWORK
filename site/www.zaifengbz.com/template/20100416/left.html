@@ -1,0 +1,83 @@
+<div id="bd_left">
+
+
+
+			<div class="rr_box2g">
+                	<div class="rr_box1_title"><div class="rr_box1_titlel"><img src="{$skin_path}/jt_22.gif" /></div><div class="titpic"><img src="{$skin_path}/jt_24.gif" /></div>
+                	<div class="titlewd">快捷导航</div>
+                	</div>
+                	<div class="box">
+                   	  <div class="em">
+                       	  <ul class="ul2">
+                    <!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on{/if}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+              </ul>
+                      </div>
+                    </div>
+                </div>
+				<div class="blank10"></div>
+
+				<div class="rr_box2g">
+                	<div class="rr_box1_title"><div class="rr_box1_titlel"><img src="{$skin_path}/jt_22.gif" /></div><div class="titpic"><img src="{$skin_path}/jt_24.gif" /></div>
+                	<div class="titlewd">网站公告</div>
+                	</div>
+                	<div class="box">
+                   	  <div class="em">
+                       	  <ul class="ul2">
+                   {loop announ(5) $an}
+<li><a href="{$an[url]}">{$an[title]}</a></li>
+{/loop}
+              </ul>
+                      </div>
+                    </div>
+                </div>
+				<div class="blank10"></div>
+
+				<div class="rr_box2g">
+                	<div class="rr_box1_title"><div class="rr_box1_titlel"><img src="{$skin_path}/jt_22.gif" /></div><div class="titpic"><img src="{$skin_path}/jt_24.gif" /></div>
+                	<div class="titlewd">内容专题</div>
+                	</div>
+                	<div class="box">
+                   	  <div class="em">
+                       	  <ul class="ul2">
+                    <!-- {loop special::listdata() $special} -->
+<li><a href="{$special[url]}" title="{$special[title]}">{$special[title]}</a></li>
+<!-- {/loop} -->
+              </ul>
+                      </div>
+                    </div>
+                </div>
+				<div class="blank10"></div>
+
+			<div class="left_box2" style="margin:0px;"><div class="l_box2_l"><img src="{$skin_path}/jt_15.gif" /></div>
+			<form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+<div class="l_box2_c"><input  id="search_text" name="keyword" type="text" align="absmiple" /></div>
+<div class="l_box2_r"><input type="image" src="{$skin_path}/jt_16.gif" id="search_btn" align="absmiple" name='submit' value=" 搜索 " /></div>
+
+</form>
+			</div>
+
+			<div class="left_box3">
+            	<div class="l_box3_title"><div class="l_box3_l"><img src="{$skin_path}/jt_17.gif" /></div>
+            	<span class="hui12">联系我们</span></div>
+                <div class="l_box3_content">
+                   <div class="tj2"><ul>
+<li>地 址：{get(address)}</li>
+<li>电 话：{get(tel)}</li>
+<li>传 真：{get(fax)}</li> 
+<li>邮 箱：{get(email)}</li> 
+<li>邮 编：{get(postcode)}</li> 
+</ul>
+            	</div>
+				</div>
+				</div>
+        	</div>

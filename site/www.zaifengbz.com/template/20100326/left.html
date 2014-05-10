@@ -1,0 +1,40 @@
+<div class="left_box1">
+<div class="titleg"><span class="cheng14c">{lang(quicknav)}</span><span class="huie">Quicknav</span></div>
+                <div class="jiange"></div>
+			<div class="t_1 mb5"><div><h3></h3></div></div>
+ <div class="content">
+                        <ul class="ul2g">
+<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+<li><a title="{$t[catname]}" href="{$t[url]}"{if isset($topid) && $topid==$t[catid]} class="on"{/if}>{$t[catname]}</a></li>
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li class="on2"><a href="{$type[url]}" title="{$type[catname]}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+</ul>
+                    </div>
+                </div>
+
+<div id="search">
+<form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+<input  id="inputsearch" name="keyword" type="text" align="absmiple" />&nbsp; 
+<input type="submit" class="s_btn" align="absmiple" name='submit' value=" " />
+</form>
+</div>
+
+<div class="left_box1">
+<div class="content_img"><img src="{$skin_path}/rj_17.gif" /></div>
+<div class="content3"><div class="pcc">
+
+<ul>
+<li>{lang(address)}：{get(address)}</li>
+<li>{lang(tel)}：{get(tel)}</li>
+<li>{lang(fax)}：{get(fax)}</li> 
+<li>{lang(email)}：{get(email)}</li>
+</div>
+</div>	
+</div>

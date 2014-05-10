@@ -1,0 +1,26 @@
+<div id="footer">
+<div class="center">
+<ul class="copy">
+<li>
+<?php $t=position_p($typeid=1);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>	|	
+<?php?>
+<!-- {loop archive(1,0,0,'0,0,0',4,'aid',3,false,0) $i $archive} -->
+<a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a>	|	
+<!-- {/loop} --><?php $t=position_p($typeid=5);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>	|	
+<?php?>
+<a href="#">TOP</a>
+</li>
+<li><a href="http://www.miibeian.gov.cn/" target="_blank">{get('site_icp')}</a>	</li>
+</ul>
+<p>公司地址：{get('address')}</p>
+<p>Copyright 2008-2009 <a href="{$base_url}/" target="_blank"style="color:#fa6c16;">{get('sitename')}</a> All Rights Reserved.</p>
+<div class="blank5"></div>
+<div class="copyright"> &nbsp;&nbsp;{getcnzzcount()}</div>
+</div>
+
+</div></div>
+</div>{template 'system/servers.html'}
+</body>
+</html>

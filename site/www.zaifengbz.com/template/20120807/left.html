@@ -1,0 +1,33 @@
+ <div class="box3"><img src="{$skin_path}/anli_17.gif" width="260" height="104" /></div>
+      	<div class="box3">
+            	<div class="title">{lang(contactus)}</div>
+                <div class="content">
+                	<div class="p">
+<ul>
+<li>{lang(address)}：{get(address)}</li>
+<li>{lang(tel)}：{get(tel)}</li>
+<li>{lang(fax)}：{get(fax)}</li> 
+<li>{lang(email)}：{get(email)}</li> 
+</ul>
+                  </div>
+				  <div class="blank10"></div>
+				  <div class="title">{lang(quicknav)}</div>
+                <div class="content">
+                	<div class="p">
+<ul>
+<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}" class="on">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+</ul>
+                  </div>
+				  </div>
+      	</div>
+ </div>

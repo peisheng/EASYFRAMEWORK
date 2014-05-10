@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-hans" lang="zh-hans" dir="ltr">
+<head>
+<title>易通企业建站程序-管理中心</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link type="text/css" rel="stylesheet" media="all" href="/images/admin/admin.css" />
+<script type="text/javascript">
+<!-- 
+function $(ID){
+return document.getElementById(ID);
+}
+function Tb(c,f,t)
+{
+for (var i=f;i<=t;i++)
+{
+if(c==i)
+{
+$('T_'+i).className = 'tab_on';
+$('A_'+i).className = 'w';
+$('C_'+i).style.display = '';
+$('I_'+i).src = '/images/admin/menu-expanded.gif';
+}
+else
+{
+$('T_'+i).className = 'tab';
+$('A_'+i).className = '';
+$('C_'+i).style.display = 'none';
+$('I_'+i).src = '/images/admin/menu-collapsed.gif';
+}
+}
+}
+ 
+function ResumeError()  
+{ 
+    return true; 
+} 
+window.onerror = ResumeError; 
+// --> 
+
+</script>
+</head>
+<body class="sidebar-left">
+<!-- Layout -->
+<div id="header-region"><a href="/" target="_blank"><strong>访问网站首页</strong></a>
+|&nbsp;&nbsp;<a href="http://www.cmseasy.org/forum-10-1.html" target="_blank">报错</a>
+|&nbsp;&nbsp;<a href="http://www.cmseasy.org/forum-9-1.html" target="_blank">在线教程</a>
+|&nbsp;&nbsp;<a href="http://www.cmseasy.org/" target="_blank">交流论坛</a>&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+  <div id="wrapper">
+    <div id="container" class="clear-block">
+<!-- header -->
+<div id="header">
+  <div id="logo-floater">
+     <h1><a href="/" title="/"><img src="/images/admin/logo.png" alt="" id="logo" /></a></h1>
+  </div>
+</div>
+<!-- /header -->
+<!-- sidebar-left -->
+<div id="sidebar-left" class="sidebar">
+
+
+<div class="tab_on" id="T_1" onclick="Tb(1,1,15);"><span class="f_r"><img src="/images/admin/menu-collapsed.gif" id="I_1"/></span>&nbsp;<a href="#" id="A_1" class="w">文章管理</a></div>
+<div id="C_1" class="nav" style="display:;">
+<a href="/admin/index.php?case=table&act=list&table=archive">文章管理</a>
+<a href="/admin/index.php?case=table&act=add&table=archive">添加文章</a>
+<a href="/admin/index.php?case=table&act=list&table=archive&needcheck=1">审核文章</a>
+</div>
+<div class="tab_on" id="T_2" onclick="Tb(2,1,15);"><span class="f_r"><img src="/images/admin/menu-collapsed.gif" id="I_2"/></span>&nbsp;<a href="#" id="A_2" >文章字段管理</a></div>
+<div id="C_2" class="nav" style="display:none;">
+<a href="/admin/index.php?case=field&act=list&table=archive">文章字段管理</a>
+<a href="/admin/index.php?case=field&act=add&table=archive">添加文章字段</a>
+</div>
+<div class="tab_on" id="T_3" onclick="Tb(3,1,15);"><span class="f_r"><img src="/images/admin/menu-collapsed.gif" id="I_3"/></span>&nbsp;<a href="#" id="A_3" >分类管理</a></div>
+<div id="C_3" class="nav" style="display:none;">
+<a href="/admin/index.php?case=table&act=list&table=type">分类管理</a>
+<a href="/admin/index.php?case=table&act=add&table=type">添加分类</a>
+</div>
+<div class="tab_on" id="T_4" onclick="Tb(4,1,15);"><span class="f_r"><img src="/images/admin/menu-collapsed.gif" id="I_4"/></span>&nbsp;<a href="#" id="A_4" >生成管理</a></div>
+<div id="C_4" class="nav" style="display:none;">
+<a href="/admin/index.php?case=cache&act=make_index">首页Html生成</a>
+<a href="/admin/index.php?case=cache&act=make_show">文章Html生成</a>
+<a href="/admin/index.php?case=cache&act=make_list">栏目Html生成</a>
+</div>
+<div><span class="f_r"><img src="/images/admin/menu-collapsed.gif" /></span>&nbsp;<a href="/admin/index.php?case=index&act=logout">退出管理</a></div>
+</div>
+<!-- /sidebar-left -->
+<!-- center -->
+<div id="center">
+  <div id="squeeze">
+    <div class="right-corner">
+      <div class="left-corner">
+<!-- breadcrumb -->
+<div class="breadcrumb">
+<a href="/" target="_blank"><strong>访问网站首页</strong></a> - 
+
+<a href="/admin/index.php?case=index&act=index&=">管理首页</a> - 
+<a href="/admin/index.php?case=index&act=index&mod=system">系统管理</a> - 
+<a href="/admin/index.php?case=index&act=index&mod=content">内容管理</a> - 
+<a href="/admin/index.php?case=index&act=index&mod=user">用户管理</a> - 
+<a href="/admin/index.php?case=index&act=index&mod=func">功能模块</a> - 
+<a href="/admin/index.php?case=index&act=index&mod=def">自定义表单</a> - 
+<a href="/admin/index.php?case=index&act=index&mod=help">模板助手</a> - 
+<a href="/admin/index.php?case=index&act=logout">退出管理</a>
+</div>
+<!-- /breadcrumb -->

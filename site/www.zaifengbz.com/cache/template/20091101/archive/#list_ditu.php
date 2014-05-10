@@ -1,0 +1,59 @@
+<?php defined('ROOT') or exit('Can\'t Access !'); ?>
+<?php echo template('header.html'); ?>
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="4" background="<?php echo $skin_path;?>/middle_bg1.jpg"> </td>
+    <td valign="top">
+<?php echo template('left.html'); ?>
+</td>
+        <td width="724" valign="top"><?php echo template('position.html'); ?>
+</td>
+          </tr>
+
+<tr>
+            <td height="20"> </td>
+          </tr>
+          <tr>
+            <td>
+            <div style="border:1px dotted #FEB697; padding:8px; text-align:center; font-size:14px; color:#333333; background:#FFFAF9;"><h1><?php echo $category[$catid]['catname'];?></h1></div></td>
+          </tr>
+
+                    <tr>
+                      <td height="28"></td>
+                    </tr>          <tr>
+            <td><img src="<?php echo $skin_path;?>/t.gif" width="1" height="6" /></td>
+          </tr>
+          <tr>
+            <td align="right" style="font-size:11px; color:#BCBCBC;"></td>
+          </tr>
+          <tr>
+            <td height="16"> </td>
+          </tr>
+          <tr>
+            <td class="newsCon">
+
+<!-- 内容 -->
+<?php echo $category[$catid]['categorycontent'];?>
+
+<div class="blank30"></div>
+
+<?php echo template('ditu.html'); ?>
+
+</td>
+          </tr>
+          <tr>
+            <td height="16" style="border-bottom:1px dotted #E6E6E6;"> </td>
+          </tr>
+
+        </table></td>
+      </tr>      
+    </table></td>
+    <td width="4" background="<?php echo $skin_path;?>/middle_bg2.jpg"> </td>
+  </tr>
+</table>
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="948"><img src="<?php echo $skin_path;?>/btm_bg.jpg" width="948" height="7" /></td>
+  </tr>
+</table>
+<?php echo template('footer.html'); ?>

@@ -1,0 +1,83 @@
+<!--左侧栏目导航开始-->
+<div class="bd_left1" id="menu">
+            <div class="bd_left1_content">
+            	<!--左侧栏目导航开始-->
+<div id="menu">
+<ul>
+
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+<li class="clear"><a title="{$t[catname]}" target="_blank" href="{$t[url]}" class="one{if isset($topid) && $topid==$t[catid]} on{/if}">{$t[catname]}</a>
+<ul> {loop categories($t[catid]) $t1}
+<li><a title="{$t1[catname]}" target="_blank" href="{$t1[url]}">{$t1[catname]}</a>
+<ul>{loop categories($t1[catid]) $t2}
+<li><a title="{$t2[catname]}" target="_blank" href="{$t2[url]}">{$t2[catname]}</a>
+<ul>{loop categories($t2[catid]) $t3}
+<li><a title="{$t3[catname]}" target="_blank" href="{$t3[url]}">{$t3[catname]}</a>
+<ul>{loop categories($t3[catid]) $t4}
+<li><a title="{$t4[catname]}" target="_blank" href="{$t4[url]}">{$t3[catname]}</a>
+<ul>{loop categories($t4[catid]) $t5}
+<li><a title="{$t5[catname]}" target="_blank" href="{$t4[url]}">{$t3[catname]}</a></li> 
+{/loop}</ul>
+</li> 
+{/loop}</ul>
+</li>
+{/loop}</ul>
+</li>
+{/loop}</ul>
+</li> 
+{/loop}</ul>
+</li>{/loop}
+</ul>
+</div>
+<!--左侧栏目导航结束-->
+ </div> 
+        </div>
+<div class="blank10"></div>
+
+ <div class="bd_left2g">
+           	  <div class="bd_left1_title">
+            	<div class="title1_img"><img src="{$skin_path}/img_17.gif" /></div>
+                <div class="title1">{lang(siteannoun)}</div>
+                <div class="more1"></div>
+           	  </div>
+                <div class="bd_rightR2_content">
+                	<ul class="ul2 announ">
+                   {loop announ(5) $an}
+			<li><a href="{$an[url]}">{$an[title]}</a></li>
+			{/loop}
+                </ul>
+				<div class="blank10"></div>
+                </div>
+            </div>
+
+			<div class="bd_left2g" style="height:191px;">
+            	<div class="bd_left1_title">
+            	<div class="title1_img"><img src="{$skin_path}/img_18.gif" /></div>
+                <div class="title1">{lang(servertel)}</div>
+            	</div>
+                <div class="bd_rightR1_content">
+                	<div class="p"><strong>{lang(address)}：</strong>{get(address)}<br /> 
+                      <strong>{lang(tel)}：</strong>{get(tel)}<br /> 
+                      <strong>{lang(fax)}：</strong>{get(fax)}<br /> 
+                      <strong>{lang(email)}：</strong>{get(email)}
+					  </div>
+                </div>
+            </div>
+
+        <div class="bd_left2">
+<div class="bd_left1_title">
+            	<div class="title1_img"><img src="{$skin_path}/img_14.gif" /></div>
+                <div class="title1">{lang(search)}</div>
+            </div>
+            <div class="bd_left2_content">
+			<div style="margin:16px;">
+           	  <form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+                <div><input  id="inputsearch" type="text" name="keyword" class="input" value="请输入关键字！" size="21" /></div>
+				<div class="blank10"></div>
+                <div><input name='submit' type="image" src="{$skin_path}/mb_15.gif" style="float:right;" /></div>
+				</form>
+				</div>
+            </div> 
+       
+</div> 

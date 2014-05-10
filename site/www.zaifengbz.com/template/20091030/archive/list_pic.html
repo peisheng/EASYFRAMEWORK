@@ -1,0 +1,51 @@
+{template 'header.html'}
+<style>
+	.NewsTitle{ text-align:center;font-size:16px;font-weight:bold;}
+	.PostDate{border-bottom:1px dotted #666666;text-align:center;padding:4px;}
+	.NewsContent{font-size:14px;line-height:20px;padding:10px;}
+	.NewsContent p{ margin:5px;padding:0px; }
+</style>
+
+<div id="main">
+	<div id="MainLeftNav">
+{template 'left.html'}
+
+	</div>
+	<div id="MainRight">
+		{template 'position.html'}
+		<div style="padding:10px 25px">
+
+			<div class="PostDate"></div>
+			<div class="NewsContent" >
+				<div id="content" style="width:680px;" class="pd">
+		<div class="blank10"></div>
+<div style="width:380px;margin:0px auto;padding:0px auto;">
+{lang(orderquery)}：<input size="40"  id="oid" name="oid" type="text" align="absmiple" />
+<input type="submit" id="search_btn" align="absmiple" name='submit' value=" {lang(look)} " onclick="javascript:window.location.href='<?php echo url('archive/orders');?>&oid='+document.getElementById('oid').value;" />
+</div>
+<div class="blank10"></div>
+<div class="blank10"></div>
+
+<!-- 内容缩略图列表 -->
+<ul id="list-view">
+{loop $archives $i $archive}
+{if $i%4==0}<div class="clear blank5"></div>{else}{/if}
+<li><div class="img-wrap"><a title="{$archive['stitle']}" target="_blank" href="{$archive['url']}"><img alt="{$archive['stitle']}" src="{$archive['sthumb']}" onerror='this.src="{$base_url}/{config::get('onerror_pic')}"' /></a></div>
+<h5><a title="{$archive['stitle']}" target="_blank" href="{$archive['url']}">{$archive['title']}</a></h5>{if $archive['attr2']}{lang(price)}	:	<span>{$archive['attr2']}</span>{lang(unit)}{/if}
+</li>
+{/loop}
+</ul>
+<!-- 内容缩略图列表结束 -->
+		<div class="clear"></div>
+		<div class="blank10"></div>
+		<!-- 内容列表分页 -->
+		{if isset($pages)}
+		{category_pagination($catid)}
+		{/if}
+	<div class="blank30"></div>
+		</div>
+				</div>
+		</div>
+	</div>
+</div>
+{template 'footer.html'}

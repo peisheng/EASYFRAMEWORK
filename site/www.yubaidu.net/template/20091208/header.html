@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{if !empty($archive[mtitle])}{$archive[mtitle]}{elseif $category[$catid][meta_title] and !$archive[title]}{$category[$catid][meta_title]}{else}{if !empty($archive[title])}{$archive[title]}-{/if}{if $type[meta_title]}{$type[meta_title]}-{elseif typename($type[typeid])}{typename($type[typeid])}-{/if}{if $category[$catid][meta_title]}{$category[$catid][meta_title]}-{elseif !empty($catid)}{catname($catid)}-{/if}{get('fullname')}{/if}</title>
+<meta name="keywords" content="{if $archive[keyword]}{$archive[keyword]}{else}{if $type[keyword]}{$type[keyword]}{elseif $category[$catid][keyword]}{$category[$catid][keyword]}{else}{get('site_keyword')}{/if}{/if}" />
+<meta name="description" content="{if $archive[description]}{$archive[description]}{else}{if $type[description]}{$type[description]}{elseif $category[$catid][description]}{$category[$catid][description]}{else}{get('site_description')}{/if}{/if}" />
+<meta name="author" content="CmsEasy Team" />
+<link rel="icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link href="{$skin_path}/reset.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{$skin_url}/style.css" media="screen" title="shandesigns (screen)" />
+<style type="text/css">
+.logo {float:left;display:block;width:{get('logo_width')}px; height:{get('logo_height')}px; background:url({$base_url}/{get('site_logo')}) center center no-repeat;}
+</style>
+<!--用于PNG图片在IE6下透明-->
+<!--[if IE 6]>
+<script src="{$skin_path}/js/png.js"></script>
+<script>
+  DD_belatedPNG.fix('.logo');
+  DD_belatedPNG.fix(' .cfooter');
+  DD_belatedPNG.fix('.cleft_box .cright');
+  DD_belatedPNG.fix('.cleft_box_content .cfooter');
+  DD_belatedPNG.fix('.cleft_box_content .cheader');
+</script>
+<![endif]--> 
+</head>
+<body>
+<!-- 整体布局开始 -->
+<div id="wrapper">
+<!-- 页头 -->
+<div id="header">
+<a title="{get(sitename)}" href="{$base_url}/" class="logo"></a>
+<div id="top">
+<script>
+function search_check() {
+	word=dojo.byId('keyword').value;
+	if(!word) {
+		alert('请输入查询信息！');
+		return false;
+	}
+	else return true;
+}
+</script>
+<form name='search_form' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+<div id="search">
+<input  id="keyword" name="keyword" type="text" class="key" />
+<input type="submit" name='submit'  value="{lang(pleaceinputtext)}" onfocus="if(this.value=='{lang(pleaceinputtext)}') {this.value=''}" onblur="if(this.value=='') this.value='{lang(pleaceinputtext)}'" class="searchbutton" />
+</div>
+</form>
+
+</div>
+<!-- 顶部导航 -->
+
+<div id="nav">
+<a title="{lang(backhome)}" href="{$base_url}/" class="one{if $topid==0} on{/if}">{lang(homepage)}</a>
+{loop categories_nav() $t}
+<a href="{$t[url]}" title="{$t[catname]}" class="one{if isset($topid) && $topid==$t[catid]} on{/if}">{$t[catname]}</a>
+{/loop}
+</div>
+<div class="clear"></div><div id="banner"></div>
+<!-- 辅助导航 -->
+<div id="subnav">
+<ul>{substr($an[title],0,10)}
+{loop announ(3) $an}
+<li>○ <a href="#" onclick="window.open('{$an[url]}','Sample','height=520,width=524,scrollbars=yes')">{$an[title]}</a></li>
+{/loop}
+</ul>
+</div>
+
+</div>

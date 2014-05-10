@@ -1,0 +1,19 @@
+   {template 'header.html'}
+    <div id="bd">
+    	<div id="bd_left">
+        	<div class="boxn">
+            	{template 'position.html'}
+                <div class="content">
+                  <div class="pd_title">{$category[$catid][catname]}</div>
+                       <div class="pd">
+{$category[$catid][categorycontent]}
+</div>
+                    </div>
+            </div>
+      </div>
+   	  <div id="bd_right">
+     {template 'left.html'}</div>
+    	<div class="clear"></div>
+    </div> 
+
+   {template 'footer.html'}

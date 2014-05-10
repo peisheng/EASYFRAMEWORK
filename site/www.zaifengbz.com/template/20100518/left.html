@@ -1,0 +1,48 @@
+<div class="title"><div class="title_img"><img src="{$skin_path}/lvse_25.gif" /></div>
+<div class="title_wd"><span class="lvwd">网站公告</span></div>
+</div>
+                <div class="content announ">
+                  <ul class="ul2">
+{loop announ(5) $an}
+			<li><a href="{$an[url]}">{$an[title]}</a></li>
+			{/loop}
+</ul>
+</div>
+
+<div class="left_box1">
+
+<div class="title"><div class="title_img"><img src="{$skin_path}/lvse_25.gif" /></div>
+<div class="title_wd"><span class="lvwd">{lang(quicknav)}</span></div>
+</div>
+                <div class="content">
+                  <ul class="ul2">
+<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}"{if $type[catid]==$catid} class="on"{/if}>{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+</ul>
+</div>
+            </div>
+            <div class="left_box1">
+           	  <div class="title"><div class="title_img"><img src="{$skin_path}/lvse_25.gif" /></div>
+           	  <div class="title_wd"><span class="lvwd">{lang(contactus)}</span></div>
+           	  </div>
+                <div class="content">
+                  <div class="pg">
+<ul>
+<li>{lang(address)}：{get(address)}</li>
+<li>{lang(tel)}：{get(tel)}</li>
+<li>{lang(fax)}：{get(fax)}</li> 
+<li>{lang(email)}：{get(email)}</li> 
+</ul>
+</div>
+                          <div class="xswl"><img src="{$skin_path}/lvse_26.gif" alt="" border="0" /></div>
+            </div>
+            </div>

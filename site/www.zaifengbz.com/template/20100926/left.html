@@ -1,0 +1,52 @@
+<div class="box1">
+            	<div class="title1">
+                	<div class="ico"><img src="{$skin_path}/hh_7.gif" /></div>
+                	<div class="title1_wd">{lang(quicknav)}</div>
+                </div>
+                <div class="content">
+                    <div class="p">
+<ul>
+<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}" class="on">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+</ul>
+</div>
+                </div>
+            </div>
+
+<div class="box1">
+            	<div class="title1">
+                	<div class="ico"><img src="{$skin_path}/hh_7.gif" /></div>
+                	<div class="title1_wd">{lang(contactus)}</div>
+                </div>
+                <div class="content">
+                	<div class="pic"><img src="{$skin_path}/hh_19.gif" /></div>
+                    <div class="p">
+<ul>
+<li>{lang(address)}：{get(address)}</li>
+<li>{lang(tel)}：{get(tel)}</li>
+<li>{lang(fax)}：{get(fax)}</li> 
+<li>{lang(email)}：{get(email)}</li> 
+</ul>
+</div>
+                </div>
+            </div>
+
+            <div class="box1">
+           	  <div class="title2">
+               	  <div class="ico"><img src="{$skin_path}/hh_20.gif" /></div>
+                	<div class="title1_wd">销售网络</div>
+              </div>
+                <div class="content">
+                  <div class="ditu"><?php $t=position_p($catid=1);?>
+<a href="{$t.url}" title="{$t['name']}"><img src="{$skin_path}/hh_13.gif" /></a>
+<?php?></div>
+                </div>
+</div>

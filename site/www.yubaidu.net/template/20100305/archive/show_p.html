@@ -1,0 +1,149 @@
+{template 'header.html'}
+<table width="931" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="210" height="365" align="center" valign="top" bgcolor="#F6F6F6" class="bgys3">
+    {template 'left.html'}
+
+    </td>
+   <td width="16">&nbsp;</td>
+    <td width="705" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td height="137" align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="23" align="center" background="{$skin_path}/mb_19.gif"><img src="{$skin_path}/mb_18.gif" width="12" height="6" /></td>
+        <td width="500" align="left" background="{$skin_path}/mb_19.gif" class="lanwd12"><strong>{$type[$typeid][typename]}</strong></td>
+        <td width="182" height="32" align="right" background="{$skin_path}/mb_19.gif" class="huiwd12"><a href="{$base_url}/">{get(sitename)}</a>{loop position($typeid) $t} &gt;&gt; <a title="{$t['name']}" href="{$t.url}">{$t['name']}</a>{/loop}&nbsp;&nbsp;</td>
+      </tr>
+      <tr>
+        <td colspan="3" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td height="32" align="center" class="lanwd14"><strong>{$archive[title]}</strong></td>
+          </tr>
+          <tr>
+            <td height="16" align="center" class="bgys">&nbsp;</td>
+          </tr>
+          <tr>
+            <td><div class="pd">
+<div id="content" style="width:680px;" class="text">{$archive[content]}</div>
+<script type="text/javascript" src="{$base_url}/js/text_size.js"></script>
+<div class="blank30"></div>
+{if $pages>1}
+<div class="blank10"></div>
+<div class="pages">
+{archive_pagination($archive)}
+</div>
+<div class="blank30"></div>
+{/if}
+<div style="border-top:#ccc 2px solid;height:15px; font-size:0;">&nbsp;</div>
+<table cellspacing="1" cellpadding="0" width="100%" bgcolor="#cccccc" border="0">
+    <tbody>
+        <tr height="25">
+            <td align="center" width="16%" bgcolor="#ffffff" height="25" rowspan="2">Forming Type：</td>
+            <td width="84%" bgcolor="#ffffff" rowspan="2">&nbsp;&nbsp;{$archive[my_formingtype]}</td>
+        </tr>
+        <tr height="25">
+        </tr>
+        <tr height="25">
+            <td align="center" bgcolor="#ffffff" height="25">Size：</td>
+            <td bgcolor="#ffffff">&nbsp;&nbsp;{$archive[my_size]}</td>
+        </tr>
+        <tr height="25">
+            <td align="center" bgcolor="#ffffff" height="25">Standard：</td>
+            <td bgcolor="#ffffff">&nbsp;&nbsp;{$archive[my_standard]}</td>
+        </tr>
+        <tr height="25">
+            <td align="center" bgcolor="#ffffff" height="25">Wall Thickness：</td>
+            <td bgcolor="#ffffff">&nbsp;&nbsp;{$archive[my_wallthickness]}</td>
+        </tr>
+        <tr height="25">
+            <td align="center" bgcolor="#ffffff" height="25">Material：</td>
+            <td bgcolor="#ffffff">&nbsp;&nbsp;{$archive[my_material]}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="blank20"></div>
+<?php if(archive_attachment($archive['aid'],'id')) { ?>
+<p>
+附件：{attachment_js($archive['aid'])}
+</p>
+<?php } ?>
+<div class="clear"></div>
+
+<script type="text/javascript" >SetSize(getCookie('size'))</script>
+
+<script language="JavaScript">
+function shutwin(){
+window.close();
+return;}
+</script>
+
+<div class="blank30"></div>
+<div id="tool">
+<li><a href="javascript:window.print()" class="print">{lang(printcontent)}</a></li>
+<li style="width:90px; padding-left:5px;"><a href='<?php echo url('comment/list/aid/'.$archive['aid']); ?>' class="t_4">{lang(comment)}</a></li>
+<li style="width:60px; padding-left:5px;">{lang(strgrades)}：</li>
+<li style="width:100px; padding-left:5px;">{$archive[strgrade]}</li>
+{if get('lang_type')=='cn'}
+<li><a href="javascript:void((function(s,d,e,r,l,p,t,z,c) {var%20f='http://v.t.sina.com.cn/share/share.php?appkey=4174743220',u=z||d.location,p=['&url=',e(u),'& title=',e(t||d.title),'&source=',e(r),'&sourceUrl=',e(l),'& content=',c||'gb2312','&pic=',e(p||'')].join('');function%20a() {if(!window.open([f,p].join(''),'mb', ['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width- 440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');}; if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();}) (screen,document,encodeURIComponent,'','','','{$archive[title]}','',''));" class="sinaicon">分享到微博</a></li>
+{/if}
+{if $archive[attr2]}
+<li><a title="{lang(makeorders)}" href="{url('archive/doorders/aid/'.$archive[aid],true)}" class="orders">{lang(makeorders)}</a></li>
+<li><a target="_blank" href="{url('archive/orders/aid/'.$archive[aid],true)}" class="orders">立即购买</a></li>
+{/if}
+</ul>
+</div>
+<div class="blank30"></div>
+<div id="page">
+{if $archive['p']['aid']}
+<strong>{lang(archivep)}：</strong><a href="{$archive['p']['url']}">{$archive['p']['title']}</a>
+{else}
+<strong>{lang(archivep)}：</strong>{lang(nopage)}	
+{/if}
+<div class="clear"></div>
+{if $archive['n']['aid']}
+ <strong>{lang(archiven)}：</strong><a href="{$archive['n']['url']}">{$archive['n']['title']}</a>
+{else}
+<strong>{lang(archiven)}：</strong>{lang(nopage)}	
+{/if}
+</div>
+
+
+			<div class="blank30"></div>
+</div>
+</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+            </tr>
+    </table> 
+        
+        
+        </td>
+        </tr>
+    </table>
+    
+    
+    </td>
+  </tr>
+</table>
+<script> 
+function resizeImg(obj)
+{ 
+var obj = document.getElementById(obj); 
+var objContent = obj.innerHTML;
+var imgs = obj.getElementsByTagName('img'); 
+if(imgs==null) return; 
+for(var i=0; i<imgs.length; i++) 
+{ 
+if(imgs[i].width>parseInt(obj.style.width)) 
+{ 
+imgs[i].width = parseInt(obj.style.width);
+} 
+} 
+} 
+window.onload = function() {resizeImg('content');
+} 
+</script>
+{template 'footer.html'}

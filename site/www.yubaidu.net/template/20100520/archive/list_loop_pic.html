@@ -1,0 +1,44 @@
+{template 'header.html'}
+<div id="bd">
+    	<div class="bd_bg_left">
+        	<div class="bd_bg_right">
+            
+            	<div id="bd_leftg">
+                	{template 'left.html'}
+                        
+
+                </div>
+                <div id="bd_rightg">
+                	<div class="right_content">
+                    	{template 'position.html'}
+                        <div class="content">
+							
+                            <div class="content_content">
+                            	
+                            {loop categories($catid) $i $t}
+		<div class="content_title"><a title="{$t[catname]}" href="{category::url($t[catid])}">{$t[catname]}</a></div>
+			{loop archive($t[catid],0,0,'0,0,0',20,'aid',10,false,0) $i $archive}<div class="prod_box">
+		<a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}"><img alt="{$archive[stitle]}" src="{$archive[sthumb]}" onerror='this.src="{$base_url}/{config::get('onerror_pic')}"' /></a><br />
+                                                <a href="{$archive[url]}" class="prod_font">{$archive[title]}</a>
+                                              </div>
+		{/loop}	
+					   <div class="blank30"></div>{/loop}
+		<a title="返回顶部" href="#" class="clear floatright"><img alt="返回顶部" src="{$skin_url}/gotop.gif"></a>
+	<div class="clear"></div>
+					   </div>
+
+                   
+               	  </div>
+                </div>
+                <div class="clear"></div>
+                <div class="bd_bgb">
+                    <div class="bd_bgb_left">
+                    <div class="bd_bgb_right"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+<div class="clear"></div>
+    </div>
+{template 'footer.html'}

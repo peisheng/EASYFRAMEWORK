@@ -1,0 +1,30 @@
+{if type($typeid)}
+<div class="right_box1g">
+        	<div class="rbox1_title"><div class="rbox1_titlel"><img src="{$skin_path}/yx_11.gif" /></div>
+            	<div class="title_pic"><img src="{$skin_path}/yx_9.gif" /></div>
+                <div class="title_wd"><span class="huiwd12"><a href="{$typeurl($typeid)}" title="{$type[$typeid][typename]}">{$type[$typeid][typename]}</a></span><span class="engwd">/ QUICK NAVIATION</span></div>
+            </div>
+            <div class="rbox1_content">
+                <ul class="ul2g">
+                {loop type($typeid) $type}
+<li><a href="{typeurl($type['typeid'])}" title="{$type['typename']}">{$type['typename']}</a></li>
+{/loop}
+                </ul>
+            </div>
+        </div>
+{/if}
+{if $parentid}
+<div class="right_box1g">
+        	<div class="rbox1_title"><div class="rbox1_titlel"><img src="{$skin_path}/yx_11.gif" /></div>
+            	<div class="title_pic"><img src="{$skin_path}/yx_9.gif" /></div>
+                <div class="title_wd"><span class="huiwd12"><a href="{$typeurl($typeid)}" title="{$type[$typeid][typename]}"><a href="{typeurl($parentid)}" title="{typename($parentid)}">{typename($parentid)}</a></a></span><span class="engwd">/ QUICK NAVIATION</span></div>
+            </div>
+            <div class="rbox1_content">
+                <ul class="ul2g">
+               {loop type($parentid) $type}
+<li><a href="{typeurl($type['typeid'])}" title="{$type['typename']}">{$type['typename']}</a></li>
+{/loop}
+                </ul>
+            </div>
+        </div>
+{/if}

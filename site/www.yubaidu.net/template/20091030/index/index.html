@@ -1,0 +1,73 @@
+{template 'header.html'}
+
+<div id="HomeMain"><div class="blank10"></div>
+	<div  style="float:left;width:236px;">
+		<div class="DialogTitle1">
+			<div class="DialogTitle2">{tag_首页联系我们栏目}</div>
+		</div>
+		<div class="DialogContent1">
+			<div class="DialogContent2">
+				<img src="{$skin_path}/banner_aboutus.gif"  />
+				<div style="line-height:15px;padding:4px 10px;color:#585757">
+				{tag_公司简介}
+				</div>
+			</div>
+		</div>
+		<div class="DialogBottom1">
+			<div class="DialogBottom2"></div>
+		</div>
+	</div>
+	<div style="float:left;width:443px;padding:0px 2px;">
+		<div class="DialogTitle1">
+			<div class="DialogTitle2">{tag_首页企业新闻栏目}</div>
+		</div>
+		<div class="DialogContent1">
+			<div class="DialogContent2" >
+				<div>
+					<div id="HomeNewPic">
+						<img src="{$skin_path}/home_news_pic.jpg" />
+					</div>
+					<div style="width:320px;padding:10px;float:left;font-weight:bold;font-size:11px;color:#4D4D4D;">
+						Autopass (Corporate web site management system) is a compact, efficient and humane procedures Enterprises Website.
+					</div>
+				</div>
+<!--news list-->				
+				<div id="HomeNewsList">
+					<ul>
+{loop archive(2,0,0,'0,0,0',16,'aid',3,false,0) $i $archive} 
+ <li><img src="{$skin_path}/dot.gif"  align="absmiddle" />&nbsp;<a href="{$archive[url]}">{$archive[title]}</a></li>
+ {/loop}
+
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="DialogBottom1">
+			<div class="DialogBottom2"></div>
+		</div>
+	</div>
+	<div  style="float:right;width:236px;">
+		<div class="DialogTitle1">
+			<div class="DialogTitle2">{tag_首页产品中心栏目}</div>
+		</div>
+		<div class="DialogContent1">
+			<div class="DialogContent2">
+				<img src="{$skin_path}/banner_products.gif"  />
+<!--products type list-->
+				<div id="protype">
+				<ul>
+{loop categories(3) $t1}
+<li style="width:50%;float:left;">
+<img src="{$skin_path}/dot.gif"  align="absmiddle" />&nbsp;<a href="{$t1[url]}" title="{$t1[catname]}">{$t1[catname]}</a></li>
+{/loop}
+				</ul>
+				</div>
+			</div>
+		</div>
+		<div class="DialogBottom1">
+			<div class="DialogBottom2"></div>
+		</div>
+	</div>
+</div>
+<!-- footer -->
+{template 'footer.html'}

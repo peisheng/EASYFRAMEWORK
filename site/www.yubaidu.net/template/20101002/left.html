@@ -1,0 +1,52 @@
+<div class="box2">
+        	<div class="title2">
+            	<div class="title2_ioc"><img src="{$skin_path}/xxi_17.gif" /></div>
+                <div class="title2_wd">{lang(quicknav)}</div>
+            </div>
+            <div class="content2">
+                <ul class="ul2g">
+                    <!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li class="on"><a href="{$type[url]}" title="{$type[catname]}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+				</ul>
+               
+            </div>
+        </div>       
+		
+		<div class="box1">
+            	<div class="title">
+                	<div class="title_wd"><span class="title_ioc"><img src="{$skin_path}/xxi_13.gif" /></span>{lang(contactus)}</div>
+                    <div class="more">{lang(more)}...</div>
+                </div>
+                <div class="content">
+                	<ul class="ul2">
+                 <ul>
+<li>{lang(address)}：{get(address)}</li>
+<li>{lang(tel)}：{get(tel)}</li>
+<li>{lang(fax)}：{get(fax)}</li> 
+<li>{lang(email)}：{get(email)}</li> 
+</ul>
+				</ul>
+              </div>
+            </div>
+
+            <div class="box1">
+            	<div class="title">
+                	<div class="title_wd"><span class="title_ioc"><img src="{$skin_path}/xxi_13.gif" /></span>{lang(relatedcontent)}</div>
+                    <div class="more">{lang(more)}...</div>
+                </div>
+                <div class="content">
+                	<ul class="ul2">
+                    {loop archive($catid,0,0,'0,0,0',16,'aid',6,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+				</ul>
+              </div>
+            </div>

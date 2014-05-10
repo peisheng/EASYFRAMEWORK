@@ -1,0 +1,27 @@
+{template 'header.html'}
+ <div id="bd">
+    	<div class="bd_up">
+        	<div class="bd_up_left">
+            	{template 'left.html'}
+            
+        </div>
+      <div id="bd_right">     
+        <div class="box">
+            	{template 'position.html'}
+                <div class="content">
+                	<div class="pd_title">{$announ[title]}</div>
+                       <div class="pd">
+					{$announ[content]}
+					   <div class="blank30"></div>
+<a title="{lang(gotop)}" href="#" class="clear floatright"><img alt="{lang(gotop)}" src="{$skin_url}/gotop.gif"></a>
+<div class="blank30"></div>
+					   </div>
+            
+<div class="clear"></div>        
+                </div>
+            </div>
+        
+      </div>
+      <div class="clear"></div>
+    </div>
+{template 'footer.html'}

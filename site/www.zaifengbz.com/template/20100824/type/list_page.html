@@ -1,0 +1,15 @@
+{template 'header.html'}
+<div id="bd">
+ {template 'left.html'}<!-- 调用通用左栏 -->
+<div id="bd_right">
+      	<div class="box">
+            {template 'position.html'}
+            <div class="content">
+            	<div class="pd_title">{type::getpositionhtml($type['typeid'])}</div>
+                       <div class="pd">{$type[typecontent]}</div>
+            </div>
+            </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+{template 'footer.html'}

@@ -1,0 +1,132 @@
+{template 'user/head.html'}
+<div id="tab" class="floatright">
+<a href="#" class="s">内容管理</a>
+</div>
+<div id="right">
+<div class="padding10">
+<img src="{$base_url}/images/user/wj.gif" style="margin-right:10px;" />欢迎来到编辑内容页面。您可以编辑修改网站内容，展示网站信息。
+</div>
+<div id="info">
+<?php if(hasflash()) { ?>
+<span style="float:left"><?php echo showflash(); ?></span>
+<span style="cursor:pointer;color:blue;float:right" onclick="hide('message')">(×)</span>
+<?php } ?>
+</div>
+<div class="blank10"></div>
+
+<script type="text/javascript" src="{$base_url}/common/js/list.js"></script>
+<script language="javascript" src="{$base_url}/common/js/common.js"></script>
+
+<style type="text/css">
+table .left {width:10%;}
+</style>
+
+
+
+<form name="searchform" id="searchform"  action="<?php echo uri();?>" method="post">
+<table align="center">
+  <tbody>
+  <tr>
+  <th>
+    <span style="float:left">内容管理<?php if(front::get('deletestate')) {?>(回收站)<?php } ?></span>
+
+    </th></tr>
+    
+    <tr>
+    <td>
+    <span style="float:left">
+        类别：
+    <?php echo form::select('_typeid',get('_typeid')?get('_typeid'):0,type::option()); ?>
+        
+    标题:
+    <input type="text" name="_title" id="_title" value=""  />    
+    <input type="submit" value="搜索" name="submit"  onclick="this.form.action='{url::modify('table/'.get('table'))}'" class="button"/>
+    </span>
+    
+    <div id="quick">
+    <a href="index.php?case=table&act=add&table=archive&admin_dir={get('admin_dir')}">添加内容</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{url::modify("table/".get('table')."/deletestate/1/page/1")}">回收站</a>
+    </div>
+    
+    </td></tr>
+    
+    </tbody>
+</table>
+</form>
+
+
+
+
+
+
+
+<form name="listform" id="listform"  action="<?php echo uri();?>" method="post">
+
+  
+  
+    <table align="center">
+      <tbody>
+        <tr>
+           <th align="center" width="20"><input title="点击可全选本页的所有项目"  onclick="CheckAll(this.form)" type="checkbox" name="chkall" class="checkbox" /> </th>
+          <th width="30" align="center"><!--aid-->编号</th>
+          <th align="center"><!--typeid-->所属类别</th>
+          <th align="center"><!--title-->标题</th>
+          <th align="center"><!--username-->用户名</th>
+          <th align="center"><!--view-->浏览</th>
+          <th align="center"><!--adddate-->添加时间</th>
+          <th align="center"><!--checked-->审核</th>
+          <!--<th align="center"><!--linkto--><!--外部链接</th>-->
+          <th align="center">操作</th>
+        </tr>
+
+
+{loop $data $d}
+<tr class="s_out" onmouseover="m_over(this)" onmouseout="m_out(this)">
+
+<td align="center" ><input onclick="c_chang(this)" type="checkbox" value="{$d.$primary_key}" name="select[]" class="checkbox" /> </td>
+
+<td>{cut($d['aid'])}</td>
+<td>    <a href="<?php echo url("archive/list/typeid/".$d[typeid],false);?>" target="_blank">{typename($d['typeid'])}</a></td>
+<td>{cut($d['title'])}</td>
+<td>{cut($d['username'])}</td>
+<td>{cut($d['view'])}</td>
+<td>{cut($d['adddate'])}</td>
+<td>{helper::yes($d['checked'])}</td>
+<!-- <td>{helper::showlinkto($d['linkto'])}</td> -->
+
+<td align="center">
+<a href='<?php if($d['linkto'])   echo $d['linkto']; else echo url("archive/show/aid/$d[$primary_key]",false);?>' target="_blank" title="查看动态页面">查看</a>
+<a href="index.php?case=manage&act=edit&manage=archive&id={$d[$primary_key]}">编辑</a> <a onclick="javascript: return confirm('确实要删除吗?');" href="index.php?case=manage&act=delete&manage=archive&id={$d[$primary_key]}">删除</a>
+</td>
+</tr>
+{/loop}
+
+
+      </tbody>
+    </table>
+
+
+<div class="blank10"></div>
+
+    <input type="hidden" name="batch" value="">
+
+            <?php  if(!front::get('deletestate')) {?>
+    <input type="button" value=" 审核 " name="check" onclick="if(getSelect(this.form)  && confirm('确实要审核ID为('+getSelect(this.form)+')的记录吗?')){ this.form.action='<?php echo modify('act/batch',true);?>';this.form.batch.value='check';this.form.submit();}" class="button" />
+    <?php } ?>
+        
+            <?php if(!front::get('deletestate')) {?>
+    <input type="button" value="删除到回收站" name="delete" onclick="if(getSelect(this.form) && confirm('确实要把ID为('+getSelect(this.form)+')的记录放到回收站吗?')){this.form.action='<?php echo modify('act/batch',true);?>'; this.form.batch.value='deletestate'; this.form.submit();}" class="button"/>
+
+
+    <?php } ?>
+        
+    <input type="button" value="<?php if(get('table')=='archive') {?>彻底<?php } ?>删除" name="delete" onclick="if(getSelect(this.form) && confirm('确实要删除ID为('+getSelect(this.form)+')的记录吗?')){this.form.action='<?php echo modify('act/batch',true);?>'; this.form.batch.value='delete'; this.form.submit();}" class="button" />
+
+<?php if(get('table')=='archive') {?>
+<input type="button" value=" 还原 " name="restore" onclick="if(getSelect(this.form) && confirm('确实要把ID为('+getSelect(this.form)+')的已删除记录还原吗?')){this.form.action='<?php echo modify('act/batch',true);?>'; this.form.batch.value='restore'; this.form.submit();}" class="button" />
+<?php } ?>
+
+</form>
+
+
+<div class="page"><?php if(get('table')!='type' && front::get('case')!='field') echo pagination::html($record_count); ?></div>
+{template 'user/foot.html'}

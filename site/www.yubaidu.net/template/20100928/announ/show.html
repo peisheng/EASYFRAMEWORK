@@ -1,0 +1,22 @@
+   {template 'header.html'}
+    <div id="bd">
+    	<div id="bd_left">
+        	<div class="boxn">
+            	{template 'position.html'}
+                <div class="content">
+                  <div class="pd_title">{$announ[title]}</div>
+                       <div class="pd">
+
+
+<div class="contentinfo">{lang(adddate)}：&nbsp;&nbsp;{$announ[adddate]}</div>
+{$announ[content]}
+</div>
+                    </div>
+            </div>
+      </div>
+   	  <div id="bd_right">
+     {template 'left.html'}</div>
+    	<div class="clear"></div>
+    </div> 
+
+   {template 'footer.html'}

@@ -1,0 +1,40 @@
+{template 'header.html'}
+<div id="bd">
+    	<div id="bd_leftg">
+    	  {template 'left.html'}
+    	</div>
+      <div id="bd_rightg">
+<div class="box">
+            	{template 'position.html'}
+                <div class="content">
+                	<div class="pd_title">{$announ[title]}</div>
+                       <div id="text" class="pd" style="width:665px;">
+
+{$announ[content]}
+</div>
+                </div>
+            </div>
+            
+            </div>
+<div class="clear"></div>
+    </div>
+
+<script> 
+function resizeImg(obj)
+{ 
+var obj = document.getElementById(obj); 
+var objContent = obj.innerHTML;
+var imgs = obj.getElementsByTagName('img'); 
+if(imgs==null) return; 
+for(var i=0; i<imgs.length; i++) 
+{ 
+if(imgs[i].width>parseInt(obj.style.width)) 
+{ 
+imgs[i].width = parseInt(obj.style.width);
+} 
+} 
+} 
+window.onload = function() {resizeImg('text');
+} 
+</script>
+{template 'footer.html'}

@@ -1,0 +1,60 @@
+ <div class="box3ggg">
+          	<div class="titlet">
+                	<div class="title1_wd">{lang(quicknav)}</div>
+                    <div class="title1_en">Products</div>
+                    <div class="title_ico"><img src="{$skin_path}/hs_12.gif" /></div>
+                </div>
+            <div class="contentt">
+                	<ul class="dg">
+            <!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<div class="links_wd"><a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on{/if}">【{$type[catname]}】</a></div>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+				</ul>
+                </div>
+          </div>
+            
+
+<div class="box3">
+          	<div class="title">
+                	<div class="title1_wd">业务范围</div>
+                    <div class="title1_en">About us</div>
+                    <div class="title_ico"><img src="{$skin_path}/hs_12.gif" /></div>
+                    <div class="more"><img src="{$skin_path}/hs_13.gif" /></div>
+                </div>
+                
+           <div class="content">
+                	<div class="pg"><div class="picys"><img src="{$skin_path}/hs_11.gif" /></div>
+                	　　{tag_公司简介}</div>
+                </div>
+          </div>
+
+          <div class="box3">
+          	<div class="title">
+                	<div class="title1_wd">{lang(relatedcontent)}</div>
+                    <div class="title1_en"></div>
+                    <div class="title_ico"><img src="{$skin_path}/hs_12.gif" /></div>
+                    <div class="more"><img src="{$skin_path}/hs_13.gif" /></div>
+                </div>
+                
+           <div class="content">
+                	<div class="pg">
+<ul class="ul2d">
+ {loop archive($catid,0,0,'0,0,0',16,'aid',5,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+</ul>
+</div>
+                </div>
+          </div>
+            
+           
+            
+            <div>
+            </div>

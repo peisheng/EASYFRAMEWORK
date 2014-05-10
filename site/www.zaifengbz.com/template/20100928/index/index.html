@@ -1,0 +1,75 @@
+{template 'header.html'}
+<div id="bd">
+    	<div id="bd_left">
+        	<div class="box1">
+            	<div class="title"><?php $t=position_p($catid=2);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></div>
+                <div class="content">
+                	<div class="pic"><img src="{$skin_path}/anli_10.gif" /></div>
+                    <div class="pic_yy"><img src="{$skin_path}/anli_16.gif" /></div>
+                    <ul class="ul2">
+                   {loop archive(2,0,0,'0,0,0',16,'aid',6,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+				</ul>
+                    <div class="more"><?php $t=position_p($catid=2);?>
+<a href="{$t.url}" title="{$t['name']}">{lang(more)}>></a><?php?></div>
+                </div>
+            </div>
+            <div class="box2">
+            	<div class="title"><?php $t=position_p($catid=3);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></div>
+                <div class="content">
+                	<div class="pic"><img src="{$skin_path}/anli_10.gif" /></div>
+                    <div class="pic_yy"><img src="{$skin_path}/anli_16.gif" /></div>
+                    <ul class="ul2">
+                   {loop archive(3,0,0,'0,0,0',16,'aid',6,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+				</ul>
+                    <div class="more"><?php $t=position_p($catid=3);?>
+<a href="{$t.url}" title="{$t['name']}">{lang(more)}>></a><?php?></div>
+                </div>
+            </div>
+            <div class="box2">
+            	<div class="title"><?php $t=position_p($catid=4);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></div>
+                <div class="content">
+                	<div class="pic"><img src="{$skin_path}/anli_10.gif" /></div>
+                    <div class="pic_yy"><img src="{$skin_path}/anli_16.gif" /></div>
+                    <ul class="ul2">
+                   {loop archive(2,0,0,'0,0,0',16,'aid',6,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+				</ul>
+                    <div class="more"><?php $t=position_p($catid=4);?>
+<a href="{$t.url}" title="{$t['name']}">{lang(more)}>></a><?php?></div>
+                </div>
+            </div>
+    	</div>
+      <div id="bd_right">
+      	<div class="box3">
+            	<div class="title"><?php $t=position_p($catid=1);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>
+<?php?></div>
+                <div class="content">
+                	<div class="p"><span class="lanwd"><strong>{get(sitename)}</strong></span><br />
+{tag_公司简介}</div>
+                  <ul class="ul2g">
+                    {loop archive(2,0,0,'0,0,0',16,'aid',6,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}"><span class="date">{=sdate($archive[adddate],'Y/m')}</span>{$archive[title]}</a></li>
+{/loop}
+				</ul>
+                    <div class="more1"><?php $t=position_p($catid=1);?>
+<a href="{$t.url}" title="{$t['name']}"><img src="{$skin_path}/anli_8.gif" border="0" /></a><?php?></div>
+                </div>
+            </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <!--bd部结束-->
+   
+{template 'footer.html'}

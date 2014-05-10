@@ -1,0 +1,35 @@
+{template 'header.html'}
+<div id="bd2j">
+      <div id="bd_box">
+          <div id="bd_leftg">
+			{template 'left.html'}
+			<div>
+			<img src="{$skin_path}/hy_11.gif" width="250" height="62" /></div>
+          </div>
+        <div id="bd_rightg">
+          	{template 'position.html'}
+
+                     
+
+{loop type($typeid) $i $t}
+		<div class="category_title">
+			<span><a title="{$type[typename]}" href="{typeurl($t[typeid])}">更多</a></span><a title="{$type[typename]}" href="{typeurl($t[typeid])}"><h4>{$t[typename]}</h4></a>
+		</div>
+		{loop article($t[typeid],20,'aid',8,true,'') $i $archive}
+			<div class="product_box">
+			<a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}"><img alt="{$archive[stitle]}" src="{$archive['sthumb']}" /></a>
+			<h5><a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}">{$archive[title]}</a></h5>
+		</div>
+			{/loop}
+		
+		{/loop}
+  <div class="pd">
+<div class="blank30"></div>
+		<a title="返回顶部" href="#" class="clear floatright"><img alt="返回顶部" src="{$skin_url}/gotop.gif"></a>
+		<div class="clear"></div>
+
+</div>
+        </div>
+          <div class="clear"></div>
+    </div>
+{template 'footer.html'}

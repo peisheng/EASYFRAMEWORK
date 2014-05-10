@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{if !empty($archive[mtitle])}{$archive[mtitle]}-{elseif !empty($archive[title])}{$archive[title]}-{/if}{if $type[meta_title]}{$type[meta_title]}-{elseif typename($type[typeid])}{typename($type[typeid])}-{/if}{if $category[$catid][meta_title]}{$category[$catid][meta_title]}-{elseif !empty($catid)}{catname($catid)}-{/if}{get('fullname')}</title>
+<meta name="keywords" content="{if $archive[keyword]}{$archive[keyword]}{else}{if $type[keyword]}{$type[keyword]}{elseif $category[$catid][keyword]}{$category[$catid][keyword]}{else}{get('site_keyword')}{/if}{/if}" />
+<meta name="description" content="{if $archive[description]}{$archive[description]}{else}{if $type[description]}{$type[description]}{elseif $category[$catid][description]}{$category[$catid][description]}{else}{get('site_description')}{/if}{/if}" />
+<meta name="author" content="CmsEasy Team" />
+<link rel="icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link href="{$skin_path}/reset.css" rel="stylesheet" type="text/css" />
+<link href="{$skin_path}/style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript">
+<!-- 
+function ResumeError()  
+{ 
+    return true; 
+} 
+window.onerror = ResumeError; 
+function check()
+{
+if(document.search.keyword.value.length==0){
+     alert("{lang(pleaceinputtext)}");
+     document.search.keyword.focus();
+     return false;
+    }
+
+	}
+	navHover = function() { 
+var lis = document.getElementById("navmenu").getElementsByTagName("LI"); 
+for (var i=0; i<lis.length; i++) { 
+lis[i].onmouseover=function() { 
+this.className+=" iehover"; 
+} 
+lis[i].onmouseout=function() { 
+this.className=this.className.replace(new RegExp(" iehover\\b"), ""); 
+} 
+} 
+} 
+if (window.attachEvent) window.attachEvent("onload", navHover); 
+
+stuHover = function() {
+ var cssRule;
+ var newSelector;// 
+ for (var i = 0; i < document.styleSheets.length; i++)
+  for (var x = 0; x < document.styleSheets[i].rules.length ; x++)
+   {
+   cssRule = document.styleSheets[i].rules[x];
+   if (cssRule.selectorText.indexOf("LI:hover") != -1)
+   {
+     newSelector = cssRule.selectorText.replace(/LI:hover/gi, "LI.iehover");
+    document.styleSheets[i].addRule(newSelector , cssRule.style.cssText);
+   }
+  }
+ var getElm = document.getElementById("menu").getElementsByTagName("LI");
+ for (var i=0; i<getElm.length; i++) {
+  getElm[i].onmouseover=function() {
+  this.className+=" iehover";
+  }
+  getElm[i].onmouseout=function() {
+  this.className=this.className.replace(new RegExp(" iehover\\b"), "");
+  }
+ }
+}
+if (window.attachEvent) window.attachEvent("onload", stuHover);
+// --> 
+// --> 
+</script>
+<!--用于PNG图片在IE6下透明-->
+<!--[if IE 6]>
+<script src="{$skin_path}/js/png.js"></script>
+<script>
+  DD_belatedPNG.fix('.logo');
+  DD_belatedPNG.fix(' .cfooter');
+  DD_belatedPNG.fix('.cleft_box .cright');
+  DD_belatedPNG.fix('.cleft_box_content .cfooter');
+  DD_belatedPNG.fix('.cleft_box_content .cheader');
+</script>
+<![endif]--> 
+<script language="javascript" type="text/javascript">
+function killerrors()
+{
+return true;
+}
+window.onerror = killerrors;
+</script>
+<style type="text/css">
+.logo {float:left;display:block;width:{get('logo_width')}px; height:{get('logo_height')}px; background:url({$base_url}/{get('site_logo')}) center center no-repeat;}
+</style>
+</head>
+<body>
+<div id="one"> 
+<div id="head">
+	<div id="head1">
+	<div class="logo"><a title="{get(sitename)}" href="{$base_url}/"></a></div>
+    	<div class="headfont">
+		<!-- 页头导航 -->
+<a title="{lang(sitewap)}" href="{$base_url}/wap/">{lang(sitewap)}</a>  -  <a href="<?php echo url('archive/orders');?>">{lang(shoppingcart)}</a>  -  
+<a title="{lang(feedback)}" href="{url('guestbook')}" target="_blank">{lang(feedback)}</a>  -  
+{if get('lang_type')=='cn'}<a id="StranLink" title="繁简转换">繁体</a>  -  {/if}
+{login_js()}
+		</div>
+  </div>
+    <div id="head2">
+    	<div id="head2_left"><img src="{$skin_path}/five_2.gif" /></div>
+        <div id="head2_right"><img src="{$skin_path}/five_3.gif" /></div>
+
+<!-- 网站导航 -->
+<div class="nav">
+<ul id="nav"> 
+<li class="one{if $topid==0} on{/if}"><a title="{lang(backhome)}" href="{$base_url}/">{lang(homepage)}</a></li>
+{loop categories_nav() $t}
+<li class="one{if isset($topid) && $topid==$t[catid]} on{/if}"><a href="{$t[url]}" title="{$t[catname]}" target="{if config::get('nav_blank')==1} _blank{/if}">{$t[catname]}</a>
+{if count(categories($t[catid]))}<ul>
+{loop categories($t[catid]) $t1}
+<li><a title="{$t1[catname]}" href="{$t1[url]}">{$t1[catname]}</a>
+{if count(categories($t1[catid]))}<ul>{loop categories($t1[catid]) $t2}<span></span>
+<li><a title="{$t2[catname]}" href="{$t2[url]}">{$t2[catname]}</a>
+{if count(categories($t2[catid]))}<ul>{loop categories($t2[catid]) $t3}<span></span>
+<li><a title="{$t3[catname]}" href="{$t3[url]}">{$t3[catname]}</a>
+{if count(categories($t3[catid]))}<ul>{loop categories($t3[catid]) $t4}<span></span>
+<li><a title="{$t4[catname]}" href="{$t4[url]}">{$t4[catname]}</a>
+{if count(categories($t4[catid]))}<ul>{loop categories($t4[catid]) $t5}<span></span>
+<li><a title="{$t5[catname]}" href="{$t5[url]}">{$t5[catname]}</a></li> 
+{/loop}</ul>{/if}
+</li> 
+{/loop}</ul>{/if}
+</li>
+{/loop}</ul>{/if}
+</li>
+{/loop}</ul>{/if}
+</li> 
+{/loop}</ul>{/if}
+</li>{/loop}
+</ul>
+</div>
+<!-- 导航结束 -->
+
+    </div>
+</div>
+ <div id="banner"style="width:980px;height:{get(slide_height)}px;overflow:hidden;">
+{template 'system/slide.html'}
+</div>
+<div class="clear"></div>

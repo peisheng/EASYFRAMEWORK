@@ -1,0 +1,32 @@
+<div id="footer">
+    	<div class="foot_nav">
+        	<div class="ft_nav_left"><img src="{$skin_path}/dz_14.gif" /></div>
+            <div class="ft_nav_right"><span style="float:right;padding-right:10px;">{login_js()}</span>{tag_网站页底关于我们等说明}
+<a href="#">TOP</a></div>
+        </div>
+        <div class="foot_cprt">{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a> All Rights Reserved. <br />
+ 
+{lang(address)}：{get(address)} {lang(tel)}：{get(tel)} {lang(fax)}：{get(fax)} {lang(email)}：{get(email)}<br />
+
+  {getcnzzcount()}  <a href="http://www.miibeian.gov.cn/" target="_blank">{get('site_icp')}</a><br />
+
+
+{if $topid==0}<!-- 热门关键词 -->
+<div class="hot_keys">{lang(hotkeys)}： {gethotsearch(10)}</div>{/if}
+</div>
+    </div>
+
+
+<!-- 友情链接 -->
+{if $topid==0}<select name="website" onchange="javascript:window.open(this.options[this.selectedIndex].value)" style="float:right; margin-top:10px;">
+<option value="default">{lang('links')}</option>
+{loop friendlink('text',0,20) $flink}
+<option value="{$flink[url]}">{$flink[name]}</option>
+{/loop}
+</select>{/if}
+<!--fooder部结束-->
+</div>
+
+{template 'system/servers.html'}
+</body>
+</html>

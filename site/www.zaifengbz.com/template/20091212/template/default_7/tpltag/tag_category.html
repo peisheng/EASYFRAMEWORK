@@ -1,0 +1,9 @@
+<ul>
+{loop plugins::categoryinfo($_catid) $cat}
+栏目名称：$_catname
+封面内容：$_categorycontent
+栏目图片：$_image
+<a href="{$cat[url]}">$_catname</a>
+  $_subcat  
+{/loop}
+</ul>

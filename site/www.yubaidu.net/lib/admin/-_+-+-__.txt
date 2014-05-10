@@ -1,0 +1,10 @@
+tag换成选择
+  1 lib/admin/admin_menu.php
+  2 lib/admin/table_admin.php
+  3 lib/admin/config_admin.php
+  4 template/admin_new/config/hottag.php
+  5 template/admin_new/table/archive/add.php
+  
+初始化数据库库
+  1 install/data/install.sql
+  2 install/data/install_testdb.sql

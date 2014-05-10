@@ -1,0 +1,29 @@
+{template 'header.html'}
+<div id="bd">
+<div id="bd_right">
+{template 'position.html'}
+
+<div id="text" style="width:570px;padding:20px 15px 10px 25px;">
+
+<ul class="ul2d">
+<!-- 内容列表循环 -->
+{loop $archives $i $archive}
+<li><span class="date">{$archive[adddate]}</span><a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}">{$archive[title]}</a></li>
+{/loop}
+</ul>
+<div class="blank30"></div>
+<!-- 内容列表分页 -->
+{if isset($pages)}
+{category_pagination($catid)}
+{/if}
+<div class="blank10"></div>
+</div>
+</div>
+
+<div id="bd_left">
+{template 'left.html'}<!-- 调用通用左栏 -->
+
+<div class="clear"></div>
+</div>
+
+{template 'footer.html'}

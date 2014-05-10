@@ -1,0 +1,32 @@
+{template 'header.html'}
+<div class="clear"></div>
+        <div id="bd">
+        	<div id="bd_leftg">
+            	
+            	{template 'left.html'}
+
+			</div>              
+            <div id="bd_rightg">
+            	<div class="titlegg"><span class="floatright"><a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a>
+<a title="{$tag}" href="#">{$tag}</a></span><span class="hui14c">{$category[$catid][catname]}</span><span class="huieg">News</span></div>
+              <div class="content">
+                       <div id="content" style="width:640px;" class="pd">
+<ul class="news_list">
+			{loop $archives $i $archive}
+            <li><span class="date">{$archive[adddate]}</span><a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}">{$archive[title]}</a></li>
+			{/loop}
+        </ul>
+        <div class="blank10"></div>
+		{if isset($pages)}
+		{tag::pagination($tag)}
+		{/if}
+		
+		<div class="blank30"></div>
+		<a title="{lang(gotop)}" href="#" class="clear floatright"><img alt="{lang(gotop)}" src="{$skin_url}/gotop.gif"></a>
+	<div class="clear"></div>
+</div>
+                </div>
+          </div>
+        </div>
+
+{template 'footer.html'}

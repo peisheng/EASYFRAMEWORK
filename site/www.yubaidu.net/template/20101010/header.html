@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{if !empty($archive[mtitle])}{$archive[mtitle]}{elseif $category[$catid][meta_title] and !$archive[title]}{$category[$catid][meta_title]}{else}{if !empty($archive[title])}{$archive[title]}-{/if}{if $type[meta_title]}{$type[meta_title]}-{elseif typename($type[typeid])}{typename($type[typeid])}-{/if}{if $category[$catid][meta_title]}{$category[$catid][meta_title]}-{elseif !empty($catid)}{catname($catid)}-{/if}{get('fullname')}{/if}</title>
+<meta name="keywords" content="{if $archive[keyword]}{$archive[keyword]}{else}{if $type[keyword]}{$type[keyword]}{elseif $category[$catid][keyword]}{$category[$catid][keyword]}{else}{get('site_keyword')}{/if}{/if}" />
+<meta name="description" content="{if $archive[description]}{$archive[description]}{else}{if $type[description]}{$type[description]}{elseif $category[$catid][description]}{$category[$catid][description]}{else}{get('site_description')}{/if}{/if}" />
+<meta name="author" content="CmsEasy Team" />
+<link rel="icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<!-- 调用样式表 -->
+
+<link href="{$skin_path}/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="{$skin_path}/js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript">
+sfHover = function() {
+var sfEls = document.getElementById("nav").getElementsByTagName("LI");
+for (var i=0; i<sfEls.length; i++) {
+sfEls[i].onmouseover=function() {
+    this.className+=" sfhover";
+}
+sfEls[i].onmouseout=function() {
+    this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+}
+}
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
+</script>
+
+<style type="text/css">
+.logo {width:{get('logo_width')}px; height:{get('logo_height')}px; background:url({$base_url}/{get('site_logo')}) no-repeat;}
+</style>
+<script language="javascript" type="text/javascript">
+function killerrors()
+{
+return true;
+}
+window.onerror = killerrors;
+</script>
+<!--用于PNG图片在IE6下透明-->
+<!--[if IE 6]>
+<script src="{$skin_path}/js/png.js"></script>
+<script>
+  DD_belatedPNG.fix('.logo');
+  DD_belatedPNG.fix(' .cfooter');
+  DD_belatedPNG.fix('.cleft_box .cright');
+  DD_belatedPNG.fix('.cleft_box_content .cfooter');
+  DD_belatedPNG.fix('.cleft_box_content .cheader');
+</script>
+<![endif]--> 
+</head>
+<body>
+<div id="main">
+		<div id="head">
+		<div id="topmenu">
+		<div id="search">
+        {login_js()}
+<a id="StranLink" title="繁简转换">&nbsp;繁体 -	&nbsp;</a>
+<a title="{lang(feedback)}" href="{url('guestbook')}" target="_blank">&nbsp;{lang(feedback)} -	</a>
+<a href="{$site_url}" onclick="window.external.addFavorite(this.href,this.title);return false;" title='{get(sitename)}' rel="sidebar">&nbsp;{lang(favorite)} -	</a>
+
+<form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+<input  id="search_text" name="keyword" type="text" align="absmiple" />
+<input type="submit" id="search_btn" align="absmiple" name='submit' value=" {lang(search)} " />
+</form>
+</div>
+		
+		<div id="nav">
+<ul id="navmenu"> 
+<li><a title="{lang(backhome)}" href="{$base_url}/" class="one">{lang(homepage)}</a></li>
+
+{loop categories_nav() $t}
+<li><a title="{$t[catname]}" target="_blank" href="{$t[url]}" class="one">{$t[catname]}</a>
+<ul> {loop categories($t[catid]) $t1}
+<li><a title="{$t1[catname]}" target="_blank" href="{$t1[url]}">{$t1[catname]}</a>
+<ul>{loop categories($t1[catid]) $t2}
+<li><a title="{$t2[catname]}" target="_blank" href="{$t2[url]}">{$t2[catname]}</a>
+<ul>{loop categories($t2[catid]) $t3}
+<li><a title="{$t3[catname]}" target="_blank" href="{$t3[url]}">{$t3[catname]}</a>
+<ul>{loop categories($t3[catid]) $t4}
+<li><a title="{$t4[catname]}" target="_blank" href="{$t4[url]}">{$t3[catname]}</a>
+<ul>{loop categories($t4[catid]) $t5}
+<li><a title="{$t5[catname]}" target="_blank" href="{$t4[url]}">{$t3[catname]}</a></li> 
+{/loop}</ul>
+</li> 
+{/loop}</ul>
+</li>
+{/loop}</ul>
+</li>
+{/loop}</ul>
+</li> 
+{/loop}</ul>
+</li>{/loop}
+</ul>
+</div>
+		</div>
+		
+		<div id="logo"><a href="{$base_url}/" title="{get(sitename)}"><img src="{$base_url}/{get(site_logo)}" width="{get(logo_width)}" alt="{get(sitename)}" /></a></div>
+		</div>
+
+<div id="banner">
+{template 'system/slide.html'}
+</div>

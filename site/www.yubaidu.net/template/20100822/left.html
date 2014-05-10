@@ -1,0 +1,75 @@
+<div class="input1">搜索：</div>
+<form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+              <div class="input2"><input name="keyword" type="text" size="14" />
+              </div>
+                <div class="input3"><input name='submit' type="image" src="{$skin_path}/lan_18.gif" /></div></form>
+            </div>
+            <div class="bd_up_right">
+           	  <div id="announ">
+	{loop announ(5) $an}
+	<p><a href="{$an[url]}" title="{$an[title]}">{$an[title]}</a> [{$an[adddate]}]</p>
+	{/loop}
+</div>
+<script type="text/javascript"> 
+//
+var t=setInterval(myfunc,2000); 
+var oBox=document.getElementById("announ"); 
+function myfunc(){ 
+var o=oBox.firstChild 
+oBox.removeChild(o) 
+oBox.appendChild(o) 
+} 
+oBox.onmouseover=function()
+{
+clearInterval(t)
+} 
+oBox.onmouseout=function()
+{
+t=setInterval(myfunc,2000)
+} 
+</script>
+            </div>
+        </div>
+    	<div id="bd_left">
+
+
+        	<div class="box">
+            	<div class="title">
+                	<div class="title_wd">{lang(quicknav)}</div>
+                    <div class="title_wde">Quick</div>
+                    <div class="more"></div>
+                </div>
+                <div class="content">
+                	<ul class="ul2">
+                    <!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li class="ul3"><a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on2{/if}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="box1">
+            	<div class="title1">
+                	<div class="title1_wd">联系我们</div>
+                    <div class="title1_wde">CONTENT US</div>
+                    <div class="more"></div>
+                </div>
+                <div class="content">
+                	<div class="p">
+<ul>
+					<li>{lang(address)}：{get(address)}</li>
+<li>{lang(tel)}：{get(tel)}</li>
+<li>{lang(fax)}：{get(fax)}</li> 
+<li>{lang(email)}：{get(email)}</li> 
+</ul>
+</div>
+                </div>
+            </div>

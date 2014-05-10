@@ -1,0 +1,13 @@
+<div class="right_box1g">
+        	<div class="rbox1_title"><div class="rbox1_titlel"><img src="{$skin_path}/yx_11.gif" /></div>
+            	<div class="title_pic"><img src="{$skin_path}/yx_9.gif" /></div>
+                <div class="title_wd"><span class="huiwd12">网站公告</span><span class="engwd">/ ANNOUN</span></div>
+            </div>
+            <div class="rbox1_content">
+                <ul class="ul2g">
+               {loop announ(5) $an}
+			<li><a href="{$an[url]}">{$an[title]}</a></li>
+			{/loop}
+                </ul>
+            </div>
+        </div>

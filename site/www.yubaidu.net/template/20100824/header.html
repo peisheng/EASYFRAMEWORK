@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{if !empty($archive[mtitle])}{$archive[mtitle]}{elseif $category[$catid][meta_title] and !$archive[title]}{$category[$catid][meta_title]}{else}{if !empty($archive[title])}{$archive[title]}-{/if}{if $type[meta_title]}{$type[meta_title]}-{elseif typename($type[typeid])}{typename($type[typeid])}-{/if}{if $category[$catid][meta_title]}{$category[$catid][meta_title]}-{elseif !empty($catid)}{catname($catid)}-{/if}{get('fullname')}{/if}</title>
+<meta name="keywords" content="{if $archive[keyword]}{$archive[keyword]}{else}{if $type[keyword]}{$type[keyword]}{elseif $category[$catid][keyword]}{$category[$catid][keyword]}{else}{get('site_keyword')}{/if}{/if}" />
+<meta name="description" content="{if $archive[description]}{$archive[description]}{else}{if $type[description]}{$type[description]}{elseif $category[$catid][description]}{$category[$catid][description]}{else}{get('site_description')}{/if}{/if}" />
+<meta name="author" content="CmsEasy Team" />
+<link rel="icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link href="{$skin_path}/style.css" rel="stylesheet" type="text/css" />
+
+<script language="javascript" type="text/javascript">
+function killerrors()
+{
+return true;
+}
+window.onerror = killerrors;
+</script>
+<!--用于PNG图片在IE6下透明-->
+<!--[if IE 6]>
+<script src="{$skin_path}/js/png.js"></script>
+<script>
+  DD_belatedPNG.fix('.logo');
+  DD_belatedPNG.fix(' .cfooter');
+  DD_belatedPNG.fix('.cleft_box .cright');
+  DD_belatedPNG.fix('.cleft_box_content .cfooter');
+  DD_belatedPNG.fix('.cleft_box_content .cheader');
+</script>
+<![endif]-->
+<style type="text/css">
+.logo {width:{get('logo_width')}px; height:{get('logo_height')}px; background:url({$base_url}/{get('site_logo')}) center center no-repeat;}
+</style>
+</head>
+
+<body>
+<div id="main">
+  <div id="header">
+  	<div class="top">
+    	<div id="logo">
+		<div class="logo"><a title="{get(sitename)}" href="{$base_url}/"></a></div>
+		</div>
+        <div class="top_right">
+        	<div class="top_right1"><img src="{$skin_path}/lv_3.gif" /></div>
+            <div class="top_right2">{lang(servertel)}：{get(tel)}</div>            
+            <div class="top_right3"><form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post"><input type="text" size="26" name="keyword" />
+          </div>
+            <div class="top_right4"><input name="submit" type="image" src="{$skin_path}/lv_5.gif" /></form></div>            
+        </div>
+    </div>
+    
+    <div class="navbax">
+    <div class="nav">
+    <div class="nav_l"><img src="{$skin_path}/lv_7.gif" /></div>
+    <div class="nav_c">
+    	<ul class="nav_ul">        
+        <li><a title="{lang(backhome)}" href="{$base_url}/" class="home">{lang(homepage)}</a></li>
+        {loop categories_nav() $t}
+        <li><img src="{$skin_path}/lv_8.gif" /></li>
+        <li{if isset($topid) && $topid==$t[catid]} class="m"{/if}><a title="{$t[catname]}" href="{$t[url]}">{$t[catname]}</a>
+        {/loop}
+        </ul>
+    </div>
+    </div> 
+    </div>
+    
+    <div class="banner">
+{template 'system/slide.html'}
+</div>
+  </div>
+<!--head部结束-->

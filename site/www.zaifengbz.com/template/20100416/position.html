@@ -1,0 +1,6 @@
+ <div class="rl_box2_title">
+    <div class="rl_box2_titlelg">{$category[$catid][catname]}</div>
+<div id="position">
+        <strong>当前位置：</strong><a title="{get('sitename')}" href="{$base_url}">{get('sitename')}</a>{loop position($catid) $t}<a title="{$t['name']}" href="{$t.url}">{$t['name']}</a>{/loop}
+    </div>
+ </div>

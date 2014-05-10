@@ -1,0 +1,35 @@
+{template 'header.html'}
+ <div id="bd">
+    	
+      <div id="bd_right">
+        <div class="bd_right1g">
+   		  <div class="box1">
+           	{template 'position.html'}
+                <div class="content">
+					   <div class="pd">
+<div id="text" style="width:600px;">
+					   <ul class="ul2">
+			{loop $archives $i $archive}
+            <li><span class="date">{$archive[adddate]}</span><a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}">{$archive[title]}</a></li>
+			{/loop}
+        </ul>
+        <div class="blank10"></div>
+		{if isset($pages)}
+		{tag::pagination($tag)}
+		{/if}
+
+ </div>
+</div>
+                </div>
+       	  </div>
+        </div>
+      </div>
+
+<div id="bd_left">
+        	{template 'left.html'}
+        </div>
+
+<div class="clear"></div>
+    </div>
+
+{template 'footer.html'}

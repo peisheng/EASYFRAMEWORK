@@ -1,0 +1,32 @@
+{template 'header.html'}
+<div id="container">
+<!-- 左侧导航 -->
+{template 'left.html'}
+<!-- 右侧功能区 -->
+<div id="main">
+<div id="content">
+{template 'position.html'}
+<!-- 正文 -->
+<div class="contenttext">
+
+	<div class="blank10"></div>
+	<h4><span style="color:red;font-weight:bold;"> “{$keyword}” </span>{lang(searchresults)}：</h4>
+	<ul class="news_list">
+		{loop $articles $article}
+		{cb_data($article)}
+		<li>[<a href="{$article[caturl]}">{$article[catname]}</a>] <a href="{$article[url]}"><?php if($keyword) echo str_replace($keyword,"<span style=color:red;font-weight:bold;>$keyword</span>",$article['title']); else { ?>{$article[title]}<?php } ?></a> ({$article['adddate']})
+		{/loop}
+	</ul>
+	<div class="blank10"></div>
+	<div class="pages">
+		<?php echo pagination::html($record_count,5); ?>
+	</div>
+	</div>
+<div class="blank10"></div>
+<a href="#" class="clear floatright">Top&nbsp;&nbsp;</a>
+</div></div>
+<div class="clear"></div>
+<div id="containerbottom"></div>
+</div>
+
+{template 'footer.html'}

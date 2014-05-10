@@ -1,0 +1,23 @@
+{if type($typeid)}
+<div class="left_box1 mb10">
+                <div class="title">
+                    <div class="title_fh"><img src="{$skin_path}/rj_5.gif" /></div>
+                    <div class="title_wd">	+	{lang(quicknav)}</div>
+             	</div>
+                <div class="content">
+                    <ul class="ul2g">
+<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+<li><a title="{$t[catname]}" href="{$t[url]}"{if isset($topid) && $topid==$t[catid]} class="on"{/if}>{$t[catname]}</a></li>
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on{/if}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+					</ul>
+                </div>
+			</div> 
+{/if}

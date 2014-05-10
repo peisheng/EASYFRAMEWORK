@@ -1,0 +1,53 @@
+<div class="right_box1g">
+        	<div class="rbox1_title"><div class="rbox1_titlel"><img src="{$skin_path}/yx_11.gif" /></div>
+            	<div class="title_pic"><img src="{$skin_path}/yx_9.gif" /></div>
+                <div class="title_wd"><span class="huiwd12">{lang(quicknav)}</span><span class="engwd">/ QUICK NAVIATION</span></div>
+            </div>
+            <div class="rbox1_content">
+                <ul class="ul2g">
+               <!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}" class="on">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+                </ul>
+            </div>
+        </div>
+
+
+		<div class="right_box1g">
+        	<div class="rbox1_title"><div class="rbox1_titlel"><img src="{$skin_path}/yx_11.gif" /></div>
+            	<div class="title_pic"><img src="{$skin_path}/yx_9.gif" /></div>
+                <div class="title_wd"><span class="huiwd12"> </span><span class="engwd">/ ARCHIVE</span></div>
+            </div>
+            <div class="rbox1_content">
+                <ul class="ul2g">
+              {loop archive($catid,0,0,'0,0,0',16,'aid',5,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a>{$archive[adddate]}</li>
+{/loop}
+                </ul>
+            </div>
+        </div>
+        <div class="right_box3g">
+        	<div class="right_box3bb">
+        	<div class="rbox3_title">
+            	<div class="title_pic"><img src="{$skin_path}/yx_9g.gif" /></div>
+                <div class="title_wd"><span class="huiwd12">{lang(contact)}</span></div>
+            </div>
+            <div class="rbox3_content">
+            	<div class="p">
+<ul>
+<li>{lang(address)}：{get(address)}</li>
+<li>{lang(tel)}：{get(tel)}</li>
+<li>{lang(fax)}：{get(fax)}</li> 
+<li>{lang(email)}：{get(email)}</li> 
+</ul>
+</div>
+            </div>
+            </div>
+        </div>

@@ -1,0 +1,29 @@
+{template 'header.html'}
+<div id="bd">
+    	<div id="bd_leftg">
+    	  {template 'left.html'}
+    	</div>
+      <div id="bd_rightg">
+<div class="box">
+            	{template 'position.html'}
+                <div class="content">
+                       <div id="text" class="pd" style="width:665px;">
+<ul class="ul2">
+{loop $archives $i $sp}
+<li><span class="date">{$sp[adddate]}</span><a title="{$sp[title]}" target="_blank" href="{$sp[url]}">{$sp[title]}</a></li>
+{/loop}
+</ul>
+<div class="blank10"></div>
+<!-- 内容列表分页 -->
+{if isset($pages)}
+{special::pagination()}
+{/if}
+<div class="blank30"></div>
+</div>
+                </div>
+            </div>
+            
+            </div>
+<div class="clear"></div>
+    </div>
+{template 'footer.html'}

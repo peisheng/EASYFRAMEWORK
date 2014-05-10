@@ -1,0 +1,60 @@
+{template 'header.html'}
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="4" background="{$skin_path}/middle_bg1.jpg"> </td>
+    <td valign="top">{template 'left.html'}</td>
+      <td width="724" valign="top">
+	  <table width="706" border="0" align="right" cellpadding="0" cellspacing="0">
+          {template 'position.html'}
+          <tr>
+            <td height="20"> </td>
+          </tr>
+          <tr>
+            <td>
+            <div class="newCenter" onmouseover="this.style.borderColor='#87D4F6';" onmouseout="this.style.borderColor='';">
+              <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="155" valign="top"><img src="{$skin_path}/news01.jpg" alt="今日浦大" width="120" height="200" border="0" style="margin:1px;" /></td>
+                  <td width="547" valign="top"><table width="530" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
+                    
+                    <tr>
+                      <td width="530">
+							<ul class="news_list">
+			{loop $archives $i $archive}
+			<li class="list{=$i+1}"><span class="date">{$archive[adddate]}</span><a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}">{$archive[title]}</a></li>
+			{/loop}
+		</ul>
+						</td>
+                    </tr>
+	
+                    <tr>
+                      <td>
+{if isset($pages)}
+{category_pagination($catid)}
+{/if}
+		</td>
+                    </tr>
+                    <tr>
+                      <td> </td>
+                    </tr>
+                  </table></td>
+                </tr>
+              </table>
+            </div></td>
+          </tr>
+          <tr>
+            <td height="20"> </td>
+          </tr>
+        </table>
+        </td>
+      </tr>      
+    </table></td>
+    <td width="4" background="{$skin_path}/middle_bg2.jpg"> </td>
+  </tr>
+</table>
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="948"><img src="{$skin_path}/btm_bg.jpg" width="948" height="7" /></td>
+  </tr>
+</table>
+{template 'footer.html'}

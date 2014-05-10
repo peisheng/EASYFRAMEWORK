@@ -1,0 +1,52 @@
+<div id="bd_left">
+            <div class="left_box1">
+            <div class="title"><div class="title_l"><img src="{$skin_path}/jt_12.gif" /></div><div class="title_r"><img src="{$skin_path}/jt_13.gif" /></div>
+            <div class="title_c">{lang(siteannoun)}</div>
+            </div>
+            <div class="content">
+              <ul class="ul2">
+			{loop announ(5) $an}
+			<li><a href="{$an[url]}">{$an[title]}</a></li>
+			{/loop}
+                </ul>
+            </div>
+            </div>
+
+<div class="left_box1">
+            <div class="title"><div class="title_l"><img src="{$skin_path}/jt_12.gif" /></div><div class="title_r"><img src="{$skin_path}/jt_13.gif" /></div>
+            <div class="title_c">	+	{lang(quicknav)}</div>
+            </div>
+            <div class="contentg">
+              <ul class="ul2">
+<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+<li><a title="{$t[catname]}" href="{$t[url]}"{if isset($topid) && $topid==$t[catid]} class="on"{/if}>{$t[catname]}</a></li>
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on{/if}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+</ul>
+            </div>
+            </div>
+
+
+            <div class="left_box1">
+            <div class="title"><div class="title_l"><img src="{$skin_path}/jt_12.gif" /></div><div class="title_r"><img src="{$skin_path}/jt_13.gif" /></div>
+            <div class="title_c">{lang(contactus)}</div>
+            </div>
+            <div class="content">
+              <div class="p">
+			  <ul class="news_list">
+<li><strong>{lang(address)}：</strong>{get(address)}</li>
+<li><strong>{lang(tel)}：</strong>{get(tel)}</li>
+<li><strong>{lang(fax)}：</strong>{get(fax)}</li>
+<li><strong>{lang(email)}：</strong>{get(email)}</li>
+</ul>
+			  </div>
+            </div>
+            </div>
+        </div>

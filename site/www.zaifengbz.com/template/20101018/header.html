@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{if !empty($archive[mtitle])}{$archive[mtitle]}{elseif $category[$catid][meta_title] and !$archive[title]}{$category[$catid][meta_title]}{else}{if !empty($archive[title])}{$archive[title]}-{/if}{if $type[meta_title]}{$type[meta_title]}-{elseif typename($type[typeid])}{typename($type[typeid])}-{/if}{if $category[$catid][meta_title]}{$category[$catid][meta_title]}-{elseif !empty($catid)}{catname($catid)}-{/if}{get('fullname')}{/if}</title>
+<meta name="keywords" content="{if $archive[keyword]}{$archive[keyword]}{else}{if $type[keyword]}{$type[keyword]}{elseif $category[$catid][keyword]}{$category[$catid][keyword]}{else}{get('site_keyword')}{/if}{/if}" />
+<meta name="description" content="{if $archive[description]}{$archive[description]}{else}{if $type[description]}{$type[description]}{elseif $category[$catid][description]}{$category[$catid][description]}{else}{get('site_description')}{/if}{/if}" />
+<meta name="author" content="CmsEasy Team" />
+<link rel="icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="{$base_url}/favicon.ico" type="image/x-icon" />
+<!-- 调用样式表 -->
+<link href="{$skin_path}/reset.css" rel="stylesheet" type="text/css" />
+<link href="{$skin_path}/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+sfHover = function() {
+var sfEls = document.getElementById("nav").getElementsByTagName("LI");
+for (var i=0; i<sfEls.length; i++) {
+sfEls[i].onmouseover=function() {
+    this.className+=" sfhover";
+}
+sfEls[i].onmouseout=function() {
+    this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+}
+}
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
+</script>
+<!--用于PNG图片在IE6下透明-->
+<!--[if IE 6]>
+<script src="{$skin_path}/images/js/png.js"></script>
+<script>
+  DD_belatedPNG.fix('.logo');
+  DD_belatedPNG.fix('.nav');
+  DD_belatedPNG.fix('#nav li ul');
+  DD_belatedPNG.fix('.r_bg');
+  DD_belatedPNG.fix('.cfooter');
+  DD_belatedPNG.fix('.cleft_box .cright');
+  DD_belatedPNG.fix('.cleft_box_content .cfooter');
+  DD_belatedPNG.fix('.cleft_box_content .cheader');
+</script>
+<![endif]--> 
+<style type="text/css">
+.logo {width:{get('logo_width')}px; height:{get('logo_height')}px; background:url({$base_url}/{get('site_logo')}) 10px 10px no-repeat;}
+</style>
+<script language="javascript" type="text/javascript">
+function killerrors()
+{
+return true;
+}
+window.onerror = killerrors;
+</script>
+</head>
+<body>
+<div id="main">
+  <div id="header">
+  	<div class="top">
+<div class="logo"><a title="{get(sitename)}" href="{$base_url}/"></a></div>
+    <div class="top_links">
+	   <div class="topwd"><div class="pic"><img src="{$skin_path}/images/eg_3.gif" /></div>
+    	{login_js()}</div>
+    	<div class="topwd"><div class="pic"><img src="{$skin_path}/images/eg_3.gif" /></div><a title="{lang(feedback)}" href="{url('guestbook')}" target="_blank">{lang(feedback)}</a></div>
+    	<div class="topwd"><div class="pic"><img src="{$skin_path}/images/eg_3.gif" /></div><a href="{$site_url}" onclick="window.external.addFavorite(this.href,this.title);return false;" title='{get(sitename)}' rel="sidebar">{lang(favorite)}</a></div>
+		{if get('lang_type')=='cn'}<div class="topwd"><div class="pic"><img src="{$skin_path}/images/eg_3.gif" /></div><a id="StranLink" title="繁简转换">繁体</a></div>{/if}
+    	<div class="topwd"><div class="pic"><img src="{$skin_path}/images/eg_3.gif" /></div>
+    	<a title="{lang(backhome)}" href="{$base_url}/">{lang(homepage)}</a></div>
+		
+    </div>
+    </div>
+    <div class="nav">
+    <div class="nav_l"><img src="{$skin_path}/images/eg_4.gif" /></div>
+    <div class="nav_c">
+    	<ul class="nav_ul">
+        <li><a title="{lang(backhome)}" href="{$base_url}/" {if $catid==0} class="m"{/if}>{lang(homepage)}</a></li>
+{loop categories_nav() $t}
+<li><img src="{$skin_path}/images/eg_5.gif" /></li>
+        <li><a title="{$t[catname]}" href="{$t[url]}"{if isset($topid) && $topid==$t[catid]} class="m"{/if}>{$t[catname]}</a></li>
+{/loop}
+        </ul>
+    </div>
+    </div>
+  </div>
+  
+  <div class="banner"><div class="banner_pic">
+  {template 'system/slide.html'}
+  </div></div>

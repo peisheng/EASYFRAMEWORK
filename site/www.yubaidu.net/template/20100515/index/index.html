@@ -1,0 +1,70 @@
+{template 'header.html'}
+<div id="bd">
+    	<div id="bd_left">
+        	<div class="box1">
+            	<div class="title"><div class="lanwd"><?php $t=position_p($catid=2);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div>
+            	<div class="english">/ NEWS</div>
+            	</div>
+                <div class="content">
+				{loop archive(2,0,0,'0,0,0',20,'aid',1,true,1) $i $archive}
+<div class="new_tj"><div class="news_pic"><img src="{$archive[sthumb]}"  class="imgys"/></div><div class="p1"><span class="lanwd12c"><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></span><br />
+{cut(strip_tags($archive['introduce']),30)}</div></div>
+{/loop}
+					<div class="news">
+                        <ul class="ul2">
+                        {loop archive(2,0,0,'0,0,0',16,'aid',5,false,0) $i $archive} 
+<li><span class="date">[{=sdate($archive[adddate],'Y-m')}]</span><a href="{$archive[url]}">{$archive[title]}</a></li>
+{/loop}
+                        </ul>
+                  </div><div class="clear"></div>
+                    <div class="learn_more"><?php $t=position_p($catid=2);?>
+<a href="{$t.url}" title="{$t['name']}"><img src="{$skin_path}/sm_14.gif" border="0" /></a></div>
+					<div class="blank10"></div>
+              </div>
+            </div>
+        </div>
+      <div id="bd_right">
+      	<div class="right_left">
+        	<div class="box1">
+            	<div class="title">
+            	  <div class="lanwd"><?php $t=position_p($catid=3);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div>
+            	  <div class="english">/ PRODUCTS</div>
+            	</div>
+                <div class="content">
+				{loop archive(3,0,0,'0,0,0',20,'aid',2,true,0) $i $archive}
+<div class="new_tjg"><div class="news_pic"><img src="{$archive[sthumb]}"  class="imgys"/></div>
+                	<div class="p1"><span class="lanwd12c"><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></span><br />
+{cut(strip_tags($archive['introduce']),30)}<br />
+<span class="lanwd10"><a href="{$archive[url]}" title="{$archive[stitle]}"><img src="{$skin_path}/sm_14.gif" class="floatright" border="0" /></a></span></div>
+                	</div>
+{/loop}
+
+
+<div class="blank10"></div>
+                </div>
+            </div>
+        </div>
+        <div class="right_right">
+        	<div class="box1">
+            	<div class="title">
+            	  <div class="lanwd"><?php $t=position_p($catid=4);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a></div>
+            	  <div class="english">/ PRODUCT TYPE</div>
+            	</div>
+                <div class="content">
+                	<ul class="ul2g">
+                         {loop archive(2,0,0,'0,0,0',16,'aid',7,false,0) $i $archive} 
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+{/loop}
+                        </ul>
+                </div>
+				<div class="blank10"></div>
+            </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <!--bd部结束-->
+{template 'footer.html'}

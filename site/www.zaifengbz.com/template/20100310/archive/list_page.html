@@ -1,0 +1,28 @@
+{template 'header.html'}
+<div id="bd">
+	<div id="bd_left">
+    	{template 'left.html'}
+    </div>
+    <div id="bd_right">
+      {template 'position.html'}
+
+	 <div style="padding:10px;">
+
+
+<div id="title">
+<h1>{$category[$catid][catname]}</h1>
+</div>
+<div id="textDiv" style="width:710px;" class="text">
+{$category[$catid][categorycontent]}
+
+<div class="blank30"></div>
+<a title="{lang(gotop)}" href="#" class="clear floatright"><img alt="{lang(gotop)}" src="{$skin_url}/gotop.gif"></a>
+<div class="blank30"></div>
+</div>
+
+		<div class="clear"></div>
+</div>
+      </div>
+      
+      </div>
+{template 'footer.html'}

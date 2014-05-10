@@ -1,0 +1,70 @@
+<div id="bd_leftg">
+			  <div class="titleg"><div class="title_w">	+	{lang(quicknav)}</div><div class="title_r"><img src="{$skin_path}/ls_13.gif" /></div>
+				</div>
+                <div class="content1g">
+                        <ul class="ul2g">
+                          <!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on{/if}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+                        </ul>
+                    </div>
+            </div>
+			
+
+<div id="bd_leftg">
+			  <div class="titleg"><div class="title_w">{lang(siteannoun)}</div><div class="title_r"><img src="{$skin_path}/ls_13.gif" /></div>
+				</div>
+                <div class="content1g">
+                        <ul class="ul2g">
+                            {loop announ(5) $an}
+			<li><a href="{$an[url]}">{$an[title]}</a></li>
+			{/loop}
+                        </ul>
+                    </div>
+            </div>
+
+<div id="bd_leftg">
+			  <div class="titleg"><div class="title_w">{lang(search)}</div><div class="title_r"><img src="{$skin_path}/ls_13.gif" /></div>
+				</div>
+                <div class="content1g">
+                        <div style="padding:20px 0px 0px 20px;">
+<form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+<input  id="inputsearch" name="keyword" type="text" align="absmiple" />&nbsp; 
+<input type="submit" class="s_btn" align="absmiple" name='submit' value=" " />
+</form>
+</div>
+                    </div>
+            </div>
+
+			<div id="bd_leftg">
+			  <div class="titleg"><div class="title_w">{lang(relatedcontent)}</div><div class="title_r"><img src="{$skin_path}/ls_13.gif" /></div>
+				</div>
+                <div class="content1g">
+                        <ul class="ul2g">
+                            <!-- {loop archive($catid,0,0,'0,0,0',16,'aid',5,false,0) $i $archive}  -->
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+<!-- {/loop} -->
+                        </ul>
+                    </div>
+            </div>
+
+
+<div id="bd_leftgg">
+			  <div class="titleg"><div class="title_w">{lang(contactus)}</div><div class="title_r"><img src="{$skin_path}/ls_13.gif" /></div>
+				</div>
+                <div class="content">
+                  <div class="p"><strong>{lang(address)}：</strong>{get(address)}<br />
+                        <strong>{lang(tel)}：</strong>{get(tel)}<br /> 
+                          <strong>{lang(fax)}：</strong>{get(fax)}<br /> 
+                          <strong>{lang(email)}：</strong>{get(email)}<br /> 
+                          <strong>{lang(servers)}：</strong>{get(qq1)}</div>
+          </div>
+            </div> 

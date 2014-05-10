@@ -1,0 +1,55 @@
+{template 'header.html'}
+ <div id="bd">
+    	<div class="bd_up">
+        	<div class="bd_up_left">
+            	{template 'left.html'}
+            
+        </div>
+      <div id="bd_right">     
+        <div class="box">
+            	{template 'position.html'}
+                <div class="content">
+                	<div class="pd_title"></div>
+                       <div class="pd">
+<!-- 内容列表开始 -->
+<table id="talbe" width="100%" border="1" align="center" cellpadding="8" cellspacing="0" bordercolor="#CCCCCC"> 
+<tr> 
+<td width="44" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('no.')}</strong></td> 
+<td width="184" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('RecruitmentPost')}</strong></td> 
+<td width="199" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('RecruitingDepartment')}</strong></td> 
+<td width="84" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('ReleaseTime')}</strong></td> 
+<td width="101" align="center" background="{$skin_path}/images/th_bg.jpg"><strong>{lang('intro')}</strong></td> 
+</tr> 
+{loop $archives $i $archive}
+<tr> 
+<td height="20" align="center" style="color:#999999; font-size:11px;">{=$i+1}</td> 
+<td height="20" align="center"><a title="{$archive['stitle']}" target="_blank" href="{$archive['url']}">{$archive['title']}</a></td> 
+<td height="20" align="center">{$archive['my_zhaopinbumen']}</td> 
+<td height="20" align="center" style="color:#999999; font-size:11px;"><span style="color:#999999">{$archive['adddate']}</span></td> 
+<td height="20" align="center"><a title="{$archive['stitle']}" target="_blank" href="{$archive['url']}"><img src="{$skin_path}/images/btn_jobs.gif" alt="{lang('more')}" width="80" height="21" border="0" /></a></td> 
+</tr> 
+{/loop}
+</table>
+<!-- 内容列表结束 -->
+
+<div class="blank30"></div>
+
+<!-- 列表分页开始 -->
+{if isset($pages)}
+{category_pagination($catid)}
+{/if}
+<!-- 列表分页结束 -->
+
+<div class="blank30"></div>
+<a title="{lang(gotop)}" href="#" class="clear floatright"><img alt="{lang(gotop)}" src="{$skin_url}/gotop.gif"></a>
+<div class="blank30"></div>
+					   </div>
+            
+<div class="clear"></div>        
+                </div>
+            </div>
+        
+      </div>
+      <div class="clear"></div>
+    </div>
+{template 'footer.html'}

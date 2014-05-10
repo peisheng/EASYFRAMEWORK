@@ -1,0 +1,43 @@
+{template 'header.html'}<!-- 调用页头模板 -->
+<div id="c">
+
+{template 'position.html'}<!-- 调用导航模板 -->
+
+<div id="right">
+<div id="text">
+
+<div style="margin-left:10px; margin-bottom:10px;">
+订单查询：<input size="50"  id="oid" name="oid" type="text" align="absmiple" />
+<input type="submit" id="search_btn" align="absmiple" name='submit' value=" {lang(look)} " onclick="javascript:window.location.href='<?php echo url('archive/orders');?>&oid='+document.getElementById('oid').value;" />
+</div>
+
+<div class="blank10"></div>
+
+<ul id="list-view">
+<!-- 内容缩略图列表 -->
+		{loop $archives $i $arc}
+			<li><div class="img-wrap"><a title="{$arc[stitle]}" target="_blank" href="{$arc[url]}"><img alt="{$arc[stitle]}" src="{$base_url}/{$arc[thumb]}" onerror='this.src="{$base_url}/{config::get('onerror_pic')}"' /></a></div>
+			<h5><a title="{$arc[stitle]}" target="_blank" href="{$arc[url]}">{$arc[title]}</a></h5></li>
+		{/loop}
+		</ul>
+		<div class="clear"></div>
+		<div class="blank10"></div>
+		<!-- 内容列表分页 -->
+		{if isset($pages)}
+		{category_pagination($catid)}
+		{/if}
+
+<div class="blank30"></div>
+<a title="{lang(gotop)}" href="#" class="clear floatright"><img alt="{lang(gotop)}" src="{$skin_url}/gotop.gif"></a>
+<div class="blank30"></div>
+
+</div>
+</div>
+
+
+{template 'left.html'}<!-- 调用通用左栏 -->
+
+<div class="clear"></div>
+</div>
+<!-- 调用页底模板 -->
+{template 'footer.html'}

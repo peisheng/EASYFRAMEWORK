@@ -1,0 +1,28 @@
+{template 'header.html'}
+<div id="bd">
+    	<div class="bd_center">
+            	{template 'position.html'}
+          <div id="bd_right">
+          	<div class="box2">
+		
+
+<div class="content1">
+
+<div id="title"><h1>{type::getpositionhtml($type['typeid'])}</h1></div>
+<div id="text">
+
+{$type[typecontent]}
+
+</div>
+          	</div>
+          </div>
+    	</div>
+	</div>
+<div id="bd_left">
+{template 'left.html'}
+ </div>
+
+<div class="clear"></div>
+    </div>
+<!-- 调用页底模板 -->
+{template 'footer.html'}

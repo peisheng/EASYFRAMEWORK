@@ -1,0 +1,34 @@
+{template 'header.html'}
+<div id="bd">
+		<div class="left_box">    	
+            {template 'left.html'}
+   		</div>
+    	<div id="bd_rightg">
+
+  {loop type($typeid) $i $t}
+         <div class="bd1_titleg">
+<div class="title_w"><a title="{$type[typename]}" href="{typeurl($t[typeid])}">{$t[typename]}</a></div>
+<span class="more1"><a title="{$type[typename]}" href="{typeurl($t[typeid])}">more</a></span>
+</div>
+
+                    <div class="content1">
+                 <div class="clear"></div>
+		{loop article($t[typeid],20,'aid',8,true,'') $i $archive}
+			<div class="product_box">
+			<a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}"><img alt="{$archive[stitle]}" src="{$archive['sthumb']}" /></a>
+			<h5><a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}">{$archive[title]}</a></h5>
+		</div>
+			{/loop}
+		</div>
+		{/loop}
+		
+    	</div>
+
+		<div class="pd">
+					   <div class="blank30"></div>
+		<a title="返回顶部" href="#" class="clear floatright"><img alt="返回顶部" src="{$skin_url}/gotop.gif"></a>
+	<div class="clear"></div>
+					   </div>
+    </div>
+<div class="clear"></div>
+{template 'footer.html'}

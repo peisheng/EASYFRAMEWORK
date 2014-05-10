@@ -1,0 +1,30 @@
+{template 'header.html'}
+<div id="bd">
+    	<div id="bd_leftg">
+    	  <div class="left_box3g">
+            	{template 'position.html'}
+                <div class="box3_yy"></div>
+            <div class="box3_content">
+            	<ul class="ul2d">
+			{loop $archives $i $archive}
+			<li><span class="date">{$archive[adddate]}</span><a title="{$archive[stitle]}" target="_blank" href="{$archive[url]}">{$archive[title]}</a></li>
+			{/loop}
+		</ul>
+		<div class="blank10"></div>
+		{if isset($pages)}
+		{area::pagination($areaid)}
+		{/if}
+
+<div class="blank30"></div>
+		<a title="{lang(gotop)}" href="#" class="clear floatright"><img alt="{lang(gotop)}" src="{$skin_url}/gotop.gif"></a>
+	<div class="clear"></div>
+</div>
+
+          </div>
+        </div>
+      <div id="bd_rightg">
+      	{template 'left.html'}
+      </div>
+      <div class="clear"></div>
+    </div>
+{template 'footer.html'}

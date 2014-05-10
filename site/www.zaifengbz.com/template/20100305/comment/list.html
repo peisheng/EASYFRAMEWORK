@@ -1,0 +1,68 @@
+{template 'header.html'}
+<table width="931" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="210" height="365" align="center" valign="top" bgcolor="#F6F6F6" class="bgys3">
+    {template 'left.html'}
+
+    </td>
+   <td width="16">&nbsp;</td>
+    <td width="705" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tr><td height="137" align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+     {template 'position.html'}
+      <tr>
+        <td colspan="3" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>
+
+
+<!-- 评论 -->
+<div id="comment">
+<!-- 评论框开始 -->
+<form action="<?php echo url('comment/add'); ?>" method="POST" name="comment_form" id="comment">
+<div class="comm">
+<a href='<?php echo url('comment/list/aid/'.$archive['aid']); ?>' style="float:right;padding-right:20px;font-size:12px;">{lang('have')}<span class="commentnumber">{comment::countcomment($archive['aid'])}</span>{lang(bitofcommenters)}&nbsp;&nbsp;<strong>{lang('clicktoview')}</strong></a><strong>{lang('iwanttocomment')}:</strong></div>
+<div class="blank5"></div>
+<textarea name="content" id="textarea"></textarea>
+<div style="margin-top:10px;line-height:34px;"><input type="hidden" name="aid" value="{$aid}"/>
+{lang('username')}：<input type="text" name="username" class="key" value="<?php echo get('username');?>"/> &nbsp;&nbsp;{lang('verifycode')}：{verify()} &nbsp;<input type="text" name="verify" value="" size="4" />&nbsp;<input name="submit" class="btn" value="{lang('submit')}" type="submit"/>
+</div>
+</form>
+<!-- 评论框结束 -->
+</div>
+
+<div class="blank30"></div>
+<div class="line_2"></div>
+<div class="comm"><strong>{lang('commentlist')}：</strong></div>
+<div class="blank30"></div>
+
+<dl class="comment_list">
+
+{loop $comments $comment}
+<dt><strong>{lang('username')}：{$comment[username]}</strong><span>{sdate($comment[adddate],'Y-m-d H:i')}</span></dt>
+<dd>{strip_tags($comment[content])}</dd>
+<?php if(!isset($i)) $i=0;  $i++; if($i<count($comments)) {echo "<br>";} else unset($i); ?>
+{/loop}
+</dl>
+<div class="clear blank30"></div>
+<div class="pages">
+ {pagination::html($record_count)}
+</div>
+
+
+</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+            </tr>
+    </table> 
+        
+        
+        </td>
+        </tr>
+    </table>
+    
+    
+    </td>
+  </tr>
+</table>
+{template 'footer.html'}

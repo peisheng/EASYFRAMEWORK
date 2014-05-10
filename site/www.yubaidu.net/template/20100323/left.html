@@ -1,0 +1,36 @@
+<div class="bd_left_titleg">
+            <div class="titleg">+&nbsp;&nbsp;{lang(quicknav)}</div>
+          </div>
+            <ul class="ul2g">
+<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+<li><a title="{$t[catname]}" href="{$t[url]}"{if isset($topid) && $topid==$t[catid]} class="on"{/if}>{$t[catname]}</a></li>
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on{/if}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+            </ul>
+
+<div class="bd_left_titleg">
+            <div class="titleg">+&nbsp;&nbsp;Search</div>
+          </div>
+           <div id="search">
+<form name='search' action="<?php echo url('archive/search');?>" onsubmit="search_check();" method="post">
+<input  id="inputsearch" name="keyword" type="text" align="absmiple" />&nbsp; 
+<input type="submit" class="s_btn" align="absmiple" name='submit' value=" " />
+</form>
+</div>
+
+            <div class="bd_left_titleg">
+            <div class="titleg">+&nbsp;&nbsp;{lang(contactus)}</div>
+          </div>
+            <ul class="ul2g">
+                    <li>{lang(address)}：{get(address)}</li>
+<li>{lang(tel)}：{get(tel)}</li>
+<li>{lang(fax)}：{get(fax)}</li> 
+<li>{lang(email)}：{get(email)}</li> 
+            </ul>

@@ -1,0 +1,55 @@
+<div id="bd_leftg">
+
+<div class="box2">
+            	<div class="title2">
+            	  <div class="lanwd2">Quick</div>
+            	  <div class="english2">/ Type</div>
+            	</div>
+                <div class="content">
+                	<ul class="ul2g">
+<!--只展开当前栏目所在一级栏目下的分类-->
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on{/if}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+<!--只展开当前栏目所在一级栏目下的分类-->
+</ul>
+</div>
+            </div>
+			<div class="blank10"></div>
+
+    
+            <div class="box1g" style="margin:0px;">
+            	<div class="title">
+            	  <div class="lanwd">{lang(contactus)}</div>
+            	  <div class="english">/ CONTACT US</div>
+            	</div>
+                <div class="content">
+                	<div class="p1g"><strong>{lang(address)}：</strong><br />{get('address')}<br />
+                        <strong>{lang(tel)}：</strong>{get('tel')}<br /> 
+                          <strong>{lang(fax)}：</strong>{get('fax')}<br /> 
+                          <strong>{lang(email)}：</strong>{get('email')}<br /> 
+                          <strong>{lang(qq)}：</strong>{get('qq1')}</div>
+                </div>
+            </div>
+        {if $typeid==0}
+		{else}
+		<div class="box2" style="margin-top:8px;">
+            	<div class="title2">
+            	  <div class="lanwd2">相关内容</div>
+            	  <div class="english2">/ Content</div>
+            	</div>
+                <div class="content">
+                	<ul class="ul2g">
+<!-- {loop article($typeid,20,'aid',10) $i $archive} -->
+<li><a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a></li>
+<!-- {/loop} -->
+</ul>
+</div>
+            </div>
+			{/if}
+			</div>

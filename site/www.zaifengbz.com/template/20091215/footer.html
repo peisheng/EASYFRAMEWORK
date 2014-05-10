@@ -1,0 +1,46 @@
+<div id="footer">
+<div class="center">
+<ul class="copy">
+<li>
+<?php $t=position_p($typeid=1);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>	|	
+<?php?>
+<!-- {loop archive(1,0,0,'0,0,0',20,'aid',10,false,0) $i $archive} -->
+<a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a>	|	
+<!-- {/loop} --><?php $t=position_p($typeid=5);?>
+<a href="{$t.url}" title="{$t['name']}">{$t['name']}</a>	|	
+<?php?>
+<a href="#">TOP</a>
+</li>
+<li>Copyright © 2010 <a href="{$base_url}/">{get(sitename)}</a>. All Rights Reserved.
+<a href="http://www.miibeian.gov.cn/" target="_blank">{get('site_icp')}</a></li>
+<li><div class="copyright"> &nbsp;&nbsp;{getcnzzcount()}
+
+<!-- 友情链接 -->
+{if $topid==0}<select name="website" onchange="javascript:window.open(this.options[this.selectedIndex].value)" style="float:right; margin-top:10px;">
+<option value="default">{lang('links')}</option>
+{loop friendlink('text',0,20) $flink}
+<option value="{$flink[url]}">{$flink[name]}</option>
+{/loop}
+</select>{/if}
+
+{if $topid==0}<!-- 热门关键词 -->
+<div class="hot_keys" style="clear:both;text-align:left;">{lang(hotkeys)}： {gethotsearch(10)}</div>{/if}
+
+</div>
+</li>
+
+</ul>
+
+</div>
+
+
+
+<!-- 在线客服 -->
+{template 'system/servers.html'}
+<!-- 短信 -->
+{template 'system/sms.html'}
+
+{if get('lang_type')=='cn'}<script type="text/javascript" src="{$base_url}/js/tc.js"></script>{/if}
+</body>
+</html>

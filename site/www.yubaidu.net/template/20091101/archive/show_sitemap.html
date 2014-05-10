@@ -1,0 +1,53 @@
+{template 'header.html'}
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="4" background="{$skin_path}/middle_bg1.jpg">&nbsp;</td>
+    <td valign="top">
+	<table width="880" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
+
+      <tr>
+        <td height="26" style="border-bottom:1px dotted #E4E4E4; font-weight:bold; "><img src="{$skin_path}/arr3.gif" width="10" height="8" align="absmiddle" style="margin-right:6px;" /><a title="{$t[typename]}" target="_blank" href="{$t[url]}" style="color:#CC0000;">{$t[typename]}</a></td>
+        </tr>
+		
+      <tr>
+        <td valign="top" style="padding:8px;">
+<div class="sitemap">
+			<style type="text/css">
+				.sitemap {padding:10px 50px;}
+				.sitemap h2 {line-height:22px;font-size:14px;margin:5px 0px;padding-left:20px;background:url({$skin_path}/down.gif) left top no-repeat;color:#333;}
+				.sitemap h2 a {color:#333;}
+				.sitemap h3,.sitemap h4,.sitemap h5, {font-size:12px;padding-left:40px;font-weight:normal;color:#555;}
+				.sitemap h3 a,.sitemap h4 a,.sitemap h5 a {color:#555;font-size:12px;font-weight:normal;}
+			</style>
+			<h2><a title="{lang(homepage)}" target="_blank" href="{$base_url}/">{lang(homepage)}</a></h2>
+			{loop categories() $t}
+			<h2><a title="{$t[catname]}" target="_blank" href="{$t[url]}">{$t[catname]}</a></h2>
+				{loop categories($t[catid]) $t1}
+				<h3><a title="{$t1[catname]}" target="_blank" href="{$t1[url]}">{$t1[catname]}</a></h3>
+					{loop categories($t1[catid]) $t2}
+					<h4><a title="{$t2[catname]}" target="_blank" href="{$t2[url]}">{$t2[catname]}</a></h4>
+						{loop categories($t2[catid]) $t3}
+						<h5><a title="{$t3[catname]}" target="_blank" href="{$t3[url]}">{$t3[catname]}</a></h5>
+						{/loop}
+					{/loop}
+				{/loop}
+			{/loop}
+		</div>
+<div class="blank30"></div>
+<a title="{lang(gotop)}" href="#" class="clear floatright"><img alt="{lang(gotop)}" src="{$skin_url}/gotop.gif"></a>
+<div class="blank30"></div>
+</td>
+      </tr>
+
+        
+    </table>
+	</td>
+    <td width="4" background="{$skin_path}/middle_bg2.jpg">&nbsp;</td>
+  </tr>
+</table>
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="948"><img src="{$skin_path}/btm_bg.jpg" width="948" height="7" /></td>
+  </tr>
+</table>
+{template 'footer.html'}

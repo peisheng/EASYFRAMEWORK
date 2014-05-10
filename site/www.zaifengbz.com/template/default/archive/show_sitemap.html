@@ -1,0 +1,67 @@
+{template 'header.html'}
+<!-- 面包屑导航开始 -->
+<div class="clear box">
+{template 'position.html'}
+</div><div class="blank5"></div>
+<!-- 面包屑导航结束 -->
+
+<!-- 中部开始 -->
+<div class="clear box c_bg">
+<div class="c_top"></div>
+
+<!-- 左侧开始 -->
+<div class="w_250">
+
+{template 'left.html'}
+
+<div class="clear"></div>
+</div>
+<!-- 左侧结束 -->
+
+
+<!-- 右侧开始 -->
+<div class="w_700">
+
+<!-- 内容标题 -->
+<div class="archive_title"><h1>{$archive[title]}</h1></div>
+
+<div id="content" class="clear" style="width:650px;">
+
+<!-- 网站地图开始 -->
+<div class="sitemap">
+<style type="text/css">
+.sitemap {padding:10px;}
+.sitemap h2 {line-height:22px;font-size:14px;margin:5px 0px;padding-left:20px;background:url({$skin_path}/images/down.gif) left top no-repeat;color:#333;}
+.sitemap h2 a {color:#333;}
+.sitemap h3,.sitemap h4,.sitemap h5 {font-size:12px;padding-left:40px;font-weight:normal;color:#555;}
+.sitemap h3 a,.sitemap h4 a,.sitemap h5 a {color:#555;font-size:12px;font-weight:normal;}
+</style>
+<h2><a title="{lang(homepage)}" target="_blank" href="{$base_url}/">{lang(homepage)}</a></h2>
+{loop categories() $t}
+<h2><a title="{$t[catname]}" target="_blank" href="{$t[url]}">{$t[catname]}</a></h2>
+{loop categories($t[catid]) $t1}
+<h3><a title="{$t1[catname]}" target="_blank" href="{$t1[url]}">&nbsp;└	{$t1[catname]}</a></h3>
+{loop categories($t1[catid]) $t2}
+<h4><a title="{$t2[catname]}" target="_blank" href="{$t2[url]}">&nbsp;&nbsp;&nbsp;└	{$t2[catname]}</a></h4>
+{loop categories($t2[catid]) $t3}
+<h5><a title="{$t3[catname]}" target="_blank" href="{$t3[url]}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└	{$t3[catname]}</a></h5>
+{/loop}
+{/loop}
+{/loop}
+{/loop}
+</div>
+<!-- 网站地图结束 -->
+
+<div class="blank30"></div>
+<a title="{lang(gotop)}" href="#" class="clear floatright"><img alt="{lang(gotop)}" src="{$skin_url}/images/gotop.gif"></a>
+<div class="blank30"></div>
+<div class="clear"></div>
+</div>
+</div>
+<!-- 右侧结束 -->
+
+<div class="c_bottom"></div>
+<div class="clear"></div>
+</div>
+<!-- 中部结束 -->
+{template 'footer.html'}

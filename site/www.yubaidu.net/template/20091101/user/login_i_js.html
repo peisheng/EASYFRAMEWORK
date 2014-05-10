@@ -1,0 +1,28 @@
+
+<?php if(isset($user) && is_array($user)) { ?>
+
+欢迎你， {$user.username}!<br>
+<a href="{url('user/logout')}">退出</a>
+ | <a href="{url('user')}" target="_blank">会员中心</a>
+{if $user['groupid']=='888'}
+ | <a href="{$admin_url}" target="_blank">后台管理</a>
+{/if}
+<?php }else{ ?>
+
+<form id="login_form"   name="loginform" method="post"  action="{url('user/login')}" onsubmit="return checkform();">
+用户名：<input type='text' id="username"  name="username" size="16"/><br>
+密&nbsp;&nbsp;码：<input type='password' id="password"  name="password" size="17"/><br>
+验证码：<input type='text' id="verify"  name="verify" size="4"/>
+{verify()}<br>
+有效期: <select name="expire">
+<option value="<?php echo 0; ?>">至浏览器关闭</option>
+<option value="<?php echo 3600; ?>">一小时</option>
+<option value="<?php echo 3600*24; ?>">一天</option>
+<option value="<?php echo 3600*24*7; ?>">一星期</option>
+<option value="<?php echo 3600*24*30; ?>">一个月</option>
+<option value="<?php echo 3600*24*365; ?>">一年</option>
+</select><br>
+<input type='submit' name="submit" value="登陆" style="margin-left:30px"/>
+<input type='button' name="register" value="注册" onclick="javascript:location.href='{url('user/register')}'"  style="margin-left:10px">
+</form>
+<?php } ?>

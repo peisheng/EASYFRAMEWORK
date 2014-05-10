@@ -1,0 +1,41 @@
+{if $topid==0}{else}<!--只展开当前栏目所在一级栏目下的分类-->
+<div class="title"><div class="title_t">	+	{lang(quicknav)}<div class="more"></div></div></div>
+<div class="bd_left1">
+<ul class="ul2">
+<?php $__pid = getcategoryparentsid($catid);?>
+{loop categories_nav() $t}
+<li><a title="{$t[catname]}" href="{$t[url]}"{if isset($topid) && $topid==$t[catid]} class="on"{/if}>{$t[catname]}</a></li>
+{if $t[catid]==$__pid}
+<!-- {loop category::listcategorydata($__pid) $type} -->
+<li><a href="{$type[url]}" title="{$type[catname]}" class="{if $type[catid]==$catid}on{/if}">{$type[catname]}</a></li>
+<!-- {/loop} -->
+{/if}
+{/loop}
+</ul>
+<div class="blank10"></div>
+</div>
+<!--只展开当前栏目所在一级栏目下的分类-->
+{/if}
+
+			<div class="title"><div class="title_t">最新公告</div><div class="more"></div></div>
+            <div class="bd_left1">
+            	<ul class="ul2 announ">
+				{loop announ(5) $an}
+			<li><a href="{$an[url]}">· {$an[title]}</a></li>
+			{/loop}
+                </ul><div class="blank10"></div>
+            </div>
+            
+            <div class="title"><div class="title_t">联系我们</div></div>
+            <div class="bd_left2">
+            	<div class="p_contact">地 址：{get(address)}
+                <br />
+                电 话：{get(tel)}
+                <br />
+                传 真：{get(fax)}
+                <br />
+                邮 箱：{get(email)}
+                <br />
+          客 服：{get(qq1)}
+		  </div>
+            </div>

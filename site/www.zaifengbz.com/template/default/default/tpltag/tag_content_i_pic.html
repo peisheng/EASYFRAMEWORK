@@ -1,0 +1,9 @@
+{loop archive($_catid,$_typeid,$_spid,$_area,$_length,$_ordertype,$_limit,$_image,$_attr1) $arc}
+<td class="GalleryPictureScrollerImageArea"><div class="GalleryPictureScrollerImage">
+<a href="{$arc[url]}" title="{$arc[stitle]}"><img src="{$base_url}/{$arc[thumb]}" alt="{$arc[stitle]}" /></a>
+</div>
+<div class="GalleryPictureScrollerDetails">
+<a href="{$arc[url]}" title="{$arc[stitle]}">{$arc[title]}</a>
+</div>
+ </td>
+{/loop}

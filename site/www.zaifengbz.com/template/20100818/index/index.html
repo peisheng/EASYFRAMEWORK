@@ -1,0 +1,60 @@
+{template 'header.html'}
+    <div id="bd">
+    	<div id="bd_left">
+        	<div class="box">
+            	<div class="title">
+               	  <div class="ioc"><img src="{$skin_path}/dz_7.gif" /></div>
+                    <?php $t=position_p($catid=2);?>
+<a href="{$t.url}" title="{$t['name']}"><div class="title_wd">{$t['name']}</div>
+                    <div class="more"><a href="{$t.url}"><img src="{$skin_path}/dz_8.gif" border="0" /></a></div><?php?>
+                </div>
+                <div class="content">
+                	<ul class="ul2">
+                    {tag_首页新闻4条}
+                    </ul>
+                </div>
+            </div>
+        </div>
+      <div id="bd_right">
+      	<div class="bd_right_left">
+        	<div class="box1">
+           	  <div class="title1">
+                <div class="title1_right"><img src="{$skin_path}/dz_13.gif" /></div>
+                    <?php $t=position_p($catid=3);?>
+<a href="{$t.url}" title="{$t['name']}"><div class="title1_wd">{$t['name']}</div>
+                    <div class="more1"><a href="{$t.url}">+ 更多产品</a></div><?php?>
+              </div>
+                <div class="content1">
+                	{loop archive(3,0,0,'0,0,0',20,'aid',1,true,1) $i $archive}
+<div class="pro_l"><a href="{$archive[url]}" title="{$archive[stitle]}"><img src="{$archive[sthumb]}" alt="{$archive[stitle]}" width="120" /></a></div>
+<div class="pro_r"> <span class="chengwd"></span><br />
+{cut(strip_tags($archive['introduce']),40)}<br />
+<span class="lanwd"><a href="{$archive[url]}" title="{$archive[stitle]}">[{lang(more)}]</a></span></div>
+{/loop}
+              </div>
+            </div>
+        </div>
+        <div class="bd_right_right">
+        	<div class="box">
+            	<div class="title">
+                	<div class="ioc"><img src="{$skin_path}/dz_7.gif" /></div>
+                    <?php $t=position_p($catid=5);?>
+<a href="{$t.url}" title="{$t['name']}"><div class="title_wd">{$t['name']}</div>
+                    <div class="more"><a href="{$t.url}"><img src="{$skin_path}/dz_8.gif" border="0" /></a></div><?php?>
+                </div>
+                <div class="content">
+                	<div class="box2"><?php $t=position_p($catid=5);?>
+<a href="{$t.url}" title="{$t['name']}">
+<img src="{$skin_path}/dz_9.gif" alt="在线交流" border="0" /></a>
+<?php?></div>
+                    <div class="box2"><?php $t=position_p($catid=5);?>
+<a href="{$t.url}" title="{$t['name']}"><img src="{$skin_path}/dz_10.gif" alt="资源下载" border="0" /></a>
+<?php?></div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <!--bd部结束-->
+    {template 'footer.html'}

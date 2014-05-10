@@ -1,0 +1,59 @@
+<table width="920" border="0" align="center" cellpadding="0" cellspacing="0" id="bottom">
+  <tr>
+    <td width="409" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      <tr>
+        <td><img src="{$skin_path}/t.gif" width="1" height="6" /></td>
+      </tr>
+      <tr>
+        <td height="22">{lang(tel)}：{get('tel')}  {lang(address)}：{get('address')}</td>
+      </tr>
+ 
+      <tr>
+        <td height="22" style="font-size:11px;">{lang(email)}：<a href="mailto:{get('email')}">{get('email')}</a>　{lang(qq)}：<a target="blank" href="http://wpa.qq.com/msgrd?V=1&Uin={get('qq1')}&Site=cnpuda.com&Menu=yes"><img border='0' src='http://wpa.qq.com/pa?p=1:{get('qq1')}:3' alt='{get('sitename')}' align="absmiddle" /></a>　</td>
+      </tr>
+    </table></td>
+    <td width="511" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="21" align="right" valign="bottom"><a href="{$base_url}/">{lang(homepage)}</a>
+		<!-- {loop archive(1,0,0,'0,0,0',20,'aid',4,false,0) $i $archive} -->
+		  |  <a href="{$archive[url]}" title="{$archive[stitle]}">{$archive[title]}</a>
+		<!-- {/loop} -->
+		<!-- <a href="eng/"><span style="font-size:11px;">ENGLISH</span></a> --></td>
+      </tr>
+      <tr>
+        <td height="25" align="right"><span style="font-size:11px;"><!-- 页底说明 -->
+{get(site_right)} <a title="{get('sitename')}" href="{$base_url}/">{get('sitename')}</a> All Rights Reserved.      </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="18" colspan="2" valign="top"> </td>
+  </tr>
+</table>
+<!-- 非商业用户请勿删除 -->
+<div class="copyright">&nbsp;&nbsp;{getcnzzcount()}
+<br />
+{if $topid==0}<!-- 热门关键词 -->
+<div class="hot_keys">{lang(hotkeys)}： {gethotsearch(10)}</div>{/if}
+</div>
+</div>
+
+
+<!-- 友情链接 -->
+{if $topid==0}<select name="website" onchange="javascript:window.open(this.options[this.selectedIndex].value)" style="float:right; margin-top:10px;">
+<option value="default">{lang('links')}</option>
+{loop friendlink('text',0,20) $flink}
+<option value="{$flink[url]}">{$flink[name]}</option>
+{/loop}
+</select>{/if}
+</div>
+
+<!-- 在线客服 -->
+{template 'system/servers.html'}
+<!-- 短信 -->
+{template 'system/sms.html'}
+
+{if get('lang_type')=='cn'}<script type="text/javascript" src="{$base_url}/js/tc.js"></script>{/if}
+</body>
+</html>

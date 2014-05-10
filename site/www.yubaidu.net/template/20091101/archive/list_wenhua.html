@@ -1,0 +1,73 @@
+{template 'header.html'}
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="4" background="{$skin_path}/middle_bg1.jpg"> </td>
+    <td valign="top">
+	{template 'left.html'}
+	</td>
+        <td width="724" valign="top">
+		<table width="706" border="0" align="right" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="706" height="28" style="background:url({$skin_path}/btbg.gif) repeat-x left bottom;"><table width="706" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="470" style="color:#999999" id="position"><a title="{get('sitename')}" href="{$base_url}"><img src="{$skin_path}/arr4.gif" width="11" height="11" style="margin-right:6px;" align="absmiddle" />{get('sitename')}</a>{loop position($typeid) $t}<a title="{$t['name']}" href="{$t.url}">{$t['name']}</a>{/loop}</td>
+                <td width="236" align="right" style="color:#CC0000"><img src="{$skin_path}/arr4.gif" width="11" height="11" style="margin-right:6px;" align="absmiddle" />{typename($typeid)}</td>
+              </tr>
+            </table></td>
+          </tr>
+
+<tr>
+            <td height="20"> </td>
+          </tr>
+            <tr>
+            <td style="padding-left:16px; background:url({$skin_path}/culturesplit.gif) no-repeat 96px 20px;"><img src="{$skin_path}/culture1.jpg" width="80" height="60" align="absmiddle" style="margin-right:50px;" />倡导以人为本的企业文化</td>
+          </tr>
+          <tr>
+            <td height="15">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="padding-left:16px; background:url({$skin_path}/culturesplit.gif) no-repeat 96px 20px;"><img src="{$skin_path}/culture2.jpg" width="80" height="60" align="absmiddle" style="margin-right:50px;" />重视员工文化素质的培养与提高</td>
+          </tr>
+          <tr>
+            <td height="15">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="padding-left:16px; background:url({$skin_path}/culturesplit.gif) no-repeat 96px 20px;"><img src="{$skin_path}/culture3.jpg" width="80" height="60" align="absmiddle" style="margin-right:50px;" />不断借鉴国外企业文化的成功经验</td>
+          </tr>
+          
+          <tr>
+            <td height="15">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="padding-left:16px; background:url({$skin_path}/culturesplit.gif) no-repeat 96px 20px;"><img src="{$skin_path}/culture4.jpg" width="80" height="60" align="absmiddle" style="margin-right:50px;" />鼓励员工发挥个人能动性，通过多种形式的教育和集训</td>
+          </tr>
+          
+          <tr>
+            <td height="15">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="padding-left:16px; background:url({$skin_path}/culturesplit.gif) no-repeat 96px 20px;"><img src="{$skin_path}/culture5.jpg" width="80" height="60" align="absmiddle" style="margin-right:50px;" />使每位员工技能更趋专业化</td>
+          </tr>
+          
+          <tr>
+            <td height="15">&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="padding-left:16px; background:url({$skin_path}/culturesplit.gif) no-repeat 96px 20px;"><img src="{$skin_path}/culture6.jpg" width="80" height="60" align="absmiddle" style="margin-right:50px;" />使企业在市场的竞争中立于不败之地</td>
+          </tr>
+          <tr>
+            <td height="16" style="border-bottom:1px dotted #E6E6E6;"> </td>
+          </tr>
+
+        </table></td>
+      </tr>      
+    </table></td>
+    <td width="4" background="{$skin_path}/middle_bg2.jpg"> </td>
+  </tr>
+</table>
+<table width="948" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="948"><img src="{$skin_path}/btm_bg.jpg" width="948" height="7" /></td>
+  </tr>
+</table>
+{template 'footer.html'}

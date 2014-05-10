@@ -1,0 +1,36 @@
+{template 'header.html'}
+<div id="bd">
+	<div id="bd_left">
+    	{template 'left.html'}
+        	
+    </div>
+    <div id="bd_right">
+    	<div class="bd_rightp">
+    	<div class="bd_rightp_title">
+    	  <div class="title1_img"><img src="{$skin_path}/img_13.gif" /></div>
+          <div class="title1">{$special[title]}</div>
+          <div class="more3"><a title="{get('sitename')}" href="{$base_url}">{get('sitename')}</a> >> <a title="{$special[title]}" href="#">{$special[title]}</a> >> </span><strong>{lang(nowposition)}</strong></div> 
+         </div>
+              <div class="bd_rightp_content">
+       <div class="pd"><ul class="news_list">
+		{loop $archives $i $sp}
+<li><span class="date">{$sp[adddate]}</span><a title="{$sp[title]}" target="_blank" href="{$sp[url]}">{$sp[title]}</a></li>
+{/loop}
+</ul>
+<div class="blank10"></div>
+<!-- 内容列表分页 -->
+{if isset($pages)}
+{tag::pagination($tag)}
+{/if}
+
+<div class="blank30"></div>
+<a title="{lang(gotop)}" href="#" class="clear floatright"><img alt="{lang(gotop)}" src="{$skin_url}/gotop.gif"></a>
+<div class="blank30"></div>
+		</div>
+              </div>
+              <div class="clear"></div>
+       </div> 
+    </div>
+</div>
+<div class="clear"></div>
+{template 'footer.html'}

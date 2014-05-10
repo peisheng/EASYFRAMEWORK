@@ -1,0 +1,127 @@
+{template 'user/head.html'}
+<!-- center -->
+<div id="center">
+  <div id="squeeze">
+    <div class="right-corner">
+      <div class="left-corner">
+<!-- breadcrumb -->
+<div class="breadcrumb">
+<a href="/" target="_blank"><strong>访问网站首页</strong></a> - 
+<a href="{url('/user/index')}">管理首页</a> - 
+<a href="{url('manage/add/manage/archive')}">发表内容</a> - 
+<a href="{url('/manage/list/manage/archive/needcheck/1')}">待审核内容</a> - 
+<a href="{url('/manage/list/manage/archive')}">已审核内容</a> - 
+<a href="{url('user/logout')}">退出管理</a>
+</div>
+<!-- /breadcrumb -->
+
+<style type="text/css">
+table td .left {width:10%;}
+</style>
+
+<script>
+function m_over(obj){
+if(obj.className=="s_out"){
+obj.className="s_over";
+}
+}
+
+function m_out(obj){
+if(obj.className=="s_over"){
+obj.className="s_out";
+}
+}
+function c_chang(obj){
+var e=obj.parentNode.parentNode;
+if(e.className=="s_over"){
+e.className="s_click";
+}else{
+e.className="s_over";
+}
+}
+function CheckAll(form){
+for (var i=0;i<form.elements.length;i++){
+var e = form.elements[i];
+if (e.name != 'chkall'){
+e.checked = form.chkall.checked;
+}
+if(e.type == 'checkbox' && e.name != 'chkall' && e.name != 'chkall_box2'){
+var obj = e.parentNode.parentNode;
+e.checked ? obj.className="s_click" : obj.className="s_out";
+}
+}
+}
+function getSelect(form){
+var ids='';
+for (var i=0;i<form.elements.length;i++) {
+var e = form.elements[i];
+if(e.type == 'checkbox' && e.name != 'chkall' && e.name != 'chkall_box2'){
+if(e.checked) ids += e.value + ',';
+}
+}
+return ids.replace(/,$/mg, "");;
+}
+</script>
+
+
+<div class="membericon"><h4></h4></div>
+<div class="blank10"></div>
+<div class="hr"></div>
+
+<form name="listform" id="listform"  action="/index.php?case=manage&act=list&manage=archive" method="post">
+
+
+
+    <table>
+      <tbody>
+        <tr>
+
+          <th><!--aid-->编号</th>
+          <th><!--typeid-->所属类别</th>
+          <th><!--title-->标题</th>
+          <th><!--username-->用户名</th>
+          <th><!--view-->浏览</th>
+          <th><!--adddate-->添加时间</th>
+          <th><!--checked-->审核</th>
+          <th>操作</th>
+        </tr>
+
+{loop $data $d}
+<tr class="s_out" onmouseover="m_over(this)" onmouseout="m_out(this)">
+<td>
+{cut($d['aid'])}
+</td>
+<td>
+{cut($d['typeid'])}
+</td>
+<td>
+{cut($d['title'])}
+</td>
+<td>
+{cut($d['username'])}
+</td>
+<td>
+{cut($d['view'])}
+</td>
+<td>
+{cut($d['adddate'])}
+</td>
+<td align="center">
+{helper::yes($d['checked'])}
+</td>
+<td>
+    </td>
+</tr>
+{/loop}
+
+      </tbody>
+    </table>
+
+
+
+</form>
+
+
+<p><?php echo pagination::html($record_count); ?></p>
+
+{template 'user/foot.html'}
