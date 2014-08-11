@@ -49,7 +49,8 @@ namespace NCrawler.Demo
 				})
 			{
 				// Begin crawl
-				c.Crawl();
+                
+                c.Crawl();
 			}
 		}
 

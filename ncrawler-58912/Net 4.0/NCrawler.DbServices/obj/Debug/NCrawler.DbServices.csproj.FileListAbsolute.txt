@@ -1,0 +1,11 @@
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.DbServices\bin\Debug\NCrawler.mdf
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.DbServices\bin\Debug\NCrawler_log.ldf
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.DbServices\bin\Debug\NCrawler.DbServices.dll.config
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.DbServices\bin\Debug\NCrawler.DbServices.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.DbServices\bin\Debug\NCrawler.DbServices.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.DbServices\bin\Debug\Autofac.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.DbServices\bin\Debug\NCrawler.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.DbServices\bin\Debug\NCrawler.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.DbServices\obj\Debug\NCrawler.DbServices.csprojResolveAssemblyReference.cache
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.DbServices\obj\Debug\NCrawler.DbServices.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.DbServices\obj\Debug\NCrawler.DbServices.pdb

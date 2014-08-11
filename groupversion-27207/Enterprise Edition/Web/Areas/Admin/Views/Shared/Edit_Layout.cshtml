@@ -1,0 +1,10 @@
+﻿<div>
+    @Html.Partial("Button_Back_List")
+</div>
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "Main" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    @RenderBody()
+    @Html.Partial("Button_Submit")
+}

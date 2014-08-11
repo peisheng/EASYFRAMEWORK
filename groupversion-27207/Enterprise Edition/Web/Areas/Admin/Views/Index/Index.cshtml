@@ -1,0 +1,97 @@
+﻿@using System.Configuration
+@using Models.SysModels
+@model IEnumerable<SysController>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = ConfigurationManager.AppSettings["SystemName"] + " 管理中心";
+}
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
+        <p ><strong> @Html.ActionLink(ConfigurationManager.AppSettings["SystemName"], "Index", null, new { @class = "navbar-brand" })</strong></p>   
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right">
+            <li>
+                <img id="page-loading" src="~/Content/Loading/0504313.gif" style="display: none; margin: 16px;" /></li>
+            <li class="active">@Ajax.ActionLink((string)ViewBag.UserName, "Edit", "Index", new AjaxOptions { UpdateTargetId = "Main" })</li>
+            <li>@Ajax.ActionLink(lang.Desktop, "Index", "Desktop", new AjaxOptions() { UpdateTargetId = "Main" })</li>
+            <li>@Ajax.ActionLink(lang.Help, "Index", "help", new AjaxOptions() { UpdateTargetId = "Main" })</li>
+            <li>@Html.ActionLink(lang.Exit, "LogOff", "Index", new { area = "Login" }, null)</li>
+        </ul>
+    </div>
+</div>
+
+<div style="margin-top: 65px;">
+    <div class="col-md-2">
+        <div class="panel-group" id="accordion">
+            @foreach (var item in Model.Where(a => a.SystemId.Length == 3))
+            {
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#@item.Id" style="display:block">@item.ControllerDisplayName</a>
+                        </h4>
+                    </div>
+                    <div id="@item.Id" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked">
+                                @foreach (var item1 in Model.Where(a => a.SystemId.Length > 3 && a.SystemId.StartsWith(item.SystemId)))
+                                {
+                                    <li>
+                                        @(item1.TargetBlank ? Html.ActionLink(item1.ControllerDisplayName, item1.ActionName, item1.ControllerName, new { id = item1.Parameter }, new { target = "_blank" }) : Ajax.ActionLink(item1.ControllerDisplayName, item1.ActionName, item1.ControllerName, new { id = item1.Parameter }, new AjaxOptions { UpdateTargetId = "Main" }))
+                                    </li> 
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div id="Main" class="col-md-10">
+        @Html.Action("Index", "Desktop")
+    </div>
+</div>
+
+<script>
+    $(document).ajaxStart(function () {
+        $("#page-loading").show();
+    });
+    $(document).ajaxStop(function () {
+        $("#page-loading").hide();
+    });
+    $(document).ajaxError(function (event, request) {
+        if (request.responseText == "") {
+            $("#errormsg .modal-body").html("您的网络无法访问到服务器，请稍后再试！");
+        }
+        else {
+            $("#errormsg .modal-body").html(request.responseText);
+        }
+        $("#errormsg").modal("toggle");
+    });
+</script>
+
+<div id="errormsg" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">系统信息</h4>
+            </div>
+            <div class="modal-body">
+                <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

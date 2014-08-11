@@ -1,0 +1,7 @@
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IsolatedStorageServices\bin\Debug\NCrawler.IsolatedStorageServices.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IsolatedStorageServices\bin\Debug\NCrawler.IsolatedStorageServices.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IsolatedStorageServices\bin\Debug\Autofac.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IsolatedStorageServices\bin\Debug\NCrawler.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IsolatedStorageServices\bin\Debug\NCrawler.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IsolatedStorageServices\obj\Debug\NCrawler.IsolatedStorageServices.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IsolatedStorageServices\obj\Debug\NCrawler.IsolatedStorageServices.pdb

@@ -1,0 +1,165 @@
+﻿<error errorId="268399ab-a932-45d6-99d2-afef7b6115e6" application="/" host="PC201308030326" type="System.InvalidOperationException" message="Invalid operation. The connection is closed." source="System.Data" detail="System.Data.EntityException: The underlying provider failed on Open. ---&gt; System.InvalidOperationException: Invalid operation. The connection is closed.&#xD;&#xA;   at System.Data.SqlClient.SqlConnection.GetOpenConnection()&#xD;&#xA;   at System.Data.SqlClient.SqlConnection.get_Parser()&#xD;&#xA;   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)&#xD;&#xA;   at System.Data.SqlClient.SqlConnection.Open()&#xD;&#xA;   at EFProviderWrapperToolkit.DBConnectionWrapper.Open() in d:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\DbConnectionWrapper.cs:line 196&#xD;&#xA;   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean&amp; closeStoreConnectionOnFailure)&#xD;&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;   at System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean&amp; closeStoreConnectionOnFailure)&#xD;&#xA;   at System.Data.EntityClient.EntityConnection.Open()&#xD;&#xA;   at System.Data.Objects.ObjectContext.EnsureConnection()&#xD;&#xA;   at System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)&#xD;&#xA;   at System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable&lt;T&gt;.GetEnumerator()&#xD;&#xA;   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)&#xD;&#xA;   at System.Data.Objects.ELinq.ObjectQueryProvider.&lt;GetElementFunction&gt;b__1[TResult](IEnumerable`1 sequence)&#xD;&#xA;   at System.Data.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)&#xD;&#xA;   at System.Data.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)&#xD;&#xA;   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)&#xD;&#xA;   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)&#xD;&#xA;   at Web.Helper.UserAuthorizeAttribute.AuthorizeCore(HttpContextBase httpContext) in d:\搜狗高速下载\groupversion-27207\Enterprise Edition\Web\Helper\UserAuthorizeFilterAttribute.cs:line 57&#xD;&#xA;   at System.Web.Mvc.AuthorizeAttribute.OnAuthorization(AuthorizationContext filterContext)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass25.&lt;BeginInvokeAction&gt;b__1e(AsyncCallback asyncCallback, Object asyncState)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeAction(ControllerContext controllerContext, String actionName, AsyncCallback callback, Object state)&#xD;&#xA;   at System.Web.Mvc.Controller.&lt;&gt;c__DisplayClass1d.&lt;BeginExecuteCore&gt;b__17(AsyncCallback asyncCallback, Object asyncState)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)&#xD;&#xA;   at System.Web.Mvc.Controller.BeginExecuteCore(AsyncCallback callback, Object state)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)&#xD;&#xA;   at System.Web.Mvc.Controller.BeginExecute(RequestContext requestContext, AsyncCallback callback, Object state)&#xD;&#xA;   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.BeginExecute(RequestContext requestContext, AsyncCallback callback, Object state)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.&lt;&gt;c__DisplayClass8.&lt;BeginProcessRequest&gt;b__2(AsyncCallback asyncCallback, Object asyncState)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.Begin(AsyncCallback callback, Object state, Int32 timeout)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="f15600d7-b7d6-4ff1-947d-df149fe0359f,01f1cf36-d7fb-4b48-9746-4a228c8aab13" time="2014-05-26T12:43:28.0881978Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:Keep-Alive&#xD;&#xA;HTTP_ACCEPT:text/css&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:zh-CN&#xD;&#xA;HTTP_COOKIE:.ASPXAUTH=4729AECADDFE5DA098BC2F0A788727A71C0ED814585673A0A1782599BA40055F6579CDC077F6A6AB39DBB697412B10B7265161ECB9B7ACA57DF99E171768BB8949F1942E189B054E5038B70D6547E2E28360A6E6FF3EB8523FC1BB9B1B5D6B91CAD44875CCEC1DD0F468461F68B8833F0EE48FF1AAEC7D7701BCF2F96BC7EEC392E329B21D84E2AA702DFC468E0BED31CEE8A4777D1C7BB81E71B37BEE6D57579812AD5ACD9E64D18426CAEA1F9C62CC9523FFBBEB20C6A2F0EFA200BAD2E9BA67D69323D71592197ABAE18197122E92FCFD4847EF176F5B948AC25ADB466A9AEEBFD8E5C0DF6E2553425DFEE2DB9F9634480F2BF758D96285BEE3D6CE6E2CBF428BABA5CFE6D5DC409C0EAC98C9EC3A; __RequestVerificationToken=iUa_v-QRU0DZjCbrogFvtFL9P4pT_WTuBmH5xLO0CmPP-W7rhJJ32etySEyXp9Xx_L5hIVj0LjStAHmKUOzPdBPFnES-oW-YKossBf82RO2Nng0v726PjFL3BHv0TwB0NskiDvGVlsfsHdFky-djzg2&#xD;&#xA;HTTP_HOST:localhost:42116&#xD;&#xA;HTTP_REFERER:http://localhost:42116/Admin/Elmah&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: Keep-Alive&#xD;&#xA;Accept: text/css&#xD;&#xA;Accept-Encoding: gzip, deflate&#xD;&#xA;Accept-Language: zh-CN&#xD;&#xA;Cookie: .ASPXAUTH=4729AECADDFE5DA098BC2F0A788727A71C0ED814585673A0A1782599BA40055F6579CDC077F6A6AB39DBB697412B10B7265161ECB9B7ACA57DF99E171768BB8949F1942E189B054E5038B70D6547E2E28360A6E6FF3EB8523FC1BB9B1B5D6B91CAD44875CCEC1DD0F468461F68B8833F0EE48FF1AAEC7D7701BCF2F96BC7EEC392E329B21D84E2AA702DFC468E0BED31CEE8A4777D1C7BB81E71B37BEE6D57579812AD5ACD9E64D18426CAEA1F9C62CC9523FFBBEB20C6A2F0EFA200BAD2E9BA67D69323D71592197ABAE18197122E92FCFD4847EF176F5B948AC25ADB466A9AEEBFD8E5C0DF6E2553425DFEE2DB9F9634480F2BF758D96285BEE3D6CE6E2CBF428BABA5CFE6D5DC409C0EAC98C9EC3A; __RequestVerificationToken=iUa_v-QRU0DZjCbrogFvtFL9P4pT_WTuBmH5xLO0CmPP-W7rhJJ32etySEyXp9Xx_L5hIVj0LjStAHmKUOzPdBPFnES-oW-YKossBf82RO2Nng0v726PjFL3BHv0TwB0NskiDvGVlsfsHdFky-djzg2&#xD;&#xA;Host: localhost:42116&#xD;&#xA;Referer: http://localhost:42116/Admin/Elmah&#xD;&#xA;User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="D:\搜狗高速下载\groupversion-27207\Enterprise Edition\Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="Forms" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="f15600d7-b7d6-4ff1-947d-df149fe0359f,01f1cf36-d7fb-4b48-9746-4a228c8aab13" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="PC201308030326\Administrator" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="f15600d7-b7d6-4ff1-947d-df149fe0359f,01f1cf36-d7fb-4b48-9746-4a228c8aab13" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="" />
+    </item>
+    <item name="HTTPS">
+      <value string="" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Admin/Elmah/stylesheet" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="D:\搜狗高速下载\groupversion-27207\Enterprise Edition\Web\Admin\Elmah\stylesheet" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Admin/Elmah/stylesheet" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="42116" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="" />
+    </item>
+    <item name="URL">
+      <value string="/Admin/Elmah/stylesheet" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="Keep-Alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/css" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="zh-CN" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string=".ASPXAUTH=4729AECADDFE5DA098BC2F0A788727A71C0ED814585673A0A1782599BA40055F6579CDC077F6A6AB39DBB697412B10B7265161ECB9B7ACA57DF99E171768BB8949F1942E189B054E5038B70D6547E2E28360A6E6FF3EB8523FC1BB9B1B5D6B91CAD44875CCEC1DD0F468461F68B8833F0EE48FF1AAEC7D7701BCF2F96BC7EEC392E329B21D84E2AA702DFC468E0BED31CEE8A4777D1C7BB81E71B37BEE6D57579812AD5ACD9E64D18426CAEA1F9C62CC9523FFBBEB20C6A2F0EFA200BAD2E9BA67D69323D71592197ABAE18197122E92FCFD4847EF176F5B948AC25ADB466A9AEEBFD8E5C0DF6E2553425DFEE2DB9F9634480F2BF758D96285BEE3D6CE6E2CBF428BABA5CFE6D5DC409C0EAC98C9EC3A; __RequestVerificationToken=iUa_v-QRU0DZjCbrogFvtFL9P4pT_WTuBmH5xLO0CmPP-W7rhJJ32etySEyXp9Xx_L5hIVj0LjStAHmKUOzPdBPFnES-oW-YKossBf82RO2Nng0v726PjFL3BHv0TwB0NskiDvGVlsfsHdFky-djzg2" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:42116" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:42116/Admin/Elmah" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name=".ASPXAUTH">
+      <value string="4729AECADDFE5DA098BC2F0A788727A71C0ED814585673A0A1782599BA40055F6579CDC077F6A6AB39DBB697412B10B7265161ECB9B7ACA57DF99E171768BB8949F1942E189B054E5038B70D6547E2E28360A6E6FF3EB8523FC1BB9B1B5D6B91CAD44875CCEC1DD0F468461F68B8833F0EE48FF1AAEC7D7701BCF2F96BC7EEC392E329B21D84E2AA702DFC468E0BED31CEE8A4777D1C7BB81E71B37BEE6D57579812AD5ACD9E64D18426CAEA1F9C62CC9523FFBBEB20C6A2F0EFA200BAD2E9BA67D69323D71592197ABAE18197122E92FCFD4847EF176F5B948AC25ADB466A9AEEBFD8E5C0DF6E2553425DFEE2DB9F9634480F2BF758D96285BEE3D6CE6E2CBF428BABA5CFE6D5DC409C0EAC98C9EC3A" />
+    </item>
+    <item name="__RequestVerificationToken">
+      <value string="iUa_v-QRU0DZjCbrogFvtFL9P4pT_WTuBmH5xLO0CmPP-W7rhJJ32etySEyXp9Xx_L5hIVj0LjStAHmKUOzPdBPFnES-oW-YKossBf82RO2Nng0v726PjFL3BHv0TwB0NskiDvGVlsfsHdFky-djzg2" />
+    </item>
+  </cookies>
+</error>

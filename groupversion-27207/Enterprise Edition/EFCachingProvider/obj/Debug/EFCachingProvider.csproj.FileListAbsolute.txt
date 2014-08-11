@@ -1,0 +1,9 @@
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFCachingProvider.dll
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFCachingProvider.pdb
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFCachingProvider.dll.CodeAnalysisLog.xml
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFCachingProvider.dll.lastcodeanalysissucceeded
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFProviderWrapperToolkit.dll
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFProviderWrapperToolkit.pdb
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFCachingProvider\obj\Debug\EFCachingProvider.csprojResolveAssemblyReference.cache
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFCachingProvider\obj\Debug\EFCachingProvider.dll
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFCachingProvider\obj\Debug\EFCachingProvider.pdb

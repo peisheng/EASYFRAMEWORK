@@ -1,0 +1,94 @@
+﻿@using Models
+@using Models.SysModels
+@model SysRole
+@{
+    Layout = "~/Areas/Platform/Views/Shared/Edit_Layout.cshtml";
+}
+
+<div style="float: left">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.RoleName)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.RoleName)
+        @Html.ValidationMessageFor(model => model.RoleName)
+    </div>
+</div>
+
+<div style="float: left">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.SystemId)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.SystemId)
+        @Html.ValidationMessageFor(model => model.SystemId)
+    </div>
+</div>
+
+
+<div style="float: left">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.CreatedDate)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.CreatedDate)
+        @Html.ValidationMessageFor(model => model.CreatedDate)
+    </div>
+</div>
+
+
+<div style="clear: both">
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Remark)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Remark)
+        @Html.ValidationMessageFor(model => model.Remark)
+    </div>
+</div>
+
+
+<table>
+    <thead>
+        <tr>
+            <th class="ui-state-default">
+                @lang.Area
+            </th>
+            <th class="ui-state-default">
+                @lang.Module
+            </th>
+            <th class="ui-state-default">
+                @lang.Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (SysController sysController in ViewBag.SysControllers)
+        {
+            <tr>
+                <td>
+                    @sysController.SysArea.AreaDisplayName
+                </td>
+                <td>
+                    @(">".PadLeft(sysController.SystemId.Length - 3, '　'))
+
+                    @sysController.ControllerDisplayName
+                </td>
+                <td>
+                    @foreach (var sysControllerSysActions in sysController.SysControllerSysActions.Where(a=>!a.Deleted).OrderBy(a => a.SysAction.SystemId))
+                    {
+                        <input id="@sysControllerSysActions.Id" name="SysControllerSysActionsId" type="checkbox" value="@sysControllerSysActions.Id"  
+                        
+                            @if (Model.SysRoleSysControllerSysActions != null && Model.SysRoleSysControllerSysActions.Any(a => a.SysControllerSysActionId.Equals(sysControllerSysActions.Id)))
+                            {
+                                @("checked")
+                            }
+                        
+                            />
+                        <label for="@sysControllerSysActions.Id">@sysControllerSysActions.SysAction.ActionDisplayName</label>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

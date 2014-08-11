@@ -1,0 +1,12 @@
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.HtmlProcessor\bin\Debug\NCrawler.HtmlProcessor.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.HtmlProcessor\bin\Debug\NCrawler.HtmlProcessor.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.HtmlProcessor\bin\Debug\HtmlAgilityPack.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.HtmlProcessor\bin\Debug\NCrawler.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.HtmlProcessor\bin\Debug\Autofac.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.HtmlProcessor\bin\Debug\NCrawler.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.HtmlProcessor\bin\Debug\HtmlAgilityPack.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.HtmlProcessor\obj\Debug\NCrawler.HtmlProcessor.csprojResolveAssemblyReference.cache
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.HtmlProcessor\obj\Debug\NCrawler.HtmlProcessor.Properties.Resources.resources
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.HtmlProcessor\obj\Debug\NCrawler.HtmlProcessor.csproj.GenerateResource.Cache
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.HtmlProcessor\obj\Debug\NCrawler.HtmlProcessor.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.HtmlProcessor\obj\Debug\NCrawler.HtmlProcessor.pdb

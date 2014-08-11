@@ -1,0 +1,10 @@
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IFilterProcessor\bin\Debug\NCrawler.IFilterProcessor.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IFilterProcessor\bin\Debug\NCrawler.IFilterProcessor.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IFilterProcessor\bin\Debug\EPocalipse.IFilter.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IFilterProcessor\bin\Debug\NCrawler.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IFilterProcessor\bin\Debug\Autofac.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IFilterProcessor\bin\Debug\NCrawler.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IFilterProcessor\bin\Debug\EPocalipse.IFilter.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IFilterProcessor\obj\Debug\NCrawler.IFilterProcessor.csprojResolveAssemblyReference.cache
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IFilterProcessor\obj\Debug\NCrawler.IFilterProcessor.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.IFilterProcessor\obj\Debug\NCrawler.IFilterProcessor.pdb

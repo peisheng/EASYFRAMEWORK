@@ -1,0 +1,6 @@
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\LanguagePack\bin\Debug\LanguagePack.dll
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\LanguagePack\bin\Debug\LanguagePack.pdb
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.lang.resources
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.csproj.GenerateResource.Cache
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.dll
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.pdb

@@ -66,6 +66,7 @@ namespace NCrawler.HtmlProcessor
 					OptionFixNestedTags = true,
 					OptionReadEncoding = true
 				};
+            
 			using (Stream reader = propertyBag.GetResponse())
 			{
 				Encoding documentEncoding = htmlDoc.DetectEncoding(reader);

@@ -1,0 +1,162 @@
+﻿<error errorId="cbf480d3-ea88-4e96-8dac-0f3f8b286d64" application="/" host="PC201308030326" type="System.Web.HttpException" message="A public action method 'Index' was not found on controller 'BootstrapMvcSample.Controllers.ExampleLayoutsController'." source="System.Web.Mvc" detail="System.Web.HttpException (0x80004005): A public action method 'Index' was not found on controller 'BootstrapMvcSample.Controllers.ExampleLayoutsController'.&#xD;&#xA;   at System.Web.Mvc.Controller.HandleUnknownAction(String actionName)&#xD;&#xA;   at System.Web.Mvc.Controller.&lt;&gt;c__DisplayClass1d.&lt;BeginExecuteCore&gt;b__18(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.&lt;&gt;c__DisplayClass4.&lt;MakeVoidDelegate&gt;b__3(IAsyncResult ar)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()&#xD;&#xA;   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.&lt;&gt;c__DisplayClass4.&lt;MakeVoidDelegate&gt;b__3(IAsyncResult ar)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()&#xD;&#xA;   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.&lt;&gt;c__DisplayClass8.&lt;BeginProcessRequest&gt;b__3(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.&lt;&gt;c__DisplayClass4.&lt;MakeVoidDelegate&gt;b__3(IAsyncResult ar)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()&#xD;&#xA;   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="f15600d7-b7d6-4ff1-947d-df149fe0359f,01f1cf36-d7fb-4b48-9746-4a228c8aab13" time="2014-05-27T09:17:46.5969036Z" statusCode="404">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:max-age=0&#xD;&#xA;HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip,deflate,sdch&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.8&#xD;&#xA;HTTP_COOKIE:.ASPXAUTH=8972484B158B5AFFB46497BDF8BB89264B3111FF8554DE9DB4103407A4B002147DD93352A784A52E01A1A13B76D10597CD9DDF878766AFA82BEFF6FBD0666A9524BD0A5DBDCA83A1A704CCE17A5651F4ADD1360674C6D46294E82AF4621AF4A85042C54B9C09D379422C4BC430119008A56A6920CC6C5DD8970943A80666CFB0BB57912BDE8756DA20082503D6AA4E0279FC995A2D2FEC5CED4A9017B803F240791F268EEB4F034D2E77393F68F3F80672D75FB484BDC41942E7C5FC416DB07438EA0AFD129F113388243FDB1CD11E76AD6A0E7303EF526080DE472B6F727C1A12C1E1B9EDD340055E0A7D91B975208FF2B3273D2EAA1B021395524F0221D34D22C4F4F98DE0001C435B7B6A8B564FA7&#xD;&#xA;HTTP_HOST:localhost:42116&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: max-age=0&#xD;&#xA;Connection: keep-alive&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip,deflate,sdch&#xD;&#xA;Accept-Language: zh-CN,zh;q=0.8&#xD;&#xA;Cookie: .ASPXAUTH=8972484B158B5AFFB46497BDF8BB89264B3111FF8554DE9DB4103407A4B002147DD93352A784A52E01A1A13B76D10597CD9DDF878766AFA82BEFF6FBD0666A9524BD0A5DBDCA83A1A704CCE17A5651F4ADD1360674C6D46294E82AF4621AF4A85042C54B9C09D379422C4BC430119008A56A6920CC6C5DD8970943A80666CFB0BB57912BDE8756DA20082503D6AA4E0279FC995A2D2FEC5CED4A9017B803F240791F268EEB4F034D2E77393F68F3F80672D75FB484BDC41942E7C5FC416DB07438EA0AFD129F113388243FDB1CD11E76AD6A0E7303EF526080DE472B6F727C1A12C1E1B9EDD340055E0A7D91B975208FF2B3273D2EAA1B021395524F0221D34D22C4F4F98DE0001C435B7B6A8B564FA7&#xD;&#xA;Host: localhost:42116&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="D:\搜狗高速下载\groupversion-27207\Enterprise Edition\Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="Forms" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="f15600d7-b7d6-4ff1-947d-df149fe0359f,01f1cf36-d7fb-4b48-9746-4a228c8aab13" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="PC201308030326\Administrator" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="f15600d7-b7d6-4ff1-947d-df149fe0359f,01f1cf36-d7fb-4b48-9746-4a228c8aab13" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="" />
+    </item>
+    <item name="HTTPS">
+      <value string="" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/ExampleLayouts/" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="D:\搜狗高速下载\groupversion-27207\Enterprise Edition\Web\ExampleLayouts" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/ExampleLayouts/" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="42116" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="" />
+    </item>
+    <item name="URL">
+      <value string="/ExampleLayouts/" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="max-age=0" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip,deflate,sdch" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="zh-CN,zh;q=0.8" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string=".ASPXAUTH=8972484B158B5AFFB46497BDF8BB89264B3111FF8554DE9DB4103407A4B002147DD93352A784A52E01A1A13B76D10597CD9DDF878766AFA82BEFF6FBD0666A9524BD0A5DBDCA83A1A704CCE17A5651F4ADD1360674C6D46294E82AF4621AF4A85042C54B9C09D379422C4BC430119008A56A6920CC6C5DD8970943A80666CFB0BB57912BDE8756DA20082503D6AA4E0279FC995A2D2FEC5CED4A9017B803F240791F268EEB4F034D2E77393F68F3F80672D75FB484BDC41942E7C5FC416DB07438EA0AFD129F113388243FDB1CD11E76AD6A0E7303EF526080DE472B6F727C1A12C1E1B9EDD340055E0A7D91B975208FF2B3273D2EAA1B021395524F0221D34D22C4F4F98DE0001C435B7B6A8B564FA7" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:42116" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name=".ASPXAUTH">
+      <value string="8972484B158B5AFFB46497BDF8BB89264B3111FF8554DE9DB4103407A4B002147DD93352A784A52E01A1A13B76D10597CD9DDF878766AFA82BEFF6FBD0666A9524BD0A5DBDCA83A1A704CCE17A5651F4ADD1360674C6D46294E82AF4621AF4A85042C54B9C09D379422C4BC430119008A56A6920CC6C5DD8970943A80666CFB0BB57912BDE8756DA20082503D6AA4E0279FC995A2D2FEC5CED4A9017B803F240791F268EEB4F034D2E77393F68F3F80672D75FB484BDC41942E7C5FC416DB07438EA0AFD129F113388243FDB1CD11E76AD6A0E7303EF526080DE472B6F727C1A12C1E1B9EDD340055E0A7D91B975208FF2B3273D2EAA1B021395524F0221D34D22C4F4F98DE0001C435B7B6A8B564FA7" />
+    </item>
+  </cookies>
+</error>

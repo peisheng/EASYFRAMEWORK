@@ -1,0 +1,8 @@
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.LanguageDetection.Google\bin\Debug\NCrawler.LanguageDetection.Google.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.LanguageDetection.Google\bin\Debug\NCrawler.LanguageDetection.Google.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.LanguageDetection.Google\bin\Debug\Autofac.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.LanguageDetection.Google\bin\Debug\NCrawler.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.LanguageDetection.Google\bin\Debug\NCrawler.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.LanguageDetection.Google\obj\Debug\NCrawler.LanguageDetection.Google.csprojResolveAssemblyReference.cache
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.LanguageDetection.Google\obj\Debug\NCrawler.LanguageDetection.Google.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.LanguageDetection.Google\obj\Debug\NCrawler.LanguageDetection.Google.pdb

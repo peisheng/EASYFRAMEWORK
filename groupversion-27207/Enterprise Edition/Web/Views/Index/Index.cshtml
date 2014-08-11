@@ -1,0 +1,15 @@
+﻿@using System.Configuration
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "通用平台";
+}
+<div style="padding: 200px; text-align: center">
+    @Html.ActionLink("管理", "Index", "Index", new { area = "Admin" }, null)
+    @(User.Identity.IsAuthenticated ? Html.ActionLink("退出", "LogOff", "Index", new { area = "Login" }, null) : Html.ActionLink("用户登录", "Index", "Index", new { area = "Login" }, null))
+</div>
+<div style="text-align: center">
+    @ViewBag.UserCount
+</div>
+<div style="text-align: center">
+    @ConfigurationManager.AppSettings["Copyright"]
+</div>

@@ -1,0 +1,7 @@
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\bin\Debug\EFProviderWrapperToolkit.dll
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\bin\Debug\EFProviderWrapperToolkit.pdb
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\bin\Debug\EFProviderWrapperToolkit.dll.CodeAnalysisLog.xml
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\bin\Debug\EFProviderWrapperToolkit.dll.lastcodeanalysissucceeded
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\obj\Debug\EFProviderWrapperToolkit.dll
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\obj\Debug\EFProviderWrapperToolkit.pdb
+D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\obj\Debug\EFProviderWrapperToolkit.csprojResolveAssemblyReference.cache

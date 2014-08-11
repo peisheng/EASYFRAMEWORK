@@ -1,0 +1,9 @@
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.iTextSharpPdfProcessor\bin\Debug\NCrawler.iTextSharpPdfProcessor.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.iTextSharpPdfProcessor\bin\Debug\NCrawler.iTextSharpPdfProcessor.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.iTextSharpPdfProcessor\bin\Debug\itextsharp.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.iTextSharpPdfProcessor\bin\Debug\NCrawler.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.iTextSharpPdfProcessor\bin\Debug\Autofac.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.iTextSharpPdfProcessor\bin\Debug\NCrawler.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.iTextSharpPdfProcessor\obj\Debug\NCrawler.iTextSharpPdfProcessor.csprojResolveAssemblyReference.cache
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.iTextSharpPdfProcessor\obj\Debug\NCrawler.iTextSharpPdfProcessor.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.iTextSharpPdfProcessor\obj\Debug\NCrawler.iTextSharpPdfProcessor.pdb

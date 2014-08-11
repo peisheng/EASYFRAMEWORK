@@ -1,0 +1,9 @@
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.EsentServices\bin\Debug\NCrawler.EsentServices.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.EsentServices\bin\Debug\NCrawler.EsentServices.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.EsentServices\bin\Debug\Autofac.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.EsentServices\bin\Debug\Esent.Interop.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.EsentServices\bin\Debug\NCrawler.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.EsentServices\bin\Debug\NCrawler.pdb
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.EsentServices\obj\Debug\NCrawler.EsentServices.csprojResolveAssemblyReference.cache
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.EsentServices\obj\Debug\NCrawler.EsentServices.dll
+H:\git\EasyFramework\ncrawler-58912\Net 4.0\NCrawler.EsentServices\obj\Debug\NCrawler.EsentServices.pdb

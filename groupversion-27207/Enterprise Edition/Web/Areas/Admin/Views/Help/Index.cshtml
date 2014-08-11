@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Models.SysModels.SysHelp>
+
+<div style="text-align: center; padding: 10px;">
+    @using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "Main" }))
+    {
+        @Html.TextBox("keyword", Request["keyword"], new { size = 50 })
+        
+        @Html.JQueryUI().Button(lang.Search, ButtonElement.Button, ButtonType.Submit, null)
+    }
+</div>
+
+<ul style="list-style-type: decimal-leading-zero">
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+        <li>
+            <h3>
+                @Html.DisplayFor(modelItem => item.Title) </h3>
+            <div>
+                @Html.DisplayFor(modelItem => item.Content)
+            </div>
+            @Html.DisplayFor(modelItem => item.SysHelpImagesUrl)
+        </li>
+        }
+    }
+</ul>
