@@ -2,11 +2,11 @@
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="11.0">
  <Targets>
-  <Target Name="D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFCachingProvider.dll">
+  <Target Name="H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFCachingProvider.dll">
    <Modules>
     <Module Name="efcachingprovider.dll">
      <Messages>
-      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2014-06-05 02:23:19Z" FixCategory="NonBreaking">
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2014-08-12 15:07:22Z" FixCategory="NonBreaking">
        <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'EFCachingProvider.dll' with a strong name key.</Issue>
       </Message>
      </Messages>

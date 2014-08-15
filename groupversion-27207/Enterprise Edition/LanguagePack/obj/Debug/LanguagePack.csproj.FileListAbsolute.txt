@@ -4,3 +4,9 @@ D:\搜狗高速下载\groupversion-27207\Enterprise Edition\LanguagePack\obj\Deb
 D:\搜狗高速下载\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.csproj.GenerateResource.Cache
 D:\搜狗高速下载\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.dll
 D:\搜狗高速下载\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.pdb
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\bin\Debug\LanguagePack.dll
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\bin\Debug\LanguagePack.pdb
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.lang.resources
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.csproj.GenerateResource.Cache
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.dll
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.pdb

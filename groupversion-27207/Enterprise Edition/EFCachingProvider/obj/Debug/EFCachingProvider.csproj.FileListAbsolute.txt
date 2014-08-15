@@ -7,3 +7,12 @@ D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFCachingProvider\bi
 D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFCachingProvider\obj\Debug\EFCachingProvider.csprojResolveAssemblyReference.cache
 D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFCachingProvider\obj\Debug\EFCachingProvider.dll
 D:\搜狗高速下载\groupversion-27207\Enterprise Edition\EFCachingProvider\obj\Debug\EFCachingProvider.pdb
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFCachingProvider.dll
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFCachingProvider.pdb
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFCachingProvider.dll.CodeAnalysisLog.xml
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFCachingProvider.dll.lastcodeanalysissucceeded
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFProviderWrapperToolkit.dll
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFProviderWrapperToolkit.pdb
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\obj\Debug\EFCachingProvider.csprojResolveAssemblyReference.cache
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\obj\Debug\EFCachingProvider.dll
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\obj\Debug\EFCachingProvider.pdb

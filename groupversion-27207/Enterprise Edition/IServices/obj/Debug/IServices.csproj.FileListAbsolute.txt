@@ -5,3 +5,10 @@ D:\搜狗高速下载\groupversion-27207\Enterprise Edition\IServices\bin\Debug\
 D:\搜狗高速下载\groupversion-27207\Enterprise Edition\IServices\bin\Debug\Models.pdb
 D:\搜狗高速下载\groupversion-27207\Enterprise Edition\IServices\obj\Debug\IServices.dll
 D:\搜狗高速下载\groupversion-27207\Enterprise Edition\IServices\obj\Debug\IServices.pdb
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\bin\Debug\IServices.dll
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\bin\Debug\IServices.pdb
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\bin\Debug\Models.dll
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\bin\Debug\Models.pdb
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\obj\Debug\IServices.csprojResolveAssemblyReference.cache
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\obj\Debug\IServices.dll
+H:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\obj\Debug\IServices.pdb
