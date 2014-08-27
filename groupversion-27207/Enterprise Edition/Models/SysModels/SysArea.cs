@@ -5,6 +5,7 @@ namespace Models.SysModels
 {
     public class SysArea : DbSetBase
     {
+       
         public SysArea()
         {
             SystemId = "000";

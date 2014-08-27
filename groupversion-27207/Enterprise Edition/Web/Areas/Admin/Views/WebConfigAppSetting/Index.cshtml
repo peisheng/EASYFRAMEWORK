@@ -20,7 +20,7 @@
             </td>
             <td>
                 <div style="text-align: center">
-                    @Ajax.ActionLink(lang.Edit, "Edit", new { id = item}, new AjaxOptions { UpdateTargetId = "Main", HttpMethod = "Get" })
+                    @Ajax.ActionLink(lang.Edit, "Edit", new { id = item.Replace(":","-")}, new AjaxOptions { UpdateTargetId = "Main", HttpMethod = "Get" })
                 </div>
             </td>
         </tr>

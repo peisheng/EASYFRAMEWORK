@@ -7,10 +7,11 @@ using EFCachingProvider;
 using EFCachingProvider.Caching;
 using Services.SysServices;
 using System.Data.Entity;
+using Models;
 
 namespace Services
 {
-    public class ApplicationDb : SysApplicationDb
+    public class ApplicationDb :DataCenterDB
     {
         //指定连接字符串
         public ApplicationDb()

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Eastupright.EnterpriseLibrary.Web</name>
+    </assembly>
+    <members>
+        <member name="T:Eastupright.EnterpriseLibrary.Web.DownloadUtility">
+            <summary>
+            下载
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Web.DownloadUtility.DownloadWithWriteFile(System.String,System.Text.Encoding)">
+            <summary>
+            文件下载（WriteFile实现）
+            </summary>
+            <param name="path">Web服务器上待下载文件的物理路径</param>
+            <param name="encoding">输出流的HTTP字符集</param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Web.DownloadUtility.DownloadWithWriteFileBlock(System.String,System.Text.Encoding)">
+            <summary>
+            文件下载（WriteFile分块实现）
+            </summary>
+            <param name="path">Web服务器上待下载文件的物理路径</param>
+            <param name="encoding">输出流的HTTP字符集</param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Web.DownloadUtility.DownloadWithBinaryWrite(System.String,System.Text.Encoding)">
+            <summary>
+            文件下载（BinaryWrite实现）
+            </summary>
+            <param name="path">Web服务器上待下载文件的物理路径</param>
+            <param name="encoding">输出流的HTTP字符集</param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Web.DownloadUtility.DownloadWithTransmitFile(System.String,System.Text.Encoding)">
+            <summary>
+            文件下载（TransmitFile实现下载）
+            微软为Response对象提供了一个新的方法TransmitFile，
+            来解决使用Response.BinaryWrite下载超过400MB的问件时导致Aspnet_wp.exe进程回收而无法成功下载的问题
+            </summary>
+            <param name="path">Web服务器上待下载文件的物理路径</param>
+            <param name="encoding">输出流的HTTP字符集</param>
+        </member>
+        <member name="T:Eastupright.EnterpriseLibrary.Web.WebUtility">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Web.WebUtility.ExistsSession(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="sessionName">Session名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Web.WebUtility.ExportFile(System.Web.UI.Page,System.Data.DataSet,System.String,System.String,System.String,System.String)">
+            <summary>
+            文件导出
+            </summary>
+            <param name="page">this.Page</param>
+            <param name="dataSet">数据集</param>
+            <param name="exportMode">
+            作为附件下载：attachment；
+            在线打开：online。
+            </param>
+            <param name="fileType">
+            文件类型：
+            application/ms-excel、
+            application/ms-word、
+            txt、
+            htm。
+            </param>
+            <param name="fileName">
+            文件名称(带后缀扩展名)扩展名必须和文件类型相符合 FileName.doc.xls.txt.htm
+            </param>
+            <param name="tableTitle">表格标题</param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Web.WebUtility.AddHtmlLink(System.Web.UI.Page,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            添加HtmlLink：样式表、脚本文件
+            </summary>
+            <param name="page"></param>
+            <param name="linkHref">链接文件</param>
+            <param name="linkAttributes">
+            ["type", "text/css"]
+            ["rel", "stylesheet"]        
+            </param>
+        </member>
+        <member name="M:Eastupright.EnterpriseLibrary.Web.WebUtility.AddHtmlMeta(System.Web.UI.Page,System.String,System.String)">
+            <summary>
+            添加HtmlMeta：关键字、描述等
+            </summary>
+            <param name="page"></param>
+            <param name="metaName">
+            [keywords]
+            [description]
+            </param>
+            <param name="metaContent"></param>
+        </member>
+    </members>
+</doc>

@@ -6,7 +6,7 @@
    <Modules>
     <Module Name="efproviderwrappertoolkit.dll">
      <Messages>
-      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2014-08-12 15:07:10Z" FixCategory="NonBreaking">
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2014-08-27 14:45:17Z" FixCategory="NonBreaking">
        <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'EFProviderWrapperToolkit.dll' with a strong name key.</Issue>
       </Message>
      </Messages>

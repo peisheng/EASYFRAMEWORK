@@ -1,0 +1,173 @@
+﻿<error errorId="6a31ebf8-9767-4120-a178-10d1e430aa3a" application="/" host="1121860" type="System.Web.HttpException" message="A public action method 'Create' was not found on controller 'Web.Areas.Admin.Controllers.SysLogController'." source="System.Web.Mvc" detail="System.Web.HttpException (0x80004005): A public action method 'Create' was not found on controller 'Web.Areas.Admin.Controllers.SysLogController'.&#xD;&#xA;   在 System.Web.Mvc.Controller.HandleUnknownAction(String actionName)&#xD;&#xA;   在 System.Web.Mvc.Controller.&lt;&gt;c__DisplayClass1d.&lt;BeginExecuteCore&gt;b__18(IAsyncResult asyncResult)&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncResultWrapper.&lt;&gt;c__DisplayClass4.&lt;MakeVoidDelegate&gt;b__3(IAsyncResult ar)&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()&#xD;&#xA;   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncResultWrapper.&lt;&gt;c__DisplayClass4.&lt;MakeVoidDelegate&gt;b__3(IAsyncResult ar)&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()&#xD;&#xA;   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   在 System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   在 System.Web.Mvc.MvcHandler.&lt;&gt;c__DisplayClass8.&lt;BeginProcessRequest&gt;b__3(IAsyncResult asyncResult)&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncResultWrapper.&lt;&gt;c__DisplayClass4.&lt;MakeVoidDelegate&gt;b__3(IAsyncResult ar)&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()&#xD;&#xA;   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)&#xD;&#xA;   在 System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)&#xD;&#xA;   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="92fad039-2278-4dc8-b716-a1b88a8a9e2d,d56006be-6e60-489f-a7b7-d6c2b9f30e80" time="2014-08-16T14:06:54.2584356Z" statusCode="404">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_ACCEPT:*/*&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip,deflate,sdch&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:zh-CN,zh;q=0.8&#xD;&#xA;HTTP_COOKIE:__RequestVerificationToken=HSztkyNORD7cFVOjGNjeOBYqUwjrvsxa7ftEHlxC4txtfpUyBSN_sJ-UxeM_Cp46jSNshmB1QTlV5s94AKxUXwQ_y0Yyjgpw-P5rz3z-Er_5JUCTj5do8qUwsssyHamCxNShbT8Sal5ixzrjyhU7pA2; .ASPXAUTH=1189588E369BB1F23DB8ECBD11B88845C6230AED83DCF1AAC9E10BFE3E203946A2341E15369F331B9603816D708D638513797E8068370F22CB3E96A52769A25ADE9515EDF423A7C017AF1400CC6BE66D5D3D1FF46833822764641D62E190FDA4FCA1D52BA8FFCBC806F9AA81AF539CE1096D820465E556CED77FB03904459F8CC12F96D9A27E5F420E0B0881FD2147E5B6C3E9622711645CAF709CE332ABB849D9D459477193E9A0B5CB52132C41B59245BCCBD2CB0A3FD970C1E70E17FD22564B92BA5782E3DC6E23EF89EA547F5DD9C0BE123AC89A23B934BCC6317648A76ADFC85B2FCD922246537F33DEC210BC83CDDB765C13E59451B1582991F5FDBD82554B3F7DAA098D765765803323818A4C&#xD;&#xA;HTTP_HOST:localhost:42116&#xD;&#xA;HTTP_REFERER:http://localhost:42116/Admin&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.36 SE 2.X MetaSr 1.0&#xD;&#xA;HTTP_X_REQUESTED_WITH:XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Accept: */*&#xD;&#xA;Accept-Encoding: gzip,deflate,sdch&#xD;&#xA;Accept-Language: zh-CN,zh;q=0.8&#xD;&#xA;Cookie: __RequestVerificationToken=HSztkyNORD7cFVOjGNjeOBYqUwjrvsxa7ftEHlxC4txtfpUyBSN_sJ-UxeM_Cp46jSNshmB1QTlV5s94AKxUXwQ_y0Yyjgpw-P5rz3z-Er_5JUCTj5do8qUwsssyHamCxNShbT8Sal5ixzrjyhU7pA2; .ASPXAUTH=1189588E369BB1F23DB8ECBD11B88845C6230AED83DCF1AAC9E10BFE3E203946A2341E15369F331B9603816D708D638513797E8068370F22CB3E96A52769A25ADE9515EDF423A7C017AF1400CC6BE66D5D3D1FF46833822764641D62E190FDA4FCA1D52BA8FFCBC806F9AA81AF539CE1096D820465E556CED77FB03904459F8CC12F96D9A27E5F420E0B0881FD2147E5B6C3E9622711645CAF709CE332ABB849D9D459477193E9A0B5CB52132C41B59245BCCBD2CB0A3FD970C1E70E17FD22564B92BA5782E3DC6E23EF89EA547F5DD9C0BE123AC89A23B934BCC6317648A76ADFC85B2FCD922246537F33DEC210BC83CDDB765C13E59451B1582991F5FDBD82554B3F7DAA098D765765803323818A4C&#xD;&#xA;Host: localhost:42116&#xD;&#xA;Referer: http://localhost:42116/Admin&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.36 SE 2.X MetaSr 1.0&#xD;&#xA;X-Requested-With: XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="Forms" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="92fad039-2278-4dc8-b716-a1b88a8a9e2d,d56006be-6e60-489f-a7b7-d6c2b9f30e80" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="1121860\Administrator" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="92fad039-2278-4dc8-b716-a1b88a8a9e2d,d56006be-6e60-489f-a7b7-d6c2b9f30e80" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="" />
+    </item>
+    <item name="HTTPS">
+      <value string="" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Admin/SysLog/Create" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Web\Admin\SysLog\Create" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="X-Requested-With=XMLHttpRequest" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Admin/SysLog/Create" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="42116" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="" />
+    </item>
+    <item name="URL">
+      <value string="/Admin/SysLog/Create" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="*/*" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip,deflate,sdch" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="zh-CN,zh;q=0.8" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__RequestVerificationToken=HSztkyNORD7cFVOjGNjeOBYqUwjrvsxa7ftEHlxC4txtfpUyBSN_sJ-UxeM_Cp46jSNshmB1QTlV5s94AKxUXwQ_y0Yyjgpw-P5rz3z-Er_5JUCTj5do8qUwsssyHamCxNShbT8Sal5ixzrjyhU7pA2; .ASPXAUTH=1189588E369BB1F23DB8ECBD11B88845C6230AED83DCF1AAC9E10BFE3E203946A2341E15369F331B9603816D708D638513797E8068370F22CB3E96A52769A25ADE9515EDF423A7C017AF1400CC6BE66D5D3D1FF46833822764641D62E190FDA4FCA1D52BA8FFCBC806F9AA81AF539CE1096D820465E556CED77FB03904459F8CC12F96D9A27E5F420E0B0881FD2147E5B6C3E9622711645CAF709CE332ABB849D9D459477193E9A0B5CB52132C41B59245BCCBD2CB0A3FD970C1E70E17FD22564B92BA5782E3DC6E23EF89EA547F5DD9C0BE123AC89A23B934BCC6317648A76ADFC85B2FCD922246537F33DEC210BC83CDDB765C13E59451B1582991F5FDBD82554B3F7DAA098D765765803323818A4C" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:42116" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:42116/Admin" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.36 SE 2.X MetaSr 1.0" />
+    </item>
+    <item name="HTTP_X_REQUESTED_WITH">
+      <value string="XMLHttpRequest" />
+    </item>
+  </serverVariables>
+  <queryString>
+    <item name="X-Requested-With">
+      <value string="XMLHttpRequest" />
+    </item>
+  </queryString>
+  <cookies>
+    <item name="__RequestVerificationToken">
+      <value string="HSztkyNORD7cFVOjGNjeOBYqUwjrvsxa7ftEHlxC4txtfpUyBSN_sJ-UxeM_Cp46jSNshmB1QTlV5s94AKxUXwQ_y0Yyjgpw-P5rz3z-Er_5JUCTj5do8qUwsssyHamCxNShbT8Sal5ixzrjyhU7pA2" />
+    </item>
+    <item name=".ASPXAUTH">
+      <value string="1189588E369BB1F23DB8ECBD11B88845C6230AED83DCF1AAC9E10BFE3E203946A2341E15369F331B9603816D708D638513797E8068370F22CB3E96A52769A25ADE9515EDF423A7C017AF1400CC6BE66D5D3D1FF46833822764641D62E190FDA4FCA1D52BA8FFCBC806F9AA81AF539CE1096D820465E556CED77FB03904459F8CC12F96D9A27E5F420E0B0881FD2147E5B6C3E9622711645CAF709CE332ABB849D9D459477193E9A0B5CB52132C41B59245BCCBD2CB0A3FD970C1E70E17FD22564B92BA5782E3DC6E23EF89EA547F5DD9C0BE123AC89A23B934BCC6317648A76ADFC85B2FCD922246537F33DEC210BC83CDDB765C13E59451B1582991F5FDBD82554B3F7DAA098D765765803323818A4C" />
+    </item>
+  </cookies>
+</error>

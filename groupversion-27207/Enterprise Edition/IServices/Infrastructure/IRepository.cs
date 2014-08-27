@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace IServices.Infrastructure
+namespace IServices
 {
     public interface IRepository<T> where T : class
     {

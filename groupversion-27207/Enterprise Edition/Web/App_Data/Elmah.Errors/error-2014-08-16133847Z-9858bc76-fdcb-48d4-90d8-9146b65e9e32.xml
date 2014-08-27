@@ -1,0 +1,173 @@
+﻿<error errorId="9858bc76-fdcb-48d4-90d8-9146b65e9e32" application="/" host="1121860" type="System.Web.HttpException" message="The layout page &quot;~/Areas/Platform/Views/Shared/Edit_Layout.cshtml&quot; could not be found at the following path: &quot;~/Areas/Platform/Views/Shared/Edit_Layout.cshtml&quot;." source="System.Web.WebPages" detail="System.Web.HttpException (0x80004005): The layout page &quot;~/Areas/Platform/Views/Shared/Edit_Layout.cshtml&quot; could not be found at the following path: &quot;~/Areas/Platform/Views/Shared/Edit_Layout.cshtml&quot;.&#xD;&#xA;   在 System.Web.WebPages.WebPageExecutingBase.NormalizeLayoutPagePath(String layoutPagePath)&#xD;&#xA;   在 System.Web.WebPages.WebPageBase.PopContext()&#xD;&#xA;   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)&#xD;&#xA;   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)&#xD;&#xA;   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)&#xD;&#xA;   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)&#xD;&#xA;   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)&#xD;&#xA;   在 System.Web.Mvc.ControllerActionInvoker.&lt;&gt;c__DisplayClass1a.&lt;InvokeActionResultWithFilters&gt;b__17()&#xD;&#xA;   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)&#xD;&#xA;   在 System.Web.Mvc.ControllerActionInvoker.&lt;&gt;c__DisplayClass1a.&lt;&gt;c__DisplayClass1c.&lt;InvokeActionResultWithFilters&gt;b__19()&#xD;&#xA;   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass25.&lt;&gt;c__DisplayClass2a.&lt;BeginInvokeAction&gt;b__20()&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass25.&lt;BeginInvokeAction&gt;b__22(IAsyncResult asyncResult)&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)&#xD;&#xA;   在 System.Web.Mvc.Controller.&lt;&gt;c__DisplayClass1d.&lt;BeginExecuteCore&gt;b__18(IAsyncResult asyncResult)&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncResultWrapper.&lt;&gt;c__DisplayClass4.&lt;MakeVoidDelegate&gt;b__3(IAsyncResult ar)&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()&#xD;&#xA;   在 System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncResultWrapper.&lt;&gt;c__DisplayClass4.&lt;MakeVoidDelegate&gt;b__3(IAsyncResult ar)&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()&#xD;&#xA;   在 System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   在 System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   在 System.Web.Mvc.MvcHandler.&lt;&gt;c__DisplayClass8.&lt;BeginProcessRequest&gt;b__3(IAsyncResult asyncResult)&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncResultWrapper.&lt;&gt;c__DisplayClass4.&lt;MakeVoidDelegate&gt;b__3(IAsyncResult ar)&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.End()&#xD;&#xA;   在 System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)&#xD;&#xA;   在 System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)&#xD;&#xA;   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="92fad039-2278-4dc8-b716-a1b88a8a9e2d,f5afdc36-f346-49bc-b514-500f5493af28" time="2014-08-16T13:38:47.8029759Z" statusCode="500">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:Keep-Alive&#xD;&#xA;HTTP_ACCEPT:*/*&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:zh-cn&#xD;&#xA;HTTP_COOKIE:.ASPXAUTH=53A9C42A60B68562AB9CC4375164B9D5492CEB8DE1820B501395B4380ED89075DF5654C0ECE45B0A97068199100246D4F66A596B8DF038998337EEB39AE1E276B21C0E9506E389A223A13219F64DA114D13755532CD255597CAEEF03CFF80E6C57F2B465B439C38C67FDD25CA685E32E0A19797286D20A6324805F2924607DDB0CED5174E1A66660AE06224C0CB98230ACB8814337E7476FCEDB49A59130B885BED522F9F871E2C1CFD11BC0E963252625A63882B7B2F6132C5BBB45F23D45E9BAE1618356B2B9AAAEEDF71ADADC6671292450003B72C589886329DED808727AD2A653106769FDB1E0C29050F6754AB19879F1BA34606E2EF4D387163C7047CBEF4BD297DB5F69F16F41396A67DC7F16; __RequestVerificationToken=HSztkyNORD7cFVOjGNjeOBYqUwjrvsxa7ftEHlxC4txtfpUyBSN_sJ-UxeM_Cp46jSNshmB1QTlV5s94AKxUXwQ_y0Yyjgpw-P5rz3z-Er_5JUCTj5do8qUwsssyHamCxNShbT8Sal5ixzrjyhU7pA2&#xD;&#xA;HTTP_HOST:localhost:42116&#xD;&#xA;HTTP_REFERER:http://localhost:42116/Admin&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SE 2.X MetaSr 1.0)&#xD;&#xA;HTTP_X_REQUESTED_WITH:XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: Keep-Alive&#xD;&#xA;Accept: */*&#xD;&#xA;Accept-Encoding: gzip, deflate&#xD;&#xA;Accept-Language: zh-cn&#xD;&#xA;Cookie: .ASPXAUTH=53A9C42A60B68562AB9CC4375164B9D5492CEB8DE1820B501395B4380ED89075DF5654C0ECE45B0A97068199100246D4F66A596B8DF038998337EEB39AE1E276B21C0E9506E389A223A13219F64DA114D13755532CD255597CAEEF03CFF80E6C57F2B465B439C38C67FDD25CA685E32E0A19797286D20A6324805F2924607DDB0CED5174E1A66660AE06224C0CB98230ACB8814337E7476FCEDB49A59130B885BED522F9F871E2C1CFD11BC0E963252625A63882B7B2F6132C5BBB45F23D45E9BAE1618356B2B9AAAEEDF71ADADC6671292450003B72C589886329DED808727AD2A653106769FDB1E0C29050F6754AB19879F1BA34606E2EF4D387163C7047CBEF4BD297DB5F69F16F41396A67DC7F16; __RequestVerificationToken=HSztkyNORD7cFVOjGNjeOBYqUwjrvsxa7ftEHlxC4txtfpUyBSN_sJ-UxeM_Cp46jSNshmB1QTlV5s94AKxUXwQ_y0Yyjgpw-P5rz3z-Er_5JUCTj5do8qUwsssyHamCxNShbT8Sal5ixzrjyhU7pA2&#xD;&#xA;Host: localhost:42116&#xD;&#xA;Referer: http://localhost:42116/Admin&#xD;&#xA;User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SE 2.X MetaSr 1.0)&#xD;&#xA;X-Requested-With: XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="Forms" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="92fad039-2278-4dc8-b716-a1b88a8a9e2d,f5afdc36-f346-49bc-b514-500f5493af28" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="1121860\Administrator" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="92fad039-2278-4dc8-b716-a1b88a8a9e2d,f5afdc36-f346-49bc-b514-500f5493af28" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="" />
+    </item>
+    <item name="HTTPS">
+      <value string="" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Admin/SysRole/Edit/922e63e0-bb56-4671-b13d-a1e9538981b4" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Web\Admin\SysRole\Edit\922e63e0-bb56-4671-b13d-a1e9538981b4" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="X-Requested-With=XMLHttpRequest" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Admin/SysRole/Edit/922e63e0-bb56-4671-b13d-a1e9538981b4" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="42116" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="" />
+    </item>
+    <item name="URL">
+      <value string="/Admin/SysRole/Edit/922e63e0-bb56-4671-b13d-a1e9538981b4" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="Keep-Alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="*/*" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="zh-cn" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string=".ASPXAUTH=53A9C42A60B68562AB9CC4375164B9D5492CEB8DE1820B501395B4380ED89075DF5654C0ECE45B0A97068199100246D4F66A596B8DF038998337EEB39AE1E276B21C0E9506E389A223A13219F64DA114D13755532CD255597CAEEF03CFF80E6C57F2B465B439C38C67FDD25CA685E32E0A19797286D20A6324805F2924607DDB0CED5174E1A66660AE06224C0CB98230ACB8814337E7476FCEDB49A59130B885BED522F9F871E2C1CFD11BC0E963252625A63882B7B2F6132C5BBB45F23D45E9BAE1618356B2B9AAAEEDF71ADADC6671292450003B72C589886329DED808727AD2A653106769FDB1E0C29050F6754AB19879F1BA34606E2EF4D387163C7047CBEF4BD297DB5F69F16F41396A67DC7F16; __RequestVerificationToken=HSztkyNORD7cFVOjGNjeOBYqUwjrvsxa7ftEHlxC4txtfpUyBSN_sJ-UxeM_Cp46jSNshmB1QTlV5s94AKxUXwQ_y0Yyjgpw-P5rz3z-Er_5JUCTj5do8qUwsssyHamCxNShbT8Sal5ixzrjyhU7pA2" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:42116" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:42116/Admin" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0; SE 2.X MetaSr 1.0)" />
+    </item>
+    <item name="HTTP_X_REQUESTED_WITH">
+      <value string="XMLHttpRequest" />
+    </item>
+  </serverVariables>
+  <queryString>
+    <item name="X-Requested-With">
+      <value string="XMLHttpRequest" />
+    </item>
+  </queryString>
+  <cookies>
+    <item name=".ASPXAUTH">
+      <value string="53A9C42A60B68562AB9CC4375164B9D5492CEB8DE1820B501395B4380ED89075DF5654C0ECE45B0A97068199100246D4F66A596B8DF038998337EEB39AE1E276B21C0E9506E389A223A13219F64DA114D13755532CD255597CAEEF03CFF80E6C57F2B465B439C38C67FDD25CA685E32E0A19797286D20A6324805F2924607DDB0CED5174E1A66660AE06224C0CB98230ACB8814337E7476FCEDB49A59130B885BED522F9F871E2C1CFD11BC0E963252625A63882B7B2F6132C5BBB45F23D45E9BAE1618356B2B9AAAEEDF71ADADC6671292450003B72C589886329DED808727AD2A653106769FDB1E0C29050F6754AB19879F1BA34606E2EF4D387163C7047CBEF4BD297DB5F69F16F41396A67DC7F16" />
+    </item>
+    <item name="__RequestVerificationToken">
+      <value string="HSztkyNORD7cFVOjGNjeOBYqUwjrvsxa7ftEHlxC4txtfpUyBSN_sJ-UxeM_Cp46jSNshmB1QTlV5s94AKxUXwQ_y0Yyjgpw-P5rz3z-Er_5JUCTj5do8qUwsssyHamCxNShbT8Sal5ixzrjyhU7pA2" />
+    </item>
+  </cookies>
+</error>

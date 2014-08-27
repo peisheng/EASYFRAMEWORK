@@ -54,19 +54,17 @@ namespace Services.Infrastructure
         /// <param name="entity"></param>
         public virtual void Save(Guid? id, T entity)
         {
-            var ientity = entity as IDbSetBase;
-            if (ientity != null)
-            {
-                ientity.EnterpriseId = _userInfo.EnterpriseId;
-                ientity.UserId = _userInfo.UserId;
+
+            if (entity != null)
+            { 
 
                 if (id.HasValue)
                 {
-                    Update(ientity as T);
+                    Update(entity as T);
                 }
                 else
                 {
-                    Add(ientity as T);
+                    Add(entity as T);
                 }
             }
             else
@@ -98,9 +96,14 @@ namespace Services.Infrastructure
         /// <param name="item"></param>
         public virtual void Delete(T item)
         {
-            var entity = item as IDbSetBase;
-            if (entity != null && entity.EnterpriseId.Equals(_userInfo.EnterpriseId))
-                entity.Deleted = true;
+            //var entity = item as IDbSetBase;
+            //if (entity != null && entity.EnterpriseId.Equals(_userInfo.EnterpriseId))
+            //    entity.Deleted = true;
+            if (item != null)
+            {
+                _dataContext.Entry(item).State = EntityState.Deleted;
+            }
+
         }
 
         /// <summary>
@@ -134,24 +137,7 @@ namespace Services.Infrastructure
             return _dbset.Find(id);
         }
 
-        /// <summary>
-        /// 获取全部企业数据
-        /// </summary>
-        /// <returns></returns>
-        public virtual IQueryable<T> GetAllEnt()
-        {
-            return GetAllEnt(false);
-        }
-
-        /// <summary>
-        /// 获取全部企业数据
-        /// </summary>
-        /// <param name="deleted"></param>
-        /// <returns></returns>
-        public virtual IQueryable<T> GetAllEnt(bool deleted)
-        {
-            return _dbset.Where("Deleted=@0", deleted).OrderBy("CreatedDate Desc");
-        }
+       
 
         /// <summary>
         /// 获取用户所在企业数据
@@ -159,19 +145,10 @@ namespace Services.Infrastructure
         /// <returns></returns>
         public virtual IQueryable<T> GetAll()
         {
-            return GetAll(false);
+            return _dbset.AsQueryable<T>();
         }
 
-        /// <summary>
-        /// 获取用户所在企业数据
-        /// </summary>
-        /// <param name="deleted"></param>
-        /// <returns></returns>
-        public virtual IQueryable<T> GetAll(bool deleted)
-        {
-            return GetAllEnt(deleted).Where("EnterpriseId=@0", _userInfo.EnterpriseId);
-        }
-
+    
         /// <summary>
         /// 获取符合条件的用户所在企业数据
         /// </summary>
@@ -179,7 +156,7 @@ namespace Services.Infrastructure
         /// <returns></returns>
         public virtual IQueryable<T> GetAll(Expression<Func<T, bool>> where)
         {
-            return GetAll().Where(where);
+            return _dbset.Where(where);
         }
 
     }

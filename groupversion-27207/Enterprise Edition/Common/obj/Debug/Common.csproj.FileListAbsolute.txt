@@ -5,6 +5,5 @@ D:\搜狗高速下载\groupversion-27207\Enterprise Edition\Common\obj\Debug\Com
 D:\搜狗高速下载\groupversion-27207\Enterprise Edition\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Common\bin\Debug\Common.dll
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Common\bin\Debug\Common.pdb
-H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Common\obj\Debug\Common.dll
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Common\obj\Debug\Common.pdb

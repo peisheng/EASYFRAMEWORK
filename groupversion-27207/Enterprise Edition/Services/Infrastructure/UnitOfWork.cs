@@ -1,4 +1,4 @@
-﻿using IServices.Infrastructure;
+﻿using IServices;
 
 namespace Services.Infrastructure
 {

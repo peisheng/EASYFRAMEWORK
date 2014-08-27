@@ -1,4 +1,4 @@
-﻿namespace IServices.Infrastructure
+﻿namespace IServices
 {
     public interface IUnitOfWork
     {

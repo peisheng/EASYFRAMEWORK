@@ -21,8 +21,10 @@ namespace Web.Areas.Admin.Controllers
        [ValidateInput(true)]
         public ActionResult Edit(string id)
         {
-            ViewBag.id = id;
-            ViewBag.value = ConfigurationManager.AppSettings[id];
+         string validateid=id.Replace("-",":");
+
+         ViewBag.id = validateid;
+         ViewBag.value = ConfigurationManager.AppSettings[validateid];
             return View();
         }
        
@@ -32,8 +34,9 @@ namespace Web.Areas.Admin.Controllers
         {
             try
             {
+                string validateid = id.Replace("-",":");
                 var webConfig = new WebAppSetting();
-                webConfig.Modify(id, value);
+                webConfig.Modify(validateid, value);
                 return RedirectToAction("Index");
             }
             catch (Exception e)

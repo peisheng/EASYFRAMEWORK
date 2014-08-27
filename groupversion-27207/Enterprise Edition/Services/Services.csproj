@@ -67,26 +67,6 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SysServices\TheIndexService.cs" />
-    <Compile Include="SysServices\SysApplicationDb.cs" />
-    <Compile Include="SysServices\SysAreaService.cs" />
-    <Compile Include="SysServices\SysControllerService.cs" />
-    <Compile Include="Initializer\DbEntitiesInitializer.cs" />
-    <Compile Include="SysServices\SysEnterpriseService.cs" />
-    <Compile Include="SysServices\SysUserResetPasswordService.cs" />
-    <Compile Include="SysServices\SysUserService.cs" />
-    <Compile Include="SysServices\SysActionService.cs" />
-    <Compile Include="SysServices\SysDepartmentService.cs" />
-    <Compile Include="SysServices\SysRoleService.cs" />
-    <Compile Include="SysServices\SysHelpService.cs" />
-    <Compile Include="SysServices\SysUserLogService.cs" />
-    <Compile Include="SysServices\SysLogService.cs" />
-    <Compile Include="SysServices\SysControllerSysActionService.cs" />
-    <Compile Include="SysServices\SysRoleSysControllerSysActionService.cs" />
-    <Compile Include="SysServices\SysDepartmentSysUserService.cs" />
-    <Compile Include="SysServices\SysRoleSysUserService.cs" />
-    <Compile Include="SysServices\SysHelpImageService.cs" />
-    <Compile Include="SysServices\SysFileService.cs" />
-    <Compile Include="SysServices\SysMailService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">
@@ -118,6 +98,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Initializer\" />
     <Folder Include="UserServices\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

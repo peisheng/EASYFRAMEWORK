@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c4e57c2a6e0e45109cbe118864d60673" Name="Diagram1">
+        <EntityTypeShape EntityType="Models.Advertisement" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Article" Width="1.5" PointX="3.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Article_Website" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Category" Width="1.5" PointX="3.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Comment" Width="1.5" PointX="6" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.KeyWord" Width="1.5" PointX="6" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.SpiderContent" Width="1.5" PointX="6" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.SpiderLink" Width="1.5" PointX="6" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Website" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.Website_Category" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.WebsiteSetting" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
+        <AssociationConnector Association="Models.FK_Advertisement_Website" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Article_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Article_Website_Article" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Comment_Article" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Article_Website_Website" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_KeyWord_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_SpiderContent_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_SpiderLink_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Website_Category_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Comment_Website" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_Website_Category_Website" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK_WebsiteSetting_Website" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Models.BaseAction" Width="1.5" PointX="1.0926406574866925" PointY="19.418682316047459" />
+        <EntityTypeShape EntityType="Models.BaseRole" Width="1.5" PointX="9.65215949604854" PointY="1.6220032580299317" />
+        <EntityTypeShape EntityType="Models.BaseRoleAction" Width="1.5" PointX="7.3766030610430073" PointY="25.053600054724885" />
+        <EntityTypeShape EntityType="Models.BaseUser" Width="1.5" PointX="6.7248453305684244" PointY="18.014098011895129" />
+        <EntityTypeShape EntityType="Models.BaseUserRole" Width="1.5" PointX="4.4519268704820085" PointY="27.39705531084773" />
+        <AssociationConnector Association="Models.FK_BaseRoleAction_BaseAction" />
+        <AssociationConnector Association="Models.FK_BaseSystemAction_BaseSystemAction" />
+        <AssociationConnector Association="Models.FK_BaseRoleAction_BaseRole" />
+        <AssociationConnector Association="Models.FK_BaseUserRole_BaseRole" />
+        <AssociationConnector Association="Models.FK_BaseUserRole_BaseUser" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,469 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Models.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModelsStoreContainer">
+    <EntitySet Name="Advertisement" EntityType="Models.Store.Advertisement" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Article" EntityType="Models.Store.Article" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Article_Website" EntityType="Models.Store.Article_Website" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BaseAction" EntityType="Models.Store.BaseAction" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BaseRole" EntityType="Models.Store.BaseRole" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BaseRoleAction" EntityType="Models.Store.BaseRoleAction" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BaseUser" EntityType="Models.Store.BaseUser" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BaseUserRole" EntityType="Models.Store.BaseUserRole" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Category" EntityType="Models.Store.Category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Comment" EntityType="Models.Store.Comment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KeyWord" EntityType="Models.Store.KeyWord" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SpiderContent" EntityType="Models.Store.SpiderContent" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SpiderLink" EntityType="Models.Store.SpiderLink" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Website" EntityType="Models.Store.Website" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Website_Category" EntityType="Models.Store.Website_Category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="WebsiteSetting" EntityType="Models.Store.WebsiteSetting" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Advertisement_Website" Association="Models.Store.FK_Advertisement_Website">
+      <End Role="Website" EntitySet="Website" />
+      <End Role="Advertisement" EntitySet="Advertisement" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Article_Category" Association="Models.Store.FK_Article_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Article" EntitySet="Article" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Article_Website_Article" Association="Models.Store.FK_Article_Website_Article">
+      <End Role="Article" EntitySet="Article" />
+      <End Role="Article_Website" EntitySet="Article_Website" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Article_Website_Website" Association="Models.Store.FK_Article_Website_Website">
+      <End Role="Website" EntitySet="Website" />
+      <End Role="Article_Website" EntitySet="Article_Website" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaseRoleAction_BaseAction" Association="Models.Store.FK_BaseRoleAction_BaseAction">
+      <End Role="BaseAction" EntitySet="BaseAction" />
+      <End Role="BaseRoleAction" EntitySet="BaseRoleAction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaseRoleAction_BaseRole" Association="Models.Store.FK_BaseRoleAction_BaseRole">
+      <End Role="BaseRole" EntitySet="BaseRole" />
+      <End Role="BaseRoleAction" EntitySet="BaseRoleAction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaseSystemAction_BaseSystemAction" Association="Models.Store.FK_BaseSystemAction_BaseSystemAction">
+      <End Role="BaseAction" EntitySet="BaseAction" />
+      <End Role="BaseAction1" EntitySet="BaseAction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaseUserRole_BaseRole" Association="Models.Store.FK_BaseUserRole_BaseRole">
+      <End Role="BaseRole" EntitySet="BaseRole" />
+      <End Role="BaseUserRole" EntitySet="BaseUserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaseUserRole_BaseUser" Association="Models.Store.FK_BaseUserRole_BaseUser">
+      <End Role="BaseUser" EntitySet="BaseUser" />
+      <End Role="BaseUserRole" EntitySet="BaseUserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Article" Association="Models.Store.FK_Comment_Article">
+      <End Role="Article" EntitySet="Article" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Website" Association="Models.Store.FK_Comment_Website">
+      <End Role="Website" EntitySet="Website" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KeyWord_Category" Association="Models.Store.FK_KeyWord_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="KeyWord" EntitySet="KeyWord" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SpiderContent_Category" Association="Models.Store.FK_SpiderContent_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="SpiderContent" EntitySet="SpiderContent" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SpiderLink_Category" Association="Models.Store.FK_SpiderLink_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="SpiderLink" EntitySet="SpiderLink" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Website_Category_Category" Association="Models.Store.FK_Website_Category_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Website_Category" EntitySet="Website_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Website_Category_Website" Association="Models.Store.FK_Website_Category_Website">
+      <End Role="Website" EntitySet="Website" />
+      <End Role="Website_Category" EntitySet="Website_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WebsiteSetting_Website" Association="Models.Store.FK_WebsiteSetting_Website">
+      <End Role="Website" EntitySet="Website" />
+      <End Role="WebsiteSetting" EntitySet="WebsiteSetting" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Advertisement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AdName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Code" Type="text" Nullable="false" />
+    <Property Name="Width" Type="int" Nullable="false" />
+    <Property Name="Height" Type="int" Nullable="false" />
+    <Property Name="AdType" Type="int" Nullable="false" />
+    <Property Name="BeginDate" Type="datetime" Nullable="false" />
+    <Property Name="EndDate" Type="datetime" Nullable="false" />
+    <Property Name="WebsiteId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Article">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="800" />
+    <Property Name="Content" Type="text" Nullable="false" />
+    <Property Name="IsReady" Type="bit" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="Author" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="PublishedDate" Type="datetime" Nullable="false" />
+    <Property Name="ArticleSource" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="SourceUrl" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="IsImageaAticle" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Article_Website">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ArticleId" Type="int" Nullable="false" />
+    <Property Name="WebsiteId" Type="int" Nullable="false" />
+    <Property Name="IsPublished" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BaseAction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ActionName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ActionUrl" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BaseRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="RoleValue" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BaseRoleAction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ActionId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BaseUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="LastLoginTime" Type="datetime" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BaseUserRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CateName" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ArticleId" Type="int" Nullable="false" />
+    <Property Name="CommentContent" Type="nvarchar" Nullable="false" MaxLength="2000" />
+    <Property Name="WebsiteId" Type="int" Nullable="false" />
+    <Property Name="CommentTime" Type="datetime" Nullable="false" />
+    <Property Name="IpAddress" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="KeyWord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="KeyWord" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="IsCatched" Type="bit" Nullable="false" />
+    <Property Name="IsExpired" Type="bit" Nullable="false" />
+    <Property Name="ExpiredDate" Type="datetime" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SpiderContent">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="800" />
+    <Property Name="HtmlContent" Type="text" Nullable="false" />
+    <Property Name="TextContent" Type="text" Nullable="false" />
+    <Property Name="SourceUrl" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="ExpiredDate" Type="datetime" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SpiderLink">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="LinkUrl" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="IsCatched" Type="bit" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Website">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="SiteNameCn" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="SiteNameEn" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="SiteUrl" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Website_Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="WebsiteId" Type="int" Nullable="false" />
+    <Property Name="MappingName" Type="nvarchar" MaxLength="50" />
+    <Property Name="IspuPlished" Type="bit" Nullable="false" />
+    <Property Name="OrderNum" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WebsiteSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentId" Type="int" Nullable="false" />
+    <Property Name="SettingGroupName" Type="nvarchar" Nullable="false" MaxLength="30" />
+    <Property Name="SettingKey" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="SettingValue" Type="nvarchar" Nullable="false" MaxLength="500" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="CreateTime" Type="datetime" Nullable="false" />
+    <Property Name="WebsiteId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Advertisement_Website">
+    <End Role="Website" Type="Models.Store.Website" Multiplicity="1" />
+    <End Role="Advertisement" Type="Models.Store.Advertisement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Website">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Advertisement">
+        <PropertyRef Name="WebsiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Article_Category">
+    <End Role="Category" Type="Models.Store.Category" Multiplicity="1" />
+    <End Role="Article" Type="Models.Store.Article" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Article">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Article_Website_Article">
+    <End Role="Article" Type="Models.Store.Article" Multiplicity="1" />
+    <End Role="Article_Website" Type="Models.Store.Article_Website" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Article_Website">
+        <PropertyRef Name="ArticleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Article_Website_Website">
+    <End Role="Website" Type="Models.Store.Website" Multiplicity="1" />
+    <End Role="Article_Website" Type="Models.Store.Article_Website" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Website">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Article_Website">
+        <PropertyRef Name="WebsiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaseRoleAction_BaseAction">
+    <End Role="BaseAction" Type="Models.Store.BaseAction" Multiplicity="1" />
+    <End Role="BaseRoleAction" Type="Models.Store.BaseRoleAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BaseAction">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BaseRoleAction">
+        <PropertyRef Name="ActionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaseRoleAction_BaseRole">
+    <End Role="BaseRole" Type="Models.Store.BaseRole" Multiplicity="1" />
+    <End Role="BaseRoleAction" Type="Models.Store.BaseRoleAction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BaseRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BaseRoleAction">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaseSystemAction_BaseSystemAction">
+    <End Role="BaseAction" Type="Models.Store.BaseAction" Multiplicity="1" />
+    <End Role="BaseAction1" Type="Models.Store.BaseAction" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BaseAction">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BaseAction1">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaseUserRole_BaseRole">
+    <End Role="BaseRole" Type="Models.Store.BaseRole" Multiplicity="1" />
+    <End Role="BaseUserRole" Type="Models.Store.BaseUserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BaseRole">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BaseUserRole">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaseUserRole_BaseUser">
+    <End Role="BaseUser" Type="Models.Store.BaseUser" Multiplicity="1" />
+    <End Role="BaseUserRole" Type="Models.Store.BaseUserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BaseUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BaseUserRole">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Article">
+    <End Role="Article" Type="Models.Store.Article" Multiplicity="1" />
+    <End Role="Comment" Type="Models.Store.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Article">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="ArticleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Website">
+    <End Role="Website" Type="Models.Store.Website" Multiplicity="1" />
+    <End Role="Comment" Type="Models.Store.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Website">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="WebsiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KeyWord_Category">
+    <End Role="Category" Type="Models.Store.Category" Multiplicity="1" />
+    <End Role="KeyWord" Type="Models.Store.KeyWord" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="KeyWord">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SpiderContent_Category">
+    <End Role="Category" Type="Models.Store.Category" Multiplicity="1" />
+    <End Role="SpiderContent" Type="Models.Store.SpiderContent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SpiderContent">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SpiderLink_Category">
+    <End Role="Category" Type="Models.Store.Category" Multiplicity="1" />
+    <End Role="SpiderLink" Type="Models.Store.SpiderLink" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SpiderLink">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Website_Category_Category">
+    <End Role="Category" Type="Models.Store.Category" Multiplicity="1" />
+    <End Role="Website_Category" Type="Models.Store.Website_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Website_Category">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Website_Category_Website">
+    <End Role="Website" Type="Models.Store.Website" Multiplicity="1" />
+    <End Role="Website_Category" Type="Models.Store.Website_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Website">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Website_Category">
+        <PropertyRef Name="WebsiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WebsiteSetting_Website">
+    <End Role="Website" Type="Models.Store.Website" Multiplicity="1" />
+    <End Role="WebsiteSetting" Type="Models.Store.WebsiteSetting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Website">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="WebsiteSetting">
+        <PropertyRef Name="WebsiteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

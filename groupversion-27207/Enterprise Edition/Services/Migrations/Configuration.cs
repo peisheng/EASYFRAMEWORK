@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
-using Models.SysModels;
+using Models;
 
 namespace Services.Migrations
 {
@@ -28,12 +28,12 @@ namespace Services.Migrations
             //    );
             //
 
-            var syshelps = new[]{
-                       new SysHelp {  Title = "DbSet<T>.AddOrUpdate()测试记录。", Content = "默认以主键来判断该记录是否存在，并进行添加更新。" },
-                       new SysHelp {  Title = "新加功能模块及内容可在Configuraion.cs中进行添加", Content = "默认以主键来判断该记录是否存在，并进行添加更新。" } 
-                };
+            //var syshelps = new[]{
+            //           new SysHelp {  Title = "DbSet<T>.AddOrUpdate()测试记录。", Content = "默认以主键来判断该记录是否存在，并进行添加更新。" },
+            //           new SysHelp {  Title = "新加功能模块及内容可在Configuraion.cs中进行添加", Content = "默认以主键来判断该记录是否存在，并进行添加更新。" } 
+            //    };
 
-            context.SysHelps.AddOrUpdate(a => new { a.Title }, syshelps);
+            //context.SysHelps.AddOrUpdate(a => new { a.Title }, syshelps);
         }
     }
 }
