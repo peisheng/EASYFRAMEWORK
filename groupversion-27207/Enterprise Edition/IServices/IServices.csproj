@@ -45,7 +45,7 @@
     <Compile Include="IBussServices\IWebSiteSettingService.cs" />
     <Compile Include="IBussServices\IWebSiteCategoryService.cs" />
     <Compile Include="IBussServices\IWebSiteService.cs" />
-    <Compile Include="IBussServices\ISpiderLink.cs" />
+    <Compile Include="IBussServices\ISpiderLinkService.cs" />
     <Compile Include="IBussServices\IKeyWordService.cs" />
     <Compile Include="IBussServices\ICategoryService.cs" />
     <Compile Include="IBussServices\IArticleWebsiteService.cs" />
@@ -54,7 +54,7 @@
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="IBussServices\IAdvertisementService.cs" />
-    <Compile Include="IBussServices\ISpiderContent.cs" />
+    <Compile Include="IBussServices\ISpiderContentService.cs" />
     <Compile Include="ISysServices\IBaseRoleActionService.cs" />
     <Compile Include="ISysServices\IBaseActionService.cs" />
     <Compile Include="ISysServices\ITheIndexService.cs" />

@@ -16,3 +16,13 @@ H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Models\bin\Debug\Elma
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Models\bin\Debug\log4net.dll
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Models\bin\Debug\log4net.xml
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\Models\bin\Debug\Models.dll.config
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\Models\bin\Debug\Models.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\Models\bin\Debug\Models.pdb
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\Models\bin\Debug\Elmah.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\Models\bin\Debug\EntityFramework.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\Models\bin\Debug\log4net.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\Models\bin\Debug\EntityFramework.xml
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\Models\bin\Debug\log4net.xml
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\Models\obj\Debug\Models.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\Models\obj\Debug\Models.pdb

@@ -7,7 +7,7 @@ using Models;
 
 namespace IServices
 {
-    interface IBaseUserService : IRepository<BaseUser>
+    public interface IBaseUserService : IRepository<BaseUser>
     {
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IServices
 {
-    interface IArticleWebsiteService : IRepository<Article_Website>
+    public interface IArticleWebsiteService : IRepository<Article_Website>
     {
     }
 }

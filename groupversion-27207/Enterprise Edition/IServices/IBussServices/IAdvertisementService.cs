@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IServices
 {
-    interface IAdvertisementService : IRepository<Advertisement>
+    public interface IAdvertisementService : IRepository<Advertisement>
     {
     }
 }

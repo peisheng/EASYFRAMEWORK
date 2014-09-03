@@ -12,12 +12,12 @@ namespace Services.Infrastructure
     {
         private readonly IDbSet<T> _dbset;
         private ApplicationCachingDb _dataContext;
-        private readonly IUserInfo _userInfo;
+       
 
-        protected RepositoryBase(IDatabaseFactory databaseFactory, IUserInfo userInfo)
+        protected RepositoryBase(IDatabaseFactory databaseFactory)
         {
             DatabaseFactory = databaseFactory;
-            _userInfo = userInfo;
+          
             _dbset = DataContext.Set<T>();
         }
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IServices
 {
-    interface ArticleService : IRepository<Article>
+    public interface IArticleService : IRepository<Article>
     {
     }
 }

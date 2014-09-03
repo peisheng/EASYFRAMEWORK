@@ -16,3 +16,12 @@ H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\bin
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\obj\Debug\EFCachingProvider.csprojResolveAssemblyReference.cache
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\obj\Debug\EFCachingProvider.dll
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\obj\Debug\EFCachingProvider.pdb
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFCachingProvider.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFCachingProvider.pdb
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFCachingProvider.dll.CodeAnalysisLog.xml
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFCachingProvider.dll.lastcodeanalysissucceeded
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFProviderWrapperToolkit.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\bin\Debug\EFProviderWrapperToolkit.pdb
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\obj\Debug\EFCachingProvider.csprojResolveAssemblyReference.cache
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\obj\Debug\EFCachingProvider.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFCachingProvider\obj\Debug\EFCachingProvider.pdb

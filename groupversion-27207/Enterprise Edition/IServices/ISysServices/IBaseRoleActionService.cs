@@ -7,7 +7,7 @@ using Models;
 
 namespace IServices
 {
-    interface IBaseRoleActionService : IRepository<BaseRoleAction>
+  public  interface IBaseRoleActionService : IRepository<BaseRoleAction>
     {
     }
 }

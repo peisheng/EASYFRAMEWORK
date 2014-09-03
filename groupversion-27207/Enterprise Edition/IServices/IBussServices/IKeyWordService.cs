@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace IServices
 {
-    interface IKeyWordService : IRepository<KeyWord>
+    public interface IKeyWordService : IRepository<KeyWord>
     {
     }
 }

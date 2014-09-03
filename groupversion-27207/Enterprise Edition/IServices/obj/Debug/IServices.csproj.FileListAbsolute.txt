@@ -14,3 +14,12 @@ H:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\bin\Debug\E
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\obj\Debug\IServices.csprojResolveAssemblyReference.cache
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\obj\Debug\IServices.dll
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\obj\Debug\IServices.pdb
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\bin\Debug\IServices.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\bin\Debug\IServices.pdb
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\bin\Debug\Models.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\bin\Debug\EntityFramework.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\bin\Debug\Models.pdb
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\bin\Debug\EntityFramework.xml
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\obj\Debug\IServices.csprojResolveAssemblyReference.cache
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\obj\Debug\IServices.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\IServices\obj\Debug\IServices.pdb

@@ -10,3 +10,10 @@ H:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debu
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.csproj.GenerateResource.Cache
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.dll
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.pdb
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\bin\Debug\LanguagePack.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\bin\Debug\LanguagePack.pdb
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.csprojResolveAssemblyReference.cache
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.lang.resources
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.csproj.GenerateResource.Cache
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\LanguagePack\obj\Debug\LanguagePack.pdb

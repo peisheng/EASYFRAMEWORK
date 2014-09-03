@@ -7,3 +7,8 @@ H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Common\bin\Debug\Comm
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Common\bin\Debug\Common.pdb
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Common\obj\Debug\Common.dll
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\Common\obj\Debug\Common.pdb
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\Common\bin\Debug\Common.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\Common\bin\Debug\Common.pdb
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\Common\obj\Debug\Common.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\Common\obj\Debug\Common.pdb

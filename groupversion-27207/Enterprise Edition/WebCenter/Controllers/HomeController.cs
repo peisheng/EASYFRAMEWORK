@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using Models;
 namespace WebCenter.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+        public HomeController()
+        { }
         public ActionResult Index()
         {
             return View();
@@ -26,5 +28,25 @@ namespace WebCenter.Controllers
 
             return View();
         }
+        [HttpPost]
+        public ActionResult Login(LogOn logon,string returnUrl)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(logon);
+            }
+            else
+            {
+
+                return null;
+            }
+            
+        }
+        public ActionResult Login()
+        {
+            return View();
+        }
+        
+
     }
 }

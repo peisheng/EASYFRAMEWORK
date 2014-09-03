@@ -59,6 +59,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDb.cs" />
+    <Compile Include="BussServices\AdvertisementService.cs" />
+    <Compile Include="BussServices\ArticleService.cs" />
+    <Compile Include="BussServices\ArticleWebsiteService.cs" />
+    <Compile Include="BussServices\CategoryService.cs" />
+    <Compile Include="BussServices\CommentService.cs" />
+    <Compile Include="BussServices\KeyWordService.cs" />
+    <Compile Include="BussServices\SpiderContentService.cs" />
+    <Compile Include="BussServices\SpiderLinkService.cs" />
+    <Compile Include="BussServices\WebSiteCategoryService.cs" />
+    <Compile Include="BussServices\WebSiteService.cs" />
+    <Compile Include="BussServices\WebSiteSettingService.cs" />
     <Compile Include="Infrastructure\DatabaseFactory.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\IDatabaseFactory.cs" />
@@ -66,6 +77,11 @@
     <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysServices\BaseActionService.cs" />
+    <Compile Include="SysServices\BaseRoleActionService.cs" />
+    <Compile Include="SysServices\BaseRoleService.cs" />
+    <Compile Include="SysServices\BaseUserRoleService.cs" />
+    <Compile Include="SysServices\BaseUserService.cs" />
     <Compile Include="SysServices\TheIndexService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -99,7 +115,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Initializer\" />
-    <Folder Include="UserServices\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

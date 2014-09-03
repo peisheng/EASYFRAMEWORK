@@ -11,3 +11,10 @@ H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFProviderWrapperTool
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\bin\Debug\EFProviderWrapperToolkit.dll.lastcodeanalysissucceeded
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\obj\Debug\EFProviderWrapperToolkit.dll
 H:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\obj\Debug\EFProviderWrapperToolkit.pdb
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\bin\Debug\EFProviderWrapperToolkit.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\bin\Debug\EFProviderWrapperToolkit.pdb
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\bin\Debug\EFProviderWrapperToolkit.dll.CodeAnalysisLog.xml
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\bin\Debug\EFProviderWrapperToolkit.dll.lastcodeanalysissucceeded
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\obj\Debug\EFProviderWrapperToolkit.csprojResolveAssemblyReference.cache
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\obj\Debug\EFProviderWrapperToolkit.dll
+E:\git\EasyFramework\groupversion-27207\Enterprise Edition\EFProviderWrapperToolkit\obj\Debug\EFProviderWrapperToolkit.pdb

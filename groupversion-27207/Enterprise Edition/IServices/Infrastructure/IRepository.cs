@@ -12,11 +12,8 @@ namespace IServices
         void Delete(Guid id);
         void Delete(T item);
         void Delete(Expression<Func<T, bool>> where);
-        T GetById(Guid id);
-        IQueryable<T> GetAllEnt();
-        IQueryable<T> GetAllEnt(bool deleted);
-        IQueryable<T> GetAll();
-        IQueryable<T> GetAll(bool deleted);
+        T GetById(Guid id);     
+        IQueryable<T> GetAll();         
         IQueryable<T> GetAll(Expression<Func<T, bool>> where);
     }
 }
